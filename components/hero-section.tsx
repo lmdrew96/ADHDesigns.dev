@@ -30,9 +30,10 @@ export function HeroSection() {
 
         {/* Main Headline - updated accent colors */}
         <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-tight mb-6">
-          <span className="text-primary">A</span>gentic <span className="text-secondary">D</span>evelopment of{" "}
-          <span className="text-purple inline-block hover:animate-wiggle cursor-default">H</span>uman{" "}
-          <span className="text-mustard">D</span>esigns
+          <span className="whitespace-nowrap"><span className="text-primary inline-block hover:animate-wiggle cursor-default">A</span>gentic</span>{" "}
+          <span className="whitespace-nowrap"><span className="text-secondary inline-block hover:animate-wiggle cursor-default">D</span>evelopment</span> of{" "}
+          <span className="whitespace-nowrap"><span className="text-purple inline-block hover:animate-wiggle cursor-default">H</span>uman</span>{" "}
+          <span className="whitespace-nowrap"><span className="text-mustard inline-block hover:animate-wiggle cursor-default">D</span>esigns</span>
         </h1>
 
         {/* Subtitle */}

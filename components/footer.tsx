@@ -19,9 +19,12 @@ export function Footer() {
           <Button
             size="lg"
             className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full px-8 py-6 text-lg font-bold"
+            asChild
           >
-            <Mail className="w-5 h-5 mr-2" />
-            Get in Touch
+            <a href="mailto:nae@adhdesigns.dev">
+              <Mail className="w-5 h-5 mr-2" />
+              Get in Touch
+            </a>
           </Button>
         </div>
 
@@ -44,7 +47,9 @@ export function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="#"
+              href="https://github.com/lmdrew96"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center hover:bg-mustard hover:text-burgundy transition-colors"
               aria-label="GitHub"
             >
@@ -58,7 +63,7 @@ export function Footer() {
               <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="mailto:nae@adhdesigns.dev"
               className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center hover:bg-mustard hover:text-burgundy transition-colors"
               aria-label="Email"
             >

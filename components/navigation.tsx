@@ -29,8 +29,8 @@ export function Navigation() {
             <a href="#contact" className="text-teal/70 hover:text-mustard transition-colors font-medium">
               Contact
             </a>
-            <Button className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full px-6 font-bold">
-              Let&apos;s Chat
+            <Button className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full px-6 font-bold" asChild>
+              <a href="mailto:nae@adhdesigns.dev">Let&apos;s Chat</a>
             </Button>
           </div>
 
@@ -54,8 +54,8 @@ export function Navigation() {
             <a href="#contact" className="block text-teal hover:text-mustard transition-colors font-medium py-2">
               Contact
             </a>
-            <Button className="w-full bg-mustard text-burgundy hover:bg-mustard/90 rounded-full font-bold">
-              Let&apos;s Chat
+            <Button className="w-full bg-mustard text-burgundy hover:bg-mustard/90 rounded-full font-bold" asChild>
+              <a href="mailto:nae@adhdesigns.dev">Let&apos;s Chat</a>
             </Button>
           </div>
         </div>

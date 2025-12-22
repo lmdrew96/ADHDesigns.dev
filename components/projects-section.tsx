@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Cat, Globe, ListTodo, Sword, ExternalLink, Github, ChevronRight } from "lucide-react"
+import { Cat, Globe, ListTodo, Newspaper, ExternalLink, Github, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -17,6 +17,8 @@ const projects = [
     textColor: "text-burgundy",
     tags: ["AI", "Study Tool", "Recordings", "Notes"],
     status: "In Development",
+    githubUrl: "https://github.com/lmdrew96/ScribeCat-v2",
+    liveUrl: "https://github.com/lmdrew96/ScribeCat-v2/releases",
   },
   {
     id: "chaoslingua",
@@ -29,6 +31,8 @@ const projects = [
     textColor: "text-burgundy",
     tags: ["Language Learning", "Romanian", "Immersion", "Experimental"],
     status: "In Development",
+    githubUrl: "https://github.com/lmdrew96/beautiful-contradictions",
+    liveUrl: "https://beautiful-contradictions.vercel.app/",
   },
   {
     id: "controlledchaos",
@@ -41,18 +45,21 @@ const projects = [
     textColor: "text-teal",
     tags: ["ADHD", "Planning", "AI Assistant", "Productivity"],
     status: "Coming Soon",
+    githubUrl: "https://github.com/lmdrew96/Controlled_Chaos",
   },
   {
-    id: "dnd-tools",
-    name: "D&D Tools",
-    tagline: "Roll for initiative (and sanity)",
+    id: "chickenscratch",
+    name: "ChickenScratch",
+    tagline: "Student-run zine submission portal",
     description:
-      "A collection of tools for DMs and players who love D&D but hate bookkeeping. Character sheets, encounter trackers, and more for the neurodivergent tabletop enthusiast.",
-    icon: Sword,
+      "A platform for students to submit and review creative works for publication in a community-driven zine. Where messy creativity meets organized chaos.",
+    icon: Newspaper,
     color: "bg-dark-teal",
     textColor: "text-teal",
-    tags: ["D&D", "Tabletop", "DM Tools", "Character Sheets"],
-    status: "Planning Phase",
+    tags: ["Zine", "Student Platform", "Creative Writing", "Community"],
+    status: "Live",
+    githubUrl: "https://github.com/lmdrew96/ChickenScratch",
+    liveUrl: "https://chickenscratch.me",
   },
 ]
 
@@ -140,17 +147,29 @@ export function ProjectsSection() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <Button className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Project
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-full border-teal text-teal hover:bg-teal hover:text-burgundy bg-transparent"
+              <a
+                href={active.liveUrl || active.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Github className="w-4 h-4 mr-2" />
-                Source Code
-              </Button>
+                <Button className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  View Project
+                </Button>
+              </a>
+              <a
+                href={active.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="rounded-full border-teal text-teal hover:bg-teal hover:text-burgundy bg-transparent"
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  Source Code
+                </Button>
+              </a>
             </div>
           </div>
         </div>
