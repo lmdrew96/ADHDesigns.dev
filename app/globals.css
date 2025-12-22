@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* New 1970s palette with user's exact hex colors */
+  /* #8CBCB9 - Seafoam teal, #DDA448 - Golden mustard, #88749E - Purple */
+  /* #510D0A - Deep burgundy, #305252 - Dark teal */
+
+  --background: #510d0a; /* Deep burgundy as base */
+  --foreground: #8cbcb9; /* Seafoam teal text */
+  --card: #305252; /* Dark teal cards */
+  --card-foreground: #8cbcb9;
+  --popover: #305252;
+  --popover-foreground: #8cbcb9;
+  --primary: #88749e; /* Your purple */
+  --primary-foreground: #510d0a;
+  --secondary: #dda448; /* Golden mustard */
+  --secondary-foreground: #510d0a;
+  --muted: #305252;
+  --muted-foreground: #8cbcb9;
+  --accent: #8cbcb9; /* Seafoam teal accent */
+  --accent-foreground: #510d0a;
+  --destructive: #dda448;
+  --destructive-foreground: #510d0a;
+  --border: #88749e;
+  --input: #305252;
+  --ring: #88749e;
+  --chart-1: #88749e;
+  --chart-2: #dda448;
+  --chart-3: #8cbcb9;
+  --chart-4: #305252;
+  --chart-5: #510d0a;
+  --radius: 1rem;
+  --sidebar: #510d0a;
+  --sidebar-foreground: #8cbcb9;
+  --sidebar-primary: #88749e;
+  --sidebar-primary-foreground: #510d0a;
+  --sidebar-accent: #dda448;
+  --sidebar-accent-foreground: #510d0a;
+  --sidebar-border: #88749e;
+  --sidebar-ring: #88749e;
+
+  /* Named custom colors for direct use */
+  --teal: #8cbcb9;
+  --mustard: #dda448;
+  --purple: #88749e;
+  --burgundy: #510d0a;
+  --dark-teal: #305252;
+}
+
+/* Removed dark mode - using bold colors only */
+
+@theme inline {
+  --font-sans: "Space Grotesk", "Space Grotesk Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-display: "Fraunces", "Fraunces Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Custom named colors for components */
+  --color-teal: var(--teal);
+  --color-mustard: var(--mustard);
+  --color-purple: var(--purple);
+  --color-burgundy: var(--burgundy);
+  --color-dark-teal: var(--dark-teal);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Groovy animations */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
