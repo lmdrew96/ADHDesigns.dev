@@ -30,8 +30,12 @@ export function AboutSection() {
 
               {/* Main content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="w-36 h-36 rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6">
-                  <GraduationCap className="w-20 h-20 text-mustard" />
+                <div className="w-36 h-36 rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden">
+                  <img 
+                    src="/nae-profile.jpg" 
+                    alt="Nae - Developer" 
+                    className="w-full h-full object-cover object-top scale-110"
+                  />
                 </div>
                 <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-teal text-center">
                   University of Delaware
