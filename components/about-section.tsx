@@ -29,7 +29,7 @@ export function AboutSection() {
               </div>
 
               {/* Main content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+              <div className="absolute inset-0 flex flex-col justify-center p-8 items-center">
                 <div className="w-36 h-36 rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden">
                   <img
                     src="/nae-profile.jpg"
@@ -69,25 +69,31 @@ export function AboutSection() {
             </span>
 
             <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-teal mb-6 leading-tight">
-              Too Much on My Plate, <span className="text-mustard">Never Backing Down</span>
+              Too much on my plate, <span className="text-mustard">making it work anyway</span>
             </h2>
 
             <div className="space-y-4 text-teal/80 leading-relaxed">
+              <p>{`I build productivity tools for brains that don't work the way traditional apps expect them to.`}</p>
               <p>
-                {`I'm a full-time college student at the University of Delaware who lives with ADHD, 
-                Bipolar Disorder, and Depression. These aren't just labels—they're part of my daily 
-                reality that shapes how I think, work, and create.`}
+                {`I live with ADHD, Bipolar Disorder, and Depression—and every app I create comes from hitting 
+                a wall with tools that assume I'll "just remember" things, "just start" tasks, or "just prioritize" 
+                when my brain is screaming at me. I got tired of downloading apps designed for neurotypical brains 
+                and trying to force myself to fit their logic.`}
+              </p>
+              <p>{`So I started building my own.`}</p>
+              <p>
+                {`I'm not a professional developer, and that's the entire point. I use agentic tools like Claude Code 
+                because I don't want to spend years learning syntax—I want to solve problems now. It's faster, 
+                it's collaborative, and it lets me focus on what matters: making tools that reduce decision paralysis 
+                instead of adding to it.`}
               </p>
               <p>
-                {`Instead of letting these challenges hold me back, I channel them into building tools 
-                that actually work for brains like mine. Every app I create comes from personal 
-                experience—from the frustration of traditional tools that don't fit neurodivergent 
-                minds.`}
+                {`My apps do the heavy lifting when it comes to day-to-day tasks and decisions—note-taking, to-do list 
+                prioritizing, study time structuring. They're built by someone who needs them, for people who need them.`}
               </p>
               <p>
-                {`I'm not a professional developer, and that's kind of the point. I'm just someone 
-                who needed better tools and decided to make them myself. If they help even one 
-                other person manage their chaos, it's all worth it.`}
+                {`If even one person uses something I've built and thinks "finally, a tool that gets it," then every 
+                late-night debugging session was worth it.`}
               </p>
             </div>
 
