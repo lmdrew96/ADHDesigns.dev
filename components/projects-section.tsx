@@ -102,7 +102,7 @@ export function ProjectsSection() {
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-popover-foreground", project.color)}
+                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-foreground", project.color)}
                     >
                       <Icon className={cn("w-6 h-6", project.textColor)} />
                     </div>
