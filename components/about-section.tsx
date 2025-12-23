@@ -30,7 +30,7 @@ export function AboutSection() {
 
               {/* Main content */}
               <div className="absolute inset-0 flex flex-col justify-center p-8 items-center">
-                <div className="w-36 h-36 rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden">
+                <div className="w-36 sm:w-40 md:w-44 aspect-square rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden">
                   <img
                     src="/nae-profile.jpg"
                     alt="Nae - Developer"
