@@ -9,7 +9,7 @@ const projects = [
   {
     id: "scribecat",
     name: "ScribeCat",
-    tagline: "Your AI study companion",
+    tagline: "ScribeCat scribes and is cat.",
     description:
       "A lecture recording and AI-powered study tool that transforms chaotic notes into organized knowledge. Because your brain has better things to do than remember everything.",
     icon: Cat,
@@ -141,7 +141,7 @@ export function ProjectsSection() {
 
             <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-teal mb-2">{active.name}</h3>
             <p className="text-mustard font-medium mb-4">{active.tagline}</p>
-            <p className="text-teal/80 leading-relaxed mb-6">{active.description}</p>
+            <p className="leading-relaxed mb-6 text-card">{active.description}</p>
 
             <div className="flex flex-wrap gap-2 mb-8">
               {active.tags.map((tag) => (
@@ -158,7 +158,7 @@ export function ProjectsSection() {
                   View Project
                 </Button>
               </a>
-              <a href={active.githubUrl} target="_blank" rel="noopener noreferrer">
+              <a className="" href={active.githubUrl} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
                   className="rounded-full border-teal text-teal hover:bg-teal hover:text-olive bg-transparent"
