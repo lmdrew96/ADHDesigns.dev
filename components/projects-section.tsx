@@ -54,8 +54,8 @@ const projects = [
     description:
       "A platform for students to submit and review creative works for publication in a community-driven zine. Where messy creativity meets organized chaos.",
     icon: Newspaper,
-    color: "bg-dark-teal",
-    textColor: "text-teal",
+    color: "bg-muted",
+    textColor: "text-purple",
     tags: ["Zine", "Student Platform", "Creative Writing", "Community"],
     status: "Live",
     githubUrl: "https://github.com/lmdrew96/ChickenScratch",
@@ -68,7 +68,7 @@ export function ProjectsSection() {
   const active = projects.find((p) => p.id === activeProject) || projects[0]
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark-teal">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-foreground bg-foreground">
       <div className="max-w-7xl mx-auto">
         {/* Section Header - updated colors */}
         <div className="text-center mb-16">
@@ -78,7 +78,7 @@ export function ProjectsSection() {
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal mb-4">
             Built Different, <span className="text-mustard">On Purpose</span>
           </h2>
-          <p className="text-lg text-teal/80 max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto text-background">
             Each project is born from personal struggle and designed to help others who think outside the box.
           </p>
         </div>
@@ -102,7 +102,7 @@ export function ProjectsSection() {
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-muted-foreground", project.color)}
+                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-popover-foreground", project.color)}
                     >
                       <Icon className={cn("w-6 h-6", project.textColor)} />
                     </div>
@@ -116,7 +116,7 @@ export function ProjectsSection() {
                           )}
                         />
                       </div>
-                      <p className="text-teal/70 text-sm">{project.tagline}</p>
+                      <p className="text-sm text-card">{project.tagline}</p>
                     </div>
                   </div>
                 </button>
@@ -126,7 +126,12 @@ export function ProjectsSection() {
 
           {/* Active Project Details - updated card colors */}
           <div className="lg:sticky lg:top-24 bg-olive rounded-3xl border-2 border-purple p-8">
-            <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-muted-foreground", active.color)}>
+            <div
+              className={cn(
+                "w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-popover-foreground",
+                active.color,
+              )}
+            >
               <active.icon className={cn("w-8 h-8", active.textColor)} />
             </div>
 
