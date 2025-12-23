@@ -19,7 +19,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image/Visual Side - updated decorative colors */}
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-dark-teal border-4 border-purple overflow-hidden relative">
+            <div className="lg:aspect-square rounded-3xl bg-dark-teal border-4 border-purple overflow-hidden relative">
               {/* Decorative pattern */}
               <div className="absolute inset-0 opacity-40">
                 <div className="absolute top-4 left-4 w-24 h-24 border-4 border-mustard rounded-full" />
@@ -29,8 +29,8 @@ export function AboutSection() {
               </div>
 
               {/* Main content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-8 items-center">
-                <div className="w-36 sm:w-40 md:w-44 aspect-square rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden">
+              <div className="relative flex flex-col justify-center p-8 items-center">
+                <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden shrink-0">
                   <img
                     src="/nae-profile.jpg"
                     alt="Nae - Developer"
@@ -72,7 +72,7 @@ export function AboutSection() {
               Too much on my plate, <span className="text-mustard">making it work anyway</span>
             </h2>
 
-            <div className="space-y-4 text-teal/80 leading-relaxed">
+            <div className="space-y-4 text-teal/80 leading-relaxed font-medium">
               <p>{`I build productivity tools for brains that don't work the way traditional apps expect them to.`}</p>
               <p>
                 {`I live with ADHD, Bipolar Disorder, and Depression—and every app I create comes from hitting 
