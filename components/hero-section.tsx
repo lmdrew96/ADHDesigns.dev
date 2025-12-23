@@ -23,17 +23,23 @@ export function HeroSection() {
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Tagline - updated colors */}
-        <div className="inline-flex items-center gap-2 bg-mustard text-burgundy px-4 py-2 rounded-full text-sm font-medium mb-8 border-2 border-teal">
-          <Zap className="w-4 h-4" />
-          Made by a neurodivergent, for neurodivergents
-        </div>
+        
 
         {/* Main Headline - updated accent colors */}
-        <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-tight mb-6">
-          <span className="whitespace-nowrap"><span className="text-primary inline-block hover:animate-wiggle cursor-default">A</span>gentic</span>{" "}
-          <span className="whitespace-nowrap"><span className="text-secondary inline-block hover:animate-wiggle cursor-default">D</span>evelopment</span> of{" "}
-          <span className="whitespace-nowrap"><span className="text-purple inline-block hover:animate-wiggle cursor-default">H</span>uman</span>{" "}
-          <span className="whitespace-nowrap"><span className="text-mustard inline-block hover:animate-wiggle cursor-default">D</span>esigns</span>
+        <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-foreground">
+          <span className="whitespace-nowrap text-foreground">
+            <span className="inline-block hover:animate-wiggle cursor-default text-muted">A</span>gentic
+          </span>{" "}
+          <span className="whitespace-nowrap text-foreground">
+            <span className="inline-block hover:animate-wiggle cursor-default text-accent">D</span>evelopment
+          </span>{" "}
+          of{" "}
+          <span className="whitespace-nowrap">
+            <span className="inline-block hover:animate-wiggle cursor-default text-destructive">H</span>uman
+          </span>{" "}
+          <span className="whitespace-nowrap">
+            <span className="inline-block hover:animate-wiggle cursor-default text-primary">D</span>esigns
+          </span>
         </h1>
 
         {/* Subtitle */}
@@ -46,7 +52,7 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full px-8 py-6 text-lg font-semibold group"
+            className="bg-mustard text-dark-teal hover:bg-mustard/90 rounded-full px-8 py-6 text-lg font-semibold group"
             asChild
           >
             <a href="#projects">
@@ -57,7 +63,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-8 py-6 text-lg font-semibold border-2 border-teal text-teal hover:bg-teal hover:text-burgundy bg-transparent"
+            className="rounded-full px-8 py-6 text-lg font-semibold border-2 border-teal text-teal hover:bg-teal hover:text-dark-teal bg-transparent"
             asChild
           >
             <a href="#about">
@@ -70,12 +76,12 @@ export function HeroSection() {
         {/* Feature Pills - updated pill colors */}
         <div className="flex flex-wrap items-center justify-center gap-3">
           {["ADHD Friendly", "Student Built", "Open Source", "Language Learning", "AI Powered"].map((tag, i) => {
-            const colors = ["bg-mustard", "bg-teal", "bg-purple", "bg-dark-teal", "bg-mustard"]
-            const textColors = ["text-burgundy", "text-burgundy", "text-burgundy", "text-teal", "text-burgundy"]
+            const bgColors = ["bg-secondary", "bg-primary", "bg-accent", "bg-card", "bg-secondary"]
+            const txtColors = ["text-card", "text-card", "text-card", "text-primary", "text-card"]
             return (
               <span
                 key={tag}
-                className={`px-4 py-2 ${colors[i]} ${textColors[i]} rounded-full text-sm font-bold hover:scale-105 transition-transform cursor-default`}
+                className={`px-4 py-2 ${bgColors[i]} ${txtColors[i]} rounded-full text-sm font-bold hover:scale-105 transition-transform cursor-default`}
               >
                 {tag}
               </span>

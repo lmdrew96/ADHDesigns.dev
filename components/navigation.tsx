@@ -8,28 +8,30 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-burgundy/90 backdrop-blur-md border-b border-purple">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-olive/90 backdrop-blur-md border-b border-purple">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground bg-foreground">
+        <div className="flex items-center justify-between h-16 bg-foreground">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-mustard flex items-center justify-center group-hover:animate-wiggle">
-              <Sparkles className="w-5 h-5 text-burgundy" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-background">
+              <Sparkles className="w-5 h-5 text-olive" />
             </div>
-            <span className="font-[family-name:var(--font-display)] font-bold text-xl text-teal">ADHD</span>
+            <span className="font-[family-name:var(--font-display)] font-bold text-xl text-muted">
+              ADHDesigns
+            </span>
           </a>
 
           {/* Desktop Nav - updated link colors */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#projects" className="text-teal/70 hover:text-mustard transition-colors font-medium">
+          <div className="hidden md:flex items-center gap-8 text-muted">
+            <a href="#projects" className="hover:text-mustard transition-colors font-medium text-muted">
               Projects
             </a>
-            <a href="#about" className="text-teal/70 hover:text-mustard transition-colors font-medium">
+            <a href="#about" className="hover:text-mustard transition-colors font-medium text-muted">
               About
             </a>
-            <a href="#contact" className="text-teal/70 hover:text-mustard transition-colors font-medium">
+            <a href="#contact" className="hover:text-mustard transition-colors font-medium text-muted">
               Contact
             </a>
-            <Button className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full px-6 font-bold" asChild>
+            <Button className="bg-mustard text-olive hover:bg-mustard/90 rounded-full px-6 font-bold" asChild>
               <a href="mailto:nae@adhdesigns.dev">Let&apos;s Chat</a>
             </Button>
           </div>
@@ -54,7 +56,7 @@ export function Navigation() {
             <a href="#contact" className="block text-teal hover:text-mustard transition-colors font-medium py-2">
               Contact
             </a>
-            <Button className="w-full bg-mustard text-burgundy hover:bg-mustard/90 rounded-full font-bold" asChild>
+            <Button className="w-full bg-mustard text-olive hover:bg-mustard/90 rounded-full font-bold" asChild>
               <a href="mailto:nae@adhdesigns.dev">Let&apos;s Chat</a>
             </Button>
           </div>

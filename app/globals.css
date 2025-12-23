@@ -4,50 +4,50 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* New 1970s palette with user's exact hex colors */
-  /* #8CBCB9 - Seafoam teal, #DDA448 - Golden mustard, #88749E - Purple */
-  /* #510D0A - Deep burgundy, #305252 - Dark teal */
+  /* New 6-color palette from user's image */
+  /* Primary to Senary: #88739E, #DEA549, #8CBDB9, #DBD5E2, #244952, #96D080 */
 
-  --background: #510d0a; /* Deep burgundy as base */
-  --foreground: #8cbcb9; /* Seafoam teal text */
-  --card: #305252; /* Dark teal cards */
-  --card-foreground: #8cbcb9;
-  --popover: #305252;
-  --popover-foreground: #8cbcb9;
-  --primary: #88749e; /* Your purple */
-  --primary-foreground: #510d0a;
-  --secondary: #dda448; /* Golden mustard */
-  --secondary-foreground: #510d0a;
-  --muted: #305252;
-  --muted-foreground: #8cbcb9;
-  --accent: #8cbcb9; /* Seafoam teal accent */
-  --accent-foreground: #510d0a;
-  --destructive: #dda448;
-  --destructive-foreground: #510d0a;
-  --border: #88749e;
-  --input: #305252;
-  --ring: #88749e;
-  --chart-1: #88749e;
-  --chart-2: #dda448;
-  --chart-3: #8cbcb9;
-  --chart-4: #305252;
-  --chart-5: #510d0a;
-  --radius: 1rem;
-  --sidebar: #510d0a;
-  --sidebar-foreground: #8cbcb9;
-  --sidebar-primary: #88749e;
-  --sidebar-primary-foreground: #510d0a;
-  --sidebar-accent: #dda448;
-  --sidebar-accent-foreground: #510d0a;
-  --sidebar-border: #88749e;
-  --sidebar-ring: #88749e;
+  --background: rgb(136, 115, 158); /* Primary - Muted purple */
+  --foreground: rgb(219, 213, 226); /* Quaternary - Pale lavender for text */
+  --card: rgb(36, 73, 82); /* Quinary - Dark teal cards */
+  --card-foreground: #dbd5e2;
+  --popover: rgb(36, 73, 82);
+  --popover-foreground: #dbd5e2;
+  --primary: rgb(140, 189, 185); /* Tertiary - Soft teal */
+  --primary-foreground: #244952;
+  --secondary: rgb(222, 165, 73); /* Secondary - Golden mustard */
+  --secondary-foreground: #244952;
+  --muted: rgb(36, 73, 82);
+  --muted-foreground: #dbd5e2;
+  --accent: rgb(150, 208, 128); /* Senary - Bright lime green */
+  --accent-foreground: #244952;
+  --destructive: rgb(222, 165, 73);
+  --destructive-foreground: #244952;
+  --border: rgb(140, 189, 185);
+  --input: rgb(36, 73, 82);
+  --ring: rgb(140, 189, 185);
+  --chart-1: rgb(140, 189, 185);
+  --chart-2: rgb(222, 165, 73);
+  --chart-3: rgb(150, 208, 128);
+  --chart-4: rgb(36, 73, 82);
+  --chart-5: rgb(136, 115, 158);
+  --radius: 16px;
+  --sidebar: rgb(36, 73, 82);
+  --sidebar-foreground: #dbd5e2;
+  --sidebar-primary: #8cbdb9;
+  --sidebar-primary-foreground: #244952;
+  --sidebar-accent: #dea549;
+  --sidebar-accent-foreground: #244952;
+  --sidebar-border: #8cbdb9;
+  --sidebar-ring: #8cbdb9;
 
   /* Named custom colors for direct use */
-  --teal: #8cbcb9;
-  --mustard: #dda448;
-  --purple: #88749e;
-  --burgundy: #510d0a;
-  --dark-teal: #305252;
+  --purple: rgb(136, 115, 158); /* Primary */
+  --mustard: rgb(222, 165, 73); /* Secondary */
+  --teal: rgb(140, 189, 185); /* Tertiary */
+  --pale-lavender: rgb(219, 213, 226); /* Quaternary */
+  --dark-teal: rgb(36, 73, 82); /* Quinary */
+  --lime: rgb(150, 208, 128); /* Senary */
 }
 
 /* Removed dark mode - using bold colors only */
@@ -92,12 +92,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* Custom named colors for components */
-  --color-teal: var(--teal);
-  --color-mustard: var(--mustard);
+  /* Updated custom named colors to match new palette */
   --color-purple: var(--purple);
-  --color-burgundy: var(--burgundy);
+  --color-mustard: var(--mustard);
+  --color-teal: var(--teal);
+  --color-pale-lavender: var(--pale-lavender);
   --color-dark-teal: var(--dark-teal);
+  --color-lime: var(--lime);
 }
 
 @layer base {

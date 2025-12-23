@@ -14,7 +14,7 @@ const projects = [
       "A lecture recording and AI-powered study tool that transforms chaotic notes into organized knowledge. Because your brain has better things to do than remember everything.",
     icon: Cat,
     color: "bg-mustard",
-    textColor: "text-burgundy",
+    textColor: "text-olive",
     tags: ["AI", "Study Tool", "Recordings", "Notes"],
     status: "In Development",
     githubUrl: "https://github.com/lmdrew96/ScribeCat-v2",
@@ -28,7 +28,7 @@ const projects = [
       "An experimental language-learning app focusing on immersion and the Romanian language. Forget boring drills—embrace the chaos of real language acquisition.",
     icon: Globe,
     color: "bg-teal",
-    textColor: "text-burgundy",
+    textColor: "text-olive",
     tags: ["Language Learning", "Romanian", "Immersion", "Experimental"],
     status: "In Development",
     githubUrl: "https://github.com/lmdrew96/beautiful-contradictions",
@@ -72,7 +72,7 @@ export function ProjectsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header - updated colors */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-mustard text-burgundy rounded-full text-sm font-bold mb-4">
+          <span className="inline-block px-4 py-2 text-olive rounded-full text-sm font-bold mb-4 bg-background">
             Current Projects
           </span>
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal mb-4">
@@ -97,7 +97,7 @@ export function ProjectsSection() {
                     "w-full text-left p-6 rounded-2xl border-2 transition-all duration-300 group",
                     activeProject === project.id
                       ? "border-mustard bg-mustard/20"
-                      : "border-purple bg-burgundy hover:border-mustard/50",
+                      : "border-purple bg-olive hover:border-mustard/50",
                   )}
                 >
                   <div className="flex items-start gap-4">
@@ -125,12 +125,12 @@ export function ProjectsSection() {
           </div>
 
           {/* Active Project Details - updated card colors */}
-          <div className="lg:sticky lg:top-24 bg-burgundy rounded-3xl border-2 border-purple p-8">
+          <div className="lg:sticky lg:top-24 bg-olive rounded-3xl border-2 border-purple p-8">
             <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-6", active.color)}>
               <active.icon className={cn("w-8 h-8", active.textColor)} />
             </div>
 
-            <div className="inline-block px-3 py-1 bg-teal text-burgundy rounded-full text-xs font-bold mb-4">
+            <div className="inline-block px-3 py-1 bg-teal text-olive rounded-full text-xs font-bold mb-4">
               {active.status}
             </div>
 
@@ -147,24 +147,16 @@ export function ProjectsSection() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href={active.liveUrl || active.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-mustard text-burgundy hover:bg-mustard/90 rounded-full">
+              <a href={active.liveUrl || active.githubUrl} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-mustard text-olive hover:bg-mustard/90 rounded-full">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   View Project
                 </Button>
               </a>
-              <a
-                href={active.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={active.githubUrl} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
-                  className="rounded-full border-teal text-teal hover:bg-teal hover:text-burgundy bg-transparent"
+                  className="rounded-full border-teal text-teal hover:bg-teal hover:text-olive bg-transparent"
                 >
                   <Github className="w-4 h-4 mr-2" />
                   Source Code

@@ -1,11 +1,11 @@
 "use client"
 
-import { Heart, GraduationCap, Sparkles, Brain, Coffee, Lightbulb } from "lucide-react"
+import { Heart, Sparkles, Brain, Coffee, Lightbulb } from "lucide-react"
 
 const struggles = [
-  { icon: Brain, label: "ADHD", color: "bg-mustard", textColor: "text-burgundy" },
+  { icon: Brain, label: "ADHD", color: "bg-mustard", textColor: "text-olive" },
   { icon: Heart, label: "Bipolar Disorder", color: "bg-purple", textColor: "text-teal" },
-  { icon: Coffee, label: "Depression", color: "bg-teal", textColor: "text-burgundy" },
+  { icon: Coffee, label: "Depression", color: "bg-teal", textColor: "text-olive" },
 ]
 
 export function AboutSection() {
@@ -31,9 +31,9 @@ export function AboutSection() {
               {/* Main content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
                 <div className="w-36 h-36 rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden">
-                  <img 
-                    src="/nae-profile.jpg" 
-                    alt="Nae - Developer" 
+                  <img
+                    src="/nae-profile.jpg"
+                    alt="Nae - Developer"
                     className="w-full h-full object-cover object-top scale-110"
                   />
                 </div>
@@ -63,7 +63,7 @@ export function AboutSection() {
 
           {/* Content Side - updated text/accent colors */}
           <div>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-teal text-burgundy rounded-full text-sm font-bold mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 text-olive rounded-full text-sm font-bold mb-6 bg-foreground text-card">
               <Sparkles className="w-4 h-4" />
               The Human Behind the Code
             </span>
@@ -97,10 +97,10 @@ export function AboutSection() {
                 <h4 className="font-bold text-teal mb-1">Built Different</h4>
                 <p className="text-sm text-teal/70">Apps that embrace how your brain actually works</p>
               </div>
-              <div className="p-4 bg-purple/20 rounded-xl border-2 border-purple">
-                <Heart className="w-8 h-8 text-purple mb-2" />
-                <h4 className="font-bold text-teal mb-1">Made with Heart</h4>
-                <p className="text-sm text-teal/70">Every feature solves a real struggle</p>
+              <div className="p-4 rounded-xl border-2 border-accent opacity-100 bg-[rgba(183,199,177,0.34604206526958803)]">
+                <Heart className="w-8 h-8 mb-2 text-accent" />
+                <h4 className="font-bold mb-1 text-foreground">Made with Care</h4>
+                <p className="text-sm text-sidebar-foreground">Every feature solves a real struggle</p>
               </div>
             </div>
           </div>
