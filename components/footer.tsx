@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Twitter, Mail, Sparkles, Heart } from "lucide-react"
+import { Github, Mail, Sparkles, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -54,13 +54,6 @@ export function Footer() {
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center hover:bg-mustard hover:text-burgundy transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5" />
             </a>
             <a
               href="mailto:nae@adhdesigns.dev"

@@ -37,10 +37,13 @@ export function AboutSection() {
                     className="w-full h-full object-cover object-top scale-110"
                   />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-teal text-center">
-                  University of Delaware
+                <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-teal text-center">
+                  Lanae Drew
                 </h3>
                 <p className="text-teal/70 text-center">Full-Time Student</p>
+                <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-teal text-center">
+                  University of Delaware
+                </p>
 
                 {/* Struggle badges */}
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
