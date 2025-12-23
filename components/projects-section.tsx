@@ -102,7 +102,7 @@ export function ProjectsSection() {
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0", project.color)}
+                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-popover-foreground", project.color)}
                     >
                       <Icon className={cn("w-6 h-6", project.textColor)} />
                     </div>
@@ -126,7 +126,7 @@ export function ProjectsSection() {
 
           {/* Active Project Details - updated card colors */}
           <div className="lg:sticky lg:top-24 bg-olive rounded-3xl border-2 border-purple p-8">
-            <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-6", active.color)}>
+            <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-foreground", active.color)}>
               <active.icon className={cn("w-8 h-8", active.textColor)} />
             </div>
 
