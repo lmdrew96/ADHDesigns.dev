@@ -9,7 +9,7 @@ const projects = [
   {
     id: "scribecat",
     name: "ScribeCat",
-    tagline: "ScribeCat scribes and is cat.",
+    tagline: "ScribeCat scribes and is cat",
     description:
       "A lecture recording and AI-powered study tool that transforms chaotic notes into organized knowledge. Because your brain has better things to do than remember everything.",
     icon: Cat,
