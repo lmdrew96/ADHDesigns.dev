@@ -32,7 +32,7 @@ const projects = [
     tags: ["Language Learning", "Romanian", "Immersion", "Experimental"],
     status: "In Development",
     githubUrl: "https://github.com/lmdrew96/beautiful-contradictions",
-    liveUrl: "https://beautiful-contradictions.vercel.app/",
+    liveUrl: "https://chaoslingua.adhdesigns.dev/",
   },
   {
     id: "controlledchaos",
@@ -44,8 +44,9 @@ const projects = [
     color: "bg-purple",
     textColor: "text-teal",
     tags: ["ADHD", "Planning", "AI Assistant", "Productivity"],
-    status: "Coming Soon",
-    githubUrl: "https://github.com/lmdrew96/Controlled_Chaos",
+    status: "In Development",
+    githubUrl: "https://github.com/lmdrew96/ControlledChaos-zg",
+    liveUrl: "https://controlledchaos.adhdesigns.dev/",
   },
   {
     id: "chickenscratch",
