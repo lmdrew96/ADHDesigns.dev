@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Cat, Globe, ListTodo, Newspaper, Wand2, ExternalLink, Github, ChevronRight } from "lucide-react"
+import { Cat, Globe, ListTodo, Newspaper, Wand2, ExternalLink, Github, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -79,11 +79,14 @@ const projects = [
 ]
 
 export function ProjectsSection() {
-  const [activeProject, setActiveProject] = useState(projects[0].id)
-  const active = projects.find((p) => p.id === activeProject) || projects[0]
+  const [activeProject, setActiveProject] = useState<string | null>(null)
+
+  const toggleProject = (projectId: string) => {
+    setActiveProject(activeProject === projectId ? null : projectId)
+  }
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-foreground bg-foreground">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-foreground">
       <div className="max-w-7xl mx-auto">
         {/* Section Header - updated colors */}
         <div className="text-center mb-16">
@@ -98,39 +101,34 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Project List - updated border/bg colors */}
-          <div className="space-y-4">
-            {projects.map((project) => {
-              const Icon = project.icon
-              return (
-                <button
-                  key={project.id}
-                  onClick={() => setActiveProject(project.id)}
-                  className={cn(
-                    "w-full text-left p-6 rounded-2xl border-2 transition-all duration-300 group",
-                    activeProject === project.id
-                      ? "border-mustard bg-mustard/20"
-                      : "border-purple bg-olive hover:border-mustard/50",
-                  )}
-                >
+        <div className="max-w-3xl mx-auto space-y-4">
+          {projects.map((project) => {
+            const Icon = project.icon
+            const isExpanded = activeProject === project.id
+
+            return (
+              <div
+                key={project.id}
+                className={cn(
+                  "rounded-2xl border-2 transition-all duration-300 overflow-hidden",
+                  isExpanded ? "border-mustard bg-mustard/20" : "border-purple bg-olive hover:border-mustard/50",
+                )}
+              >
+                {/* Clickable header */}
+                <button onClick={() => toggleProject(project.id)} className="w-full text-left p-6">
                   <div className="flex items-start gap-4">
                     <div
-                      className={cn(
-                        "w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-popover-foreground",
-                        project.color,
-                      )}
+                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0", project.color)}
                     >
                       <Icon className={cn("w-6 h-6", project.textColor)} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-2 mb-1">
                         <h3 className="font-bold text-lg text-teal">{project.name}</h3>
-                        <ChevronRight
+                        <ChevronDown
                           className={cn(
-                            "w-5 h-5 text-teal/60 transition-transform",
-                            activeProject === project.id && "rotate-90 text-mustard",
+                            "w-5 h-5 text-teal/60 transition-transform duration-300",
+                            isExpanded && "rotate-180 text-mustard",
                           )}
                         />
                       </div>
@@ -138,55 +136,52 @@ export function ProjectsSection() {
                     </div>
                   </div>
                 </button>
-              )
-            })}
-          </div>
 
-          {/* Active Project Details - updated card colors */}
-          <div className="lg:sticky lg:top-24 bg-olive rounded-3xl border-2 border-purple p-8">
-            <div
-              className={cn(
-                "w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-popover-foreground",
-                active.color,
-              )}
-            >
-              <active.icon className={cn("w-8 h-8", active.textColor)} />
-            </div>
-
-            <div className="inline-block px-3 py-1 bg-teal text-olive rounded-full text-xs font-bold mb-4">
-              {active.status}
-            </div>
-
-            <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-teal mb-2">{active.name}</h3>
-            <p className="text-mustard font-medium mb-4">{active.tagline}</p>
-            <p className="leading-relaxed mb-6 text-card">{active.description}</p>
-
-            <div className="flex flex-wrap gap-2 mb-8">
-              {active.tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 bg-purple text-teal rounded-full text-sm font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              <a href={active.liveUrl || active.githubUrl} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-mustard text-olive hover:bg-mustard/90 rounded-full">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  View Project
-                </Button>
-              </a>
-              <a className="" href={active.githubUrl} target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="outline"
-                  className="rounded-full border-teal text-teal hover:bg-teal hover:text-olive bg-transparent"
+                <div
+                  className={cn(
+                    "grid transition-all duration-300 ease-in-out",
+                    isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                  )}
                 >
-                  <Github className="w-4 h-4 mr-2" />
-                  Source Code
-                </Button>
-              </a>
-            </div>
-          </div>
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 pt-2 border-t border-purple/30">
+                      <div className="inline-block px-3 py-1 bg-teal text-olive rounded-full text-xs font-bold mb-4">
+                        {project.status}
+                      </div>
+
+                      <p className="leading-relaxed mb-6 text-card">{project.description}</p>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="px-3 py-1 bg-purple text-teal rounded-full text-sm font-medium">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-wrap gap-3">
+                        <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Button className="bg-mustard text-olive hover:bg-mustard/90 rounded-full">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            View Project
+                          </Button>
+                        </a>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Button
+                            variant="outline"
+                            className="rounded-full border-teal text-teal hover:bg-teal hover:text-olive bg-transparent"
+                          >
+                            <Github className="w-4 h-4 mr-2" />
+                            Source Code
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
