@@ -67,7 +67,7 @@ const projects = [
     name: "ChickenScratch",
     tagline: "Student-run zine submission portal",
     description:
-      "Built for Hen & Ink Society's literary magazine. Students submit writing and art, editors review and assign pieces, work gets published to a public gallery. Role-based access, file uploads, sleek UI.",
+      "Built for Hen & Ink Society's literary magazine. Students submit writing and art, editors review and assign pieces, work gets published to a public gallery. Role-based access, file uploads, and zero Google Forms document-requesting hell.",
     icon: Newspaper,
     color: "bg-muted",
     textColor: "text-purple",

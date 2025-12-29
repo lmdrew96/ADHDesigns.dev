@@ -73,29 +73,41 @@ export function AboutSection() {
             </h2>
 
             <div className="space-y-4 text-teal/80 leading-relaxed font-medium">
-              <p>{`I build productivity tools for brains that don't work the way traditional apps expect them to.`}</p>
-              <p>
-                {`I live with ADHD, Bipolar Disorder, and Depression—and every app I create comes from hitting 
-                a wall with tools that assume I'll "just remember" things, "just start" tasks, or "just prioritize" 
-                when my brain is screaming at me. I got tired of downloading apps designed for neurotypical brains 
-                and trying to force myself to fit their logic.`}
-              </p>
-              <p>{`So I started building my own.`}</p>
-              <p>
-                {`I'm not a professional developer, and that's the entire point. I use agentic tools like Claude Code 
-                because I don't want to spend years learning syntax—I want to solve problems now. It's faster, 
-                it's collaborative, and it lets me focus on what matters: making tools that reduce decision paralysis 
-                instead of adding to it.`}
-              </p>
-              <p>
-                {`My apps do the heavy lifting when it comes to day-to-day tasks and decisions—note-taking, to-do list 
-                prioritizing, study time structuring. They're built by someone who needs them, for people who need them.`}
-              </p>
-              <p>
-                {`If even one person uses something I've built and thinks "finally, a tool that gets it," then every 
-                late-night debugging session was worth it.`}
-              </p>
-            </div>
+  <p>
+    I build productivity tools for brains that don't work the way traditional apps expect them to.
+  </p>
+  
+  <p>
+    I have ADHD, Bipolar Disorder, and Depression. Every app I've built exists because I got tired of productivity tools designed for people whose brains cooperate. Apps that assume you'll remember to check them. That starting tasks is the easy part. That you can just pick what's most important and do it.
+  </p>
+  
+  <p>
+    My brain doesn't work like that. Yours might not either.
+  </p>
+  
+  <p>
+    I'm very much an "if you want it done right, do it yourself" person. Are my apps perfect? No. 
+    Are they better than what they're replacing? Not necessarily. But they work better for me—-they 
+    solve my specific problems with price, UI, UX, missing features, or plain incompatibility with 
+    executive dysfunction. Besides, building them is fun--my brain craves that blend of creativity and perfectionism.
+  </p>
+  
+  <p>
+    I am by no means a professional developer--my coding experience consists of Y2K Neopets-level HTML. I use agentic tools like Claude Code and v0, because learning syntax for three years before I can solve today's problem is my idea of a terrible return on investment. (And there's no way in hell I'm taking all those math classes, are you kidding me?) This approach is immediate, lets me iterate in real-time, and keeps me focused on solving actual problems instead of constantly fighting with semicolons.
+  </p>
+  
+  <p> 
+    You can label it 'vibe coding,' I don't mind the dig. Do not think, however, that my apps are just slapped together with a couple of prompts. An ungodly amount of my waking hours is spent iterating and reiterating, problem-solving, and learning as I go. My hyperfocus is my superpower, and I've got the commit history to prove it.
+  </p>
+
+  <p>
+    My apps handle the executive function stuff—-prioritizing tasks, structuring study time, deciding what to work on next. The stuff that's supposed to be automatic but isn't. If professional developers aren't going to make tools that work with my brain, I'm going to make them myself.
+  </p>
+  
+  <p>
+    If these tools help others who think like me, excellent. But I'm building them either way because I need them to exist.
+  </p>
+</div>
 
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="p-4 bg-mustard/20 rounded-xl border-2 border-mustard">
