@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Cat, Globe, ListTodo, Newspaper, ExternalLink, Github, ChevronRight } from "lucide-react"
+import { Cat, Globe, ListTodo, Newspaper, Wand2, ExternalLink, Github, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -47,6 +47,20 @@ const projects = [
     status: "In Development",
     githubUrl: "https://github.com/lmdrew96/ControlledChaos-zg",
     liveUrl: "https://controlledchaos.adhdesigns.dev/",
+  },
+  {
+    id: "feyforge",
+    name: "FeyForge",
+    tagline: "All-in-one D&D toolkit",
+    description:
+      "A comprehensive toolkit for Dungeons & Dragons players and DMs. Character sheets, campaign management, encounter tracking, and more—all in one place for your adventures.",
+    icon: Wand2,
+    color: "bg-accent",
+    textColor: "text-card",
+    tags: ["D&D", "TTRPG", "Game Tools", "Campaign Management"],
+    status: "In Development",
+    githubUrl: "https://github.com/lmdrew96/feyforge",
+    liveUrl: "https://feyforge.adhdesigns.dev",
   },
   {
     id: "chickenscratch",
@@ -103,7 +117,10 @@ export function ProjectsSection() {
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-popover-foreground", project.color)}
+                      className={cn(
+                        "w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-popover-foreground",
+                        project.color,
+                      )}
                     >
                       <Icon className={cn("w-6 h-6", project.textColor)} />
                     </div>
