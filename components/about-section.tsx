@@ -10,16 +10,15 @@ const struggles = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
       <div className="absolute top-20 right-10 w-40 h-40 rounded-full bg-mustard/40 blur-3xl" />
       <div className="absolute bottom-20 left-10 w-48 h-48 rounded-full bg-teal/30 blur-3xl" />
       <div className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-purple/20 blur-3xl" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Image/Visual Side - updated decorative colors */}
-          <div className="relative">
-            <div className="lg:aspect-square rounded-3xl bg-dark-teal border-4 border-purple overflow-hidden relative">
+          <div className="md:sticky md:top-24 rounded-3xl bg-dark-teal border-4 border-purple overflow-hidden relative">
               {/* Decorative pattern */}
               <div className="absolute inset-0 opacity-40">
                 <div className="absolute top-4 left-4 w-24 h-24 border-4 border-mustard rounded-full" />
@@ -58,7 +57,6 @@ export function AboutSection() {
                   })}
                 </div>
               </div>
-            </div>
           </div>
 
           {/* Content Side - updated text/accent colors */}
@@ -85,23 +83,19 @@ export function AboutSection() {
     My brain doesn't work like that. Yours might not either.
   </p>
   
-  <p>
-    I'm very much an "if you want it done right, do it yourself" person. Are my apps perfect? No. 
-    Are they better than what they're replacing? Not necessarily. But they work better for me—-they 
-    solve my specific problems with price, UI, UX, missing features, or plain incompatibility with 
-    executive dysfunction. Besides, building them is fun--my brain craves that blend of creativity and perfectionism.
+  <p>I'm very much an “if you want it done right, do it yourself” person. Are my apps perfect? No. Are they better than what they're replacing? Not necessarily. But they work better for me—they solve my specific problems with price, UI, UX, missing features, or plain incompatibility with executive dysfunction. Besides, building them is fun—my brain craves that blend of creativity and perfectionism.
   </p>
   
   <p>
-    I am by no means a professional developer--my coding experience consists of Y2K Neopets-level HTML. I use agentic tools like Claude Code and v0, because learning syntax for three years before I can solve today's problem is my idea of a terrible return on investment. (And there's no way in hell I'm taking all those math classes, are you kidding me?) This approach is immediate, lets me iterate in real-time, and keeps me focused on solving actual problems instead of constantly fighting with semicolons.
+    I am by no means a professional developer—my coding experience consists of Y2K Neopets-level HTML. I use agentic tools like Claude Code and v0, because learning syntax for three years before I can solve today's problem is my idea of a terrible return on investment. (And there's no way in hell I'm taking all those math classes, are you kidding me?) This approach is immediate, lets me iterate in real-time, and keeps me focused on solving actual problems instead of constantly fighting with semicolons.
   </p>
-  
+
   <p> 
-    You can label it 'vibe coding,' I don't mind the dig. Do not think, however, that my apps are just slapped together with a couple of prompts. An ungodly amount of my waking hours is spent iterating and reiterating, problem-solving, and learning as I go. My hyperfocus is my superpower, and I've got the commit history to prove it.
+    You can label it ‘vibe coding,’ I don't mind the dig. Do not think, however, that my apps are just slapped together with a couple of prompts. An ungodly amount of my waking hours is spent iterating and reiterating, problem-solving, and learning as I go. My hyperfocus is my superpower, and I've got the commit history to prove it.
   </p>
 
   <p>
-    My apps handle the executive function stuff—-prioritizing tasks, structuring study time, deciding what to work on next. The stuff that's supposed to be automatic but isn't. If professional developers aren't going to make tools that work with my brain, I'm going to make them myself.
+    My apps handle the executive function stuff—prioritizing tasks, structuring study time, deciding what to work on next. The stuff that's supposed to be automatic but isn't. If professional developers aren't going to make tools that work with my brain, I'm going to make them myself.
   </p>
   
   <p>
