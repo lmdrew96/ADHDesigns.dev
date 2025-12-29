@@ -11,7 +11,7 @@ const projects = [
     name: "ScribeCat",
     tagline: "ScribeCat scribes and is cat",
     description:
-      "A lecture recording and AI-powered study tool that transforms confusing lessons into organized knowledge. Because your brain has better things to do than remember everything.",
+      "Desktop app that records lectures with real-time transcription, then turns even the messiest notes into flashcards, quizzes, and other study tools using AI. Plus study group rooms, multiplayer quiz games, and 40 themes because why not.",
     icon: Cat,
     color: "bg-mustard",
     textColor: "text-olive",
@@ -25,13 +25,13 @@ const projects = [
     name: "ChaosLingua",
     tagline: "Learn languages the unhinged way",
     description:
-      "An experimental language-learning app focusing on immersion and the Romanian language. Forget boring drills—embrace the chaos of real language acquisition.",
+      "Language learning through measured mayhem: random timed sessions, fog mode for full immersion, vocabulary forge that learns from your mistakes, grammar spirals, and a mystery system. Romanian + Korean support.",
     icon: Globe,
     color: "bg-teal",
     textColor: "text-olive",
-    tags: ["Language Learning", "Romanian", "Immersion", "Experimental"],
+    tags: ["Language Learning", "Romanian", "Korean", "Experimental"],
     status: "In Development",
-    githubUrl: "https://github.com/lmdrew96/beautiful-contradictions",
+    githubUrl: "https://github.com/lmdrew96/ChaosLingua",
     liveUrl: "https://chaoslingua.adhdesigns.dev/",
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     name: "ControlledChaos",
     tagline: "ADHD planning, actually possible",
     description:
-      "An ADHD-friendly AI planning assistant that understands your brain doesn't work in straight lines. Flexible, forgiving, and actually helpful.",
+      "AI-powered 'What Now?' view tells you the single best next task based on context, deadlines, and your mood/energy level. Brain dump your chaos and watch it turn into manageable tasks, track personal insights, toggle themes, cloud sync. Your executive function, effectively replaced.",
     icon: ListTodo,
     color: "bg-purple",
     textColor: "text-teal",
@@ -53,7 +53,7 @@ const projects = [
     name: "FeyForge",
     tagline: "Step into the Circle",
     description:
-      "An all-in-one toolkit for Dungeons & Dragons players and DMs. Character sheets, campaign management, encounter tracking, and more—all in one place for your adventures.",
+      "All-in-one D&D toolkit with character sheets, campaign tracking, dice roller, NPC generator, combat encounters, world maps, and an AI DM assistant. Currently redesigning the UI because the live version sucks.",
     icon: Wand2,
     color: "bg-accent",
     textColor: "text-card",
@@ -67,7 +67,7 @@ const projects = [
     name: "ChickenScratch",
     tagline: "Student-run zine submission portal",
     description:
-      "A platform for students to submit and review creative works for publication in a community-driven zine. Where messy creativity meets organized chaos.",
+      "Built for Hen & Ink Society's literary magazine. Students submit writing and art, editors review and assign pieces, work gets published to a public gallery. Role-based access, file uploads, sleek UI.",
     icon: Newspaper,
     color: "bg-muted",
     textColor: "text-purple",
