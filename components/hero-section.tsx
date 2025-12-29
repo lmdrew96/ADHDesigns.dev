@@ -44,8 +44,7 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl text-teal max-w-3xl mx-auto mb-10 leading-relaxed">
-          Apps built with chaos, designed with heart. Created by an amateur developer who believes the best tools come
-          from understanding the beautiful mess of neurodivergent minds.
+          Apps built with chaos, designed with purpose. Created by a neurodivergent designer who believes the best tools come from understanding the beautiful mess of neurodivergent minds.
         </p>
 
         {/* CTA Buttons - updated button colors */}

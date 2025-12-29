@@ -11,7 +11,7 @@ const projects = [
     name: "ScribeCat",
     tagline: "ScribeCat scribes and is cat",
     description:
-      "A lecture recording and AI-powered study tool that transforms chaotic notes into organized knowledge. Because your brain has better things to do than remember everything.",
+      "A lecture recording and AI-powered study tool that transforms confusing lessons into organized knowledge. Because your brain has better things to do than remember everything.",
     icon: Cat,
     color: "bg-mustard",
     textColor: "text-olive",
