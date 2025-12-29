@@ -51,9 +51,9 @@ const projects = [
   {
     id: "feyforge",
     name: "FeyForge",
-    tagline: "All-in-one D&D toolkit",
+    tagline: "Step into the Circle",
     description:
-      "A comprehensive toolkit for Dungeons & Dragons players and DMs. Character sheets, campaign management, encounter tracking, and more—all in one place for your adventures.",
+      "An all-in-one toolkit for Dungeons & Dragons players and DMs. Character sheets, campaign management, encounter tracking, and more—all in one place for your adventures.",
     icon: Wand2,
     color: "bg-accent",
     textColor: "text-card",
