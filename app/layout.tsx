@@ -11,7 +11,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "ADHD: Agentic Development of Human Designs",
   description:
-    "Apps designed by a neurodivergent developer for fellow neurodivergents. ScribeCat, ChaosLingua, ControlledChaos & D&D Tools.",
+    "Apps created by a neurodivergent designer for fellow neurodivergents. ScribeCat, ChaosLingua, ControlledChaos & D&D Tools.",
     generator: 'v0.app'
 }
 
