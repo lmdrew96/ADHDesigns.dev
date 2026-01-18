@@ -6,6 +6,20 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const projects = [
+    {
+    id: "chaoslimba",
+    name: "ChaosLimbă",
+    tagline: "Learn Romanian through Structured Chaos",
+    description:
+      "Language learning through measured mayhem: random timed sessions, fog mode for full immersion, vocabulary forge that learns from your mistakes, grammar spirals, and a mystery system. Romanian + Korean support.",
+    icon: Globe,
+    color: "bg-teal",
+    textColor: "text-olive",
+    tags: ["Language Learning", "Romanian", "Korean", "Experimental"],
+    status: "Active Development",
+    githubUrl: "https://github.com/lmdrew96/ChaosLingua",
+    liveUrl: "https://chaoslingua.adhdesigns.dev/",
+  },
   {
     id: "scribecat",
     name: "ScribeCat",
@@ -16,23 +30,9 @@ const projects = [
     color: "bg-mustard",
     textColor: "text-olive",
     tags: ["AI", "Study Tool", "Recordings", "Notes"],
-    status: "In Development",
+    status: "Development Paused",
     githubUrl: "https://github.com/lmdrew96/ScribeCat-v2",
     liveUrl: "https://github.com/lmdrew96/ScribeCat-v2/releases",
-  },
-  {
-    id: "chaoslingua",
-    name: "ChaosLingua",
-    tagline: "Learn languages the unhinged way",
-    description:
-      "Language learning through measured mayhem: random timed sessions, fog mode for full immersion, vocabulary forge that learns from your mistakes, grammar spirals, and a mystery system. Romanian + Korean support.",
-    icon: Globe,
-    color: "bg-teal",
-    textColor: "text-olive",
-    tags: ["Language Learning", "Romanian", "Korean", "Experimental"],
-    status: "In Development",
-    githubUrl: "https://github.com/lmdrew96/ChaosLingua",
-    liveUrl: "https://chaoslingua.adhdesigns.dev/",
   },
   {
     id: "controlledchaos",
@@ -44,7 +44,7 @@ const projects = [
     color: "bg-purple",
     textColor: "text-teal",
     tags: ["ADHD", "Planning", "AI Assistant", "Productivity"],
-    status: "In Development",
+    status: "Development Paused",
     githubUrl: "https://github.com/lmdrew96/ControlledChaos-zg",
     liveUrl: "https://controlledchaos.adhdesigns.dev/",
   },
@@ -58,7 +58,7 @@ const projects = [
     color: "bg-accent",
     textColor: "text-card",
     tags: ["D&D", "TTRPG", "Game Tools", "Campaign Management"],
-    status: "In Development",
+    status: "Development Paused",
     githubUrl: "https://github.com/lmdrew96/feyforge",
     liveUrl: "https://feyforge.adhdesigns.dev",
   },

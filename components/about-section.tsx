@@ -1,11 +1,12 @@
 "use client"
 
-import { Heart, Sparkles, Brain, Coffee, Lightbulb } from "lucide-react"
+import { Heart, Sparkles, Brain, Coffee, Lightbulb, Bolt, Zap } from "lucide-react"
 
 const struggles = [
-  { icon: Brain, label: "ADHD", color: "bg-mustard", textColor: "text-olive" },
-  { icon: Heart, label: "Bipolar Disorder", color: "bg-purple", textColor: "text-teal" },
-  { icon: Coffee, label: "Depression", color: "bg-teal", textColor: "text-olive" },
+  { icon: Brain, label: "ADHD", color: "bg-mustard", textColor: "text-foreground" },
+  { icon: Coffee, label: "Depression", color: "bg-teal", textColor: "text-purple" },
+  { icon: Zap, label: "Tenacity", color: "bg-purple", textColor: "text-teal" },
+  { icon: Lightbulb, label: "Innovation", color: "bg-accent", textColor: "text-card" },
 ]
 
 export function AboutSection() {
@@ -61,7 +62,7 @@ export function AboutSection() {
 
           {/* Content Side - updated text/accent colors */}
           <div>
-            <span className="inline-flex items-center gap-2 px-4 py-2 text-olive rounded-full text-sm font-bold mb-6 bg-foreground text-card">
+            <span className="inline-flex items-center gap-2 px-4 py-2 text-dark-teal rounded-full text-sm font-bold mb-6 bg-foreground text-card">
               <Sparkles className="w-4 h-4" />
               The Human Behind the Code
             </span>
@@ -76,7 +77,7 @@ export function AboutSection() {
   </p>
   
   <p>
-    I have ADHD, Bipolar Disorder, and Depression. Every app I've built exists because I got tired of productivity tools designed for people whose brains cooperate. Apps that assume you'll remember to check them. That starting tasks is the easy part. That you can just pick what's most important and do it.
+    I live with ADHD and Depression. Every app I've built exists because I got tired of productivity tools designed for people whose brains cooperate. Apps that assume you'll remember to check them. That starting tasks is the easy part. That you can just pick what's most important and do it.
   </p>
   
   <p>
@@ -87,32 +88,36 @@ export function AboutSection() {
   </p>
   
   <p>
-    I am by no means a professional developer—my coding experience consists of Y2K Neopets-level HTML. I use agentic tools like Claude Code and v0, because learning syntax for three years before I can solve today's problem is my idea of a terrible return on investment. (And there's no way in hell I'm taking all those math classes, are you kidding me?) This approach is immediate, lets me iterate in real-time, and keeps me focused on solving actual problems instead of constantly fighting with semicolons.
-  </p>
-
-  <p> 
-    You can label it ‘vibe coding,’ I don't mind the dig. Do not think, however, that my apps are just slapped together with a couple of prompts. An ungodly amount of my waking hours is spent iterating and reiterating, problem-solving, and learning as I go. My hyperfocus is my superpower, and I've got the commit history to prove it.
+    By no means am I a professional developer—the bulk of my coding experience consists of Y2K Neopets-level HTML. I use agentic tools like Claude Code, Windsurf Cascade, and Replit to bridge the gap as I learn, because spending three years mastering syntax before I can solve the problem I have today is my idea of a terrible return on investment. This approach is immediate, lets me iterate in real-time, and keeps me focused on solving actual problems instead of constantly fighting with semicolons.
   </p>
 
   <p>
-    My apps handle the executive function stuff—prioritizing tasks, structuring study time, deciding what to work on next. The stuff that's supposed to be automatic but isn't. If professional developers aren't going to make tools that work with my brain, I'm going to make them myself.
+    What I bring to the table is a combination of tenacity, pattern recognition, and insatiable curiosity that fuels an innovative approach to problem-solving. My unique perspective as someone who lives with ADHD and Depression dictates the premise upon which my apps are built. I strongly believe that technology can and should be designed to adapt to the individual needs of its users, rather than forcing users to adapt to the technology.
   </p>
-  
+
   <p>
-    If these tools help others who think like me, excellent. But I'm building them either way because I need them to exist.
+    Through hands-on experience with various tools and technologies, I have found and settled into my niche at the intersection of executive dysfunction and Artificial Intelligence. The programs I design are built to act as complements to brains that don't work the way traditional apps expect them to—aiding individuals who struggle with prioritizing tasks, structuring schedules, and deciding what to work on next. If professional developers aren't going to make tools that work with brains like mine, I'm going to make them myself.
+  </p>
+
+  <p>
+    As I continue on my academic journey at the University of Delaware, I plan to incorporate my ever-growing base of Linguistic and Cognitive Neuroscience knowledge into my work. Personal experiments with Machine Learning will continue to inform my development of innovative tools and systems that synergize AI and ADHD. I expect this combined research to both reaffirm and challenge my current understanding of the intersection of ADHD and AI, enabling me to implement a more nuanced and balanced development process.
+  </p>
+
+  <p>
+    Projects will move in and out of development as I learn, grow, fail, and succeed; some will be abandoned in favor of others, many will be nuked and rebuilt from scratch, a few will even be shelved indefinitely. My goal is not to build the Next Big Thing, but to explore the implications of working with Artificial Intelligence to create tools, and eventually systems, that adapt to individuals' neurological strengths and needs.
   </p>
 </div>
 
             <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="p-4 bg-mustard/20 rounded-xl border-2 border-mustard">
-                <Lightbulb className="w-8 h-8 text-mustard mb-2" />
-                <h4 className="font-bold text-teal mb-1">Built Different</h4>
-                <p className="text-sm text-teal/70">Apps that embrace how your brain actually works</p>
+              <div className="p-4 bg-teal/20 rounded-xl border-2 border-teal">
+                <Lightbulb className="w-8 h-8 text-teal mb-2" />
+                <h4 className="font-bold text-lime mb-1">Built Different</h4>
+                <p className="text-sm text-foreground/70">Unique solutions designed to work <span className="font-bold italic text-foreground/70">with</span> unique brains, not against them</p>
               </div>
               <div className="p-4 rounded-xl border-2 border-accent opacity-100 bg-[rgba(183,199,177,0.34604206526958803)]">
                 <Heart className="w-8 h-8 mb-2 text-accent" />
-                <h4 className="font-bold mb-1 text-foreground">Made with Care</h4>
-                <p className="text-sm text-sidebar-foreground">Every feature solves a real struggle</p>
+                <h4 className="font-bold mb-1 text-teal">Structured Chaos</h4>
+                <p className="text-sm text-dark-teal">ADHD-AI synergy: the core of the development process</p>
               </div>
             </div>
           </div>

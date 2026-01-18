@@ -48,6 +48,7 @@
   --pale-lavender: rgb(219, 213, 226); /* Quaternary */
   --dark-teal: rgb(36, 73, 82); /* Quinary */
   --lime: rgb(150, 208, 128); /* Senary */
+  --olive: rgb(128, 128, 0); /* Custom olive color */
 }
 
 /* Removed dark mode - using bold colors only */
@@ -99,6 +100,7 @@
   --color-pale-lavender: var(--pale-lavender);
   --color-dark-teal: var(--dark-teal);
   --color-lime: var(--lime);
+  --color-olive: var(--olive);
 }
 
 @layer base {
