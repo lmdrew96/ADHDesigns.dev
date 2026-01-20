@@ -11,14 +11,14 @@ const projects = [
     name: "ChaosLimbă",
     tagline: "Learn Romanian through Structured Chaos",
     description:
-      "Language learning through measured mayhem: random timed sessions, fog mode for full immersion, vocabulary forge that learns from your mistakes, grammar spirals, and a mystery system. Romanian + Korean support.",
+      "Innovative language learning platform that combines the chaos of ADHD with the structure of AI to create a unique and effective learning experience.",
     icon: Globe,
     color: "bg-teal",
     textColor: "text-olive",
-    tags: ["Language Learning", "Romanian", "Korean", "Experimental"],
+    tags: ["SLA", "Romanian", "Interlanguage", "CALL"],
     status: "Active Development",
-    githubUrl: "https://github.com/lmdrew96/ChaosLingua",
-    liveUrl: "https://chaoslingua.adhdesigns.dev/",
+    githubUrl: "https://github.com/lmdrew96/ChaosLimba",
+    liveUrl: "https://chaoslimba.adhdesigns.dev/",
   },
   {
     id: "scribecat",
@@ -90,14 +90,14 @@ export function ProjectsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header - updated colors */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 text-olive rounded-full text-sm font-bold mb-4 bg-background">
+          <span className="inline-block px-4 py-2 text-teal rounded-full text-sm font-bold mb-4 bg-background">
             Current Projects
           </span>
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal mb-4">
             Built Different, <span className="text-mustard">On Purpose</span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto text-background">
-            Each project is born from personal struggle and designed to help others who think outside the box.
+            Each project is born from personal experience and designed to help others who think outside the box.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export function ProjectsSection() {
                 key={project.id}
                 className={cn(
                   "rounded-2xl border-2 transition-all duration-300 overflow-hidden",
-                  isExpanded ? "border-mustard bg-mustard/20" : "border-purple bg-olive hover:border-mustard/50",
+                  isExpanded ? "border-mustard bg-mustard/20" : "border-purple bg-foreground hover:border-mustard/50",
                 )}
               >
                 {/* Clickable header */}

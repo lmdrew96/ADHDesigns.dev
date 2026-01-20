@@ -73,18 +73,11 @@ export function AboutSection() {
 
             <div className="space-y-4 text-teal/80 leading-relaxed font-medium">
   <p>
-    I build productivity tools for brains that don't work the way traditional apps expect them to.
+    I build tools for brains that don't work the way traditional apps expect them to.
   </p>
   
   <p>
-    I live with ADHD and Depression. Every app I've built exists because I got tired of productivity tools designed for people whose brains cooperate. Apps that assume you'll remember to check them. That starting tasks is the easy part. That you can just pick what's most important and do it.
-  </p>
-  
-  <p>
-    My brain doesn't work like that. Yours might not either.
-  </p>
-  
-  <p>I'm very much an “if you want it done right, do it yourself” person. Are my apps perfect? No. Are they better than what they're replacing? Not necessarily. But they work better for me—they solve my specific problems with price, UI, UX, missing features, or plain incompatibility with executive dysfunction. Besides, building them is fun—my brain craves that blend of creativity and perfectionism.
+   My program development journey started because I got tired of being failed by productivity tools designed for people whose brains cooperate. Existing tools assume you’ll remember to check them, that starting tasks is easy, or that you always know what’s most important. My brain doesn't work like that.
   </p>
   
   <p>

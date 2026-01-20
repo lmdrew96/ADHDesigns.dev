@@ -13,7 +13,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 bg-foreground">
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-background">
-              <Sparkles className="w-5 h-5 text-olive" />
+              <Sparkles className="w-5 h-5 text-mustard" />
             </div>
             <span className="font-[family-name:var(--font-display)] font-bold text-xl text-muted">
               ADHDesigns
