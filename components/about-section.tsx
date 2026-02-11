@@ -81,7 +81,7 @@ export function AboutSection() {
   </p>
   
   <p>
-    By no means am I a professional developer—the bulk of my coding experience consists of Y2K Neopets-level HTML. I use agentic tools like Claude Code, Windsurf Cascade, and Replit to bridge the gap as I learn, because spending three years mastering syntax before I can solve the problem I have today is my idea of a terrible return on investment. This approach is immediate, lets me iterate in real-time, and keeps me focused on solving actual problems instead of constantly fighting with semicolons.
+    By no means am I a professional developer—the bulk of my coding experience consists of Y2K Neopets-level HTML. I use agentic tools like Claude Code, JetBrains, and Replit to bridge the gap as I learn, because spending three years mastering syntax before I can solve the problem I have today is my idea of a terrible return on investment. This approach is immediate, lets me iterate in real-time, and keeps me focused on solving actual problems instead of constantly fighting with semicolons.
   </p>
 
   <p>
