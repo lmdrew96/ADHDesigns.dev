@@ -31,8 +31,8 @@ const projects = [
     textColor: "text-olive",
     tags: ["AI", "Study Tool", "Recordings", "Notes"],
     status: "Sporadic Chaos",
-    githubUrl: "https://github.com/lmdrew96/ScribeCat-v2",
-    liveUrl: "https://github.com/lmdrew96/ScribeCat-v2/releases",
+    githubUrl: "https://github.com/lmdrew96/ScribeCat-v3",
+    liveUrl: "https://scribecat.adhdesigns.dev/",
   },
   {
     id: "controlledchaos",
