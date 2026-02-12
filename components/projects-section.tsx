@@ -25,7 +25,7 @@ const projects = [
     name: "ScribeCat",
     tagline: "ScribeCat scribes and is cat",
     description:
-      "Desktop app that records lectures with real-time transcription, then turns even the messiest notes into flashcards, quizzes, and other study tools using AI. Plus study group rooms, multiplayer quiz games, and 40 themes because why not.",
+      "Desktop app that records lectures with real-time transcription, then turns even the messiest notes into flashcards, quizzes, and other study tools using AI. Plus study group rooms, multiplayer quiz games, and 6 different themes because why not.",
     icon: Cat,
     color: "bg-mustard",
     textColor: "text-olive",
