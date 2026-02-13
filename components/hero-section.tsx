@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowDown, Zap, Brain, Sparkles } from "lucide-react"
+import { ArrowDown, Brain, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {

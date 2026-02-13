@@ -1,6 +1,6 @@
 "use client"
 
-import { Heart, Sparkles, Brain, Coffee, Lightbulb, Bolt, Zap } from "lucide-react"
+import { Heart, Sparkles, Brain, Coffee, Lightbulb, Zap } from "lucide-react"
 
 const struggles = [
   { icon: Brain, label: "ADHD", color: "bg-mustard", textColor: "text-foreground" },

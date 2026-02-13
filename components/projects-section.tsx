@@ -1,9 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import { Cat, Globe, ListTodo, Newspaper, Wand2, ExternalLink, Github, ChevronDown } from "lucide-react"
+import { Atom, Cat, ListTodo, Newspaper, Wand2, ExternalLink, Github, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+
+const ChaosLimbaIcon = ({ className }: { className?: string }) => (
+  <span className={cn("relative inline-block", className)}>
+    <Atom className="w-full h-full" />
+    <span className="absolute -top-1.5 inset-x-0 text-center text-[10px] leading-none">˘</span>
+  </span>
+)
 
 const projects = [
     {
@@ -12,11 +19,11 @@ const projects = [
     tagline: "Learn Romanian through Structured Chaos",
     description:
       "Innovative language learning platform that combines the chaos of ADHD with the structure of AI to create a unique and effective learning experience.",
-    icon: Globe,
+    icon: ChaosLimbaIcon,
     color: "bg-teal",
     textColor: "text-olive",
     tags: ["SLA", "Romanian", "Interlanguage", "CALL"],
-    status: "Active Chaos",
+    status: "Testing Chaos",
     githubUrl: "https://github.com/lmdrew96/ChaosLimba",
     liveUrl: "https://chaoslimba.adhdesigns.dev/",
   },
@@ -30,7 +37,7 @@ const projects = [
     color: "bg-mustard",
     textColor: "text-olive",
     tags: ["AI", "Study Tool", "Recordings", "Notes"],
-    status: "Sporadic Chaos",
+    status: "Active Chaos",
     githubUrl: "https://github.com/lmdrew96/ScribeCat-v3",
     liveUrl: "https://scribecat.adhdesigns.dev/",
   },
@@ -39,13 +46,13 @@ const projects = [
     name: "ControlledChaos",
     tagline: "ADHD planning, actually possible",
     description:
-      "AI-powered 'What Now?' view tells you the single best next task based on context, deadlines, and your mood/energy level. Brain dump your chaos and watch it turn into manageable tasks, track personal insights, toggle themes, cloud sync. Your executive function, effectively replaced.",
+      "AI-powered 'What Now?' view tells you the single best next task based on context, deadlines, and your energy level. Brain dump your chaos and watch it turn into manageable tasks! Track personal insights, toggle themes, cloud sync. Your executive function, effectively replaced.",
     icon: ListTodo,
     color: "bg-purple",
     textColor: "text-teal",
     tags: ["ADHD", "Planning", "AI Assistant", "Productivity"],
-    status: "Chaos Paused",
-    githubUrl: "https://github.com/lmdrew96/ControlledChaos-zg",
+    status: "Active Chaos",
+    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
     liveUrl: "https://controlledchaos.adhdesigns.dev/",
   },
   {
