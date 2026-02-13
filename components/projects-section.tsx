@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 const ChaosLimbaIcon = ({ className }: { className?: string }) => (
   <span className={cn("relative inline-block", className)}>
     <Atom className="w-full h-full" />
-    <span className="absolute -top-3 inset-x-0 text-center text-[22px] leading-none font-bold">˘</span>
+    <span className="absolute -top-1 inset-x-0 text-center text-[28px] leading-none font-bold">˘</span>
   </span>
 )
 
