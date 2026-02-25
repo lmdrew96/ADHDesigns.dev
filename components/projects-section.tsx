@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Atom, Cat, ListTodo, Newspaper, Wand2, ExternalLink, Github, ChevronDown } from "lucide-react"
+import { Atom, Cat, ListTodo, Newspaper, Search, Wand2, ExternalLink, Github, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -82,6 +82,20 @@ const projects = [
     status: "Live Chaos",
     githubUrl: "https://github.com/lmdrew96/ChickenScratch",
     liveUrl: "https://chickenscratch.me",
+  },
+  {
+    id: "researchjournal",
+    name: "Research Journal",
+    tagline: "Where hyperfocus meets hypothesis",
+    description:
+      "Research hub for organizing papers, tracking citations, and connecting ideas across disciplines. Built for the kind of brain that reads one paper and ends up with 47 open tabs.",
+    icon: Search,
+    color: "bg-teal",
+    textColor: "text-mustard",
+    tags: ["Research", "Journal", "Academic", "Notes"],
+    status: "Testing Chaos",
+    githubUrl: "https://github.com/lmdrew96/research-journal",
+    liveUrl: "https://research.adhdesigns.dev/demo",
   },
 ]
 
