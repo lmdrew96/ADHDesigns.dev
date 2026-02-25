@@ -52,25 +52,25 @@ export function HeroSection() {
         </p>
 
         {/* CTA Buttons - updated button colors */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-mustard text-dark-teal hover:bg-mustard/90 rounded-full px-5 py-5 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold group"
+            className="bg-mustard text-dark-teal hover:bg-mustard/90 rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold group"
             asChild
           >
             <a href="#projects">
-              <Sparkles className="w-5 h-5 mr-2 group-hover:animate-spin" />
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 group-hover:animate-spin" />
               Explore Projects
             </a>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-5 py-5 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold border border-teal/40 text-teal hover:bg-teal hover:text-dark-teal bg-white/5 backdrop-blur-md shadow-lg shadow-teal/10"
+            className="rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold border border-teal/40 text-teal hover:bg-teal hover:text-dark-teal bg-white/5 backdrop-blur-md shadow-lg shadow-teal/10"
             asChild
           >
             <a href="#about">
-              <Brain className="w-5 h-5 mr-2" />
+              <Brain className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2" />
               My Story
             </a>
           </Button>

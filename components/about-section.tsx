@@ -51,7 +51,7 @@ export function AboutSection() {
                   {struggles.map((item) => {
                     const Icon = item.icon
                     return (
-                      <div key={item.label} className={`flex items-center gap-2 px-3 py-2 ${item.color}/80 rounded-full backdrop-blur-md border border-white/15`}>
+                      <div key={item.label} className={`flex items-center gap-2 px-3 py-2 ${item.color} rounded-full backdrop-blur-md border border-white/15`}>
                         <Icon className={`w-4 h-4 ${item.textColor}`} />
                         <span className={`text-sm font-bold ${item.textColor}`}>{item.label}</span>
                       </div>
