@@ -5,8 +5,12 @@ import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
-    <footer id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-purple text-popover-foreground">
-      <div className="max-w-6xl mx-auto">
+    <footer id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-purple/60 backdrop-blur-xl text-popover-foreground relative overflow-hidden">
+      {/* Background blobs for glassmorphism */}
+      <div className="absolute top-10 left-10 w-56 h-56 rounded-full bg-mustard/25 blur-3xl" />
+      <div className="absolute bottom-10 right-20 w-64 h-64 rounded-full bg-teal/20 blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-accent/15 blur-3xl" />
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* CTA Section - updated colors */}
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
@@ -50,14 +54,14 @@ export function Footer() {
               href="https://github.com/lmdrew96"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center hover:bg-mustard hover:text-olive transition-colors"
+              className="w-10 h-10 rounded-full bg-teal/10 backdrop-blur-md border border-teal/20 flex items-center justify-center hover:bg-mustard hover:text-olive transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
             <a
               href="mailto:nae@adhdesigns.dev"
-              className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center hover:bg-mustard hover:text-olive transition-colors"
+              className="w-10 h-10 rounded-full bg-teal/10 backdrop-blur-md border border-teal/20 flex items-center justify-center hover:bg-mustard hover:text-olive transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />

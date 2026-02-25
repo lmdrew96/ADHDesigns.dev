@@ -12,14 +12,15 @@ const struggles = [
 export function AboutSection() {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
-      <div className="absolute top-20 right-10 w-40 h-40 rounded-full bg-mustard/40 blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-48 h-48 rounded-full bg-teal/30 blur-3xl" />
-      <div className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-purple/20 blur-3xl" />
+      <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-mustard/40 blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 rounded-full bg-teal/35 blur-3xl" />
+      <div className="absolute top-1/2 left-1/3 w-56 h-56 rounded-full bg-purple/25 blur-3xl" />
+      <div className="absolute top-1/4 left-5 w-48 h-48 rounded-full bg-accent/20 blur-3xl" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Image/Visual Side - updated decorative colors */}
-          <div className="md:sticky md:top-24 rounded-3xl bg-dark-teal border-4 border-purple overflow-hidden relative">
+          <div className="md:sticky md:top-24 rounded-3xl glass-dark border border-teal/25 overflow-hidden relative shadow-2xl shadow-black/20">
               {/* Decorative pattern */}
               <div className="absolute inset-0 opacity-40">
                 <div className="absolute top-4 left-4 w-24 h-24 border-4 border-mustard rounded-full" />
@@ -50,7 +51,7 @@ export function AboutSection() {
                   {struggles.map((item) => {
                     const Icon = item.icon
                     return (
-                      <div key={item.label} className={`flex items-center gap-2 px-3 py-2 ${item.color} rounded-full`}>
+                      <div key={item.label} className={`flex items-center gap-2 px-3 py-2 ${item.color}/50 rounded-full backdrop-blur-md border border-white/15`}>
                         <Icon className={`w-4 h-4 ${item.textColor}`} />
                         <span className={`text-sm font-bold ${item.textColor}`}>{item.label}</span>
                       </div>
@@ -62,7 +63,7 @@ export function AboutSection() {
 
           {/* Content Side - updated text/accent colors */}
           <div>
-            <span className="inline-flex items-center gap-2 px-4 py-2 text-dark-teal rounded-full text-sm font-bold mb-6 bg-foreground text-card">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass text-card">
               <Sparkles className="w-4 h-4" />
               The Human Behind the Code
             </span>
@@ -102,12 +103,12 @@ export function AboutSection() {
 </div>
 
             <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="p-4 bg-teal/20 rounded-xl border-2 border-teal">
+              <div className="p-4 glass rounded-xl border-2 border-teal/30">
                 <Lightbulb className="w-8 h-8 text-teal mb-2" />
                 <h4 className="font-bold text-lime mb-1">Built Different</h4>
                 <p className="text-sm text-foreground/70">Unique solutions designed to work <span className="font-bold italic text-foreground/70">with</span> unique brains, not against them</p>
               </div>
-              <div className="p-4 rounded-xl border-2 border-accent opacity-100 bg-[rgba(183,199,177,0.34604206526958803)]">
+              <div className="p-4 rounded-xl glass-accent border-2 border-accent/30">
                 <Heart className="w-8 h-8 mb-2 text-accent" />
                 <h4 className="font-bold mb-1 text-teal">Structured Chaos</h4>
                 <p className="text-sm text-dark-teal">ADHD-AI synergy: the core of the development process</p>

@@ -107,11 +107,16 @@ export function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-foreground">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-foreground relative overflow-hidden">
+      {/* Background blobs for glassmorphism */}
+      <div className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-mustard/30 blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-72 h-72 rounded-full bg-teal/25 blur-3xl" />
+      <div className="absolute top-1/2 right-1/3 w-48 h-48 rounded-full bg-purple/30 blur-3xl" />
+      <div className="absolute bottom-1/3 left-10 w-56 h-56 rounded-full bg-accent/20 blur-3xl" />
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header - updated colors */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 text-teal rounded-full text-sm font-bold mb-4 bg-background">
+          <span className="inline-block px-4 py-2 text-teal rounded-full text-sm font-bold mb-4 bg-background/60 backdrop-blur-md border border-teal/20">
             Current Projects
           </span>
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal mb-4">
@@ -132,7 +137,7 @@ export function ProjectsSection() {
                 key={project.id}
                 className={cn(
                   "rounded-2xl border-2 transition-all duration-300 overflow-hidden",
-                  isExpanded ? "border-mustard bg-mustard/20" : "border-purple bg-foreground hover:border-mustard/50",
+                  isExpanded ? "glass-accent shadow-lg shadow-mustard/10" : "glass-card hover:border-mustard/30 hover:shadow-lg hover:shadow-mustard/5",
                 )}
               >
                 {/* Clickable header */}

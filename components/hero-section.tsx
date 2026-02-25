@@ -6,19 +6,23 @@ import { Button } from "@/components/ui/button"
 export function HeroSection() {
   return (
     <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden">
-      {/* Decorative shapes - updated to new color palette */}
-      <div className="absolute top-32 left-10 w-24 h-24 rounded-full bg-mustard opacity-80 animate-float" />
+      {/* Decorative blobs - large and blurred for glassmorphism backdrop */}
+      <div className="absolute top-20 left-5 w-48 h-48 rounded-full bg-mustard/50 blur-2xl animate-float" />
       <div
-        className="absolute top-48 right-16 w-20 h-20 rounded-full bg-teal opacity-70 animate-float"
+        className="absolute top-32 right-10 w-56 h-56 rounded-full bg-teal/40 blur-2xl animate-float"
         style={{ animationDelay: "1s" }}
       />
       <div
-        className="absolute bottom-32 left-1/4 w-16 h-16 rounded-full bg-purple opacity-60 animate-float"
+        className="absolute bottom-24 left-1/4 w-40 h-40 rounded-full bg-purple/40 blur-2xl animate-float"
         style={{ animationDelay: "0.5s" }}
       />
       <div
-        className="absolute top-1/3 right-1/4 w-12 h-12 rounded-full bg-dark-teal opacity-70 animate-float"
+        className="absolute top-1/3 right-1/4 w-36 h-36 rounded-full bg-dark-teal/50 blur-2xl animate-float"
         style={{ animationDelay: "1.5s" }}
+      />
+      <div
+        className="absolute bottom-1/3 right-1/6 w-44 h-44 rounded-full bg-accent/30 blur-2xl animate-float"
+        style={{ animationDelay: "2s" }}
       />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -62,7 +66,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-8 py-6 text-lg font-semibold border-2 border-teal text-teal hover:bg-teal hover:text-dark-teal bg-transparent"
+            className="rounded-full px-8 py-6 text-lg font-semibold border border-teal/40 text-teal hover:bg-teal hover:text-dark-teal bg-white/5 backdrop-blur-md shadow-lg shadow-teal/10"
             asChild
           >
             <a href="#about">
@@ -80,7 +84,7 @@ export function HeroSection() {
             return (
               <span
                 key={tag}
-                className={`px-4 py-2 ${bgColors[i]} ${txtColors[i]} rounded-full text-sm font-bold hover:scale-105 transition-transform cursor-default`}
+                className={`px-4 py-2 ${bgColors[i]}/40 ${txtColors[i]} rounded-full text-sm font-bold hover:scale-105 transition-transform cursor-default backdrop-blur-xl border border-white/20 shadow-lg shadow-black/10`}
               >
                 {tag}
               </span>

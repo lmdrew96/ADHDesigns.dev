@@ -8,9 +8,9 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-foreground/90 backdrop-blur-md border-b border-purple">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground bg-foreground">
-        <div className="flex items-center justify-between h-16 bg-foreground">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-foreground/60 backdrop-blur-xl border-b border-teal/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground">
+        <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-background">
               <Sparkles className="w-5 h-5 text-mustard" />
@@ -45,7 +45,7 @@ export function Navigation() {
 
       {/* Mobile Menu - updated menu colors */}
       {isOpen && (
-        <div className="md:hidden bg-dark-teal border-b border-purple">
+        <div className="md:hidden glass-dark border-b border-teal/20">
           <div className="px-4 py-4 space-y-3">
             <a href="#projects" className="block text-teal hover:text-mustard transition-colors font-medium py-2">
               Projects
