@@ -26,6 +26,7 @@ const projects = [
     status: "Testing Chaos",
     githubUrl: "https://github.com/lmdrew96/ChaosLimba",
     liveUrl: "https://chaoslimba.adhdesigns.dev/",
+    demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
   },
   {
     id: "researchjournal",
@@ -192,6 +193,14 @@ export function ProjectsSection() {
                             View Project
                           </Button>
                         </a>
+                        {"demoUrl" in project && project.demoUrl && (
+                          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                            <Button className="bg-teal text-olive hover:bg-teal/90 rounded-full">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Live Demo
+                            </Button>
+                          </a>
+                        )}
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Button
                             variant="outline"
