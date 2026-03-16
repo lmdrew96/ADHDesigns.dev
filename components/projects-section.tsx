@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Atom, Cat, ListTodo, Newspaper, Search, Wand2, ExternalLink, Github, ChevronDown } from "lucide-react"
+import { Atom, Brain, Cat, ListTodo, Newspaper, Search, ExternalLink, Github, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -41,6 +41,7 @@ const projects = [
     status: "Testing Chaos",
     githubUrl: "https://github.com/lmdrew96/research-journal",
     liveUrl: "https://research.adhdesigns.dev/demo",
+    viewLabel: "Live Demo",
   },
   {
     id: "controlledchaos",
@@ -85,18 +86,18 @@ const projects = [
     liveUrl: "https://chickenscratch.me",
   },
   {
-    id: "feyforge",
-    name: "FeyForge",
-    tagline: "Step into the Circle",
+    id: "threadbrain",
+    name: "ThreadBrain",
+    tagline: "Your thoughts, finally connected",
     description:
-      "All-in-one D&D toolkit with character sheets, campaign tracking, dice roller, NPC generator, combat encounters, world maps, and an AI DM assistant. Currently redesigning the UI because the live version sucks.",
-    icon: Wand2,
+      "A thread-based thinking tool for the kind of brain that makes connections between everything. Capture ideas, link them together, and follow the thread before it disappears. Built for the way ADHD brains actually work.",
+    icon: Brain,
     color: "bg-accent",
     textColor: "text-card",
-    tags: ["D&D", "TTRPG", "Game Tools", "Campaign Management"],
-    status: "Chaos Paused",
-    githubUrl: "https://github.com/lmdrew96/feyforge",
-    liveUrl: "https://feyforge.adhdesigns.dev",
+    tags: ["ADHD", "Note-taking", "Threads", "Productivity"],
+    status: "Active Chaos",
+    githubUrl: "https://github.com/lmdrew96/threadbrain",
+    liveUrl: "https://threadbrain.adhdesigns.dev",
   },
 ]
 
@@ -190,7 +191,7 @@ export function ProjectsSection() {
                         <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Button className="bg-mustard text-olive hover:bg-mustard/90 rounded-full">
                             <ExternalLink className="w-4 h-4 mr-2" />
-                            View Project
+                            {"viewLabel" in project && project.viewLabel ? project.viewLabel : "View Project"}
                           </Button>
                         </a>
                         {"demoUrl" in project && project.demoUrl && (
