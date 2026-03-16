@@ -23,7 +23,7 @@ const projects = [
     color: "bg-teal",
     textColor: "text-olive",
     tags: ["SLA", "Romanian", "Interlanguage", "CALL"],
-    status: "Testing Chaos",
+    status: "Live Chaos",
     githubUrl: "https://github.com/lmdrew96/ChaosLimba",
     liveUrl: "https://chaoslimba.adhdesigns.dev/",
     demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
