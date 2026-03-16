@@ -88,13 +88,13 @@ const projects = [
   {
     id: "threadbrain",
     name: "ThreadBrain",
-    tagline: "Your thoughts, finally connected",
+    tagline: "Long reads, finally readable",
     description:
-      "A thread-based thinking tool for the kind of brain that makes connections between everything. Capture ideas, link them together, and follow the thread before it disappears. Built for the way ADHD brains actually work.",
+      "AI-powered reading tool that takes longform texts and breaks them into digestible chunks with key points highlighted. Built for brains that want the insight without the overwhelm.",
     icon: Brain,
     color: "bg-accent",
     textColor: "text-card",
-    tags: ["ADHD", "Note-taking", "Threads", "Productivity"],
+    tags: ["AI", "Reading", "Accessibility", "Text Processing"],
     status: "Active Chaos",
     githubUrl: "https://github.com/lmdrew96/threadbrain",
     liveUrl: "https://threadbrain.adhdesigns.dev",
