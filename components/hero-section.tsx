@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden">
+    <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden bg-background">
       {/* Decorative blobs - large and blurred for glassmorphism backdrop */}
       <div className="absolute top-20 left-5 w-48 h-48 rounded-full bg-mustard/50 blur-2xl animate-float" />
       <div
