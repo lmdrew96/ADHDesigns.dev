@@ -6,24 +6,12 @@ import { Button } from "@/components/ui/button"
 export function HeroSection() {
   return (
     <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden bg-background">
-      {/* Decorative blobs - large and blurred for glassmorphism backdrop */}
-      <div className="absolute top-20 left-5 w-48 h-48 rounded-full bg-mustard/50 blur-2xl animate-float" />
-      <div
-        className="absolute top-32 right-10 w-56 h-56 rounded-full bg-teal/40 blur-2xl animate-float"
-        style={{ animationDelay: "1s" }}
-      />
-      <div
-        className="absolute bottom-24 left-1/4 w-40 h-40 rounded-full bg-purple/40 blur-2xl animate-float"
-        style={{ animationDelay: "0.5s" }}
-      />
-      <div
-        className="absolute top-1/3 right-1/4 w-36 h-36 rounded-full bg-dark-teal/50 blur-2xl animate-float"
-        style={{ animationDelay: "1.5s" }}
-      />
-      <div
-        className="absolute bottom-1/3 right-1/6 w-44 h-44 rounded-full bg-accent/30 blur-2xl animate-float"
-        style={{ animationDelay: "2s" }}
-      />
+      {/* Decorative blobs - radial gradients avoid iOS WebKit filter:blur compositing bug */}
+      <div className="absolute top-20 left-5 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(222,165,73,0.5) 0%, transparent 70%)" }} />
+      <div className="absolute top-32 right-10 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(140,189,185,0.4) 0%, transparent 70%)", animationDelay: "1s" }} />
+      <div className="absolute bottom-24 left-1/4 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(136,115,158,0.4) 0%, transparent 70%)", animationDelay: "0.5s" }} />
+      <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(36,73,82,0.5) 0%, transparent 70%)", animationDelay: "1.5s" }} />
+      <div className="absolute bottom-1/3 right-16 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(150,208,128,0.3) 0%, transparent 70%)", animationDelay: "2s" }} />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Tagline - updated colors */}
