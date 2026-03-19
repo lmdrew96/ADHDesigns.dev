@@ -29,8 +29,8 @@ const projects = [
     demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
   },
   {
-    id: "researchjournal",
-    name: "Research Journal",
+    id: "threadnotes",
+    name: "ThreadNotes",
     tagline: "Where hyperfocus meets hypothesis",
     description:
       "Research hub for organizing papers, tracking citations, and connecting ideas across disciplines. Built for the kind of brain that reads one paper and ends up with 47 open tabs.",
@@ -40,8 +40,8 @@ const projects = [
     tags: ["Research", "Journal", "Academic", "Notes"],
     status: "Testing Chaos",
     githubUrl: "https://github.com/lmdrew96/research-journal",
-    liveUrl: "https://research.adhdesigns.dev/demo",
-    viewLabel: "Live Demo",
+    liveUrl: "https://research.adhdesigns.dev/",
+    demoUrl: "https://research.adhdesigns.dev/demo",
   },
   {
     id: "controlledchaos",
@@ -191,7 +191,7 @@ export function ProjectsSection() {
                         <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Button className="bg-mustard text-olive hover:bg-mustard/90 rounded-full">
                             <ExternalLink className="w-4 h-4 mr-2" />
-                            {"viewLabel" in project && project.viewLabel ? project.viewLabel : "View Project"}
+                            View Project
                           </Button>
                         </a>
                         {"demoUrl" in project && project.demoUrl && (
