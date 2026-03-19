@@ -61,7 +61,7 @@ const projects = [
     name: "ThreadBrain",
     tagline: "Long reads, finally readable",
     description:
-      "AI-powered reading tool that takes longform texts and breaks them into digestible chunks with key points highlighted. Built for brains that want the insight without the overwhelm.",
+      "AI-powered reading tool that takes longform texts and breaks them into digestible chunks with key points highlighted. Built for brains that want the insight without the overwhelm. Works standalone or integrates with ThreadNotes to send highlights straight into your research hub.",
     icon: Brain,
     color: "bg-accent",
     textColor: "text-card",
@@ -75,7 +75,7 @@ const projects = [
     name: "ThreadNotes",
     tagline: "Where hyperfocus meets hypothesis",
     description:
-      "Research hub for organizing papers, tracking citations, and connecting ideas across disciplines. Built for the kind of brain that reads one paper and ends up with 47 open tabs.",
+      "Research hub for organizing papers, tracking citations, and connecting ideas across disciplines. Built for the kind of brain that reads one paper and ends up with 47 open tabs. Works standalone or integrates with ThreadBrain to pipe highlights directly into your notes.",
     icon: Search,
     color: "bg-teal",
     textColor: "text-mustard",
