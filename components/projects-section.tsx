@@ -13,7 +13,7 @@ const ChaosLimbaIcon = ({ className }: { className?: string }) => (
 )
 
 const projects = [
-    {
+  {
     id: "chaoslimba",
     name: "ChaosLimbă",
     tagline: "Learn Romanian through Structured Chaos",
@@ -27,6 +27,48 @@ const projects = [
     githubUrl: "https://github.com/lmdrew96/ChaosLimba",
     liveUrl: "https://chaoslimba.adhdesigns.dev/",
     demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
+  },
+  {
+    id: "scribecat",
+    name: "ScribeCat",
+    tagline: "ScribeCat scribes and is cat",
+    description:
+      "Desktop app that records lectures with real-time transcription, then turns even the messiest notes into flashcards, quizzes, and other study tools using AI. Plus study group rooms, multiplayer quiz games, and 6 different themes because why not.",
+    icon: Cat,
+    color: "bg-mustard",
+    textColor: "text-olive",
+    tags: ["AI", "Study Tool", "Recordings", "Notes"],
+    status: "Active Chaos",
+    githubUrl: "https://github.com/lmdrew96/ScribeCat-v3",
+    liveUrl: "https://scribecat.adhdesigns.dev/",
+  },
+  {
+    id: "controlledchaos",
+    name: "ControlledChaos",
+    tagline: "ADHD planning, actually possible",
+    description:
+      "AI-powered 'What Now?' view tells you the single best next task based on context, deadlines, and your energy level. Brain dump your chaos and watch it turn into manageable tasks! Track personal insights, toggle themes, cloud sync. Your executive function, effectively replaced.",
+    icon: ListTodo,
+    color: "bg-purple",
+    textColor: "text-teal",
+    tags: ["ADHD", "Planning", "AI Assistant", "Productivity"],
+    status: "Active Chaos",
+    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
+    liveUrl: "https://controlledchaos.adhdesigns.dev/",
+  },
+  {
+    id: "threadbrain",
+    name: "ThreadBrain",
+    tagline: "Long reads, finally readable",
+    description:
+      "AI-powered reading tool that takes longform texts and breaks them into digestible chunks with key points highlighted. Built for brains that want the insight without the overwhelm.",
+    icon: Brain,
+    color: "bg-accent",
+    textColor: "text-card",
+    tags: ["AI", "Reading", "Accessibility", "Text Processing"],
+    status: "Active Chaos",
+    githubUrl: "https://github.com/lmdrew96/threadbrain",
+    liveUrl: "https://threadbrain.adhdesigns.dev",
   },
   {
     id: "threadnotes",
@@ -44,34 +86,6 @@ const projects = [
     demoUrl: "https://research.adhdesigns.dev/demo",
   },
   {
-    id: "controlledchaos",
-    name: "ControlledChaos",
-    tagline: "ADHD planning, actually possible",
-    description:
-      "AI-powered 'What Now?' view tells you the single best next task based on context, deadlines, and your energy level. Brain dump your chaos and watch it turn into manageable tasks! Track personal insights, toggle themes, cloud sync. Your executive function, effectively replaced.",
-    icon: ListTodo,
-    color: "bg-purple",
-    textColor: "text-teal",
-    tags: ["ADHD", "Planning", "AI Assistant", "Productivity"],
-    status: "Active Chaos",
-    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
-    liveUrl: "https://controlledchaos.adhdesigns.dev/",
-  },
-  {
-    id: "scribecat",
-    name: "ScribeCat",
-    tagline: "ScribeCat scribes and is cat",
-    description:
-      "Desktop app that records lectures with real-time transcription, then turns even the messiest notes into flashcards, quizzes, and other study tools using AI. Plus study group rooms, multiplayer quiz games, and 6 different themes because why not.",
-    icon: Cat,
-    color: "bg-mustard",
-    textColor: "text-olive",
-    tags: ["AI", "Study Tool", "Recordings", "Notes"],
-    status: "Active Chaos",
-    githubUrl: "https://github.com/lmdrew96/ScribeCat-v3",
-    liveUrl: "https://scribecat.adhdesigns.dev/",
-  },
-  {
     id: "chickenscratch",
     name: "ChickenScratch",
     tagline: "Student-run zine submission portal",
@@ -84,20 +98,6 @@ const projects = [
     status: "Live Chaos",
     githubUrl: "https://github.com/lmdrew96/ChickenScratch",
     liveUrl: "https://chickenscratch.me",
-  },
-  {
-    id: "threadbrain",
-    name: "ThreadBrain",
-    tagline: "Long reads, finally readable",
-    description:
-      "AI-powered reading tool that takes longform texts and breaks them into digestible chunks with key points highlighted. Built for brains that want the insight without the overwhelm.",
-    icon: Brain,
-    color: "bg-accent",
-    textColor: "text-card",
-    tags: ["AI", "Reading", "Accessibility", "Text Processing"],
-    status: "Active Chaos",
-    githubUrl: "https://github.com/lmdrew96/threadbrain",
-    liveUrl: "https://threadbrain.adhdesigns.dev",
   },
 ]
 
