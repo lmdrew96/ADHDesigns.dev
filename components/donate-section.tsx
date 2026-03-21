@@ -51,11 +51,11 @@ export function DonateSection() {
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-teal mb-6 leading-tight">
             Help Keep This <span className="text-mustard">Going</span>
           </h2>
-          <p className="max-w-[55vw] mx-auto text-teal/80 leading-relaxed font-medium">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-teal/80 leading-relaxed font-medium">
             Everything I build is free — ChaosLimbă, ScribeCat, ThreadBrain, all of it.
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
-          <p className="max-w-[55vw] mx-auto text-teal/80 leading-relaxed font-medium mt-4">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-teal/80 leading-relaxed font-medium mt-4">
             If anything I've built has helped you, even a small monthly membership goes further than you'd think — $5 covers an entire user's server costs for a month. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
