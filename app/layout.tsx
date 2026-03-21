@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Space_Grotesk, Fraunces, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { KofiWidget } from "@/components/kofi-widget"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased ${fraunces.variable}`}>
         {children}
         <Analytics />
+        <KofiWidget />
       </body>
     </html>
   )
