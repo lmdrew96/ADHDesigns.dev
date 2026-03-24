@@ -78,7 +78,7 @@ const projects = [
       "Research hub for organizing papers, tracking citations, and connecting ideas across disciplines. Built for the kind of brain that reads one paper and ends up with 47 open tabs. Works standalone or integrates with ThreadBrain to pipe highlights directly into your notes.",
     icon: Search,
     color: "bg-teal",
-    textColor: "text-mustard",
+    textColor: "text-purple",
     tags: ["Research", "Journal", "Academic", "Notes"],
     status: "Testing Chaos",
     githubUrl: "https://github.com/lmdrew96/research-journal",

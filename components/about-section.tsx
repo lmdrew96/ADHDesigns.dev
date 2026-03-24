@@ -18,9 +18,9 @@ export function AboutSection() {
       <div className="absolute top-1/4 left-5 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(150,208,128,0.2) 0%, transparent 70%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="flex flex-col gap-12 items-start">
           {/* Image/Visual Side - updated decorative colors */}
-          <div className="md:sticky md:top-24 rounded-3xl glass-dark border border-teal/25 overflow-hidden relative shadow-2xl shadow-black/20">
+          <div className="w-full rounded-3xl glass-dark border border-teal/25 overflow-hidden relative shadow-2xl shadow-black/20">
               {/* Decorative pattern */}
               <div className="absolute inset-0 opacity-40">
                 <div className="absolute top-4 left-4 w-24 h-24 border-4 border-mustard rounded-full" />

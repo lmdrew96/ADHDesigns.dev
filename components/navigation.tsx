@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function Navigation() {
@@ -12,8 +13,8 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-background">
-              <Sparkles className="w-5 h-5 text-mustard" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-foreground overflow-hidden">
+              <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" />
             </div>
             <span className="font-[family-name:var(--font-display)] font-bold text-xl text-muted">
               ADHDesigns

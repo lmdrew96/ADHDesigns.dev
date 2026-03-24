@@ -1,6 +1,7 @@
 "use client"
 
-import { Github, Mail, Sparkles, Heart } from "lucide-react"
+import { Github, Mail, Heart } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -39,8 +40,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-left">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-accent">
-              <Sparkles className="w-5 h-5 text-olive text-card" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-accent overflow-hidden">
+              <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" />
             </div>
             <div>
               <span className="font-[family-name:var(--font-display)] font-bold text-xl text-card">Brought to you by ADHD</span>

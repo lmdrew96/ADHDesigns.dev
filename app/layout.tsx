@@ -13,7 +13,11 @@ export const metadata: Metadata = {
   title: "ADHD: Agentic Development of Human Designs",
   description:
     "Apps created by a neurodivergent designer for fellow neurodivergents. ScribeCat, ChaosLingua, ControlledChaos & D&D Tools.",
-    generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: '/vertexism_favicon_128.png',
+    apple: '/vertexism_favicon_128.png',
+  },
 }
 
 export const viewport: Viewport = {
