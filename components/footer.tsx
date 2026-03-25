@@ -41,7 +41,7 @@ export function Footer() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full flex items-center justify-center bg-accent overflow-hidden">
-              <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" />
+              <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" style={{ marginTop: '-4.67px' }} />
             </div>
             <div>
               <span className="font-[family-name:var(--font-display)] font-bold text-xl text-card">Brought to you by ADHD</span>

@@ -13,8 +13,8 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-foreground overflow-hidden">
-              <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-teal overflow-hidden" style={{ transformOrigin: '50% 66.67%' }}>
+              <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" style={{ marginTop: '-4.67px' }} />
             </div>
             <span className="font-[family-name:var(--font-display)] font-bold text-xl text-muted">
               ADHDesigns

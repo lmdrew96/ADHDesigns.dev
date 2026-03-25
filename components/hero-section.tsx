@@ -1,6 +1,7 @@
 "use client"
 
-import { ArrowDown, Brain, Sparkles } from "lucide-react"
+import { ArrowDown, Brain } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -47,7 +48,9 @@ export function HeroSection() {
             asChild
           >
             <a href="#projects">
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 group-hover:animate-spin" />
+              <span className="block w-5 h-5 mr-1.5 sm:mr-2 group-hover:animate-spin shrink-0" style={{ transformOrigin: '50% 66.67%' }}>
+                <Image src="/vertexism_favicon_128.png" alt="" width={20} height={20} className="object-contain w-full h-full" />
+              </span>
               Explore Projects
             </a>
           </Button>
@@ -66,18 +69,20 @@ export function HeroSection() {
 
         {/* Feature Pills - updated pill colors */}
         <div className="flex flex-wrap items-center justify-center gap-3">
-          {["ADHD Friendly", "Student Built", "Open Source", "Language Learning", "AI Powered"].map((tag, i) => {
-            const bgColors = ["bg-secondary", "bg-primary", "bg-accent", "bg-card", "bg-secondary"]
-            const txtColors = ["text-card", "text-card", "text-card", "text-primary", "text-card"]
-            return (
-              <span
-                key={tag}
-                className={`px-4 py-2 ${bgColors[i]}/40 ${txtColors[i]} rounded-full text-sm font-bold hover:scale-105 transition-transform cursor-default backdrop-blur-xl border border-white/20 shadow-lg shadow-black/10`}
-              >
-                {tag}
-              </span>
-            )
-          })}
+          {[
+            { label: "ADHD Friendly",     cls: "bg-foreground/40 text-card" },
+            { label: "Student Built",     cls: "bg-primary/40 text-foreground" },
+            { label: "Open Source",       cls: "bg-accent/40 text-secondary" },
+            { label: "Learning Tools", cls: "bg-card/40 text-primary" },
+            { label: "AI Powered",        cls: "bg-secondary/40 text-secondary" },
+          ].map(({ label, cls }) => (
+            <span
+              key={label}
+              className={`px-4 py-2 ${cls} rounded-full text-sm font-bold hover:scale-105 transition-transform cursor-default backdrop-blur-xl border border-white/20 shadow-lg shadow-black/10`}
+            >
+              {label}
+            </span>
+          ))}
         </div>
       </div>
 
