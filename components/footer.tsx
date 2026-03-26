@@ -8,9 +8,9 @@ export function Footer() {
   return (
     <footer id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-purple/60 backdrop-blur-xl text-popover-foreground relative overflow-hidden">
       {/* Background blobs for glassmorphism */}
-      <div className="absolute top-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(222,165,73,0.25) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-10 right-20 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(140,189,185,0.2) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(150,208,128,0.15) 0%, transparent 70%)" }} />
+      <div className="absolute top-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 25%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-10 right-20 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 20%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 15%, transparent) 0%, transparent 70%)" }} />
       <div className="max-w-6xl mx-auto relative z-10">
         {/* CTA Section - updated colors */}
         <div className="text-center mb-16">
@@ -23,7 +23,7 @@ export function Footer() {
           </p>
           <Button
             size="lg"
-            className="bg-mustard text-olive hover:bg-mustard/90 rounded-full px-8 py-6 text-lg font-bold"
+            className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full px-8 py-6 text-lg font-bold"
             asChild
           >
             <a href="mailto:nae@adhdesigns.dev">
@@ -55,14 +55,14 @@ export function Footer() {
               href="https://github.com/lmdrew96"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-teal/10 backdrop-blur-md border border-teal/20 flex items-center justify-center hover:bg-mustard hover:text-olive transition-colors"
+              className="w-10 h-10 rounded-full bg-adhd-teal/10 backdrop-blur-md border border-adhd-sage/20 flex items-center justify-center hover:bg-adhd-amber hover:text-adhd-dark transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
             <a
               href="mailto:nae@adhdesigns.dev"
-              className="w-10 h-10 rounded-full bg-teal/10 backdrop-blur-md border border-teal/20 flex items-center justify-center hover:bg-mustard hover:text-olive transition-colors"
+              className="w-10 h-10 rounded-full bg-adhd-teal/10 backdrop-blur-md border border-adhd-sage/20 flex items-center justify-center hover:bg-adhd-amber hover:text-adhd-dark transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
@@ -71,7 +71,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-sm flex items-center gap-1 text-popover-foreground">
-            Made with <Heart className="w-4 h-4 text-mustard fill-mustard" /> by a chaotic mind
+            Made with <Heart className="w-4 h-4 text-adhd-amber fill-adhd-amber" /> by a chaotic mind
           </p>
         </div>
       </div>

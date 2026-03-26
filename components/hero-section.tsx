@@ -8,11 +8,11 @@ export function HeroSection() {
   return (
     <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden bg-background">
       {/* Decorative blobs - radial gradients avoid iOS WebKit filter:blur compositing bug */}
-      <div className="absolute top-20 left-5 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(222,165,73,0.5) 0%, transparent 70%)" }} />
-      <div className="absolute top-32 right-10 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(140,189,185,0.4) 0%, transparent 70%)", animationDelay: "1s" }} />
-      <div className="absolute bottom-24 left-1/4 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(136,115,158,0.4) 0%, transparent 70%)", animationDelay: "0.5s" }} />
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(36,73,82,0.5) 0%, transparent 70%)", animationDelay: "1.5s" }} />
-      <div className="absolute bottom-1/3 right-16 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, rgba(150,208,128,0.3) 0%, transparent 70%)", animationDelay: "2s" }} />
+      <div className="absolute top-20 left-5 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 50%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-32 right-10 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 40%, transparent) 0%, transparent 70%)", animationDelay: "1s" }} />
+      <div className="absolute bottom-24 left-1/4 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 40%, transparent) 0%, transparent 70%)", animationDelay: "0.5s" }} />
+      <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-teal) 50%, transparent) 0%, transparent 70%)", animationDelay: "1.5s" }} />
+      <div className="absolute bottom-1/3 right-16 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 30%, transparent) 0%, transparent 70%)", animationDelay: "2s" }} />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Tagline - updated colors */}
@@ -21,17 +21,17 @@ export function HeroSection() {
         {/* Main Headline - updated accent colors */}
         <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-foreground">
           <span className="whitespace-nowrap text-foreground">
-            <span className="inline-block hover:animate-wiggle cursor-default text-muted">A</span>gentic
+            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-teal">A</span>gentic
           </span>{" "}
           <span className="whitespace-nowrap text-foreground">
-            <span className="inline-block hover:animate-wiggle cursor-default text-accent">D</span>evelopment
+            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-green">D</span>evelopment
           </span>{" "}
           of{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-destructive">H</span>uman
+            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-amber">H</span>uman
           </span>{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-primary">D</span>esigns
+            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-sage">D</span>esigns
           </span>
         </h1>
 
@@ -44,7 +44,7 @@ export function HeroSection() {
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-mustard text-dark-teal hover:bg-mustard/90 rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold group"
+            className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold group"
             asChild
           >
             <a href="#projects">
@@ -57,7 +57,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold border border-teal/40 text-teal hover:bg-teal hover:text-dark-teal bg-white/5 backdrop-blur-md shadow-lg shadow-teal/10"
+            className="rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold border border-adhd-sage/40 text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-white/5 backdrop-blur-md shadow-lg shadow-adhd-sage/10"
             asChild
           >
             <a href="#about">

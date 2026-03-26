@@ -111,10 +111,10 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-foreground relative overflow-hidden">
       {/* Background blobs for glassmorphism */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(222,165,73,0.3) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(140,189,185,0.25) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 right-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(136,115,158,0.3) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-1/3 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(150,208,128,0.2) 0%, transparent 70%)" }} />
+      <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 30%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 25%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 right-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 30%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-1/3 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 20%, transparent) 0%, transparent 70%)" }} />
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header - updated colors */}
         <div className="text-center mb-16">
@@ -189,14 +189,14 @@ export function ProjectsSection() {
 
                       <div className="flex flex-wrap gap-3">
                         <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Button className="bg-mustard text-olive hover:bg-mustard/90 rounded-full">
+                          <Button className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full">
                             <ExternalLink className="w-4 h-4 mr-2" />
                             View Project
                           </Button>
                         </a>
                         {"demoUrl" in project && project.demoUrl && (
                           <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                            <Button className="bg-teal text-olive hover:bg-teal/90 rounded-full">
+                            <Button className="bg-adhd-teal text-adhd-lavender hover:bg-adhd-teal/90 rounded-full">
                               <ExternalLink className="w-4 h-4 mr-2" />
                               Live Demo
                             </Button>
@@ -205,7 +205,7 @@ export function ProjectsSection() {
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Button
                             variant="outline"
-                            className="rounded-full border-teal text-teal hover:bg-teal hover:text-olive bg-transparent"
+                            className="rounded-full border-adhd-sage text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-transparent"
                           >
                             <Github className="w-4 h-4 mr-2" />
                             Source Code

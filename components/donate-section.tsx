@@ -37,9 +37,9 @@ export function DonateSection() {
   return (
     <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
       {/* Background blobs */}
-      <div className="absolute top-10 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(140,189,185,0.3) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(222,165,73,0.3) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(136,115,158,0.2) 0%, transparent 70%)" }} />
+      <div className="absolute top-10 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 30%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 30%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 20%, transparent) 0%, transparent 70%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
@@ -87,7 +87,7 @@ export function DonateSection() {
           <Button
             size="lg"
             asChild
-            className="bg-mustard text-dark-teal hover:bg-mustard/90 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-mustard/20"
+            className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-adhd-amber/20"
           >
             <a href="https://ko-fi.com/adhdesigns/tiers" target="_blank" rel="noopener noreferrer">
               <Coffee className="w-5 h-5 mr-2" />

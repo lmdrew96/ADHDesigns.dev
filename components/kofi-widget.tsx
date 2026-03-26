@@ -12,7 +12,7 @@ export function KofiWidget() {
         kofiWidgetOverlay.draw('adhdesigns', {
           'type': 'floating-chat',
           'floating-chat.donateButton.text': 'Tip Me',
-          'floating-chat.donateButton.background-color': '#DEA549',
+          'floating-chat.donateButton.background-color': '#DFA649',
           'floating-chat.donateButton.text-color': '#244952',
         })
       }}

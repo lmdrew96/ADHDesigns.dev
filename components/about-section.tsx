@@ -12,10 +12,10 @@ const struggles = [
 export function AboutSection() {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
-      <div className="absolute top-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(222,165,73,0.4) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(140,189,185,0.35) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(136,115,158,0.25) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/4 left-5 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(150,208,128,0.2) 0%, transparent 70%)" }} />
+      <div className="absolute top-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 40%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 35%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 25%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/4 left-5 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 20%, transparent) 0%, transparent 70%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex flex-col gap-12 items-start">
