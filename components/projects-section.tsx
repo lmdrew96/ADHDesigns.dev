@@ -30,7 +30,8 @@ function CartwheelingHeading() {
       onMouseLeave={() => setGone(false)}
     >
       {Array.from(HEADING).map((char, i) => {
-        const { delay, duration, rotation, dy } = letterChaos(i)
+        const ri = HEADING.length - 1 - i           // reverse index: last letter = 0
+        const { delay, duration, rotation, dy } = letterChaos(ri)
         const isMustard = i >= MUSTARD_START
         return (
           <span
@@ -40,13 +41,12 @@ function CartwheelingHeading() {
               display: 'inline-block',
               whiteSpace: 'pre',
               transition: gone
-                ? `transform ${duration}ms cubic-bezier(.4,0,.6,1), opacity ${duration * 0.8}ms ease`
-                : 'transform 300ms ease, opacity 300ms ease',
+                ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)`
+                : 'transform 300ms ease',
               transitionDelay: gone ? `${delay}ms` : '0ms',
               transform: gone
                 ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
                 : 'translateX(0) translateY(0) rotate(0deg)',
-              opacity: gone ? 0 : 1,
             }}
           >
             {char === ' ' ? '\u00A0' : char}
