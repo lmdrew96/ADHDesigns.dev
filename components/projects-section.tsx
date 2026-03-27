@@ -67,6 +67,7 @@ function CartwheelingHeading() {
           return (
             <span
               key={i}
+              className={i < 15 ? 'text-adhd-amber' : 'text-teal'}
               style={{
                 display: 'inline-block',
                 whiteSpace: 'pre',
