@@ -12,13 +12,8 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-sidebar/95 backdrop-blur-xl border-b border-adhd-teal/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:animate-wiggle bg-adhd-teal overflow-hidden" style={{ transformOrigin: '50% 66.67%' }}>
-              <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" style={{ marginTop: '-4.67px' }} />
-            </div>
-            <span className="font-[family-name:var(--font-display)] font-bold text-xl">
-              <span className="text-adhd-teal">A</span><span className="text-adhd-green">D</span><span className="text-adhd-amber">H</span><span className="text-adhd-sage">D</span><span className="text-foreground">esigns</span>
-            </span>
+          <a href="#" className="flex items-center group">
+            <Image src="/adhdesigns-logo.svg" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake" />
           </a>
 
           {/* Desktop Nav */}

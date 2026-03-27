@@ -170,6 +170,30 @@
   animation: float 3s ease-in-out infinite;
 }
 
+@keyframes chaos-shake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  10%  { transform: translate(-3px, 2px) rotate(-1.5deg); }
+  20%  { transform: translate(3px, -3px) rotate(1deg); }
+  30%  { transform: translate(-4px, 1px) rotate(2deg); }
+  40%  { transform: translate(4px, 3px) rotate(-1deg); }
+  50%  { transform: translate(-2px, -2px) rotate(1.5deg); }
+  60%  { transform: translate(3px, 2px) rotate(-2deg); }
+  70%  { transform: translate(-3px, 3px) rotate(1deg); }
+  80%  { transform: translate(2px, -1px) rotate(-1.5deg); }
+  90%  { transform: translate(-1px, 2px) rotate(0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.animate-chaos-shake:hover {
+  animation: chaos-shake 0.5s ease-in-out infinite;
+}
+
+@utility animate-chaos-shake {
+  &:hover {
+    animation: chaos-shake 0.5s ease-in-out infinite;
+  }
+}
+
 /* Glassmorphism utilities */
 .glass {
   background: color-mix(in srgb, var(--adhd-lavender) 12%, transparent);
