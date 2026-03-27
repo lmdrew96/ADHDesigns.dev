@@ -69,7 +69,7 @@ export function AboutSection() {
             </span>
 
             <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-teal mb-6 leading-tight">
-              Too much on my plate, making it<span className="text-mustard">work anyway</span>
+              Too much on my plate, making it <span className="text-mustard">work anyway</span>
             </h2>
 
             <div className="space-y-4 text-teal/80 leading-relaxed font-medium">
