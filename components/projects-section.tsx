@@ -1,67 +1,6 @@
 "use client"
 
 import { useState } from "react"
-
-const FROM = "Built Different, On Purpose"
-const TO   = "Conceput altfel, în mod intenționat"
-// "On Purpose" starts at index 17 in FROM
-const MUSTARD_START = 17
-
-function RolodexHeading() {
-  const [hovered, setHovered] = useState(false)
-  const len = Math.max(FROM.length, TO.length)
-
-  return (
-    <h2
-      className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold mb-4 cursor-default select-none"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {Array.from({ length: len }, (_, i) => {
-        const fc = FROM[i] ?? ' '
-        const tc = TO[i]   ?? ' '
-        const delay = `${i * 20}ms`
-
-        return (
-          <span
-            key={i}
-            className="relative inline-block overflow-hidden"
-            style={{ perspective: '300px', verticalAlign: 'top' }}
-          >
-            {/* Outgoing (English) — cartwheels off to the right */}
-            <span
-              className={i >= MUSTARD_START && i < FROM.length ? 'text-mustard' : 'text-teal'}
-              style={{
-                display: 'inline-block',
-                whiteSpace: 'pre',
-                transition: `transform 500ms ease, opacity 500ms ease`,
-                transitionDelay: delay,
-                transform: hovered ? 'translateX(80vw) rotate(540deg)' : 'translateX(0) rotate(0deg)',
-                opacity: hovered ? 0 : 1,
-              }}
-            >
-              {fc === ' ' ? '\u00A0' : fc}
-            </span>
-            {/* Incoming (Romanian) — cartwheels in from the left */}
-            <span
-              className="text-teal absolute top-0 left-0"
-              style={{
-                display: 'inline-block',
-                whiteSpace: 'pre',
-                transition: `transform 500ms ease, opacity 500ms ease`,
-                transitionDelay: delay,
-                transform: hovered ? 'translateX(0) rotate(0deg)' : 'translateX(-80vw) rotate(-540deg)',
-                opacity: hovered ? 1 : 0,
-              }}
-            >
-              {tc === ' ' ? '\u00A0' : tc}
-            </span>
-          </span>
-        )
-      })}
-    </h2>
-  )
-}
 import { Atom, Brain, Cat, ListTodo, Newspaper, Search, ExternalLink, Github, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -182,7 +121,9 @@ export function ProjectsSection() {
           <span className="inline-block px-4 py-2 text-teal rounded-full text-sm font-bold mb-4 bg-background/60 backdrop-blur-md border border-teal/20">
             Current Projects
           </span>
-          <RolodexHeading />
+          <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal mb-4">
+            Built Different, <span className="text-mustard">On Purpose</span>
+          </h2>
           <p className="text-lg max-w-2xl mx-auto text-background">
             Each project is born from personal experience and designed to help others who think outside the box.
           </p>
