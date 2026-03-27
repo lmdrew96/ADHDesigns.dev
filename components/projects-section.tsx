@@ -14,10 +14,10 @@ function letterChaos(i: number, seed = 0) {
   const c = Math.sin(i * 11.3 + 0.7 + seed)
   const d = Math.sin(i * 5.19 + 4.2 + seed)
   return {
-    delay:    i * 45 + ((a + 1) / 2) * 35,
-    duration: 420 + ((b + 1) / 2) * 280,
-    rotation: 200 + ((c + 1) / 2) * 560,
-    dy:       ((d + 1) / 2 - 0.5) * 60,
+    delay:    Math.round(i * 45 + ((a + 1) / 2) * 35),
+    duration: Math.round(420 + ((b + 1) / 2) * 280),
+    rotation: Math.round(200 + ((c + 1) / 2) * 560),
+    dy:       Math.round(((d + 1) / 2 - 0.5) * 60),
   }
 }
 
