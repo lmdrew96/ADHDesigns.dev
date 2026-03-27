@@ -2,6 +2,60 @@
 
 import { useState } from "react"
 import { Atom, Brain, Cat, ListTodo, Newspaper, Search, ExternalLink, Github, ChevronDown } from "lucide-react"
+
+const HEADING = "Built Different, On Purpose"
+const MUSTARD_START = 17 // index where "On Purpose" begins
+
+// Deterministic per-letter chaos — same every render, unique per letter
+function letterChaos(i: number) {
+  const a = Math.sin(i * 7.31 + 1.1)
+  const b = Math.sin(i * 3.77 + 2.5)
+  const c = Math.sin(i * 11.3 + 0.7)
+  const d = Math.sin(i * 5.19 + 4.2)
+  return {
+    delay:    i * 45 + ((a + 1) / 2) * 35,         // staggered + jitter (ms)
+    duration: 420 + ((b + 1) / 2) * 280,            // 420–700ms
+    rotation: 200 + ((c + 1) / 2) * 560,            // 200–760deg (varies wildly)
+    dy:       ((d + 1) / 2 - 0.5) * 60,             // ±30px vertical drift
+  }
+}
+
+function CartwheelingHeading() {
+  const [gone, setGone] = useState(false)
+
+  return (
+    <h2
+      className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold mb-4 cursor-default select-none"
+      onMouseEnter={() => setGone(true)}
+      onMouseLeave={() => setGone(false)}
+    >
+      {Array.from(HEADING).map((char, i) => {
+        const { delay, duration, rotation, dy } = letterChaos(i)
+        const isMustard = i >= MUSTARD_START
+        return (
+          <span
+            key={i}
+            className={isMustard ? 'text-mustard' : 'text-teal'}
+            style={{
+              display: 'inline-block',
+              whiteSpace: 'pre',
+              transition: gone
+                ? `transform ${duration}ms cubic-bezier(.4,0,.6,1), opacity ${duration * 0.8}ms ease`
+                : 'transform 300ms ease, opacity 300ms ease',
+              transitionDelay: gone ? `${delay}ms` : '0ms',
+              transform: gone
+                ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
+                : 'translateX(0) translateY(0) rotate(0deg)',
+              opacity: gone ? 0 : 1,
+            }}
+          >
+            {char === ' ' ? '\u00A0' : char}
+          </span>
+        )
+      })}
+    </h2>
+  )
+}
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -121,9 +175,7 @@ export function ProjectsSection() {
           <span className="inline-block px-4 py-2 text-teal rounded-full text-sm font-bold mb-4 bg-background/60 backdrop-blur-md border border-teal/20">
             Current Projects
           </span>
-          <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal mb-4">
-            Built Different, <span className="text-mustard">On Purpose</span>
-          </h2>
+          <CartwheelingHeading />
           <p className="text-lg max-w-2xl mx-auto text-background">
             Each project is born from personal experience and designed to help others who think outside the box.
           </p>
