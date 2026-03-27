@@ -68,7 +68,7 @@ export function HeroSection() {
           className="fixed z-[9999] pointer-events-none rounded-full"
           style={{ left: puckPos.x, top: puckPos.y, width: PUCK_SIZE, height: PUCK_SIZE }}
         >
-          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-adhd-teal" />
+          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-adhd-amber" />
         </div>
       )}
 
