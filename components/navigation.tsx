@@ -13,7 +13,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center group">
-            <Image src="/adhdesigns-logo.svg" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake" />
+            <Image src="/adhdesigns-logo.png" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake" />
           </a>
 
           {/* Desktop Nav */}
