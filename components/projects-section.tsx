@@ -28,31 +28,29 @@ function RolodexHeading() {
             className="relative inline-block overflow-hidden"
             style={{ perspective: '300px', verticalAlign: 'top' }}
           >
-            {/* Outgoing (English) — rolls down out of sight */}
+            {/* Outgoing (English) — cartwheels off to the right */}
             <span
               className={i >= MUSTARD_START && i < FROM.length ? 'text-mustard' : 'text-teal'}
               style={{
                 display: 'inline-block',
                 whiteSpace: 'pre',
-                transition: `transform 220ms ease, opacity 220ms ease`,
+                transition: `transform 500ms ease, opacity 500ms ease`,
                 transitionDelay: delay,
-                transform: hovered ? 'rotateX(90deg)' : 'rotateX(0deg)',
-                transformOrigin: 'center top',
+                transform: hovered ? 'translateX(80vw) rotate(540deg)' : 'translateX(0) rotate(0deg)',
                 opacity: hovered ? 0 : 1,
               }}
             >
               {fc === ' ' ? '\u00A0' : fc}
             </span>
-            {/* Incoming (Romanian) — rolls down into sight */}
+            {/* Incoming (Romanian) — cartwheels in from the left */}
             <span
               className="text-teal absolute top-0 left-0"
               style={{
                 display: 'inline-block',
                 whiteSpace: 'pre',
-                transition: `transform 220ms ease, opacity 220ms ease`,
+                transition: `transform 500ms ease, opacity 500ms ease`,
                 transitionDelay: delay,
-                transform: hovered ? 'rotateX(0deg)' : 'rotateX(-90deg)',
-                transformOrigin: 'center top',
+                transform: hovered ? 'translateX(0) rotate(0deg)' : 'translateX(-80vw) rotate(-540deg)',
                 opacity: hovered ? 1 : 0,
               }}
             >
