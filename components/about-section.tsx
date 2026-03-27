@@ -5,11 +5,11 @@ import { Heart, Sparkles, Brain, Coffee, Lightbulb, Zap } from "lucide-react"
 
 const BALLOON_WORD = "work anyway"
 
-// Deterministic scatter per letter — violent omnidirectional explosion
+// KABOOM — letters obliterated in every direction
 function burstVector(i: number) {
-  const angle = (i / BALLOON_WORD.length) * Math.PI * 2 + Math.sin(i * 5.3 + 1.7) * 1.2
-  const dist  = Math.round(380 + Math.abs(Math.sin(i * 4.1 + 0.9)) * 420)
-  const rot   = Math.round((Math.sin(i * 7.7 + 3.1) > 0 ? 1 : -1) * (400 + Math.abs(Math.sin(i * 3.3)) * 680))
+  const angle = (i / BALLOON_WORD.length) * Math.PI * 2 + Math.sin(i * 5.3 + 1.7) * 1.5
+  const dist  = Math.round(900 + Math.abs(Math.sin(i * 4.1 + 0.9)) * 1100)
+  const rot   = Math.round((Math.sin(i * 7.7 + 3.1) > 0 ? 1 : -1) * (800 + Math.abs(Math.sin(i * 3.3)) * 1400))
   return { dx: Math.round(Math.cos(angle) * dist), dy: Math.round(Math.sin(angle) * dist), rot }
 }
 
@@ -34,14 +34,14 @@ function BalloonText() {
         const { dx, dy, rot } = burstVector(i)
 
         const transform =
-          phase === 'inflating' ? 'scale(1.55) rotate(0deg)' :
-          phase === 'burst'     ? `translate(${dx}px, ${dy}px) scale(2.5) rotate(${rot}deg)` :
+          phase === 'inflating' ? 'scale(1.8) rotate(0deg)' :
+          phase === 'burst'     ? `translate(${dx}px, ${dy}px) scale(6) rotate(${rot}deg)` :
                                   'scale(1) rotate(0deg)'
 
         const transition =
-          phase === 'inflating' ? 'transform 650ms cubic-bezier(.34,1.7,.64,1)' :
-          phase === 'burst'     ? 'transform 500ms cubic-bezier(.2,0,.8,.2), opacity 500ms ease' :
-                                  'transform 250ms ease, opacity 250ms ease'
+          phase === 'inflating' ? 'transform 600ms cubic-bezier(.34,2,.64,1)' :
+          phase === 'burst'     ? 'transform 280ms cubic-bezier(.05,.9,.4,1), opacity 220ms ease' :
+                                  'transform 200ms ease, opacity 200ms ease'
 
         const opacity = phase === 'burst' ? 0 : 1
 
