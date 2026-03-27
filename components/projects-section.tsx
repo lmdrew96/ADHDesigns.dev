@@ -5,18 +5,19 @@ import { Atom, Brain, Cat, ListTodo, Newspaper, Search, ExternalLink, Github, Ch
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
+const ROMANIAN = "Conceput altfel, în mod intenționat"
 
-// Deterministic per-letter chaos — same every render, unique per letter
-function letterChaos(i: number) {
-  const a = Math.sin(i * 7.31 + 1.1)
-  const b = Math.sin(i * 3.77 + 2.5)
-  const c = Math.sin(i * 11.3 + 0.7)
-  const d = Math.sin(i * 5.19 + 4.2)
+// Deterministic per-letter chaos — seed offsets keep EN and RO values independent
+function letterChaos(i: number, seed = 0) {
+  const a = Math.sin(i * 7.31 + 1.1 + seed)
+  const b = Math.sin(i * 3.77 + 2.5 + seed)
+  const c = Math.sin(i * 11.3 + 0.7 + seed)
+  const d = Math.sin(i * 5.19 + 4.2 + seed)
   return {
-    delay:    i * 45 + ((a + 1) / 2) * 35,         // staggered + jitter (ms)
-    duration: 420 + ((b + 1) / 2) * 280,            // 420–700ms
-    rotation: 200 + ((c + 1) / 2) * 560,            // 200–760deg (varies wildly)
-    dy:       ((d + 1) / 2 - 0.5) * 60,             // ±30px vertical drift
+    delay:    i * 45 + ((a + 1) / 2) * 35,
+    duration: 420 + ((b + 1) / 2) * 280,
+    rotation: 200 + ((c + 1) / 2) * 560,
+    dy:       ((d + 1) / 2 - 0.5) * 60,
   }
 }
 
@@ -24,36 +25,64 @@ function CartwheelingHeading() {
   const [gone, setGone] = useState(false)
 
   return (
-    <h2
-      className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold mb-4 cursor-default select-none"
+    <div
+      className="relative mb-4 cursor-default select-none"
       onMouseEnter={() => setGone(true)}
       onMouseLeave={() => setGone(false)}
     >
-      {Array.from(HEADING).map((char, i) => {
-        const ri = HEADING.length - 1 - i           // reverse index: last letter = 0
-        const { delay, duration, rotation, dy } = letterChaos(ri)
-        const isMustard = i >= MUSTARD_START
-        return (
-          <span
-            key={i}
-            className={isMustard ? 'text-mustard' : 'text-teal'}
-            style={{
-              display: 'inline-block',
-              whiteSpace: 'pre',
-              transition: gone
-                ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)`
-                : 'transform 300ms ease',
-              transitionDelay: gone ? `${delay}ms` : '0ms',
-              transform: gone
-                ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
-                : 'translateX(0) translateY(0) rotate(0deg)',
-            }}
-          >
-            {char === ' ' ? '\u00A0' : char}
-          </span>
-        )
-      })}
-    </h2>
+      {/* English — cartwheels off to the right, last letter first */}
+      <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold">
+        {Array.from(HEADING).map((char, i) => {
+          const ri = HEADING.length - 1 - i
+          const { delay, duration, rotation, dy } = letterChaos(ri)
+          const isMustard = i >= MUSTARD_START
+          return (
+            <span
+              key={i}
+              className={isMustard ? 'text-mustard' : 'text-teal'}
+              style={{
+                display: 'inline-block',
+                whiteSpace: 'pre',
+                transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
+                transitionDelay: gone ? `${delay}ms` : '0ms',
+                transform: gone
+                  ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
+                  : 'translateX(0) translateY(0) rotate(0deg)',
+              }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </span>
+          )
+        })}
+      </h2>
+
+      {/* Romanian — cartwheels in from the left, last letter first */}
+      <h2
+        className="absolute top-0 left-0 right-0 text-center font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal pointer-events-none"
+        aria-hidden
+      >
+        {Array.from(ROMANIAN).map((char, i) => {
+          const ri = ROMANIAN.length - 1 - i
+          const { delay, duration, rotation, dy } = letterChaos(ri, 3.14)
+          return (
+            <span
+              key={i}
+              style={{
+                display: 'inline-block',
+                whiteSpace: 'pre',
+                transition: gone ? `transform ${duration}ms cubic-bezier(.2,0,.4,1)` : 'transform 300ms ease',
+                transitionDelay: gone ? `${delay}ms` : '0ms',
+                transform: gone
+                  ? `translateX(0) translateY(0) rotate(0deg)`
+                  : `translateX(-90vw) translateY(${dy}px) rotate(-${rotation}deg)`,
+              }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </span>
+          )
+        })}
+      </h2>
+    </div>
   )
 }
 import { Button } from "@/components/ui/button"
