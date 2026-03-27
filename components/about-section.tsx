@@ -5,11 +5,11 @@ import { Heart, Sparkles, Brain, Coffee, Lightbulb, Zap } from "lucide-react"
 
 const BALLOON_WORD = "work anyway"
 
-// Deterministic scatter per letter — omnidirectional explosion
+// Deterministic scatter per letter — violent omnidirectional explosion
 function burstVector(i: number) {
   const angle = (i / BALLOON_WORD.length) * Math.PI * 2 + Math.sin(i * 5.3 + 1.7) * 1.2
-  const dist  = Math.round(110 + Math.abs(Math.sin(i * 4.1 + 0.9)) * 210)
-  const rot   = Math.round((Math.sin(i * 7.7 + 3.1) > 0 ? 1 : -1) * (200 + Math.abs(Math.sin(i * 3.3)) * 380))
+  const dist  = Math.round(380 + Math.abs(Math.sin(i * 4.1 + 0.9)) * 420)
+  const rot   = Math.round((Math.sin(i * 7.7 + 3.1) > 0 ? 1 : -1) * (400 + Math.abs(Math.sin(i * 3.3)) * 680))
   return { dx: Math.round(Math.cos(angle) * dist), dy: Math.round(Math.sin(angle) * dist), rot }
 }
 
@@ -35,16 +35,18 @@ function BalloonText() {
 
         const transform =
           phase === 'inflating' ? 'scale(1.55) rotate(0deg)' :
-          phase === 'burst'     ? `translate(${dx}px, ${dy}px) scale(0.4) rotate(${rot}deg)` :
+          phase === 'burst'     ? `translate(${dx}px, ${dy}px) scale(2.5) rotate(${rot}deg)` :
                                   'scale(1) rotate(0deg)'
 
         const transition =
           phase === 'inflating' ? 'transform 650ms cubic-bezier(.34,1.7,.64,1)' :
-          phase === 'burst'     ? 'transform 380ms cubic-bezier(.4,0,1,1)' :
-                                  'transform 250ms ease'
+          phase === 'burst'     ? 'transform 500ms cubic-bezier(.2,0,.8,.2), opacity 500ms ease' :
+                                  'transform 250ms ease, opacity 250ms ease'
+
+        const opacity = phase === 'burst' ? 0 : 1
 
         return (
-          <span key={i} style={{ display: 'inline-block', whiteSpace: 'pre', transform, transition }}>
+          <span key={i} style={{ display: 'inline-block', whiteSpace: 'pre', transform, transition, opacity }}>
             {char === ' ' ? '\u00A0' : char}
           </span>
         )
