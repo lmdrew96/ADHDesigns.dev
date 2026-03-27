@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { Heart, Sparkles, Brain, Coffee, Lightbulb, Zap } from "lucide-react"
 
 const BALLOON_WORD = "work anyway"
@@ -14,39 +14,24 @@ function burstVector(i: number) {
 }
 
 function BalloonText() {
-  const [phase, setPhase] = useState<'idle' | 'inflating' | 'burst'>('idle')
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  const onEnter = () => {
-    if (phase !== 'idle') return
-    setPhase('inflating')
-    timer.current = setTimeout(() => setPhase('burst'), 650)
-  }
-  const onLeave = () => {
-    if (timer.current) clearTimeout(timer.current)
-    setPhase('idle')
-  }
-  useEffect(() => () => { if (timer.current) clearTimeout(timer.current) }, [])
+  const [burst, setBurst] = useState(false)
 
   return (
-    <span className="text-mustard cursor-default" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+    <span className="text-mustard cursor-default" onMouseEnter={() => setBurst(true)} onMouseLeave={() => setBurst(false)}>
       {Array.from(BALLOON_WORD).map((char, i) => {
         const { dx, dy, rot } = burstVector(i)
-
-        const transform =
-          phase === 'inflating' ? 'scale(1.8) rotate(0deg)' :
-          phase === 'burst'     ? `translate(${dx}px, ${dy}px) scale(6) rotate(${rot}deg)` :
-                                  'scale(1) rotate(0deg)'
-
-        const transition =
-          phase === 'inflating' ? 'transform 600ms cubic-bezier(.34,2,.64,1)' :
-          phase === 'burst'     ? 'transform 280ms cubic-bezier(.05,.9,.4,1), opacity 220ms ease' :
-                                  'transform 200ms ease, opacity 200ms ease'
-
-        const opacity = phase === 'burst' ? 0 : 1
-
         return (
-          <span key={i} style={{ display: 'inline-block', whiteSpace: 'pre', transform, transition, opacity }}>
+          <span
+            key={i}
+            style={{
+              display: 'inline-block',
+              whiteSpace: 'pre',
+              transition: burst ? 'transform 300ms cubic-bezier(.05,.9,.4,1)' : 'transform 220ms ease',
+              transform: burst
+                ? `translate(${dx}px, ${dy}px) scale(5) rotate(${rot}deg)`
+                : 'translate(0,0) scale(1) rotate(0deg)',
+            }}
+          >
             {char === ' ' ? '\u00A0' : char}
           </span>
         )
