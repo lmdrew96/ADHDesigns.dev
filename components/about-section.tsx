@@ -1,6 +1,57 @@
 "use client"
 
+import { useEffect, useRef, useState } from "react"
 import { Heart, Sparkles, Brain, Coffee, Lightbulb, Zap } from "lucide-react"
+
+const BALLOON_WORD = "work anyway"
+
+// Deterministic scatter per letter — omnidirectional explosion
+function burstVector(i: number) {
+  const angle = (i / BALLOON_WORD.length) * Math.PI * 2 + Math.sin(i * 5.3 + 1.7) * 1.2
+  const dist  = Math.round(110 + Math.abs(Math.sin(i * 4.1 + 0.9)) * 210)
+  const rot   = Math.round((Math.sin(i * 7.7 + 3.1) > 0 ? 1 : -1) * (200 + Math.abs(Math.sin(i * 3.3)) * 380))
+  return { dx: Math.round(Math.cos(angle) * dist), dy: Math.round(Math.sin(angle) * dist), rot }
+}
+
+function BalloonText() {
+  const [phase, setPhase] = useState<'idle' | 'inflating' | 'burst'>('idle')
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const onEnter = () => {
+    if (phase !== 'idle') return
+    setPhase('inflating')
+    timer.current = setTimeout(() => setPhase('burst'), 650)
+  }
+  const onLeave = () => {
+    if (timer.current) clearTimeout(timer.current)
+    setPhase('idle')
+  }
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current) }, [])
+
+  return (
+    <span className="text-mustard cursor-default" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      {Array.from(BALLOON_WORD).map((char, i) => {
+        const { dx, dy, rot } = burstVector(i)
+
+        const transform =
+          phase === 'inflating' ? 'scale(1.55) rotate(0deg)' :
+          phase === 'burst'     ? `translate(${dx}px, ${dy}px) scale(0.4) rotate(${rot}deg)` :
+                                  'scale(1) rotate(0deg)'
+
+        const transition =
+          phase === 'inflating' ? 'transform 650ms cubic-bezier(.34,1.7,.64,1)' :
+          phase === 'burst'     ? 'transform 380ms cubic-bezier(.4,0,1,1)' :
+                                  'transform 250ms ease'
+
+        return (
+          <span key={i} style={{ display: 'inline-block', whiteSpace: 'pre', transform, transition }}>
+            {char === ' ' ? '\u00A0' : char}
+          </span>
+        )
+      })}
+    </span>
+  )
+}
 
 const struggles = [
   { icon: Brain, label: "ADHD", color: "bg-mustard", textColor: "text-foreground" },
@@ -69,7 +120,7 @@ export function AboutSection() {
             </span>
 
             <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-teal mb-6 leading-tight">
-              Too much on my plate, making it <span className="text-mustard">work anyway</span>
+              Too much on my plate, making it <BalloonText />
             </h2>
 
             <div className="space-y-4 text-teal/80 leading-relaxed font-medium">
