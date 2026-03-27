@@ -5,28 +5,24 @@ import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 
-const PUCK_SIZE = 52
+const PUCK_SIZE = 20
 
-function AirHockeyPuck({ active }: { active: boolean }) {
+export function HeroSection() {
+  const iconRef = useRef<HTMLSpanElement>(null)
   const posRef = useRef({ x: 0, y: 0 })
   const velRef = useRef({ x: 0, y: 0 })
   const frameRef = useRef<number | null>(null)
-  const [pos, setPos] = useState({ x: 0, y: 0 })
+  const [puckPos, setPuckPos] = useState<{ x: number; y: number } | null>(null)
 
-  useEffect(() => {
-    if (!active) {
-      if (frameRef.current) cancelAnimationFrame(frameRef.current)
-      return
-    }
-
-    posRef.current = {
-      x: window.innerWidth / 2 - PUCK_SIZE / 2,
-      y: window.innerHeight / 2 - PUCK_SIZE / 2,
-    }
+  const startPuck = () => {
+    if (!iconRef.current) return
+    const rect = iconRef.current.getBoundingClientRect()
+    posRef.current = { x: rect.left, y: rect.top }
     velRef.current = {
       x: (Math.random() > 0.5 ? 1 : -1) * (9 + Math.random() * 5),
       y: (Math.random() > 0.5 ? 1 : -1) * (7 + Math.random() * 5),
     }
+    setPuckPos({ x: rect.left, y: rect.top })
 
     const tick = () => {
       const p = posRef.current
@@ -43,34 +39,19 @@ function AirHockeyPuck({ active }: { active: boolean }) {
 
       posRef.current = { x: nx, y: ny }
       velRef.current = { x: nvx, y: nvy }
-      setPos({ x: nx, y: ny })
+      setPuckPos({ x: nx, y: ny })
       frameRef.current = requestAnimationFrame(tick)
     }
 
     frameRef.current = requestAnimationFrame(tick)
-    return () => { if (frameRef.current) cancelAnimationFrame(frameRef.current) }
-  }, [active])
+  }
 
-  if (!active) return null
+  const stopPuck = () => {
+    if (frameRef.current) cancelAnimationFrame(frameRef.current)
+    setPuckPos(null)
+  }
 
-  return (
-    <div
-      className="fixed z-[9999] pointer-events-none rounded-full shadow-2xl shadow-adhd-amber/40"
-      style={{ left: pos.x, top: pos.y, width: PUCK_SIZE, height: PUCK_SIZE }}
-    >
-      <Image
-        src="/vertexism_favicon_128.png"
-        alt=""
-        width={PUCK_SIZE}
-        height={PUCK_SIZE}
-        className="rounded-full w-full h-full object-contain bg-adhd-teal"
-      />
-    </div>
-  )
-}
-
-export function HeroSection() {
-  const [puckActive, setPuckActive] = useState(false)
+  useEffect(() => () => { if (frameRef.current) cancelAnimationFrame(frameRef.current) }, [])
 
   return (
     <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden bg-background">
@@ -81,11 +62,17 @@ export function HeroSection() {
       <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-teal) 50%, transparent) 0%, transparent 70%)", animationDelay: "1.5s" }} />
       <div className="absolute bottom-1/3 right-16 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 30%, transparent) 0%, transparent 70%)", animationDelay: "2s" }} />
 
-      <AirHockeyPuck active={puckActive} />
-      <div className="max-w-5xl mx-auto text-center relative z-10">
-        {/* Tagline - updated colors */}
-        
+      {/* Bouncing puck — fixed clone of the button icon */}
+      {puckPos && (
+        <div
+          className="fixed z-[9999] pointer-events-none rounded-full"
+          style={{ left: puckPos.x, top: puckPos.y, width: PUCK_SIZE, height: PUCK_SIZE }}
+        >
+          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-adhd-teal" />
+        </div>
+      )}
 
+      <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Main Headline - updated accent colors */}
         <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-foreground">
           <span className="whitespace-nowrap text-foreground">
@@ -117,10 +104,14 @@ export function HeroSection() {
           >
             <a
               href="#projects"
-              onMouseEnter={() => setPuckActive(true)}
-              onMouseLeave={() => setPuckActive(false)}
+              onMouseEnter={startPuck}
+              onMouseLeave={stopPuck}
             >
-              <span className="block w-5 h-5 mr-1.5 sm:mr-2 group-hover:animate-spin shrink-0" style={{ transformOrigin: '50% 66.67%' }}>
+              <span
+                ref={iconRef}
+                className="block w-5 h-5 mr-1.5 sm:mr-2 shrink-0"
+                style={{ visibility: puckPos ? "hidden" : "visible" }}
+              >
                 <Image src="/vertexism_favicon_128.png" alt="" width={20} height={20} className="object-contain w-full h-full" />
               </span>
               Explore Projects
