@@ -5,12 +5,13 @@ import { Heart, Sparkles, Brain, Coffee, Lightbulb, Zap } from "lucide-react"
 
 const BALLOON_WORD = "work anyway"
 
-// KABOOM — letters obliterated in every direction
+// Letters flung in every direction — visible flailing arc, then gone
 function burstVector(i: number) {
-  const angle = (i / BALLOON_WORD.length) * Math.PI * 2 + Math.sin(i * 5.3 + 1.7) * 1.5
-  const dist  = Math.round(900 + Math.abs(Math.sin(i * 4.1 + 0.9)) * 1100)
-  const rot   = Math.round((Math.sin(i * 7.7 + 3.1) > 0 ? 1 : -1) * (800 + Math.abs(Math.sin(i * 3.3)) * 1400))
-  return { dx: Math.round(Math.cos(angle) * dist), dy: Math.round(Math.sin(angle) * dist), rot }
+  const angle    = (i / BALLOON_WORD.length) * Math.PI * 2 + Math.sin(i * 5.3 + 1.7) * 1.5
+  const dist     = Math.round(450 + Math.abs(Math.sin(i * 4.1 + 0.9)) * 350)
+  const rot      = Math.round((Math.sin(i * 7.7 + 3.1) > 0 ? 1 : -1) * (1080 + Math.abs(Math.sin(i * 3.3)) * 1800))
+  const duration = Math.round(650 + Math.abs(Math.sin(i * 6.2 + 2.1)) * 400)
+  return { dx: Math.round(Math.cos(angle) * dist), dy: Math.round(Math.sin(angle) * dist), rot, duration }
 }
 
 function BalloonText() {
@@ -19,16 +20,16 @@ function BalloonText() {
   return (
     <span className="text-mustard cursor-default" onMouseEnter={() => setBurst(true)} onMouseLeave={() => setBurst(false)}>
       {Array.from(BALLOON_WORD).map((char, i) => {
-        const { dx, dy, rot } = burstVector(i)
+        const { dx, dy, rot, duration } = burstVector(i)
         return (
           <span
             key={i}
             style={{
               display: 'inline-block',
               whiteSpace: 'pre',
-              transition: burst ? 'transform 300ms cubic-bezier(.05,.9,.4,1)' : 'transform 220ms ease',
+              transition: burst ? `transform ${duration}ms cubic-bezier(.15,.5,.3,1)` : 'transform 220ms ease',
               transform: burst
-                ? `translate(${dx}px, ${dy}px) scale(5) rotate(${rot}deg)`
+                ? `translate(${dx}px, ${dy}px) scale(3) rotate(${rot}deg)`
                 : 'translate(0,0) scale(1) rotate(0deg)',
             }}
           >
