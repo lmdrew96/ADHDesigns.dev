@@ -2,9 +2,76 @@
 
 import { ArrowDown, Brain } from "lucide-react"
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 
+const PUCK_SIZE = 52
+
+function AirHockeyPuck({ active }: { active: boolean }) {
+  const posRef = useRef({ x: 0, y: 0 })
+  const velRef = useRef({ x: 0, y: 0 })
+  const frameRef = useRef<number | null>(null)
+  const [pos, setPos] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    if (!active) {
+      if (frameRef.current) cancelAnimationFrame(frameRef.current)
+      return
+    }
+
+    posRef.current = {
+      x: window.innerWidth / 2 - PUCK_SIZE / 2,
+      y: window.innerHeight / 2 - PUCK_SIZE / 2,
+    }
+    velRef.current = {
+      x: (Math.random() > 0.5 ? 1 : -1) * (9 + Math.random() * 5),
+      y: (Math.random() > 0.5 ? 1 : -1) * (7 + Math.random() * 5),
+    }
+
+    const tick = () => {
+      const p = posRef.current
+      const v = velRef.current
+      let nx = p.x + v.x
+      let ny = p.y + v.y
+      let nvx = v.x
+      let nvy = v.y
+
+      if (nx <= 0) { nx = 0; nvx = Math.abs(nvx) }
+      if (nx >= window.innerWidth - PUCK_SIZE) { nx = window.innerWidth - PUCK_SIZE; nvx = -Math.abs(nvx) }
+      if (ny <= 0) { ny = 0; nvy = Math.abs(nvy) }
+      if (ny >= window.innerHeight - PUCK_SIZE) { ny = window.innerHeight - PUCK_SIZE; nvy = -Math.abs(nvy) }
+
+      posRef.current = { x: nx, y: ny }
+      velRef.current = { x: nvx, y: nvy }
+      setPos({ x: nx, y: ny })
+      frameRef.current = requestAnimationFrame(tick)
+    }
+
+    frameRef.current = requestAnimationFrame(tick)
+    return () => { if (frameRef.current) cancelAnimationFrame(frameRef.current) }
+  }, [active])
+
+  if (!active) return null
+
+  return (
+    <div
+      className="fixed z-[9999] pointer-events-none rounded-full shadow-2xl shadow-adhd-amber/40"
+      style={{ left: pos.x, top: pos.y, width: PUCK_SIZE, height: PUCK_SIZE }}
+    >
+      <Image
+        src="/vertexism_favicon_128.png"
+        alt=""
+        width={PUCK_SIZE}
+        height={PUCK_SIZE}
+        className="rounded-full w-full h-full object-contain bg-adhd-teal"
+      />
+    </div>
+  )
+}
+
 export function HeroSection() {
+  const [puckActive, setPuckActive] = useState(false)
+
   return (
     <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden bg-background">
       {/* Decorative blobs - radial gradients avoid iOS WebKit filter:blur compositing bug */}
@@ -14,6 +81,7 @@ export function HeroSection() {
       <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-teal) 50%, transparent) 0%, transparent 70%)", animationDelay: "1.5s" }} />
       <div className="absolute bottom-1/3 right-16 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 30%, transparent) 0%, transparent 70%)", animationDelay: "2s" }} />
 
+      <AirHockeyPuck active={puckActive} />
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Tagline - updated colors */}
         
@@ -47,7 +115,11 @@ export function HeroSection() {
             className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold group"
             asChild
           >
-            <a href="#projects">
+            <a
+              href="#projects"
+              onMouseEnter={() => setPuckActive(true)}
+              onMouseLeave={() => setPuckActive(false)}
+            >
               <span className="block w-5 h-5 mr-1.5 sm:mr-2 group-hover:animate-spin shrink-0" style={{ transformOrigin: '50% 66.67%' }}>
                 <Image src="/vertexism_favicon_128.png" alt="" width={20} height={20} className="object-contain w-full h-full" />
               </span>
