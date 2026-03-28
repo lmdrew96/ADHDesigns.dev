@@ -1,7 +1,57 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { Heart, Zap, Star, Sparkles, Coffee } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+const SMOKE_PARTICLES = [
+  { left: '15%', size: 7,  delay: 0,   duration: 520 },
+  { left: '50%', size: 9,  delay: 190, duration: 610 },
+  { left: '82%', size: 6,  delay: 95,  duration: 470 },
+]
+
+function SpinningWord() {
+  const [spinning, setSpinning] = useState(false)
+  const [canHover, setCanHover] = useState(false)
+  useEffect(() => { setCanHover(window.matchMedia('(hover: hover)').matches) }, [])
+
+  return (
+    <span
+      className="text-mustard cursor-default"
+      onMouseEnter={canHover ? () => setSpinning(true) : undefined}
+      onMouseLeave={canHover ? () => setSpinning(false) : undefined}
+      onClick={() => setSpinning(s => !s)}
+    >
+      {Array.from('Going').map((char, i) => (
+        <span
+          key={i}
+          className="relative inline-block"
+          style={{
+            animation: spinning ? `tire-spin 120ms linear infinite` : 'none',
+          }}
+        >
+          {char}
+          {/* Smoke puffs — burn rubber! */}
+          {spinning && SMOKE_PARTICLES.map((p, pi) => (
+            <span
+              key={pi}
+              className="absolute pointer-events-none rounded-full"
+              style={{
+                bottom: '-4px',
+                left: p.left,
+                width:  p.size,
+                height: p.size,
+                background: 'rgba(80,80,80,0.55)',
+                animation: `smoke-rise ${p.duration}ms ease-out infinite`,
+                animationDelay: `${p.delay + i * 60}ms`,
+              }}
+            />
+          ))}
+        </span>
+      ))}
+    </span>
+  )
+}
 
 const donationTiers = [
   {
@@ -49,7 +99,7 @@ export function DonateSection() {
             Support the Work
           </span>
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-teal mb-6 leading-tight">
-            Help Keep This <span className="text-mustard">Going</span>
+            Help Keep This <SpinningWord />
           </h2>
           <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-teal/80 leading-relaxed font-medium">
             Everything I build is free — ChaosLimbă, ScribeCat, ThreadBrain, all of it.
