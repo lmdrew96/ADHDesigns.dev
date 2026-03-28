@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Heart, Sparkles, Brain, Coffee, Lightbulb, Zap } from "lucide-react"
 
 const BALLOON_WORD = "work anyway"
