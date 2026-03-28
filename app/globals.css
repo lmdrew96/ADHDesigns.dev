@@ -176,9 +176,19 @@
 }
 
 @keyframes smoke-rise {
-  0%   { transform: translate(-50%, 0px) scale(0.3); opacity: 0.75; filter: blur(1px); }
-  60%  { opacity: 0.3; }
-  100% { transform: translate(-50%, -60px) scale(3); opacity: 0; filter: blur(7px); }
+  0%   { transform: translate(-50%, 0) scale(1);   opacity: 0.55; filter: blur(4px); }
+  50%  { opacity: 0.3; }
+  100% { transform: translate(-50%, -80px) scale(4.5); opacity: 0; filter: blur(20px); }
+}
+@keyframes smoke-left {
+  0%   { transform: translate(-50%, 0) scale(1);   opacity: 0.55; filter: blur(4px); }
+  50%  { opacity: 0.3; }
+  100% { transform: translate(calc(-50% - 22px), -72px) scale(4); opacity: 0; filter: blur(18px); }
+}
+@keyframes smoke-right {
+  0%   { transform: translate(-50%, 0) scale(1);   opacity: 0.55; filter: blur(4px); }
+  50%  { opacity: 0.3; }
+  100% { transform: translate(calc(-50% + 22px), -70px) scale(4); opacity: 0; filter: blur(18px); }
 }
 
 @keyframes chaos-shake {

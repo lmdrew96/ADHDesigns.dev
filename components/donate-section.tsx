@@ -5,9 +5,11 @@ import { Heart, Zap, Star, Sparkles, Coffee } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const SMOKE_PARTICLES = [
-  { left: '15%', size: 7,  delay: 0,   duration: 520 },
-  { left: '50%', size: 9,  delay: 190, duration: 610 },
-  { left: '82%', size: 6,  delay: 95,  duration: 470 },
+  { left: '10%', size: 20, delay: 0,   duration: 700, anim: 'smoke-left'  },
+  { left: '35%', size: 24, delay: 220, duration: 820, anim: 'smoke-rise'  },
+  { left: '55%', size: 18, delay: 110, duration: 660, anim: 'smoke-right' },
+  { left: '75%', size: 22, delay: 340, duration: 760, anim: 'smoke-left'  },
+  { left: '50%', size: 16, delay: 470, duration: 600, anim: 'smoke-rise'  },
 ]
 
 function SpinningWord() {
@@ -37,13 +39,13 @@ function SpinningWord() {
               key={pi}
               className="absolute pointer-events-none rounded-full"
               style={{
-                bottom: '-4px',
+                bottom: '-6px',
                 left: p.left,
                 width:  p.size,
                 height: p.size,
-                background: 'rgba(80,80,80,0.55)',
-                animation: `smoke-rise ${p.duration}ms ease-out infinite`,
-                animationDelay: `${p.delay + i * 60}ms`,
+                background: 'rgba(70,70,70,0.5)',
+                animation: `${p.anim} ${p.duration}ms ease-out infinite`,
+                animationDelay: `${p.delay + i * 55}ms`,
               }}
             />
           ))}
