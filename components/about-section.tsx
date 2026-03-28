@@ -16,9 +16,15 @@ function burstVector(i: number) {
 
 function BalloonText() {
   const [burst, setBurst] = useState(false)
+  const [canHover, setCanHover] = useState(false)
+  useEffect(() => { setCanHover(window.matchMedia('(hover: hover)').matches) }, [])
 
   return (
-    <span className="text-mustard cursor-default" onMouseEnter={() => setBurst(true)} onMouseLeave={() => setBurst(false)}>
+    <span
+      className="text-mustard cursor-default"
+      onMouseEnter={canHover ? () => setBurst(true) : undefined}
+      onMouseLeave={canHover ? () => setBurst(false) : undefined}
+    >
       {Array.from(BALLOON_WORD).map((char, i) => {
         const { dx, dy, rot, duration } = burstVector(i)
         return (

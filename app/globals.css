@@ -184,13 +184,17 @@
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 
-.animate-chaos-shake:hover {
-  animation: chaos-shake 0.5s ease-in-out infinite;
+@media (hover: hover) {
+  .animate-chaos-shake:hover {
+    animation: chaos-shake 0.5s ease-in-out infinite;
+  }
 }
 
 @utility animate-chaos-shake {
-  &:hover {
-    animation: chaos-shake 0.5s ease-in-out infinite;
+  @media (hover: hover) {
+    &:hover {
+      animation: chaos-shake 0.5s ease-in-out infinite;
+    }
   }
 }
 

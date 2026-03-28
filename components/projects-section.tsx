@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Atom, Brain, Cat, ListTodo, Newspaper, Search, ExternalLink, Github, ChevronDown } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
@@ -23,12 +23,14 @@ function letterChaos(i: number, seed = 0) {
 
 function CartwheelingHeading() {
   const [gone, setGone] = useState(false)
+  const [canHover, setCanHover] = useState(false)
+  useEffect(() => { setCanHover(window.matchMedia('(hover: hover)').matches) }, [])
 
   return (
     <div
       className="relative mb-4 cursor-default select-none"
-      onMouseEnter={() => setGone(true)}
-      onMouseLeave={() => setGone(false)}
+      onMouseEnter={canHover ? () => setGone(true) : undefined}
+      onMouseLeave={canHover ? () => setGone(false) : undefined}
     >
       {/* English — cartwheels off to the right, last letter first */}
       <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold">

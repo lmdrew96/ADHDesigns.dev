@@ -13,6 +13,8 @@ export function HeroSection() {
   const velRef = useRef({ x: 0, y: 0 })
   const frameRef = useRef<number | null>(null)
   const [puckPos, setPuckPos] = useState<{ x: number; y: number } | null>(null)
+  const [canHover, setCanHover] = useState(false)
+  useEffect(() => { setCanHover(window.matchMedia('(hover: hover)').matches) }, [])
 
   const startPuck = () => {
     if (!iconRef.current) return
@@ -104,8 +106,8 @@ export function HeroSection() {
           >
             <a
               href="#projects"
-              onMouseEnter={startPuck}
-              onMouseLeave={stopPuck}
+              onMouseEnter={canHover ? startPuck : undefined}
+              onMouseLeave={canHover ? stopPuck : undefined}
             >
               <span
                 ref={iconRef}
