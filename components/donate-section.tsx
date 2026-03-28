@@ -25,15 +25,13 @@ function SpinningWord() {
       onClick={() => setSpinning(s => !s)}
     >
       {Array.from('Going').map((char, i) => (
-        <span
-          key={i}
-          className="relative inline-block"
-          style={{
-            animation: spinning ? `tire-spin 120ms linear infinite` : 'none',
-          }}
-        >
-          {char}
-          {/* Smoke puffs — burn rubber! */}
+        // Outer wrapper is static — anchors smoke to the "road"
+        <span key={i} className="relative inline-block">
+          {/* Only the letter spins */}
+          <span style={{ display: 'inline-block', animation: spinning ? 'tire-spin 120ms linear infinite' : 'none' }}>
+            {char}
+          </span>
+          {/* Smoke rises from the fixed baseline, not the spinning letter */}
           {spinning && SMOKE_PARTICLES.map((p, pi) => (
             <span
               key={pi}
