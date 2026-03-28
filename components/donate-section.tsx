@@ -5,11 +5,11 @@ import { Heart, Zap, Star, Sparkles, Coffee } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const SMOKE_PARTICLES = [
-  { left: '10%', size: 20, delay: 0,   duration: 700, anim: 'smoke-left'  },
-  { left: '35%', size: 24, delay: 220, duration: 820, anim: 'smoke-rise'  },
-  { left: '55%', size: 18, delay: 110, duration: 660, anim: 'smoke-right' },
-  { left: '75%', size: 22, delay: 340, duration: 760, anim: 'smoke-left'  },
-  { left: '50%', size: 16, delay: 470, duration: 600, anim: 'smoke-rise'  },
+  { left: '60%', size: 22, delay: 0,   duration: 700, anim: 'smoke-blow-left'     },
+  { left: '75%', size: 26, delay: 210, duration: 830, anim: 'smoke-blow-left-far' },
+  { left: '50%', size: 18, delay: 110, duration: 660, anim: 'smoke-blow-left'     },
+  { left: '80%', size: 20, delay: 350, duration: 750, anim: 'smoke-blow-left-far' },
+  { left: '65%', size: 16, delay: 470, duration: 600, anim: 'smoke-blow-left'     },
 ]
 
 function SpinningWord() {
@@ -41,7 +41,7 @@ function SpinningWord() {
                 left: p.left,
                 width:  p.size,
                 height: p.size,
-                background: 'rgba(70,70,70,0.5)',
+                background: 'rgba(240,240,240,0.65)',
                 animation: `${p.anim} ${p.duration}ms ease-out infinite`,
                 animationDelay: `${p.delay + i * 55}ms`,
               }}
