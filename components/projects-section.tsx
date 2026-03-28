@@ -21,17 +21,11 @@ function letterChaos(i: number, seed = 0) {
   }
 }
 
-function CartwheelingHeading() {
-  const [gone, setGone] = useState(false)
-  const [canHover, setCanHover] = useState(false)
-  useEffect(() => { setCanHover(window.matchMedia('(hover: hover)').matches) }, [])
+const SUBTITLE = "Each project is born from personal experience and designed to help others who think outside the box."
 
+function CartwheelingHeading({ gone }: { gone: boolean }) {
   return (
-    <div
-      className="relative mb-4 cursor-default select-none"
-      onMouseEnter={canHover ? () => setGone(true) : undefined}
-      onMouseLeave={canHover ? () => setGone(false) : undefined}
-    >
+    <div className="relative mb-4 cursor-default select-none">
       {/* English — cartwheels off to the right, last letter first */}
       <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold">
         {HEADING.split(' ').map((word, wi, words) => {
@@ -103,6 +97,44 @@ function CartwheelingHeading() {
     </div>
   )
 }
+
+function ProjectsIntroBlock() {
+  const [gone, setGone] = useState(false)
+  const [canHover, setCanHover] = useState(false)
+  useEffect(() => { setCanHover(window.matchMedia('(hover: hover)').matches) }, [])
+
+  const subtitleWords = SUBTITLE.split(' ')
+
+  return (
+    <div
+      onMouseEnter={canHover ? () => setGone(true) : undefined}
+      onMouseLeave={canHover ? () => setGone(false) : undefined}
+    >
+      <CartwheelingHeading gone={gone} />
+      <p className="text-lg max-w-2xl mx-auto text-background select-none cursor-default">
+        {subtitleWords.map((word, wi, words) => {
+          const ri = words.length - 1 - wi
+          const { duration, rotation, dy } = letterChaos(ri, 1.61)
+          const delay = 150 + ri * 40 + Math.round(Math.abs(Math.sin(ri * 4.9)) * 30)
+          return (
+            <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              <span style={{
+                display: 'inline-block',
+                transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
+                transitionDelay: gone ? `${delay}ms` : '0ms',
+                transform: gone
+                  ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
+                  : 'translateX(0) translateY(0) rotate(0deg)',
+              }}>{word}</span>
+              {wi < words.length - 1 && <span style={{ display: 'inline-block' }}>&nbsp;</span>}
+            </span>
+          )
+        })}
+      </p>
+    </div>
+  )
+}
+
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -222,10 +254,7 @@ export function ProjectsSection() {
           <span className="inline-block px-4 py-2 text-teal rounded-full text-sm font-bold mb-4 bg-background/60 backdrop-blur-md border border-teal/20">
             Current Projects
           </span>
-          <CartwheelingHeading />
-          <p className="text-lg max-w-2xl mx-auto text-background">
-            Each project is born from personal experience and designed to help others who think outside the box.
-          </p>
+          <ProjectsIntroBlock />
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
