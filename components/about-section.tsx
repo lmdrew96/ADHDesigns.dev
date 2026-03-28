@@ -14,6 +14,42 @@ function burstVector(i: number) {
   return { dx: Math.round(Math.cos(angle) * dist), dy: Math.round(Math.sin(angle) * dist), rot, duration }
 }
 
+function CoinFlipAvatar() {
+  const [flipped, setFlipped] = useState(false)
+  const [canHover, setCanHover] = useState(false)
+  useEffect(() => { setCanHover(window.matchMedia('(hover: hover)').matches) }, [])
+
+  return (
+    <div
+      className="w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 shrink-0 cursor-pointer"
+      style={{ perspective: '700px' }}
+      onMouseEnter={canHover ? () => setFlipped(true) : undefined}
+      onMouseLeave={canHover ? () => setFlipped(false) : undefined}
+      onClick={!canHover ? () => setFlipped(f => !f) : undefined}
+    >
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        transformStyle: 'preserve-3d',
+        transition: 'transform 0.65s cubic-bezier(.4,0,.2,1)',
+        transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+      }}>
+        {/* Front — profile photo */}
+        <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}
+          className="rounded-full bg-mustard/30 border-4 border-mustard overflow-hidden">
+          <img src="/nae-profile.jpg" alt="Nae" className="w-full h-full object-cover object-top scale-110" />
+        </div>
+        {/* Back — SpaceNugg */}
+        <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          className="rounded-full bg-adhd-purple/30 border-4 border-adhd-purple overflow-hidden">
+          <img src="/SpaceNugg.png" alt="Space Nugg" className="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function BalloonText() {
   const [burst, setBurst] = useState(false)
   const [canHover, setCanHover] = useState(false)
@@ -82,12 +118,8 @@ export function AboutSection() {
 
               {/* Main content */}
               <div className="relative flex flex-col justify-center p-8 items-center">
-                <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-mustard/30 border-4 border-mustard flex items-center justify-center mb-6 overflow-hidden shrink-0">
-                  <img
-                    src="/nae-profile.jpg"
-                    alt="Nae - Developer"
-                    className="w-full h-full object-cover object-top scale-110"
-                  />
+                <div className="mb-6">
+                  <CoinFlipAvatar />
                 </div>
                 <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-teal text-center">
                   Lanae Drew
