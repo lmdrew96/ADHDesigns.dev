@@ -34,25 +34,32 @@ function CartwheelingHeading() {
     >
       {/* English — cartwheels off to the right, last letter first */}
       <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold">
-        {Array.from(HEADING).map((char, i) => {
-          const ri = HEADING.length - 1 - i
-          const { delay, duration, rotation, dy } = letterChaos(ri)
-          const isMustard = i >= MUSTARD_START
+        {HEADING.split(' ').map((word, wi, words) => {
+          const charOffset = words.slice(0, wi).reduce((n, w) => n + w.length + 1, 0)
           return (
-            <span
-              key={i}
-              className={isMustard ? 'text-mustard' : 'text-teal'}
-              style={{
-                display: 'inline-block',
-                whiteSpace: 'pre',
-                transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
-                transitionDelay: gone ? `${delay}ms` : '0ms',
-                transform: gone
-                  ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
-                  : 'translateX(0) translateY(0) rotate(0deg)',
-              }}
-            >
-              {char === ' ' ? '\u00A0' : char}
+            <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              {Array.from(word).map((char, j) => {
+                const i  = charOffset + j
+                const ri = HEADING.length - 1 - i
+                const { delay, duration, rotation, dy } = letterChaos(ri)
+                return (
+                  <span
+                    key={j}
+                    className={i >= MUSTARD_START ? 'text-mustard' : 'text-teal'}
+                    style={{
+                      display: 'inline-block',
+                      transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
+                      transitionDelay: gone ? `${delay}ms` : '0ms',
+                      transform: gone
+                        ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
+                        : 'translateX(0) translateY(0) rotate(0deg)',
+                    }}
+                  >{char}</span>
+                )
+              })}
+              {wi < words.length - 1 && (
+                <span style={{ display: 'inline-block' }}>&nbsp;</span>
+              )}
             </span>
           )
         })}
@@ -60,27 +67,35 @@ function CartwheelingHeading() {
 
       {/* Romanian — cartwheels in from the left, last letter first */}
       <h2
-        className="absolute top-0 left-0 right-0 text-center font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-teal pointer-events-none"
+        className="absolute top-0 left-0 right-0 text-center font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold pointer-events-none"
         aria-hidden
       >
-        {Array.from(ROMANIAN).map((char, i) => {
-          const ri = ROMANIAN.length - 1 - i
-          const { delay, duration, rotation, dy } = letterChaos(ri, 3.14)
+        {ROMANIAN.split(' ').map((word, wi, words) => {
+          const charOffset = words.slice(0, wi).reduce((n, w) => n + w.length + 1, 0)
           return (
-            <span
-              key={i}
-              className={i <= 15 ? 'text-adhd-amber' : 'text-teal'}
-              style={{
-                display: 'inline-block',
-                whiteSpace: 'pre',
-                transition: gone ? `transform ${duration}ms cubic-bezier(.2,0,.4,1)` : 'transform 300ms ease',
-                transitionDelay: gone ? `${delay}ms` : '0ms',
-                transform: gone
-                  ? `translateX(0) translateY(0) rotate(0deg)`
-                  : `translateX(-90vw) translateY(${dy}px) rotate(-${rotation}deg)`,
-              }}
-            >
-              {char === ' ' ? '\u00A0' : char}
+            <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              {Array.from(word).map((char, j) => {
+                const i  = charOffset + j
+                const ri = ROMANIAN.length - 1 - i
+                const { delay, duration, rotation, dy } = letterChaos(ri, 3.14)
+                return (
+                  <span
+                    key={j}
+                    className={i <= 15 ? 'text-adhd-amber' : 'text-teal'}
+                    style={{
+                      display: 'inline-block',
+                      transition: gone ? `transform ${duration}ms cubic-bezier(.2,0,.4,1)` : 'transform 300ms ease',
+                      transitionDelay: gone ? `${delay}ms` : '0ms',
+                      transform: gone
+                        ? `translateX(0) translateY(0) rotate(0deg)`
+                        : `translateX(-90vw) translateY(${dy}px) rotate(-${rotation}deg)`,
+                    }}
+                  >{char}</span>
+                )
+              })}
+              {wi < words.length - 1 && (
+                <span style={{ display: 'inline-block' }}>&nbsp;</span>
+              )}
             </span>
           )
         })}

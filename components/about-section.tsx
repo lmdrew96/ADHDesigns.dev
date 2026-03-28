@@ -25,21 +25,27 @@ function BalloonText() {
       onMouseEnter={canHover ? () => setBurst(true) : undefined}
       onMouseLeave={canHover ? () => setBurst(false) : undefined}
     >
-      {Array.from(BALLOON_WORD).map((char, i) => {
-        const { dx, dy, rot, duration } = burstVector(i)
+      {BALLOON_WORD.split(' ').map((word, wi, words) => {
+        const charOffset = words.slice(0, wi).reduce((n, w) => n + w.length + 1, 0)
         return (
-          <span
-            key={i}
-            style={{
-              display: 'inline-block',
-              whiteSpace: 'pre',
-              transition: burst ? `transform ${duration}ms cubic-bezier(.15,.5,.3,1)` : 'transform 220ms ease',
-              transform: burst
-                ? `translate(${dx}px, ${dy}px) scale(3) rotate(${rot}deg)`
-                : 'translate(0,0) scale(1) rotate(0deg)',
-            }}
-          >
-            {char === ' ' ? '\u00A0' : char}
+          <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+            {Array.from(word).map((char, j) => {
+              const i = charOffset + j
+              const { dx, dy, rot, duration } = burstVector(i)
+              return (
+                <span
+                  key={j}
+                  style={{
+                    display: 'inline-block',
+                    transition: burst ? `transform ${duration}ms cubic-bezier(.15,.5,.3,1)` : 'transform 220ms ease',
+                    transform: burst
+                      ? `translate(${dx}px, ${dy}px) scale(3) rotate(${rot}deg)`
+                      : 'translate(0,0) scale(1) rotate(0deg)',
+                  }}
+                >{char}</span>
+              )
+            })}
+            {wi < words.length - 1 && <span style={{ display: 'inline-block' }}>&nbsp;</span>}
           </span>
         )
       })}
