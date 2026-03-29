@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "Apps created by a neurodivergent designer for fellow neurodivergents. ControlledChaos, ChaosLimbă, ScribeCat, & more! 💜",
     url: "https://adhdesigns.dev",
-    siteName: "ADHD Designs",
+    siteName: "ADHDesigns",
     images: [{ url: "/homepage.png", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
