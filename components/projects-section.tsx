@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Atom, Brain, Cat, ListTodo, Newspaper, Search, ExternalLink, Github, ChevronDown } from "lucide-react"
+import { Atom, Brain, Bug, Cat, CloudLightning, Code2, Fingerprint, Flame, ListTodo, MessageSquare, Newspaper, RefreshCcwDot, Search, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -145,92 +145,185 @@ const ChaosLimbaIcon = ({ className }: { className?: string }) => (
   </span>
 )
 
-const projects = [
+type StatusKey = "brewing" | "unleashed" | "raging" | "sustained"
+
+const statusConfig: Record<StatusKey, { label: string; icon: React.FC<{ className?: string }>; bg: string; text: string }> = {
+  brewing:   { label: "Brewing",   icon: CloudLightning, bg: "bg-adhd-sage/30",  text: "text-adhd-sage" },
+  unleashed: { label: "Unleashed", icon: Zap,            bg: "bg-adhd-amber/30", text: "text-adhd-amber" },
+  raging:    { label: "Raging",    icon: Flame,          bg: "bg-adhd-green/30",  text: "text-adhd-green" },
+  sustained: { label: "Sustained", icon: RefreshCcwDot,  bg: "bg-adhd-teal/30",  text: "text-adhd-teal" },
+}
+
+type Project = {
+  id: string
+  name: string
+  tagline: string
+  description: string
+  icon: React.FC<{ className?: string }>
+  color: string
+  textColor: string
+  tags: string[]
+  status: StatusKey
+  githubUrl: string
+  liveUrl?: string
+  demoUrl?: string
+  category: "chaos" | "other"
+}
+
+const projects: Project[] = [
+  // ── The Chaos Ecosystem ──
+  {
+    id: "chaoscode",
+    name: "ChaosCode",
+    tagline: "A multi-LLM agentic IDE",
+    description:
+      "Custom multi-LLM agentic IDE built on Electron with Monaco Editor, React, TypeScript, and Tailwind. Features a dual-LLM panel architecture — Claude Haiku handles implementation while Claude Sonnet reviews — designed for agentic development workflows.",
+    icon: Code2,
+    color: "bg-adhd-amber",
+    textColor: "text-adhd-dark",
+    tags: ["Electron", "Monaco", "Multi-LLM", "Agentic"],
+    status: "brewing",
+    githubUrl: "https://github.com/lmdrew96/ChaosCode",
+    liveUrl: "https://github.com/lmdrew96/ChaosCode/releases",
+    category: "chaos",
+  },
+  {
+    id: "chattos",
+    name: "Cha(t)os",
+    tagline: "Group chat, but everyone brought Claude",
+    description:
+      "Multi-user group chat app where everyone brings their own Claude API key. Each user gets a personalized Claude instance in shared rooms with @mention routing, multimodal file uploads, and Personal Context MCP integration. Built on Convex + Next.js.",
+    icon: MessageSquare,
+    color: "bg-purple",
+    textColor: "text-teal",
+    tags: ["Convex", "Next.js", "Claude API", "MCP"],
+    status: "raging",
+    githubUrl: "https://github.com/lmdrew96/Chatos",
+    liveUrl: "https://chatos.adhdesigns.dev/",
+    category: "chaos",
+  },
+  {
+    id: "controlledchaos",
+    name: "ControlledChaos",
+    tagline: "Your Executive Function, Effectively Replaced",
+    description:
+      "ADHD-friendly task manager with a Crisis Mode feature for overwhelm moments. Includes a 10-tool MCP server for Claude integration.",
+    icon: ListTodo,
+    color: "bg-adhd-dark",
+    textColor: "text-adhd-amber",
+    tags: ["ADHD", "MCP", "Crisis Mode", "Productivity"],
+    status: "raging",
+    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
+    liveUrl: "https://controlledchaos.adhdesigns.dev/",
+    category: "chaos",
+  },
   {
     id: "chaoslimba",
     name: "ChaosLimbă",
     tagline: "Learn Romanian through Structured Chaos",
     description:
-      "Innovative language learning platform that combines the chaos of ADHD with the structure of AI to create a unique and effective learning experience.",
+      "English-to-Romanian language learning platform grounded in second language acquisition theory. Features a 10-component AI ensemble, a 3-tier fossilization Adaptation Engine, 14 dashboard routes, and a dedicated MCP server for instructional design auditing.",
     icon: ChaosLimbaIcon,
     color: "bg-teal",
     textColor: "text-olive",
-    tags: ["SLA", "Romanian", "Interlanguage", "CALL"],
-    status: "Live Chaos",
+    tags: ["SLA", "AI Ensemble", "Adaptation Engine", "MCP"],
+    status: "raging",
     githubUrl: "https://github.com/lmdrew96/ChaosLimba",
     liveUrl: "https://chaoslimba.adhdesigns.dev/",
     demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
+    category: "chaos",
   },
+  {
+    id: "chaospatch",
+    name: "ChaosPatch",
+    tagline: "Dev patch tracker with MCP powers",
+    description:
+      "Lightweight dev patch tracker PWA with Claude Code MCP integration. Manages bugs, fixes, and refactors scoped to individual projects.",
+    icon: Bug,
+    color: "bg-accent",
+    textColor: "text-card",
+    tags: ["PWA", "MCP", "Patch Tracking", "Dev Tools"],
+    status: "unleashed",
+    githubUrl: "https://github.com/lmdrew96/ChaosPatch",
+    liveUrl: "https://chaospatch.adhdesigns.dev/",
+    category: "chaos",
+  },
+  // ── Other Projects ──
   {
     id: "scribecat",
     name: "ScribeCat",
     tagline: "ScribeCat scribes and is cat",
     description:
-      "Desktop app that records lectures with real-time transcription, then turns even the messiest notes into flashcards, quizzes, and other study tools using AI. Plus study group rooms, multiplayer quiz games, and 6 different themes because why not.",
+      "Collaborative study platform with real-time speech-to-text transcription, multiplayer study games, and a Chrome extension. Built on Convex.",
     icon: Cat,
     color: "bg-mustard",
     textColor: "text-olive",
-    tags: ["AI", "Study Tool", "Recordings", "Notes"],
-    status: "Active Chaos",
+    tags: ["Convex", "Transcription", "Study Games", "Chrome Extension"],
+    status: "sustained",
     githubUrl: "https://github.com/lmdrew96/ScribeCat-v3",
     liveUrl: "https://scribecat.adhdesigns.dev/",
-  },
-  {
-    id: "controlledchaos",
-    name: "ControlledChaos",
-    tagline: "ADHD planning, actually possible",
-    description:
-      "AI-powered 'What Now?' view tells you the single best next task based on context, deadlines, and your energy level. Brain dump your chaos and watch it turn into manageable tasks! Track personal insights, toggle themes, cloud sync. Your executive function, effectively replaced.",
-    icon: ListTodo,
-    color: "bg-purple",
-    textColor: "text-teal",
-    tags: ["ADHD", "Planning", "AI Assistant", "Productivity"],
-    status: "Active Chaos",
-    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
-    liveUrl: "https://controlledchaos.adhdesigns.dev/",
+    category: "other",
   },
   {
     id: "threadbrain",
     name: "ThreadBrain",
     tagline: "Long reads, finally readable",
     description:
-      "AI-powered reading tool that takes longform texts and breaks them into digestible chunks with key points highlighted. Built for brains that want the insight without the overwhelm. Works standalone or integrates with ThreadNotes to send highlights straight into your research hub.",
+      "ADHD-focused AI reading companion that helps break down and engage with dense text.",
     icon: Brain,
     color: "bg-accent",
     textColor: "text-card",
-    tags: ["AI", "Reading", "Accessibility", "Text Processing"],
-    status: "Active Chaos",
+    tags: ["AI", "Reading", "Accessibility", "ADHD"],
+    status: "sustained",
     githubUrl: "https://github.com/lmdrew96/threadbrain",
     liveUrl: "https://threadbrain.adhdesigns.dev",
+    category: "other",
   },
   {
     id: "threadnotes",
     name: "ThreadNotes",
     tagline: "Where hyperfocus meets hypothesis",
     description:
-      "Research hub for organizing papers, tracking citations, and connecting ideas across disciplines. Built for the kind of brain that reads one paper and ends up with 47 open tabs. Works standalone or integrates with ThreadBrain to pipe highlights directly into your notes.",
+      "Research journal app for tracking academic research questions across thematic categories. Includes a browser extension for highlighting and saving excerpts from sources.",
     icon: Search,
     color: "bg-teal",
     textColor: "text-purple",
-    tags: ["Research", "Journal", "Academic", "Notes"],
-    status: "Testing Chaos",
+    tags: ["Research", "Journal", "Browser Extension", "Academic"],
+    status: "sustained",
     githubUrl: "https://github.com/lmdrew96/research-journal",
     liveUrl: "https://research.adhdesigns.dev/",
     demoUrl: "https://research.adhdesigns.dev/demo",
+    category: "other",
   },
   {
     id: "chickenscratch",
     name: "ChickenScratch",
     tagline: "Student-run zine submission portal",
     description:
-      "Built for Hen & Ink Society's literary magazine. Students submit writing and art, editors review and assign pieces, work gets published to a public gallery. Role-based access, file uploads, and zero Google Forms document-requesting hell.",
+      "The editorial submission portal for Hen & Ink Society's literary zine, Chicken Scratch. Handles submissions, editorial review, and image processing.",
     icon: Newspaper,
     color: "bg-muted",
     textColor: "text-purple",
-    tags: ["Zine", "Student Platform", "Creative Writing", "Community"],
-    status: "Live Chaos",
+    tags: ["Submissions", "Editorial", "Image Processing", "Community"],
+    status: "raging",
     githubUrl: "https://github.com/lmdrew96/ChickenScratch",
     liveUrl: "https://chickenscratch.me",
+    category: "other",
+  },
+  {
+    id: "personal-context-mcp",
+    name: "Personal Context MCP",
+    tagline: "Cross-session memory for Claude",
+    description:
+      "An MCP server that stores identity, projects, relationships, and preferences for cross-session Claude context. Powers Cha(t)os context awareness and provides continuity across Claude conversations.",
+    icon: Fingerprint,
+    color: "bg-adhd-sage",
+    textColor: "text-adhd-dark",
+    tags: ["MCP", "Context", "Identity", "Cross-Session"],
+    status: "sustained",
+    githubUrl: "https://github.com/lmdrew96/personal-context-mcp",
+    liveUrl: "https://personal-context-mcp.vercel.app/",
+    category: "other",
   },
 ]
 
@@ -257,96 +350,113 @@ export function ProjectsSection() {
           <ProjectsIntroBlock />
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
-          {projects.map((project) => {
-            const Icon = project.icon
-            const isExpanded = activeProject === project.id
+        {([
+          { key: "chaos" as const, label: "The Chaos Ecosystem" },
+          { key: "other" as const, label: "Other Projects" },
+        ]).map((group) => {
+          const groupProjects = projects.filter((p) => p.category === group.key)
+          return (
+            <div key={group.key} className="max-w-3xl mx-auto mb-12 last:mb-0">
+              <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-teal mb-6 text-center">
+                {group.label}
+              </h3>
+              <div className="space-y-4">
+                {groupProjects.map((project) => {
+                  const Icon = project.icon
+                  const isExpanded = activeProject === project.id
+                  const status = statusConfig[project.status]
+                  const StatusIcon = status.icon
 
-            return (
-              <div
-                key={project.id}
-                className={cn(
-                  "rounded-2xl border-2 transition-all duration-300 overflow-hidden",
-                  isExpanded ? "glass-accent shadow-lg shadow-mustard/10" : "glass-card hover:border-mustard/30 hover:shadow-lg hover:shadow-mustard/5",
-                )}
-              >
-                {/* Clickable header */}
-                <button onClick={() => toggleProject(project.id)} className="w-full text-left p-6">
-                  <div className="flex items-start gap-4">
+                  return (
                     <div
-                      className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0", project.color)}
+                      key={project.id}
+                      className={cn(
+                        "rounded-2xl border-2 transition-all duration-300 overflow-hidden",
+                        isExpanded ? "glass-accent shadow-lg shadow-mustard/10" : "glass-card hover:border-mustard/30 hover:shadow-lg hover:shadow-mustard/5",
+                      )}
                     >
-                      <Icon className={cn("w-6 h-6", project.textColor)} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <h3 className="font-bold text-lg text-teal">{project.name}</h3>
-                        <ChevronDown
-                          className={cn(
-                            "w-5 h-5 text-teal/60 transition-transform duration-300",
-                            isExpanded && "rotate-180 text-mustard",
-                          )}
-                        />
-                      </div>
-                      <p className="text-sm text-card">{project.tagline}</p>
-                    </div>
-                  </div>
-                </button>
-
-                <div
-                  className={cn(
-                    "grid transition-all duration-300 ease-in-out",
-                    isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-                  )}
-                >
-                  <div className="overflow-hidden">
-                    <div className="px-6 pb-6 pt-2 border-t border-purple/30">
-                      <div className="inline-block px-3 py-1 bg-teal text-olive rounded-full text-xs font-bold mb-4">
-                        {project.status}
-                      </div>
-
-                      <p className="leading-relaxed mb-6 text-card">{project.description}</p>
-
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="px-3 py-1 bg-purple text-teal rounded-full text-sm font-medium">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex flex-wrap gap-3">
-                        <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Button className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            View Project
-                          </Button>
-                        </a>
-                        {"demoUrl" in project && project.demoUrl && (
-                          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                            <Button className="bg-adhd-teal text-adhd-lavender hover:bg-adhd-teal/90 rounded-full">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Live Demo
-                            </Button>
-                          </a>
-                        )}
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="outline"
-                            className="rounded-full border-adhd-sage text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-transparent"
+                      {/* Clickable header */}
+                      <button onClick={() => toggleProject(project.id)} className="w-full text-left p-6">
+                        <div className="flex items-start gap-4">
+                          <div
+                            className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0", project.color)}
                           >
-                            <Github className="w-4 h-4 mr-2" />
-                            Source Code
-                          </Button>
-                        </a>
+                            <Icon className={cn("w-6 h-6", project.textColor)} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-2 mb-1">
+                              <div className="flex items-center gap-3">
+                                <h3 className="font-bold text-lg text-teal">{project.name}</h3>
+                                <span className={cn("inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold", status.bg, status.text)}>
+                                  <StatusIcon className="w-3.5 h-3.5" />
+                                  {status.label}
+                                </span>
+                              </div>
+                              <ChevronDown
+                                className={cn(
+                                  "w-5 h-5 text-teal/60 transition-transform duration-300",
+                                  isExpanded && "rotate-180 text-mustard",
+                                )}
+                              />
+                            </div>
+                            <p className="text-sm text-card">{project.tagline}</p>
+                          </div>
+                        </div>
+                      </button>
+
+                      <div
+                        className={cn(
+                          "grid transition-all duration-300 ease-in-out",
+                          isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                        )}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="px-6 pb-6 pt-2 border-t border-purple/30">
+                            <p className="leading-relaxed mb-6 text-card">{project.description}</p>
+
+                            <div className="flex flex-wrap gap-2 mb-6">
+                              {project.tags.map((tag) => (
+                                <span key={tag} className="px-3 py-1 bg-purple text-teal rounded-full text-sm font-medium">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+
+                            <div className="flex flex-wrap gap-3">
+                              <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Button className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full">
+                                  <ExternalLink className="w-4 h-4 mr-2" />
+                                  View Project
+                                </Button>
+                              </a>
+                              {project.demoUrl && (
+                                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                                  <Button className="bg-adhd-teal text-adhd-lavender hover:bg-adhd-teal/90 rounded-full">
+                                    <ExternalLink className="w-4 h-4 mr-2" />
+                                    Live Demo
+                                  </Button>
+                                </a>
+                              )}
+                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Button
+                                  variant="outline"
+                                  className="rounded-full border-adhd-sage text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-transparent"
+                                >
+                                  <Github className="w-4 h-4 mr-2" />
+                                  Source Code
+                                </Button>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  )
+                })}
               </div>
-            )
-          })}
-        </div>
+            </div>
+          )
+        })}
       </div>
     </section>
   )
