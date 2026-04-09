@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Atom, Brain, Bug, Cat, CloudLightning, Code2, Fingerprint, Flame, ListTodo, MessageSquare, Newspaper, RefreshCcwDot, Search, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Atom, Brain, Bug, Cat, CloudLightning, Fingerprint, Flame, ListTodo, MessageSquare, Newspaper, RefreshCcwDot, Search, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -172,21 +172,6 @@ type Project = {
 
 const projects: Project[] = [
   // ── The Chaos Ecosystem ──
-  {
-    id: "chaoscode",
-    name: "ChaosCode",
-    tagline: "A multi-LLM agentic IDE",
-    description:
-      "Custom multi-LLM agentic IDE built on Electron with Monaco Editor, React, TypeScript, and Tailwind. Features a dual-LLM panel architecture — Claude Haiku handles implementation while Claude Sonnet reviews — designed for agentic development workflows.",
-    icon: Code2,
-    color: "bg-adhd-amber",
-    textColor: "text-adhd-dark",
-    tags: ["Electron", "Monaco", "Multi-LLM", "Agentic"],
-    status: "brewing",
-    githubUrl: "https://github.com/lmdrew96/ChaosCode",
-    liveUrl: "https://github.com/lmdrew96/ChaosCode/releases",
-    category: "chaos",
-  },
   {
     id: "chattos",
     name: "Cha(t)os",
