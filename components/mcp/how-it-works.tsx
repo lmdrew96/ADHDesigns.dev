@@ -30,7 +30,7 @@ export function HowItWorks() {
       className="rounded-3xl glass-card border-2 border-adhd-sage/25 px-6 sm:px-10 py-10 sm:py-12"
     >
       <div className="text-center mb-10 max-w-2xl mx-auto">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-amber/15 text-adhd-amber border border-adhd-amber/30 uppercase tracking-wide mb-4">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-sage/15 text-adhd-sage border border-adhd-sage/30 uppercase tracking-wide mb-4">
           How it works
         </span>
         <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-bg leading-tight">
@@ -48,8 +48,8 @@ export function HowItWorks() {
           return (
             <li key={step.title} className="contents">
               <div className="flex flex-col items-center text-center bg-adhd-dark/40 rounded-2xl border border-adhd-sage/20 p-5">
-                <div className="w-12 h-12 rounded-xl bg-adhd-amber/20 flex items-center justify-center mb-3">
-                  <Icon className="w-6 h-6 text-adhd-amber" aria-hidden />
+                <div className="w-12 h-12 rounded-xl bg-adhd-sage/20 flex items-center justify-center mb-3">
+                  <Icon className="w-6 h-6 text-adhd-sage" aria-hidden />
                 </div>
                 <div className="text-[10px] uppercase tracking-wider font-bold text-adhd-lavender/70 mb-1">
                   Step {i + 1}

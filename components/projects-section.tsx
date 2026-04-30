@@ -400,7 +400,7 @@ export function ProjectsSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header - updated colors */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 text-adhd-olive rounded-full text-sm font-bold mb-4 bg-adhd-amber backdrop-blur-md border border-adhd-amber/30">
+          <span className="inline-block px-4 py-2 text-adhd-lavender rounded-full text-sm font-bold mb-4 bg-adhd-olive backdrop-blur-md border border-adhd-amber/30">
             Current Projects
           </span>
           <ProjectsIntroBlock />

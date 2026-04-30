@@ -20,6 +20,26 @@
     "last_updated": "2026-04-30"
   },
   {
+    "name": "ChaosLengua",
+    "slug": "chaoslengua",
+    "url": "https://chaoslengua.adhdesigns.dev",
+    "tagline": "English-to-Spanish counterpart to ChaosLimbă.",
+    "description": "Spanish-language sister project to ChaosLimbă, built in a shared monorepo with the same SLA-grounded AI ensemble architecture and Adaptation Engine. Shares Clerk auth and monorepo tooling with ChaosLimbă while targeting Spanish-specific error patterns like ser/estar and preterite/imperfect.",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ChaosCitim",
+    "slug": "chaoscitim",
+    "url": null,
+    "tagline": "Romanian reading companion with graduated morphological glossing.",
+    "description": "The reading-side counterpart to ChaosLimbă: a PWA for reading authentic Romanian texts with tier-based glossing that escalates only when needed. Tracks what learners resolve unaided to feed a single cross-modal interlanguage model spanning reading and production.",
+    "status": "in-development",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "UDPipe 2", "Tailwind"],
+    "last_updated": "2026-04-30"
+  },
+  {
     "name": "Cha(t)os",
     "slug": "chatos",
     "url": "https://chatos.adhdesigns.dev",
@@ -27,6 +47,16 @@
     "description": "Real-time chat rooms where multiple users each bring their own Claude — with their own persona, system prompt, and BYOK API key. Claudes respond to @mentions and can talk to each other in sequence, enabling genuine AI-to-AI dialogue. Personal Context MCP layers per-user identity into every Claude.",
     "status": "beta",
     "tech": ["Next.js", "Convex", "Clerk", "Anthropic SDK", "MCP", "Personal Context MCP"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ChaosPatch",
+    "slug": "chaospatch",
+    "url": "https://chaospatch.adhdesigns.dev",
+    "tagline": "Patch tracker built for agentic development workflows.",
+    "description": "A PWA for tracking dev patches — small specs that Claude Code can pick up and implement. Integrated via MCP so patches flow directly into Claude Code sessions instead of dying in a Notion doc. Includes batch updates, cross-project search, and an Insights page that visualizes work-in-flight across projects.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP"],
     "last_updated": "2026-04-30"
   },
   {
@@ -50,16 +80,6 @@
     "last_updated": "2026-04-30"
   },
   {
-    "name": "ChaosPatch",
-    "slug": "chaospatch",
-    "url": "https://chaospatch.adhdesigns.dev",
-    "tagline": "Patch tracker built for agentic development workflows.",
-    "description": "A PWA for tracking dev patches — small specs that Claude Code can pick up and implement. Integrated via MCP so patches flow directly into Claude Code sessions instead of dying in a Notion doc. Includes batch updates, cross-project search, and an Insights page that visualizes work-in-flight across projects.",
-    "status": "live",
-    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP"],
-    "last_updated": "2026-04-30"
-  },
-  {
     "name": "ThreadBrain",
     "slug": "threadbrain",
     "url": "https://threadbrain.adhdesigns.dev",
@@ -70,32 +90,23 @@
     "last_updated": "2026-04-30"
   },
   {
-    "name": "ChaosCitim",
-    "slug": "chaoscitim",
-    "url": null,
-    "tagline": "Romanian reading companion with graduated morphological glossing.",
-    "description": "The reading-side counterpart to ChaosLimbă: a PWA for reading authentic Romanian texts with tier-based glossing that escalates only when needed. Tracks what learners resolve unaided to feed a single cross-modal interlanguage model spanning reading and production.",
-    "status": "in-development",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "UDPipe 2", "Tailwind"],
-    "last_updated": "2026-04-30"
-  },
-  {
-    "name": "ChaosLengua",
-    "slug": "chaoslengua",
-    "url": null,
-    "tagline": "English-to-Spanish counterpart to ChaosLimbă.",
-    "description": "Spanish-language sister project to ChaosLimbă, built in the same monorepo and sharing the same SLA-grounded AI ensemble architecture. Currently catching up to feature parity with the Romanian app.",
-    "status": "in-development",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku"],
-    "last_updated": "2026-04-30"
-  },
-  {
     "name": "ChickenScratch",
     "slug": "chickenscratch",
     "url": "https://chickenscratch.me",
     "tagline": "Editorial portal for Hen & Ink Society literary zine.",
     "description": "The submissions and review portal for Hen & Ink Society, the first AAP-based RSO at the University of Delaware. Handles submission intake, editor review, and publishing workflows for the zine.",
     "status": "live",
+    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "Cloudflare R2"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "Personal Context MCP",
+    "slug": "personal-context-mcp",
+    "url": "https://personal-context-mcp.vercel.app",
+    "tagline": "Cross-session memory layer for Claude.",
+    "description": "An MCP server that stores identity, projects, relationships, and preferences for cross-session Claude context. Powers Cha(t)os context awareness and provides continuity across Claude conversations. Multi-tenant with Redis-backed persistence.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
     "last_updated": "2026-04-30"
   }
 ]

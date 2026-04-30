@@ -34,12 +34,12 @@ export default function McpPage() {
         />
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass text-card">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass-dark text-adhd-sage/90 border border-adhd-sage/25">
             Model Context Protocol
           </span>
 
-          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-adhd-bg leading-[1.05]">
-            MCP servers I&rsquo;ve built.
+          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-adhd-teal leading-[1.05]">
+            MCP servers I&rsquo;ve <span className="text-adhd-amber">built</span>.
           </h1>
 
           <p className="mt-8 text-lg sm:text-xl text-adhd-lavender/90 leading-relaxed font-medium max-w-2xl mx-auto">
@@ -53,7 +53,7 @@ export default function McpPage() {
               <a
                 key={server.id}
                 href={`#${server.id}`}
-                className="px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-dark/40 border border-adhd-sage/25 text-adhd-bg hover:border-adhd-amber/60 hover:text-adhd-amber transition-colors font-[family-name:var(--font-mono)]"
+                className="px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-sage/40 border border-adhd-teal/25 text-adhd-lavender hover:border-adhd-sage/60 hover:text-adhd-sage hover:bg-adhd-sage/25 transition-colors font-[family-name:var(--font-mono)]"
               >
                 {server.prefix}*
                 <span className="ml-1.5 opacity-70">·</span>
@@ -73,7 +73,7 @@ export default function McpPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-center mb-2">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-bg">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-lavender">
               The servers, up close.
             </h2>
             <p className="mt-3 text-adhd-lavender/85">
@@ -87,8 +87,8 @@ export default function McpPage() {
       </section>
 
       <section className="px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="max-w-3xl mx-auto rounded-3xl bg-adhd-teal border-2 border-adhd-amber/40 shadow-2xl shadow-black/20 p-8 sm:p-12 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-amber/15 text-adhd-amber border border-adhd-amber/30 uppercase tracking-wide mb-4">
+        <div className="max-w-3xl mx-auto rounded-3xl glass-dark shadow-2xl shadow-black/20 p-8 sm:p-12 text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-sage/15 text-adhd-sage border border-adhd-sage/30 uppercase tracking-wide mb-4">
             Want one of these for your product?
           </span>
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-bg leading-tight">

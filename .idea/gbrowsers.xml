@@ -13,6 +13,18 @@
     {
       "name": "ADHD: Agentic Development of Human Designs",
       "url": "http://localhost:3000/#"
+    },
+    {
+      "name": "ADHD: Agentic Development of Human Designs",
+      "url": "http://localhost:3000/#projects"
+    },
+    {
+      "name": "Services — ADHDesigns",
+      "url": "http://localhost:3000/services"
+    },
+    {
+      "name": "MCP Servers — ADHDesigns",
+      "url": "http://localhost:3000/mcp"
     }
   ]
 }]]></component>

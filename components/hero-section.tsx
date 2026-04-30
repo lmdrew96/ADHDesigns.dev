@@ -70,17 +70,17 @@ export function HeroSection() {
           className="fixed z-[9999] pointer-events-none rounded-full"
           style={{ left: puckPos.x, top: puckPos.y, width: PUCK_SIZE, height: PUCK_SIZE }}
         >
-          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-adhd-amber" />
+          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-adhd-dark" />
         </div>
       )}
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Main Headline - updated accent colors */}
-        <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-foreground">
-          <span className="whitespace-nowrap text-foreground">
+        <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-adhd-lavender">
+          <span className="whitespace-nowrap">
             <span className="inline-block hover:animate-wiggle cursor-default text-adhd-teal">A</span>gentic
           </span>{" "}
-          <span className="whitespace-nowrap text-foreground">
+          <span className="whitespace-nowrap">
             <span className="inline-block hover:animate-wiggle cursor-default text-adhd-green">D</span>evelopment
           </span>{" "}
           of{" "}
@@ -101,7 +101,7 @@ export function HeroSection() {
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold group"
+            className="bg-adhd-lavender/50 text-adhd-lavender border border-adhd-lavender hover:bg-adhd-purple/10 hover:text-adhd-lavender rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold group"
             asChild
           >
             <a
@@ -122,7 +122,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold border border-adhd-sage/40 text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-white/5 backdrop-blur-md shadow-lg shadow-adhd-sage/10"
+            className="rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold border glass-dark text-adhd-olive hover:text-adhd-teal bg-white/5 backdrop-blur-md shadow-lg shadow-adhd-sage/10"
             asChild
           >
             <a href="/about">
@@ -152,7 +152,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#projects" className="flex flex-col items-center gap-2 text-teal hover:text-mustard transition-colors">
+        <a href="#projects" className="flex flex-col items-center gap-2 text-adhd-sage hover:text-adhd-dark transition-colors">
           <span className="text-sm font-medium">Scroll to explore</span>
           <ArrowDown className="w-5 h-5" />
         </a>

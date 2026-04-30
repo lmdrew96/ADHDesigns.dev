@@ -32,17 +32,16 @@ export default function ServicesPage() {
         />
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass text-card">
-            Hire ADHDesigns
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-20 glass-accent text-adhd-sage">
+            Available Services
           </span>
 
-          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-adhd-bg leading-[1.05]">
-            Three ways to work together.
+          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-adhd-lavender leading-[1.05]">
+            <span className="text-adhd-teal">Three</span> ways to work together.
           </h1>
 
           <p className="mt-8 text-lg sm:text-xl text-adhd-lavender/90 leading-relaxed font-medium max-w-2xl mx-auto">
-            I'm a neurodivergent developer building tools for neurodivergent people. Not accessibility as an afterthought —
-            as the architecture. If your product serves humans, it should work for all of them.
+            I'm a neurodivergent developer building tools for neurodivergent people. Accessibility as the architecture—not as an afterthought. If your product serves humans, it should work for <span className="italic text-adhd-amber">all</span> of them.
           </p>
         </div>
       </section>
@@ -53,7 +52,7 @@ export default function ServicesPage() {
             <ServiceTier key={tier.id} tier={tier} />
           ))}
 
-          <p className="text-center text-adhd-lavender/80 italic font-medium pt-4">
+          <p className="text-center text-adhd-sage/80 italic font-medium pt-4">
             Flexible rates available for independent creators, nonprofits, and neurodivergent-led projects.
           </p>
         </div>
