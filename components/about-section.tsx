@@ -155,7 +155,7 @@ export function AboutSection() {
               Too much on my plate, making it <BalloonText />
             </h2>
 
-            <div className="space-y-4 text-teal/80 leading-relaxed font-medium">
+            <div className="space-y-4 text-adhd-green leading-relaxed font-medium">
   <p>
     I build tools for brains that don't work the way traditional apps expect them to.
   </p>

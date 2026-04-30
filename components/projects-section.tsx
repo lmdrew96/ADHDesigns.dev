@@ -45,7 +45,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
                       transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
                       transitionDelay: gone ? `${delay}ms` : '0ms',
                       transform: gone
-                        ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
+                        ? `translateX(calc(100vw + 100%)) translateY(${dy}px) rotate(${rotation}deg)`
                         : 'translateX(0) translateY(0) rotate(0deg)',
                     }}
                   >{char}</span>
@@ -82,7 +82,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
                       transitionDelay: gone ? `${delay}ms` : '0ms',
                       transform: gone
                         ? `translateX(0) translateY(0) rotate(0deg)`
-                        : `translateX(-90vw) translateY(${dy}px) rotate(-${rotation}deg)`,
+                        : `translateX(calc(-100vw - 100%)) translateY(${dy}px) rotate(-${rotation}deg)`,
                     }}
                   >{char}</span>
                 )
@@ -113,19 +113,25 @@ function ProjectsIntroBlock() {
       <CartwheelingHeading gone={gone} />
       <p className="text-lg max-w-2xl mx-auto text-background select-none cursor-default">
         {subtitleWords.map((word, wi, words) => {
-          const ri = words.length - 1 - wi
-          const { duration, rotation, dy } = letterChaos(ri, 1.61)
-          const delay = 150 + ri * 40 + Math.round(Math.abs(Math.sin(ri * 4.9)) * 30)
+          const charOffset = words.slice(0, wi).reduce((n, w) => n + w.length + 1, 0)
           return (
             <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-              <span style={{
-                display: 'inline-block',
-                transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
-                transitionDelay: gone ? `${delay}ms` : '0ms',
-                transform: gone
-                  ? `translateX(90vw) translateY(${dy}px) rotate(${rotation}deg)`
-                  : 'translateX(0) translateY(0) rotate(0deg)',
-              }}>{word}</span>
+              {Array.from(word).map((char, j) => {
+                const i = charOffset + j
+                const ri = SUBTITLE.length - 1 - i
+                const { duration, rotation, dy } = letterChaos(ri, 1.61)
+                const delay = 150 + ri * 18 + Math.round(Math.abs(Math.sin(ri * 4.9)) * 30)
+                return (
+                  <span key={j} style={{
+                    display: 'inline-block',
+                    transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
+                    transitionDelay: gone ? `${delay}ms` : '0ms',
+                    transform: gone
+                      ? `translateX(calc(100vw + 100%)) translateY(${dy}px) rotate(${rotation}deg)`
+                      : 'translateX(0) translateY(0) rotate(0deg)',
+                  }}>{char}</span>
+                )
+              })}
               {wi < words.length - 1 && <span style={{ display: 'inline-block' }}>&nbsp;</span>}
             </span>
           )
