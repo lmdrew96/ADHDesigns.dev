@@ -109,9 +109,9 @@ export function ServerCard({ server }: { server: McpServer }) {
             <p className="text-adhd-lavender/90 leading-snug">{server.tagline}</p>
             <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-adhd-sage font-[family-name:var(--font-mono)]">
               <span className="opacity-80">{server.endpointLabel}</span>
-              {server.comingSoon && (
+              {server.localOnly && (
                 <span className="px-2 py-0.5 rounded-full bg-adhd-amber/15 text-adhd-amber border border-adhd-amber/35 text-[10px] uppercase tracking-wider font-bold">
-                  Endpoint coming soon
+                  Local-only
                 </span>
               )}
             </div>

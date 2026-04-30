@@ -27,7 +27,7 @@ export type McpServer = {
   description: string
   endpoint: string
   endpointLabel: string
-  comingSoon?: boolean
+  localOnly?: boolean
   liveUrl?: string
   accent: "green" | "purple" | "amber" | "sage" | "olive"
   tools: readonly ToolDef[]
@@ -172,9 +172,9 @@ export const MCP_SERVERS: readonly McpServer[] = [
     tagline: "Instructional design auditing for an SLA-grounded language learning app.",
     description:
       "The MCP layer behind ChaosLimbă — an English-to-Romanian language learning platform built on second language acquisition theory. These tools expose the diagnostic and adaptation pipeline so Claude can audit content coverage, surface error patterns, track proficiency trends, and check that the curriculum is progressing the way the SLA framework expects.",
-    endpoint: "https://chaoslimba.adhdesigns.dev/mcp",
-    endpointLabel: "chaoslimba.adhdesigns.dev/mcp",
-    comingSoon: true,
+    endpoint: "local stdio",
+    endpointLabel: "local stdio (Claude Code / Desktop)",
+    localOnly: true,
     liveUrl: "https://chaoslimba.adhdesigns.dev/",
     accent: "amber",
     tools: [
