@@ -105,7 +105,7 @@ export function HeroSection() {
             asChild
           >
             <a
-              href="#projects"
+              href="/services"
               onMouseEnter={canHover ? startPuck : undefined}
               onMouseLeave={canHover ? stopPuck : undefined}
             >
@@ -116,7 +116,7 @@ export function HeroSection() {
               >
                 <Image src="/vertexism_favicon_128.png" alt="" width={20} height={20} className="object-contain w-full h-full" />
               </span>
-              Explore Projects
+              Explore Services
             </a>
           </Button>
           <Button
