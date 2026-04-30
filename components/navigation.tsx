@@ -1,12 +1,19 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { ChatPanel } from "@/components/chatbot/chat-panel"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isChatOpen, setIsChatOpen] = useState(false)
+
+  const openChat = () => {
+    setIsChatOpen(true)
+    setIsOpen(false)
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-adhd-dark/95 backdrop-blur-xl border-b border-adhd-teal/20">
@@ -33,8 +40,13 @@ export function Navigation() {
             <a href="/#contact" className="hover:text-adhd-sage transition-colors font-medium">
               Contact
             </a>
-            <Button className="bg-adhd-sage text-adhd-dark hover:bg-adhd-sage/90 rounded-full px-6 font-bold" asChild>
-              <a href="mailto:nae@adhdesigns.dev">Let&apos;s Chat</a>
+            <Button
+              type="button"
+              onClick={openChat}
+              className="bg-adhd-sage text-adhd-dark hover:bg-adhd-sage/90 rounded-full px-6 font-bold gap-2"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Let&apos;s Chat
             </Button>
           </div>
 
@@ -64,12 +76,18 @@ export function Navigation() {
             <a href="/#contact" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
               Contact
             </a>
-            <Button className="w-full bg-adhd-purple text-adhd-dark hover:bg-adhd-purple/90 rounded-full font-bold" asChild>
-              <a href="mailto:nae@adhdesigns.dev">Let&apos;s Chat</a>
+            <Button
+              type="button"
+              onClick={openChat}
+              className="w-full bg-adhd-purple text-adhd-dark hover:bg-adhd-purple/90 rounded-full font-bold gap-2"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Let&apos;s Chat
             </Button>
           </div>
         </div>
       )}
+      <ChatPanel isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </nav>
   )
 }
