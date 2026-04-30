@@ -1,0 +1,101 @@
+[
+  {
+    "name": "ControlledChaos",
+    "slug": "controlledchaos",
+    "url": "https://controlledchaos.adhdesigns.dev",
+    "tagline": "Your executive function, effectively replaced.",
+    "description": "An ADHD-friendly task manager built around brain dumps (text, voice, or photo) that Claude Haiku parses into structured tasks. Includes crisis mode for overwhelm days, AI-powered prioritization that factors in time and energy, Canvas calendar sync, momentum visualization without guilt-streaks, and a Mirror view that shows your whole day in one chronological timeline. Targeting public launch June 2026.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ChaosLimbă",
+    "slug": "chaoslimba",
+    "url": "https://chaoslimba.adhdesigns.dev",
+    "tagline": "English-to-Romanian language learning grounded in SLA research.",
+    "description": "A CALL app for English speakers learning Romanian, designed for ADHD brains and grounded in second language acquisition theory. Built around a 10-component AI ensemble with fossilization detection that turns persistent errors into micro-curriculum. Targeting MVP launch August 2026.",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku", "HuggingFace"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "Cha(t)os",
+    "slug": "chatos",
+    "url": "https://chatos.adhdesigns.dev",
+    "tagline": "Multi-user, multi-Claude collaborative AI workspace.",
+    "description": "Real-time chat rooms where multiple users each bring their own Claude — with their own persona, system prompt, and BYOK API key. Claudes respond to @mentions and can talk to each other in sequence, enabling genuine AI-to-AI dialogue. Personal Context MCP layers per-user identity into every Claude.",
+    "status": "beta",
+    "tech": ["Next.js", "Convex", "Clerk", "Anthropic SDK", "MCP", "Personal Context MCP"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ScribeCat",
+    "slug": "scribecat",
+    "url": "https://scribecat.adhdesigns.dev",
+    "tagline": "ScribeCat scribes and is cat.",
+    "description": "Records lectures with real-time AssemblyAI transcription, generates AI study notes mid-recording (not after), and includes six AI study tools (flashcards, quizzes, concept maps, ELI5). Features exam study rooms with weak-spot tracking, a Tamagotchi-style pixel cat (StudyQuest) tied to study metrics, multiplayer Quiz Battle and Jeopardy, friends + DMs, and a Chrome extension that imports Canvas courses.",
+    "status": "live",
+    "tech": ["Vite", "React", "TypeScript", "Convex", "Clerk", "AssemblyAI", "Claude Haiku", "TipTap"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ThreadNotes",
+    "slug": "threadnotes",
+    "url": "https://research.adhdesigns.dev",
+    "tagline": "Personal research command center for the way ADHD brains actually research.",
+    "description": "A unified hub for academic research: search peer-reviewed literature via OpenAlex and Crossref, save and annotate articles, organize research questions by theme with bidirectional article linking, write reflective journal entries, and get AI-generated summaries. Includes a Chrome extension for clipping excerpts and an MCP server so Claude can read and write to your research base.",
+    "status": "live",
+    "tech": ["React", "TypeScript", "Vite", "Clerk", "Neon Postgres", "Claude Haiku", "OpenAlex", "Crossref"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ChaosPatch",
+    "slug": "chaospatch",
+    "url": "https://chaospatch.adhdesigns.dev",
+    "tagline": "Patch tracker built for agentic development workflows.",
+    "description": "A PWA for tracking dev patches — small specs that Claude Code can pick up and implement. Integrated via MCP so patches flow directly into Claude Code sessions instead of dying in a Notion doc. Includes batch updates, cross-project search, and an Insights page that visualizes work-in-flight across projects.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ThreadBrain",
+    "slug": "threadbrain",
+    "url": "https://threadbrain.adhdesigns.dev",
+    "tagline": "Reading companion that scaffolds dense text for ADHD brains.",
+    "description": "AI-generated micro-headers, purpose-aware chunking that adapts to your stated reading goal and energy level, and \"The Map\" — a 2-3 sentence orientation summary before reading begins. Includes ExpressBrain for cram-sheet generation and integrates with ThreadNotes so excerpts flow into your research thread.",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Cloudflare R2"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ChaosCitim",
+    "slug": "chaoscitim",
+    "url": null,
+    "tagline": "Romanian reading companion with graduated morphological glossing.",
+    "description": "The reading-side counterpart to ChaosLimbă: a PWA for reading authentic Romanian texts with tier-based glossing that escalates only when needed. Tracks what learners resolve unaided to feed a single cross-modal interlanguage model spanning reading and production.",
+    "status": "in-development",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "UDPipe 2", "Tailwind"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ChaosLengua",
+    "slug": "chaoslengua",
+    "url": null,
+    "tagline": "English-to-Spanish counterpart to ChaosLimbă.",
+    "description": "Spanish-language sister project to ChaosLimbă, built in the same monorepo and sharing the same SLA-grounded AI ensemble architecture. Currently catching up to feature parity with the Romanian app.",
+    "status": "in-development",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku"],
+    "last_updated": "2026-04-30"
+  },
+  {
+    "name": "ChickenScratch",
+    "slug": "chickenscratch",
+    "url": "https://chickenscratch.me",
+    "tagline": "Editorial portal for Hen & Ink Society literary zine.",
+    "description": "The submissions and review portal for Hen & Ink Society, the first AAP-based RSO at the University of Delaware. Handles submission intake, editor review, and publishing workflows for the zine.",
+    "status": "live",
+    "last_updated": "2026-04-30"
+  }
+]
