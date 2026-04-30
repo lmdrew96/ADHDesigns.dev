@@ -65,9 +65,9 @@
 /* Removed dark mode - using bold colors only */
 
 @theme inline {
-  --font-sans: "Space Grotesk", "Space Grotesk Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
-  --font-display: "Fraunces", "Fraunces Fallback";
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-display), Georgia, serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

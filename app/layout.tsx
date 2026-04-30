@@ -5,9 +5,9 @@ import { Analytics } from "@vercel/analytics/next"
 import { KofiWidget } from "@/components/kofi-widget"
 import "./globals.css"
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" })
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-display" })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adhdesigns.dev"),
@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased ${fraunces.variable}`}>
+      <body className={`font-sans antialiased ${spaceGrotesk.variable} ${fraunces.variable} ${geistMono.variable}`}>
         {children}
         <Analytics />
         <KofiWidget />
