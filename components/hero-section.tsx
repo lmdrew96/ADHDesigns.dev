@@ -133,13 +133,12 @@ export function HeroSection() {
         </div>
 
         {/* Feature Pills - updated pill colors */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           {[
-            { label: "ADHD Friendly",     cls: "bg-foreground/40 text-card" },
-            { label: "Student Built",     cls: "bg-primary/40 text-foreground" },
-            { label: "Open Source",       cls: "bg-accent/40 text-secondary" },
-            { label: "Learning Tools", cls: "bg-card/40 text-primary" },
-            { label: "AI Powered",        cls: "bg-secondary/40 text-secondary" },
+            { label: "ADHD Friendly",     cls: "bg-adhd-sage/80 text-adhd-teal" },
+            { label: "Open Source",       cls: "bg-adhd-green/80 text-adhd-teal" },
+            { label: "Student Built", cls: "bg-adhd-teal/80 text-adhd-sage" },
+            { label: "AI Powered",        cls: "bg-adhd-lavender/80 text-adhd-dark" },
           ].map(({ label, cls }) => (
             <span
               key={label}
@@ -152,7 +151,7 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 animate-bounce">
         <a href="#projects" className="flex flex-col items-center gap-2 text-teal hover:text-mustard transition-colors">
           <span className="text-sm font-medium">Scroll to explore</span>
           <ArrowDown className="w-5 h-5" />

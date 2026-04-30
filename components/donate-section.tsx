@@ -19,7 +19,7 @@ function SpinningWord() {
 
   return (
     <span
-      className="text-mustard cursor-default"
+      className="text-adhd-green cursor-default"
       onMouseEnter={canHover ? () => setSpinning(true) : undefined}
       onMouseLeave={canHover ? () => setSpinning(false) : undefined}
       onClick={() => setSpinning(s => !s)}
@@ -59,26 +59,26 @@ const donationTiers = [
     title: "Keep the Lights On",
     amount: "$5/mo",
     description: "Cover the cost of one user across the ADHDesigns ecosystem for a month. Servers, domains, API calls — the invisible stuff that makes free tools possible.",
-    color: "bg-mustard",
-    textColor: "text-olive",
-    borderColor: "border-mustard/40",
+    color: "bg-adhd-dark",
+    textColor: "text-adhd-amber",
+    borderColor: "border-adhd-amber/40",
   },
   {
     icon: Heart,
     title: "Fuel the Chaos",
     amount: "$10/mo",
     description: "Keep two users' worth of tools running AND help fund new features and bug fixes. You're basically my QA department's salary. (I am also the QA department.)",
-    color: "bg-teal",
-    textColor: "text-purple",
-    borderColor: "border-teal/40",
+    color: "bg-adhd-lavender",
+    textColor: "text-adhd-purple",
+    borderColor: "border-adhd-purple/40",
   },
   {
     icon: Star,
     title: "Chaos Patron",
     amount: "$25/mo",
     description: "You're single-handedly keeping a chunk of the ecosystem alive. You get my undying gratitude, a spot on a future supporters page, and the knowledge that you're funding tools built by spite and stubbornness.",
-    color: "bg-purple",
-    textColor: "text-teal",
+    color: "bg-adhd-amber",
+    textColor: "text-adhd-purple",
     borderColor: "border-purple/40",
   },
 ]
@@ -98,14 +98,14 @@ export function DonateSection() {
             <Sparkles className="w-4 h-4" />
             Support the Work
           </span>
-          <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-teal mb-6 leading-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-adhd-lavender mb-6 leading-tight">
             Help Keep This <SpinningWord />
           </h2>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-teal/80 leading-relaxed font-medium">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-amber leading-relaxed font-medium">
             Everything I build is free — ChaosLimbă, ScribeCat, ThreadBrain, all of it.
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-teal/80 leading-relaxed font-medium mt-4">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-amber leading-relaxed font-medium mt-4">
             If anything I've built has helped you, even a small monthly membership goes further than you'd think — $5 covers an entire user's server costs for a month. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
