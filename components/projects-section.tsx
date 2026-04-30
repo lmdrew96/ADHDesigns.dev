@@ -153,11 +153,40 @@ const ChaosLimbaIcon = ({ className }: { className?: string }) => (
 
 type StatusKey = "brewing" | "unleashed" | "raging" | "sustained"
 
-const statusConfig: Record<StatusKey, { label: string; icon: React.FC<{ className?: string }>; bg: string; text: string }> = {
-  brewing:   { label: "Brewing",   icon: CloudLightning, bg: "bg-adhd-sage/30",  text: "text-adhd-sage" },
-  unleashed: { label: "Unleashed", icon: Zap,            bg: "bg-adhd-amber/30", text: "text-adhd-amber" },
-  raging:    { label: "Raging",    icon: Flame,          bg: "bg-adhd-green/30",  text: "text-adhd-green" },
-  sustained: { label: "Sustained", icon: RefreshCcwDot,  bg: "bg-adhd-teal/30",  text: "text-adhd-teal" },
+const statusConfig: Record<StatusKey, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string }> = {
+  brewing:   { label: "Brewing",   description: "Planning or early build",   icon: CloudLightning, bg: "bg-adhd-sage/30",  text: "text-adhd-sage" },
+  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/30", text: "text-adhd-amber" },
+  raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-adhd-olive/30", text: "text-adhd-olive" },
+  sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-adhd-teal/30",  text: "text-adhd-teal" },
+}
+
+const STATUS_ORDER: StatusKey[] = ["brewing", "unleashed", "raging", "sustained"]
+
+function StatusKeyLegend() {
+  return (
+    <div className="max-w-3xl mx-auto mb-12 glass-card rounded-2xl border-2 border-purple/20 p-4 sm:p-5">
+      <p className="text-xs font-bold uppercase tracking-wider text-teal/70 mb-3 text-center">
+        Status Key
+      </p>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {STATUS_ORDER.map((key) => {
+          const cfg = statusConfig[key]
+          const Icon = cfg.icon
+          return (
+            <div key={key} className="flex items-start gap-2">
+              <span className={cn("inline-flex items-center justify-center w-7 h-7 rounded-full shrink-0", cfg.bg)}>
+                <Icon className={cn("w-4 h-4", cfg.text)} />
+              </span>
+              <div className="min-w-0">
+                <div className={cn("text-sm font-bold leading-tight", cfg.text)}>{cfg.label}</div>
+                <div className="text-xs text-card/80 leading-snug">{cfg.description}</div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 
 type Project = {
@@ -179,7 +208,7 @@ type Project = {
 const projects: Project[] = [
   // ── The Chaos Ecosystem ──
   {
-    id: "chattos",
+    id: "chatos",
     name: "Cha(t)os",
     tagline: "Group chat, but everyone brought Claude",
     description:
@@ -218,7 +247,7 @@ const projects: Project[] = [
     color: "bg-teal",
     textColor: "text-olive",
     tags: ["SLA", "AI Ensemble", "Adaptation Engine", "MCP"],
-    status: "raging",
+    status: "sustained",
     githubUrl: "https://github.com/lmdrew96/ChaosLimba",
     liveUrl: "https://chaoslimba.adhdesigns.dev/",
     demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
@@ -234,7 +263,7 @@ const projects: Project[] = [
     color: "bg-accent",
     textColor: "text-card",
     tags: ["PWA", "MCP", "Patch Tracking", "Dev Tools"],
-    status: "unleashed",
+    status: "sustained",
     githubUrl: "https://github.com/lmdrew96/ChaosPatch",
     liveUrl: "https://chaospatch.adhdesigns.dev/",
     category: "chaos",
@@ -265,7 +294,7 @@ const projects: Project[] = [
     color: "bg-accent",
     textColor: "text-card",
     tags: ["AI", "Reading", "Accessibility", "ADHD"],
-    status: "sustained",
+    status: "raging",
     githubUrl: "https://github.com/lmdrew96/threadbrain",
     liveUrl: "https://threadbrain.adhdesigns.dev",
     category: "other",
@@ -296,7 +325,7 @@ const projects: Project[] = [
     color: "bg-muted",
     textColor: "text-purple",
     tags: ["Submissions", "Editorial", "Image Processing", "Community"],
-    status: "raging",
+    status: "sustained",
     githubUrl: "https://github.com/lmdrew96/ChickenScratch",
     liveUrl: "https://chickenscratch.me",
     category: "other",
@@ -340,6 +369,8 @@ export function ProjectsSection() {
           </span>
           <ProjectsIntroBlock />
         </div>
+
+        <StatusKeyLegend />
 
         {([
           { key: "chaos" as const, label: "The Chaos Ecosystem" },
