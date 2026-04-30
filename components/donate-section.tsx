@@ -85,7 +85,7 @@ const donationTiers = [
 
 export function DonateSection() {
   return (
-    <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+    <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-adhd-teal relative overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-10 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 30%, transparent) 0%, transparent 70%)" }} />
       <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 30%, transparent) 0%, transparent 70%)" }} />
@@ -94,18 +94,19 @@ export function DonateSection() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass text-card">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass-accent text-adhd-sage">
             <Sparkles className="w-4 h-4" />
             Support the Work
+            <Sparkles className="w-4 h-4" />
           </span>
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-adhd-lavender mb-6 leading-tight">
             Help Keep This <SpinningWord />
           </h2>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-amber leading-relaxed font-medium">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-sage leading-relaxed font-medium">
             Everything I build is free — ChaosLimbă, ScribeCat, ThreadBrain, all of it.
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-amber leading-relaxed font-medium mt-4">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-sage leading-relaxed font-medium mt-4">
             If anything I've built has helped you, even a small monthly membership goes further than you'd think — $5 covers an entire user's server costs for a month. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
@@ -117,7 +118,7 @@ export function DonateSection() {
             return (
               <div
                 key={tier.title}
-                className={`relative p-6 glass rounded-3xl border-2 ${tier.borderColor} flex flex-col gap-4 transition-transform hover:-translate-y-1`}
+                className={`relative p-6 glass-accent rounded-3xl border-2 ${tier.borderColor} flex flex-col gap-4 transition-transform hover:-translate-y-1`}
               >
 <div className={`w-12 h-12 rounded-2xl ${tier.color} flex items-center justify-center`}>
                   <Icon className={`w-6 h-6 ${tier.textColor}`} />
