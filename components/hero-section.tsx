@@ -125,7 +125,7 @@ export function HeroSection() {
             className="rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold border border-adhd-sage/40 text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-white/5 backdrop-blur-md shadow-lg shadow-adhd-sage/10"
             asChild
           >
-            <a href="#about">
+            <a href="/about">
               <Brain className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2" />
               My Story
             </a>

@@ -27,7 +27,7 @@ export function Navigation() {
             <a href="/mcp" className="hover:text-adhd-amber transition-colors font-medium text-foreground">
               MCP
             </a>
-            <a href="/#about" className="hover:text-adhd-amber transition-colors font-medium text-foreground">
+            <a href="/about" className="hover:text-adhd-amber transition-colors font-medium text-foreground">
               About
             </a>
             <a href="/#contact" className="hover:text-adhd-amber transition-colors font-medium text-foreground">
@@ -58,7 +58,7 @@ export function Navigation() {
             <a href="/mcp" className="block text-teal hover:text-mustard transition-colors font-medium py-2">
               MCP
             </a>
-            <a href="/#about" className="block text-teal hover:text-mustard transition-colors font-medium py-2">
+            <a href="/about" className="block text-teal hover:text-mustard transition-colors font-medium py-2">
               About
             </a>
             <a href="/#contact" className="block text-teal hover:text-mustard transition-colors font-medium py-2">
