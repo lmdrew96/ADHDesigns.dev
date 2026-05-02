@@ -143,6 +143,7 @@ function ProjectsIntroBlock() {
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { projects as projectsData, type Project as ProjectData } from "@/lib/projects"
 
 const ChaosLimbaIcon = ({ className }: { className?: string }) => (
   <span className={cn("relative inline-block", className)}>
@@ -212,176 +213,152 @@ type Project = {
   category: "chaos" | "other"
 }
 
-const projects: Project[] = [
-  // ── The Chaos Ecosystem ──
-  {
-    id: "controlledchaos",
-    name: "ControlledChaos",
-    tagline: "Your Executive Function, Effectively Replaced",
-    description:
-      "ADHD-friendly task manager with a Crisis Mode feature for overwhelm moments. Includes a 10-tool MCP server for Claude integration.",
+type ProjectUI = {
+  icon: React.FC<{ className?: string }>
+  color: string
+  textColor: string
+  tags: string[]
+  category: "chaos" | "other"
+  displayStatus?: StatusKey
+  githubUrl: string
+  demoUrl?: string
+}
+
+const statusMap: Record<ProjectData["status"], StatusKey> = {
+  "live": "unleashed",
+  "beta": "raging",
+  "in-development": "brewing",
+  "archived": "sustained",
+}
+
+const projectUIConfig: Record<string, ProjectUI> = {
+  controlledchaos: {
     icon: ListTodo,
     color: "bg-adhd-purple",
     textColor: "text-adhd-lavender",
     tags: ["ADHD", "MCP", "Crisis Mode", "Productivity"],
-    status: "raging",
-    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
-    liveUrl: "https://controlledchaos.adhdesigns.dev/",
     category: "chaos",
+    displayStatus: "raging",
+    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
   },
-  {
-    id: "chaospatch",
-    name: "ChaosPatch",
-    tagline: "Dev patch tracker with MCP powers",
-    description:
-        "Lightweight dev patch tracker PWA with Claude Code MCP integration. Manages bugs, fixes, and refactors scoped to individual projects.",
+  chaospatch: {
     icon: Bug,
     color: "bg-adhd-dark",
     textColor: "text-adhd-purple",
     tags: ["PWA", "MCP", "Patch Tracking", "Dev Tools"],
-    status: "sustained",
-    githubUrl: "https://github.com/lmdrew96/ChaosPatch",
-    liveUrl: "https://chaospatch.adhdesigns.dev/",
     category: "chaos",
+    displayStatus: "sustained",
+    githubUrl: "https://github.com/lmdrew96/ChaosPatch",
   },
-  {
-    id: "chaoslimba",
-    name: "ChaosLimbă",
-    tagline: "Learn Romanian through Structured Chaos",
-    description:
-      "English-to-Romanian language learning platform grounded in second language acquisition theory. Features a 10-component AI ensemble, a 3-tier fossilization Adaptation Engine, 14 dashboard routes, and a dedicated MCP server for instructional design auditing.",
+  chaoslimba: {
     icon: ChaosLimbaIcon,
     color: "bg-adhd-amber",
     textColor: "text-olive",
     tags: ["SLA", "AI Ensemble", "Adaptation Engine", "MCP"],
-    status: "sustained",
-    githubUrl: "https://github.com/lmdrew96/ChaosLimba",
-    liveUrl: "https://chaoslimba.adhdesigns.dev/",
-    demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
     category: "chaos",
+    displayStatus: "sustained",
+    githubUrl: "https://github.com/lmdrew96/ChaosLimba",
+    demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
   },
-  {
-    id: "chaoslengua",
-    name: "ChaosLengua",
-    tagline: "Learn Spanish through Structured Chaos",
-    description:
-      "English-to-Spanish language learning platform — ChaosLimbă's sibling, built in a shared monorepo. Applies the same SLA theory, AI ensemble, and Adaptation Engine architecture to Spanish acquisition.",
+  chaoslengua: {
     icon: ChaosLenguaIcon,
     color: "bg-adhd-olive",
     textColor: "text-adhd-amber",
     tags: ["SLA", "AI Ensemble", "Spanish", "Monorepo"],
-    status: "raging",
-    githubUrl: "https://github.com/lmdrew96/chaos",
-    liveUrl: "https://chaoslengua.adhdesigns.dev/",
     category: "chaos",
+    githubUrl: "https://github.com/lmdrew96/chaos",
   },
-  {
-    id: "chaoscitim",
-    name: "ChaosCitim",
-    tagline: "Read Romanian, one morpheme at a time",
-    description:
-      "Romanian reading companion PWA with graduated morphological glossing. A four-tier scaffold system tracks which grammatical forms you resolve independently — the reception-side complement to ChaosLimbă's production training.",
+  chaoscitim: {
     icon: BookOpen,
     color: "bg-adhd-sage",
     textColor: "text-adhd-dark",
     tags: ["SLA", "PWA", "Reading", "Morphology"],
-    status: "brewing",
-    githubUrl: "https://github.com/lmdrew96/ChaosCitim",
     category: "chaos",
+    githubUrl: "https://github.com/lmdrew96/ChaosCitim",
   },
-  {
-    id: "chatos",
-    name: "Cha(t)os",
-    tagline: "Group chat, but everyone brought Claude",
-    description:
-        "Multi-user group chat app where everyone brings their own Claude API key. Each user gets a personalized Claude instance in shared rooms with @mention routing, multimodal file uploads, and Personal Context MCP integration. Built on Convex + Next.js.",
+  chatos: {
     icon: MessageSquare,
     color: "bg-adhd-green",
     textColor: "text-adhd-dark",
     tags: ["Convex", "Next.js", "Claude API", "MCP"],
-    status: "raging",
-    githubUrl: "https://github.com/lmdrew96/Chatos",
-    liveUrl: "https://chatos.adhdesigns.dev/",
     category: "chaos",
+    displayStatus: "raging",
+    githubUrl: "https://github.com/lmdrew96/Chatos",
   },
-  // ── Other Projects ──
-  {
-    id: "scribecat",
-    name: "ScribeCat",
-    tagline: "ScribeCat scribes and is cat",
-    description:
-      "Collaborative study platform with real-time speech-to-text transcription, multiplayer study games, and AI notetaking. Built on Convex.",
+  scribecat: {
     icon: Cat,
     color: "bg-adhd-purple",
     textColor: "text-adhd-amber",
     tags: ["Convex", "Transcription", "Study Games", "Chrome Extension"],
-    status: "sustained",
+    category: "other",
+    displayStatus: "sustained",
     githubUrl: "https://github.com/lmdrew96/ScribeCat-v3",
-    liveUrl: "https://scribecat.adhdesigns.dev/",
-    category: "other",
   },
-  {
-    id: "threadbrain",
-    name: "ThreadBrain",
-    tagline: "Long stories made short",
-    description:
-      "ADHD-focused AI reading companion that helps break down and engage with dense text.",
-    icon: Brain,
-    color: "bg-adhd-teal",
-    textColor: "text-adhd-lavender",
-    tags: ["AI", "Reading", "Accessibility", "ADHD"],
-    status: "raging",
-    githubUrl: "https://github.com/lmdrew96/threadbrain",
-    liveUrl: "https://threadbrain.adhdesigns.dev",
-    category: "other",
-  },
-  {
-    id: "threadnotes",
-    name: "ThreadNotes",
-    tagline: "Where hyperfocus meets hypothesis",
-    description:
-      "Research journal app for tracking academic research questions across thematic categories. Includes a browser extension for highlighting and saving excerpts from sources.",
+  threadnotes: {
     icon: Search,
     color: "bg-adhd-green",
     textColor: "text-adhd-teal",
     tags: ["Research", "Journal", "Browser Extension", "Academic"],
-    status: "unleashed",
-    githubUrl: "https://github.com/lmdrew96/research-journal",
-    liveUrl: "https://research.adhdesigns.dev/",
-    demoUrl: "https://research.adhdesigns.dev/demo",
     category: "other",
+    displayStatus: "unleashed",
+    githubUrl: "https://github.com/lmdrew96/research-journal",
+    demoUrl: "https://research.adhdesigns.dev/demo",
   },
-  {
-    id: "chickenscratch",
-    name: "ChickenScratch",
-    tagline: "Student-run zine submission portal",
-    description:
-      "The editorial submission portal for Hen & Ink Society's literary zine, Chicken Scratch. Handles submissions, editorial review, and image processing.",
+  threadbrain: {
+    icon: Brain,
+    color: "bg-adhd-teal",
+    textColor: "text-adhd-lavender",
+    tags: ["AI", "Reading", "Accessibility", "ADHD"],
+    category: "other",
+    displayStatus: "raging",
+    githubUrl: "https://github.com/lmdrew96/threadbrain",
+  },
+  chickenscratch: {
     icon: Newspaper,
     color: "bg-adhd-amber",
     textColor: "text-adhd-dark",
     tags: ["Submissions", "Editorial", "Image Processing", "Community"],
-    status: "sustained",
-    githubUrl: "https://github.com/lmdrew96/ChickenScratch",
-    liveUrl: "https://chickenscratch.me",
     category: "other",
+    displayStatus: "sustained",
+    githubUrl: "https://github.com/lmdrew96/ChickenScratch",
   },
-  {
-    id: "personal-context-mcp",
-    name: "Personal Context MCP",
-    tagline: "Cross-session memory for Claude",
-    description:
-      "An MCP server that stores identity, projects, relationships, and preferences for cross-session Claude context. Powers Cha(t)os context awareness and provides continuity across Claude conversations.",
+  "personal-context-mcp": {
     icon: Fingerprint,
     color: "bg-adhd-sage",
     textColor: "text-adhd-purple",
     tags: ["MCP", "Context", "Identity", "Cross-Session"],
-    status: "sustained",
-    githubUrl: "https://github.com/lmdrew96/personal-context-mcp",
-    liveUrl: "https://personal-context-mcp.vercel.app/",
     category: "other",
+    githubUrl: "https://github.com/lmdrew96/personal-context-mcp",
   },
+}
+
+const displayOrder = [
+  "chatos", "controlledchaos", "chaoslimba", "chaoslengua", "chaoscitim", "chaospatch",
+  "scribecat", "threadnotes", "threadbrain", "chickenscratch", "personal-context-mcp",
 ]
+
+const projects: Project[] = displayOrder
+  .map((slug): Project | null => {
+    const data = projectsData.find((p) => p.slug === slug)
+    const ui = projectUIConfig[slug]
+    if (!data || !ui) return null
+    return {
+      id: data.slug,
+      name: data.name,
+      tagline: data.tagline,
+      description: data.description,
+      icon: ui.icon,
+      color: ui.color,
+      textColor: ui.textColor,
+      tags: ui.tags,
+      status: ui.displayStatus ?? statusMap[data.status],
+      githubUrl: ui.githubUrl,
+      ...(data.url ? { liveUrl: data.url } : {}),
+      ...(ui.demoUrl ? { demoUrl: ui.demoUrl } : {}),
+      category: ui.category,
+    }
+  })
+  .filter((p): p is Project => p !== null)
 
 export function ProjectsSection() {
   const [activeProject, setActiveProject] = useState<string | null>(null)
