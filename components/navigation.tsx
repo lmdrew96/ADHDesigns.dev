@@ -37,10 +37,7 @@ export function Navigation() {
             <a href="/about" className="hover:text-adhd-sage transition-colors font-medium">
               About
             </a>
-            <a href="/#contact" className="hover:text-adhd-sage transition-colors font-medium">
-              Contact
-            </a>
-            <Button
+             <Button
               type="button"
               onClick={openChat}
               className="bg-adhd-sage text-adhd-dark hover:bg-adhd-sage/90 rounded-full px-6 font-bold gap-2"

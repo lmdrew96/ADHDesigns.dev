@@ -34,7 +34,7 @@ export default function McpPage() {
         />
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass-dark text-adhd-sage/90 border border-adhd-sage/25">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-20 glass-dark text-adhd-sage/90 border border-adhd-sage/25">
             Model Context Protocol
           </span>
 
@@ -73,10 +73,10 @@ export default function McpPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-center mb-2">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-lavender">
-              The servers, up close.
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-teal">
+              The servers, <span className="text-adhd-amber">up close.</span>
             </h2>
-            <p className="mt-3 text-adhd-lavender/85">
+            <p className="mt-3 text-adhd-lavender">
               Click any card to expand the tool list and see real example flows.
             </p>
           </div>
@@ -91,15 +91,15 @@ export default function McpPage() {
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-sage/15 text-adhd-sage border border-adhd-sage/30 uppercase tracking-wide mb-4">
             Want one of these for your product?
           </span>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-bg leading-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-lavender leading-tight">
             I build MCP servers for clients too.
           </h2>
-          <p className="mt-5 text-adhd-lavender/90 leading-relaxed max-w-xl mx-auto">
+          <p className="mt-5 text-adhd-lavender/80 leading-relaxed max-w-xl mx-auto">
             If your users are already asking &ldquo;can I use this with Claude?&rdquo; — the answer should be yes.
             Custom MCP servers, tool APIs, auth, and the data layer that makes it work, scoped per project.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="rounded-full px-7 font-bold">
+            <Button asChild size="lg" className="rounded-full px-7 font-bold bg-adhd-dark text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark">
               <Link href="/services#ai-mcp">See the AI Integration tier</Link>
             </Button>
             <Button

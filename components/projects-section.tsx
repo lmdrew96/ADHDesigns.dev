@@ -162,7 +162,7 @@ type StatusKey = "brewing" | "unleashed" | "raging" | "sustained"
 
 const statusConfig: Record<StatusKey, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string }> = {
   brewing:   { label: "Brewing",   description: "Planning or early build",   icon: CloudLightning, bg: "bg-adhd-sage/30",  text: "text-adhd-teal/70" },
-  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/30", text: "text-adhd-sage" },
+  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/50", text: "text-adhd-purple" },
   raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-adhd-green/30", text: "text-adhd-olive" },
   sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-adhd-purple/30",  text: "text-adhd-dark" },
 }
@@ -172,7 +172,7 @@ const STATUS_ORDER: StatusKey[] = ["brewing", "unleashed", "raging", "sustained"
 function StatusKeyLegend() {
   return (
     <div className="max-w-3xl mx-auto mb-12 glass-card rounded-2xl border-2 border-adhd-purple/20 p-4 sm:p-5">
-      <p className="text-xs font-bold uppercase tracking-wider text-adhd-sage/70 mb-3 text-center">
+      <p className="text-xs font-bold uppercase tracking-wider text-adhd-sage mb-3 text-center">
         Status Key
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

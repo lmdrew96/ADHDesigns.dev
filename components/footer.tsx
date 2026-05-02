@@ -23,7 +23,7 @@ export function Footer() {
           </p>
           <Button
             size="lg"
-            className="bg-adhd-dark text-adhd-sage hover:bg-adhd-teal rounded-full px-8 py-6 text-lg font-bold"
+            className="bg-adhd-dark/90 text-adhd-sage hover:bg-adhd-lavender hover:text-adhd-teal rounded-full px-8 py-6 text-lg font-bold"
             asChild
           >
             <a href="mailto:nae@adhdesigns.dev">

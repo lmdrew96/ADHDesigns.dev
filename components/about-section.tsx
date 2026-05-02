@@ -155,7 +155,7 @@ export function AboutSection() {
               Too much on my plate, making it <BalloonText />
             </h2>
 
-            <div className="space-y-4 text-adhd-green leading-relaxed font-medium">
+            <div className="space-y-4 text-adhd-lavender leading-relaxed font-medium">
   <p>
     I build tools for brains that don't work the way traditional apps expect them to.
   </p>
@@ -186,15 +186,15 @@ export function AboutSection() {
 </div>
 
             <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="p-4 glass rounded-xl border-2 border-teal/30">
-                <Lightbulb className="w-8 h-8 text-teal mb-2" />
-                <h4 className="font-bold text-lime mb-1">Built Different</h4>
-                <p className="text-sm text-foreground/70">Unique solutions designed to work <span className="font-bold italic text-foreground/70">with</span> unique brains, not against them</p>
+              <div className="p-4 glass-dark rounded-xl">
+                <Lightbulb className="w-8 h-8 text-adhd-amber mb-2" />
+                <h4 className="font-bold text-adhd-green mb-1">Built Different</h4>
+                <p className="text-sm text-lavender">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
               </div>
-              <div className="p-4 rounded-xl glass-accent border-2 border-accent/30">
-                <Heart className="w-8 h-8 mb-2 text-accent" />
-                <h4 className="font-bold mb-1 text-teal">Structured Chaos</h4>
-                <p className="text-sm text-dark-teal">ADHD-AI synergy: the core of the development process</p>
+              <div className="p-4 rounded-xl glass-dark">
+                <Heart className="w-8 h-8 mb-2 text-adhd-sage" />
+                <h4 className="font-bold mb-1 text-adhd-green">Structured Chaos</h4>
+                <p className="text-sm text-adhd-lavender">ADHD-AI synergy: the core of the development process</p>
               </div>
             </div>
           </div>

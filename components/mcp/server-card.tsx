@@ -74,7 +74,7 @@ export function ServerCard({ server }: { server: McpServer }) {
     <article
       id={server.id}
       className={cn(
-        "rounded-3xl bg-adhd-teal border-2 shadow-2xl shadow-black/20 overflow-hidden scroll-mt-24",
+        "rounded-3xl bg-adhd-dark/40 border-2 shadow-2xl shadow-black/20 overflow-hidden scroll-mt-24",
         accent.border,
       )}
     >
@@ -110,7 +110,7 @@ export function ServerCard({ server }: { server: McpServer }) {
             <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-adhd-sage font-[family-name:var(--font-mono)]">
               <span className="opacity-80">{server.endpointLabel}</span>
               {server.localOnly && (
-                <span className="px-2 py-0.5 rounded-full bg-adhd-amber/15 text-adhd-amber border border-adhd-amber/35 text-[10px] uppercase tracking-wider font-bold">
+                <span className="px-2 py-0.5 rounded-full bg-adhd-sage/15 text-adhd-sage border border-adhd-sage/35 text-[10px] uppercase tracking-wider font-bold">
                   Local-only
                 </span>
               )}
@@ -140,7 +140,7 @@ export function ServerCard({ server }: { server: McpServer }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "mt-4 inline-flex items-center gap-1.5 text-sm font-bold border rounded-full px-4 py-1.5 transition-colors hover:bg-adhd-bg/5",
+                    "mt-4 inline-flex items-center gap-1.5 text-sm font-bold border rounded-full px-4 py-1.5 transition-colors hover:bg-adhd-purple/20",
                     accent.chip,
                   )}
                 >
