@@ -74,9 +74,9 @@
     "slug": "threadnotes",
     "url": "https://research.adhdesigns.dev",
     "tagline": "Personal research command center for the way ADHD brains actually research.",
-    "description": "A unified hub for academic research: search peer-reviewed literature across three providers (OpenAlex, Crossref, and CORE for full-text search), automatically discover free open-access PDFs via Unpaywall, save and annotate articles, organize research questions by theme with bidirectional article linking, write reflective journal entries, and get AI-generated summaries. Includes a Chrome extension for clipping excerpts and an MCP server so Claude can read and write to your research base.",
+    "description": "A unified hub for academic research: search peer-reviewed literature via OpenAlex and Crossref, automatically discover free open-access PDFs via Unpaywall, save and annotate articles, organize research questions by theme with bidirectional article linking, write reflective journal entries, and get AI-generated summaries. Includes a Chrome extension for clipping excerpts and an MCP server so Claude can read and write to your research base.",
     "status": "live",
-    "tech": ["React", "TypeScript", "Vite", "Clerk", "Neon Postgres", "Claude Haiku", "OpenAlex", "Crossref", "CORE", "Unpaywall"],
+    "tech": ["React", "TypeScript", "Vite", "Clerk", "Neon Postgres", "Claude Haiku", "OpenAlex", "Crossref", "Unpaywall"],
     "last_updated": "2026-05-04"
   },
   {
