@@ -7,7 +7,7 @@
     "description": "An ADHD-friendly task manager built around brain dumps (text, voice, or photo) that Claude Haiku parses into structured tasks. Includes crisis mode for overwhelm days, AI-powered prioritization that factors in time and energy, Canvas calendar sync, momentum visualization without guilt-streaks, and a Mirror view that shows your whole day in one chronological timeline. Targeting public launch June 2026.",
     "status": "live",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
-    "last_updated": "2026-04-30"
+    "last_updated": "2026-05-04"
   },
   {
     "name": "ChaosLimbă",
