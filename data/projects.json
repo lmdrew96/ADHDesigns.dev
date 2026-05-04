@@ -4,9 +4,9 @@
     "slug": "controlledchaos",
     "url": "https://controlledchaos.adhdesigns.dev",
     "tagline": "Your executive function, effectively replaced.",
-    "description": "An ADHD-friendly task manager built around brain dumps (text, voice, or photo) that Claude Haiku parses into structured tasks. Includes crisis mode for overwhelm days, AI-powered prioritization that factors in time and energy, Canvas calendar sync, momentum visualization without guilt-streaks, and a Mirror view that shows your whole day in one chronological timeline. Targeting public launch June 2026.",
+    "description": "An ADHD-friendly task manager built around brain dumps (text, voice, or photo) that Claude Haiku parses into structured tasks. Crisis mode for overwhelm days, AI-powered prioritization that factors in time and energy, and Parallel Play rooms for body-doubling with friends. One-tap Moments capture energy and focus state; microtasks surface small recurring prompts without streak guilt. Includes Canvas calendar sync, location-aware notifications, momentum visualization, and a Mirror view that shows your whole day in one chronological timeline. Targeting public launch June 2026.",
     "status": "live",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Convex", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
     "last_updated": "2026-05-04"
   },
   {
