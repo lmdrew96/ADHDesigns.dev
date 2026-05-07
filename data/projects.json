@@ -108,5 +108,15 @@
     "status": "live",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
     "last_updated": "2026-04-30"
+  },
+  {
+    "name": "Tangle",
+    "slug": "tangle",
+    "url": "https://tangle.adhdesigns.dev",
+    "tagline": "Continuity-of-thought MCP for Claude.",
+    "description": "An MCP server that persists Claude's epistemic state across sessions — hunches, suspicions, dead-ends, and partial reasoning that would otherwise evaporate at session end. Sibling to Personal Context MCP (which captures identity and projects) and the built-in memory feature (which captures chat history); Tangle captures the texture of working on a problem. Each Claude attributes their notes via an identity header, and a recency × confidence ranking surfaces what matters most when re-entering a project.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
+    "last_updated": "2026-05-06"
   }
 ]
