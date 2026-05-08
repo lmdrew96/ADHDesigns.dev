@@ -118,5 +118,15 @@
     "status": "live",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
     "last_updated": "2026-05-07"
+  },
+  {
+    "name": "Songs of My Selves: We as Walt",
+    "slug": "walt",
+    "url": "https://walt.adhdesigns.dev",
+    "tagline": "Walk through Whitman's *Song of Myself* amid a network of stars.",
+    "description": "An interactive map of Walt Whitman's Epic-like *Song of Myself*. All 52 sections are paired with songs that match the emotions and themes they contain. Click any star in the constellation to read the section in full and listen to its accompanying track.",
+    "status": "live",
+    "tech": ["Vite", "React", "TypeScript", "Tailwind", "d3-force"],
+    "last_updated": "2026-05-08"
   }
 ]
