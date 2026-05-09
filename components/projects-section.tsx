@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Atom, BookOpen, Brain, Bug, Cat, CloudLightning, Fingerprint, Flame, ListTodo, MessageSquare, Newspaper, RefreshCcwDot, Search, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Atom, BookOpen, Brain, Bug, Cat, CloudLightning, Fingerprint, Flame, ListTodo, MessageSquare, Network, Newspaper, RefreshCcwDot, Search, Sparkles, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -142,6 +142,7 @@ function ProjectsIntroBlock() {
 }
 
 import { Button } from "@/components/ui/button"
+import { Markdown } from "@/components/markdown"
 import { cn } from "@/lib/utils"
 import { projects as projectsData, type Project as ProjectData } from "@/lib/projects"
 
@@ -330,11 +331,27 @@ const projectUIConfig: Record<string, ProjectUI> = {
     category: "other",
     githubUrl: "https://github.com/lmdrew96/personal-context-mcp",
   },
+  tangle: {
+    icon: Network,
+    color: "bg-adhd-teal",
+    textColor: "text-adhd-amber",
+    tags: ["MCP", "Continuity", "Epistemic Memory", "Claude"],
+    category: "other",
+    githubUrl: "https://github.com/lmdrew96/Tangle",
+  },
+  walt: {
+    icon: Sparkles,
+    color: "bg-adhd-dark",
+    textColor: "text-adhd-lavender",
+    tags: ["Whitman", "Constellation", "Music", "Canvas"],
+    category: "other",
+    githubUrl: "https://github.com/lmdrew96/walt",
+  },
 }
 
 const displayOrder = [
   "chatos", "controlledchaos", "chaoslimba", "chaoslengua", "chaoscitim", "chaospatch",
-  "scribecat", "threadnotes", "threadbrain", "chickenscratch", "personal-context-mcp",
+  "scribecat", "threadnotes", "threadbrain", "walt", "chickenscratch", "personal-context-mcp", "tangle",
 ]
 
 const projects: Project[] = displayOrder
@@ -434,7 +451,7 @@ export function ProjectsSection() {
                                 )}
                               />
                             </div>
-                            <p className="text-sm text-card">{project.tagline}</p>
+                            <Markdown className="text-sm text-card">{project.tagline}</Markdown>
                           </div>
                         </div>
                       </button>
@@ -447,7 +464,7 @@ export function ProjectsSection() {
                       >
                         <div className="overflow-hidden">
                           <div className="px-6 pb-6 pt-2 border-t border-adhd-purple/30">
-                            <p className="leading-relaxed mb-6 text-card">{project.description}</p>
+                            <Markdown className="leading-relaxed mb-6 text-card">{project.description}</Markdown>
 
                             <div className="flex flex-wrap gap-2 mb-6">
                               {project.tags.map((tag) => (
