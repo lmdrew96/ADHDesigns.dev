@@ -127,6 +127,6 @@
     "description": "An interactive map of Walt Whitman's Epic-like *Song of Myself*. All 52 sections are paired with songs that match the emotions and themes they contain. Click any star in the constellation to read the section in full and listen to its accompanying track.",
     "status": "live",
     "tech": ["Vite", "React", "TypeScript", "Tailwind", "d3-force"],
-    "last_updated": "2026-05-08"
+    "last_updated": "2026-05-09"
   }
 ]
