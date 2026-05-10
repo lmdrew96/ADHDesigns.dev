@@ -60,6 +60,16 @@
     "last_updated": "2026-04-30"
   },
   {
+    "name": "ChaosDash",
+    "slug": "chaosdash",
+    "url": "https://dash.adhdesigns.dev",
+    "tagline": "Single command center for the whole ADHDesigns ecosystem.",
+    "description": "A glanceable terminal-style dashboard that pulls live state from every ADHDesigns MCP server (ControlledChaos, ChaosPatch, ChaosCourse, ResearchJournal) into one screen. Cards for what's on fire, today's agenda, prioritized coursework, recent moments, and the open patch backlog — each with stale-while-revalidate behavior so a slow MCP server can't block the rest. Inline mutations for logging moments, brain dumps, and adding patches without leaving the dashboard.",
+    "status": "in-development",
+    "tech": ["Vite", "React", "TypeScript", "Tailwind", "Cloudflare Workers", "MCP"],
+    "last_updated": "2026-05-10"
+  },
+  {
     "name": "ScribeCat",
     "slug": "scribecat",
     "url": "https://scribecat.adhdesigns.dev",
