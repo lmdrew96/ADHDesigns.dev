@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Atom, BookOpen, Brain, Bug, Cat, CloudLightning, Fingerprint, Flame, ListTodo, MessageSquare, Network, Newspaper, RefreshCcwDot, Search, Sparkles, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Atom, BookOpen, Brain, Bug, Cat, CloudLightning, Fingerprint, Flame, LayoutDashboard, ListTodo, MessageSquare, Network, Newspaper, RefreshCcwDot, Search, Sparkles, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -269,6 +269,14 @@ const projectUIConfig: Record<string, ProjectUI> = {
     category: "chaos",
     githubUrl: "https://github.com/lmdrew96/chaos",
   },
+  chaosdash: {
+    icon: LayoutDashboard,
+    color: "bg-adhd-teal",
+    textColor: "text-adhd-sage",
+    tags: ["Dashboard", "MCP", "Cloudflare Workers", "Ecosystem"],
+    category: "chaos",
+    githubUrl: "https://github.com/lmdrew96/ChaosDash",
+  },
   chaoscitim: {
     icon: BookOpen,
     color: "bg-adhd-sage",
@@ -350,7 +358,7 @@ const projectUIConfig: Record<string, ProjectUI> = {
 }
 
 const displayOrder = [
-  "chatos", "controlledchaos", "chaoslimba", "chaoslengua", "chaoscitim", "chaospatch",
+  "chatos", "controlledchaos", "chaoslimba", "chaoslengua", "chaoscitim", "chaosdash", "chaospatch",
   "scribecat", "threadnotes", "threadbrain", "walt", "chickenscratch", "personal-context-mcp", "tangle",
 ]
 
