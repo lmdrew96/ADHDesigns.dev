@@ -34,10 +34,10 @@
     "slug": "chaoscitim",
     "url": null,
     "tagline": "Romanian reading companion with graduated morphological glossing.",
-    "description": "The reading-side counterpart to ChaosLimbă: a PWA for reading authentic Romanian texts with tier-based glossing that escalates only when needed. Tracks what learners resolve unaided to feed a single cross-modal interlanguage model spanning reading and production.",
+    "description": "The reading-side counterpart to ChaosLimbă: an installable, offline-capable PWA for reading authentic Romanian texts with tier-based glossing that escalates only when needed. Hover any word to peek at its morphology; right-click to pull a fuller gloss — tier 1 leads with part-of-speech and cuts the noise that's obvious from context. Tracks what learners resolve unaided to feed a single cross-modal interlanguage model spanning reading and production.",
     "status": "in-development",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "UDPipe 2", "Tailwind"],
-    "last_updated": "2026-04-30"
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "UDPipe 2", "Tailwind", "PWA"],
+    "last_updated": "2026-05-11"
   },
   {
     "name": "Cha(t)os",
