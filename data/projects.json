@@ -54,10 +54,10 @@
     "slug": "chaospatch",
     "url": "https://chaospatch.adhdesigns.dev",
     "tagline": "Patch tracker built for agentic development workflows.",
-    "description": "A PWA for tracking dev patches — small specs that Claude Code can pick up and implement. Integrated via MCP so patches flow directly into Claude Code sessions instead of dying in a Notion doc. Includes batch updates, cross-project search, and an Insights page that visualizes work-in-flight across projects.",
+    "description": "A PWA for tracking dev patches — small specs that Claude Code can pick up and implement. Integrated via MCP so patches flow directly into Claude Code sessions instead of dying in a Notion doc. Attach screenshots to a patch and Claude sees them as visual context. Includes batch updates, cross-project search, tag filtering, and an Insights page that visualizes work-in-flight across projects.",
     "status": "live",
-    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP"],
-    "last_updated": "2026-04-30"
+    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP", "Vercel Blob"],
+    "last_updated": "2026-06-03"
   },
   {
     "name": "ChaosDash",
