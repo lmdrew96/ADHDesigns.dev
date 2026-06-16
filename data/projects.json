@@ -138,5 +138,15 @@
     "status": "live",
     "tech": ["Vite", "React", "TypeScript", "Tailwind", "d3-force", "Canvas"],
     "last_updated": "2026-05-09"
+  },
+  {
+    "name": "LibraLex",
+    "slug": "chaosshelf",
+    "url": "https://libra.adhdesigns.dev",
+    "tagline": "Your shelf, your wishlist, your library loans — one catalog.",
+    "description": "A personal book catalog that tracks the three states a book actually lives in — owned, wished-for, and borrowed-from-the-library (with due dates so nothing goes overdue). Search any title to pull covers, summaries, and author bios from Open Library. A friends layer lets you swap shelves and trade recommendations, and an MCP server makes the whole catalog queryable by Claude — ask 'what am I reading?', 'what's due soon?', or 'add Dune to my wishlist' right in chat.",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Tailwind CSS", "MCP", "Vercel"],
+    "last_updated": "2026-06-16"
   }
 ]
