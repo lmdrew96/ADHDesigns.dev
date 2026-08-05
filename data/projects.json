@@ -164,7 +164,7 @@
     "slug": "duelingchaos",
     "url": null,
     "tagline": "A Magic: The Gathering client built on a real rules engine.",
-    "description": "A headless integration with Forge, the open-source MTG rules engine, bridged over HTTP as a JSON game-state API — full stack/targeting/static-ability resolution rather than a simplified simulation. The React frontend renders live board state with stack visualization and targeting arrows, a complete choice UI (targeting, modal spells, mana payment, X-costs, multi-blocker combat damage assignment), and a deckbuilder with card search, legality checking, and save/load.",
+    "description": "A headless integration with Forge, the open-source MTG rules engine, bridged over HTTP as a JSON game-state API — full stack/targeting/static-ability resolution rather than a simplified simulation. The React frontend renders live board state with stack visualization and targeting arrows, a complete choice UI (targeting, modal spells, mana payment, X-costs, multi-blocker combat damage assignment), and a deckbuilder with card search, legality checking, commander/side-deck assignment, and save/load. Pick your AI opponent's deck (or leave it to random) before a match, and switch between light and dark themes.",
     "status": "beta",
     "tech": ["TypeScript", "Node.js", "Java", "React", "Vite"],
     "last_updated": "2026-08-05"
