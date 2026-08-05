@@ -30,26 +30,6 @@
     "last_updated": "2026-04-30"
   },
   {
-    "name": "ChaosCitim",
-    "slug": "chaoscitim",
-    "url": null,
-    "tagline": "Romanian reading companion with graduated morphological glossing.",
-    "description": "The reading-side counterpart to ChaosLimbă: an installable, offline-capable PWA for reading authentic Romanian texts with tier-based glossing that escalates only when needed. Hover any word to peek at its morphology; right-click to pull a fuller gloss — tier 1 leads with part-of-speech and cuts the noise that's obvious from context. Tracks what learners resolve unaided to feed a single cross-modal interlanguage model spanning reading and production.",
-    "status": "in-development",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "UDPipe 2", "Tailwind", "PWA"],
-    "last_updated": "2026-05-11"
-  },
-  {
-    "name": "Cha(t)os",
-    "slug": "chatos",
-    "url": "https://chatos.adhdesigns.dev",
-    "tagline": "Multi-user, multi-Claude collaborative AI workspace.",
-    "description": "Real-time chat rooms where multiple users each bring their own Claude — with their own persona, system prompt, and BYOK API key. Claudes respond to @mentions and can talk to each other in sequence, enabling genuine AI-to-AI dialogue. Personal Context MCP layers per-user identity into every Claude.",
-    "status": "beta",
-    "tech": ["Next.js", "Convex", "Clerk", "Anthropic SDK", "MCP", "Personal Context MCP"],
-    "last_updated": "2026-04-30"
-  },
-  {
     "name": "ChaosPatch",
     "slug": "chaospatch",
     "url": "https://chaospatch.adhdesigns.dev",
@@ -58,16 +38,6 @@
     "status": "live",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP", "Vercel Blob"],
     "last_updated": "2026-06-03"
-  },
-  {
-    "name": "ChaosDash",
-    "slug": "chaosdash",
-    "url": "https://dash.adhdesigns.dev",
-    "tagline": "Single command center for the whole ADHDesigns ecosystem.",
-    "description": "A glanceable terminal-style dashboard that pulls live state from every ADHDesigns MCP server (ControlledChaos, ChaosPatch, ChaosCourse, ResearchJournal) into one screen. Cards for what's on fire, today's agenda, prioritized coursework, recent moments, and the open patch backlog — each with stale-while-revalidate behavior so a slow MCP server can't block the rest. Inline mutations for logging moments, brain dumps, and adding patches without leaving the dashboard.",
-    "status": "in-development",
-    "tech": ["Vite", "React", "TypeScript", "Tailwind", "Cloudflare Workers", "MCP"],
-    "last_updated": "2026-05-10"
   },
   {
     "name": "ScribeCat",
@@ -148,5 +118,95 @@
     "status": "beta",
     "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Tailwind CSS", "Voyage AI", "MCP", "Vercel"],
     "last_updated": "2026-07-04"
+  },
+  {
+    "name": "Kindling",
+    "slug": "kindling",
+    "url": "https://kindling.adhdesigns.dev/",
+    "tagline": "A place for ideas to catch before they go out.",
+    "description": "An MCP-connected store for sparks and half-formed ideas — capture, dig back through, archive, or promote them into real projects. Exposed to Claude via kindle/kindling_* tools.",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Tailwind CSS"],
+    "last_updated": "2026-05-17"
+  },
+  {
+    "name": "The Majorot",
+    "slug": "majorot",
+    "url": "https://majorot.vercel.app/",
+    "tagline": "A solo tarot journaling RPG, played with a real deck and tracked in-app.",
+    "description": "A companion app for a physical solo journaling RPG: draw through a real tarot deck one sitting at a time, collecting all 22 Major Arcana spells before the deck runs out. Majors are spells, Court cards are allies or duel opponents, and Pips are life events — combat runs on a d6 and an elemental rock-paper-scissors wheel (Fire/Water/Air/Earth). The app tracks Self & Spark, allies, kit items, and an editable journal offline-first via IndexedDB, with a full in-app rules reference and round-by-round combat log. Engine logic (122 passing tests) is traceable line-by-line to the written rulebook.",
+    "status": "beta",
+    "tech": ["Vite", "React", "TypeScript", "Zustand", "idb-keyval", "PWA"],
+    "last_updated": "2026-07-02"
+  },
+  {
+    "name": "ChaosLingua Lite",
+    "slug": "chaoslingua-lite",
+    "url": "https://lingua-lite.vercel.app/",
+    "tagline": "Lightweight Latin learning companion.",
+    "description": "A lighter-weight companion app in the Chaos language-learning family, focused on Latin curriculum and drills.",
+    "status": "in-development",
+    "tech": ["Vite", "React", "TypeScript", "Convex"],
+    "last_updated": "2026-07-14"
+  },
+  {
+    "name": "Color Factory",
+    "slug": "color-factory",
+    "url": "https://color.adhdesigns.dev/",
+    "tagline": "A tiny palette-card generator.",
+    "description": "Lock the colors you want to keep, pick a harmony style, and let an OKLCH engine fill the rest — then export a polished, shareable palette card as PNG or SVG.",
+    "status": "in-development",
+    "tech": ["Vite", "React"],
+    "last_updated": "2026-07-13"
+  },
+  {
+    "name": "DuelingChaos",
+    "slug": "duelingchaos",
+    "url": null,
+    "tagline": "A Magic: The Gathering client built on a real rules engine.",
+    "description": "A headless integration with Forge, the open-source MTG rules engine, bridged over HTTP as a JSON game-state API — full stack/targeting/static-ability resolution rather than a simplified simulation. The React frontend renders live board state with stack visualization and targeting arrows, a complete choice UI (targeting, modal spells, mana payment, X-costs, multi-blocker combat damage assignment), and a deckbuilder with card search, legality checking, and save/load.",
+    "status": "beta",
+    "tech": ["TypeScript", "Node.js", "Java", "React", "Vite"],
+    "last_updated": "2026-08-05"
+  },
+  {
+    "name": "FeyForge",
+    "slug": "feyforge",
+    "url": "https://feyforge.adhdesigns.dev",
+    "tagline": "A comprehensive D&D 5e campaign companion.",
+    "description": "A D&D 5e companion built with Next.js and Convex: full character sheets across the 2014 and 2024 rules, live real-time sessions with synced audio and live captions, an interactive world map, a campaign wiki, homebrew authoring, an AI DM assistant, a friends/social layer, and AI-assisted character & NPC building.",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk"],
+    "last_updated": "2026-06-14"
+  },
+  {
+    "name": "Loose Change",
+    "slug": "loose-change",
+    "url": "https://change.adhdesigns.dev/",
+    "tagline": "Frictionless capture for stray thoughts.",
+    "description": "Voice/text capture for stray thoughts that hit while driving, falling asleep, or otherwise mid-task — the ones that aren't ControlledChaos tasks and aren't Kindling-worthy sparks. Talk or type, release, triage later in batches.",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Convex", "PWA", "MCP"],
+    "last_updated": "2026-07-22"
+  },
+  {
+    "name": "Stellation",
+    "slug": "stellation",
+    "url": "https://stellation.adhdesigns.dev/",
+    "tagline": "Generative constellation chart app.",
+    "description": "Takes birth data, calculates a real natal chart via Skyfield and JPL's DE440s ephemeris, and renders it as generative art with an AI-generated interpretation. Beyond a solo natal chart: synastry, composite charts, transits, and solar/Saturn returns, with optional sign-in to save and revisit charts.",
+    "status": "beta",
+    "tech": ["FastAPI", "Python", "pyswisseph", "React", "Claude Haiku"],
+    "last_updated": "2026-07-21"
+  },
+  {
+    "name": "Syzygy",
+    "slug": "syzygy",
+    "url": "https://syzygy.adhdesigns.dev/",
+    "tagline": "A generative tarot-and-astrology oracle.",
+    "description": "Every reading draws Major Arcana weighted by your input and today's actual planetary transits, then renders live as a unique constellation — no two readings ever look the same, because the sky itself has changed since last time.",
+    "status": "beta",
+    "tech": ["Next.js", "Canvas", "Convex", "Claude Sonnet"],
+    "last_updated": "2026-07-29"
   }
 ]
