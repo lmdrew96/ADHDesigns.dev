@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { Footer } from "@/components/footer"
 import { HowItWorks } from "@/components/mcp/how-it-works"
 import { ServerCard } from "@/components/mcp/server-card"
 import { Navigation } from "@/components/navigation"
-import { Button } from "@/components/ui/button"
 import { MCP_SERVERS, TOTAL_TOOL_COUNT } from "@/lib/mcp-servers"
 
 export const metadata: Metadata = {
@@ -83,34 +81,6 @@ export default function McpPage() {
           {MCP_SERVERS.map((server) => (
             <ServerCard key={server.id} server={server} />
           ))}
-        </div>
-      </section>
-
-      <section className="px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="max-w-3xl mx-auto rounded-3xl glass-dark shadow-2xl shadow-black/20 p-8 sm:p-12 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-sage/15 text-adhd-sage border border-adhd-sage/30 uppercase tracking-wide mb-4">
-            Want one of these for your product?
-          </span>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-lavender leading-tight">
-            I build MCP servers for clients too.
-          </h2>
-          <p className="mt-5 text-adhd-lavender/80 leading-relaxed max-w-xl mx-auto">
-            If your users are already asking &ldquo;can I use this with Claude?&rdquo; — the answer should be yes.
-            Custom MCP servers, tool APIs, auth, and the data layer that makes it work, scoped per project.
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="rounded-full px-7 font-bold bg-adhd-dark text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark">
-              <Link href="/services#ai-mcp">See the AI Integration tier</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full border-adhd-sage text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-transparent font-bold"
-            >
-              <a href="mailto:nae@adhdesigns.dev">Email Nae</a>
-            </Button>
-          </div>
         </div>
       </section>
 

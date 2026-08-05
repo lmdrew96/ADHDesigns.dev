@@ -84,7 +84,7 @@ const sendContactEmail = async (
   }
 
   const to = process.env.CHAT_CONTACT_TO || "nae@adhdesigns.dev"
-  const from = process.env.SERVICES_INQUIRY_FROM || "ADHDesigns <onboarding@resend.dev>"
+  const from = process.env.CHAT_CONTACT_FROM || "ADHDesigns <onboarding@resend.dev>"
 
   const transcriptHtml = transcript
     .map((m) => {

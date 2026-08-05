@@ -28,9 +28,6 @@ export function Navigation() {
             <a href="/#projects" className="hover:text-adhd-sage transition-colors font-medium">
               Projects
             </a>
-            <a href="/services" className="hover:text-adhd-sage transition-colors font-medium">
-              Services
-            </a>
             <a href="/mcp" className="hover:text-adhd-sage transition-colors font-medium">
               MCP
             </a>
@@ -60,9 +57,6 @@ export function Navigation() {
           <div className="px-4 py-4 space-y-3">
             <a href="/#projects" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
               Projects
-            </a>
-            <a href="/services" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
-              Services
             </a>
             <a href="/mcp" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
               MCP

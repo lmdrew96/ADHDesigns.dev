@@ -167,7 +167,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about a project, services, or send a message…"
+              placeholder="Ask about a project, or send a message…"
               rows={1}
               maxLength={4000}
               disabled={status === "sending"}

@@ -14,7 +14,7 @@ const COOLDOWN_MS = 1500
 export const GREETING: ChatMessage = {
   role: "assistant",
   content:
-    "Hey! I'm the ADHDesigns assistant — I can tell you about Nae's projects, walk you through her services, or pass a message along to her. What would you like to know?",
+    "Hey! I'm the ADHDesigns assistant — I can tell you about Nae's projects, her background, or pass a message along to her. What would you like to know?",
 }
 
 type Status = "idle" | "sending" | "error"
