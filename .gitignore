@@ -28,7 +28,8 @@ yarn-error.log*
 next-env.d.ts
 
 # branding
-/branding
+/branding/ADHDesigns.png
+/branding/brand-voice-guidelines.md
 
 # macOS
 .DS_Store
