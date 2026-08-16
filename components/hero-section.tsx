@@ -56,13 +56,39 @@ export function HeroSection() {
   useEffect(() => () => { if (frameRef.current) cancelAnimationFrame(frameRef.current) }, [])
 
   return (
-    <section className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden bg-background">
-      {/* Decorative blobs - radial gradients avoid iOS WebKit filter:blur compositing bug */}
-      <div className="absolute top-20 left-5 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 50%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-32 right-10 w-96 h-96 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 40%, transparent) 0%, transparent 70%)", animationDelay: "1s" }} />
-      <div className="absolute bottom-24 left-1/4 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 40%, transparent) 0%, transparent 70%)", animationDelay: "0.5s" }} />
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-teal) 50%, transparent) 0%, transparent 70%)", animationDelay: "1.5s" }} />
-      <div className="absolute bottom-1/3 right-16 w-80 h-80 rounded-full animate-float pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 30%, transparent) 0%, transparent 70%)", animationDelay: "2s" }} />
+    <section
+      className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden"
+      style={{ background: "linear-gradient(180deg, var(--adhd-dark) 0%, var(--adhd-teal) 45%, var(--adhd-purple) 70%, var(--adhd-dark) 100%)" }}
+    >
+      {/* Grid horizon — perspective floor in bone, replaces the old pastel blobs */}
+      <div
+        className="absolute left-0 right-0 bottom-0 h-[46%] pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(90deg, color-mix(in srgb, var(--adhd-lavender) 30%, transparent) 0 2px, transparent 2px 60px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--adhd-lavender) 24%, transparent) 0 2px, transparent 2px 34px)",
+          transform: "perspective(240px) rotateX(58deg)",
+          transformOrigin: "bottom",
+          maskImage: "linear-gradient(180deg, transparent, black 30%)",
+          WebkitMaskImage: "linear-gradient(180deg, transparent, black 30%)",
+        }}
+      />
+
+      {/* Halftone halo behind the headline — same dot texture as the project clippings */}
+      <div
+        className="absolute left-1/2 top-[54%] w-[480px] h-[480px] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-40"
+        style={{
+          backgroundImage: "radial-gradient(circle, var(--adhd-lavender) 1.5px, transparent 1.8px)",
+          backgroundSize: "14px 14px",
+          maskImage: "radial-gradient(circle, black 0%, transparent 65%)",
+          WebkitMaskImage: "radial-gradient(circle, black 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Scanlines */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
+        style={{ background: "repeating-linear-gradient(0deg, color-mix(in srgb, var(--shadow) 18%, transparent) 0 1px, transparent 1px 3px)" }}
+      />
 
       {/* Bouncing puck — fixed clone of the button icon */}
       {puckPos && (
@@ -75,10 +101,13 @@ export function HeroSection() {
       )}
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        {/* Main Headline - updated accent colors */}
-        <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-adhd-lavender">
+        {/* Main Headline - stamped double-shadow, magenta + indigo */}
+        <h1
+          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-adhd-lavender"
+          style={{ textShadow: "3px 3px 0 var(--pink), 6px 6px 0 var(--adhd-purple)" }}
+        >
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-teal">A</span>gentic
+            <span className="inline-block hover:animate-wiggle cursor-default text-magenta">A</span>gentic
           </span>{" "}
           <span className="whitespace-nowrap">
             <span className="inline-block hover:animate-wiggle cursor-default text-adhd-green">D</span>evelopment
@@ -97,11 +126,12 @@ export function HeroSection() {
           Apps built with chaos, designed with purpose. Created by a neurodivergent designer who believes the best tools come from understanding the beautiful mess of neurodivergent minds.
         </p>
 
-        {/* CTA Buttons - updated button colors */}
+        {/* CTA Buttons — sticker-taped rectangles instead of pills */}
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-adhd-lavender/50 text-adhd-lavender border border-adhd-lavender hover:bg-adhd-purple/10 hover:text-adhd-lavender rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold group"
+            className="bg-adhd-lavender text-adhd-dark border-2 border-adhd-lavender hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
+            style={{ boxShadow: "4px 4px 0 var(--magenta)" }}
             asChild
           >
             <a
@@ -122,7 +152,8 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold border glass-dark text-adhd-olive hover:text-adhd-teal bg-white/5 backdrop-blur-md shadow-lg shadow-adhd-sage/10"
+            className="rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest border-2 border-adhd-lavender text-adhd-lavender bg-transparent hover:bg-adhd-lavender/10 transition-colors"
+            style={{ boxShadow: "4px 4px 0 var(--adhd-purple)" }}
             asChild
           >
             <a href="/about">
@@ -132,17 +163,12 @@ export function HeroSection() {
           </Button>
         </div>
 
-        {/* Feature Pills - updated pill colors */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          {[
-            { label: "ADHD Friendly",     cls: "bg-adhd-sage/80 text-adhd-teal" },
-            { label: "Open Source",       cls: "bg-adhd-green/80 text-adhd-teal" },
-            { label: "Student Built", cls: "bg-adhd-teal/80 text-adhd-sage" },
-            { label: "AI Powered",        cls: "bg-adhd-lavender/80 text-adhd-dark" },
-          ].map(({ label, cls }) => (
+        {/* Feature tags — mono chips instead of pastel pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+          {["ADHD Friendly", "Open Source", "Student Built", "AI Powered"].map((label) => (
             <span
               key={label}
-              className={`px-4 py-2 ${cls} rounded-full text-sm font-bold hover:scale-105 transition-transform cursor-default backdrop-blur-xl border border-white/20 shadow-lg shadow-black/10`}
+              className="px-3 py-1.5 bg-adhd-dark text-adhd-lavender text-xs font-mono uppercase tracking-wider border border-adhd-lavender/25 hover:border-magenta transition-colors cursor-default"
             >
               {label}
             </span>
@@ -152,8 +178,8 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#projects" className="flex flex-col items-center gap-2 text-adhd-sage hover:text-adhd-dark transition-colors">
-          <span className="text-sm font-medium">Scroll to explore</span>
+        <a href="#projects" className="flex flex-col items-center gap-2 text-adhd-lavender/70 hover:text-magenta transition-colors">
+          <span className="text-sm font-mono uppercase tracking-widest">Scroll to explore</span>
           <ArrowDown className="w-5 h-5" />
         </a>
       </div>

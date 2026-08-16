@@ -61,16 +61,18 @@ const donationTiers = [
     description: "Cover the cost of one user across the ADHDesigns ecosystem for a month. Servers, domains, API calls — the invisible stuff that makes free tools possible.",
     color: "bg-adhd-dark",
     textColor: "text-adhd-amber",
-    borderColor: "border-adhd-amber/40",
+    tilt: "-1.4deg",
+    clip: "zine-card--a",
   },
   {
     icon: Heart,
     title: "Fuel the Chaos",
     amount: "$10/mo",
     description: "Keep two users' worth of tools running AND help fund new features and bug fixes. You're basically my QA department's salary. (I am also the QA department.)",
-    color: "bg-adhd-lavender",
-    textColor: "text-adhd-purple",
-    borderColor: "border-adhd-purple/40",
+    color: "bg-adhd-purple",
+    textColor: "text-adhd-lavender",
+    tilt: "1.1deg",
+    clip: "zine-card--b",
   },
   {
     icon: Star,
@@ -78,8 +80,9 @@ const donationTiers = [
     amount: "$25/mo",
     description: "You're single-handedly keeping a chunk of the ecosystem alive. You get my undying gratitude, a spot on a future supporters page, and the knowledge that you're funding tools built by spite and stubbornness.",
     color: "bg-adhd-amber",
-    textColor: "text-adhd-purple",
-    borderColor: "border-purple/40",
+    textColor: "text-adhd-dark",
+    tilt: "-0.7deg",
+    clip: "zine-card--c",
   },
 ]
 
@@ -94,12 +97,15 @@ export function DonateSection() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass-accent text-adhd-sage">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono uppercase tracking-widest mb-6 bg-adhd-dark text-adhd-lavender border border-adhd-amber/40">
             <Sparkles className="w-4 h-4" />
             Support the Work
             <Sparkles className="w-4 h-4" />
           </span>
-          <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-adhd-lavender mb-6 leading-tight">
+          <h2
+            className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-adhd-lavender mb-6 leading-tight"
+            style={{ textShadow: "2px 2px 0 var(--magenta), 4px 4px 0 var(--adhd-purple)" }}
+          >
             Help Keep This <SpinningWord />
           </h2>
           <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-sage leading-relaxed font-medium">
@@ -111,23 +117,25 @@ export function DonateSection() {
           </p>
         </div>
 
-        {/* Donation Tiers */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* Donation Tiers — taped like a raffle-ticket strip */}
+        <div className="grid md:grid-cols-3 gap-x-6 gap-y-10 mb-12">
           {donationTiers.map((tier) => {
             const Icon = tier.icon
             return (
               <div
                 key={tier.title}
-                className={`relative p-6 glass-accent rounded-3xl border-2 ${tier.borderColor} flex flex-col gap-4 transition-transform hover:-translate-y-1`}
+                className={`zine-card ${tier.clip} relative p-6 flex flex-col gap-4`}
+                style={{ "--tilt": tier.tilt } as React.CSSProperties}
               >
-<div className={`w-12 h-12 rounded-2xl ${tier.color} flex items-center justify-center`}>
+                <div className="zine-tape" />
+                <div className={`w-12 h-12 rounded-2xl ${tier.color} flex items-center justify-center`}>
                   <Icon className={`w-6 h-6 ${tier.textColor}`} />
                 </div>
                 <div>
-                  <p className="text-3xl font-bold font-[family-name:var(--font-display)] text-teal">{tier.amount}</p>
-                  <h3 className="font-bold text-lg text-foreground mt-1">{tier.title}</h3>
+                  <p className="text-3xl font-bold font-[family-name:var(--font-display)] text-adhd-purple">{tier.amount}</p>
+                  <h3 className="font-bold text-lg text-adhd-dark mt-1">{tier.title}</h3>
                 </div>
-                <p className="text-sm text-teal/90 leading-relaxed font-semibold">{tier.description}</p>
+                <p className="text-sm text-paper-text leading-relaxed font-semibold">{tier.description}</p>
               </div>
             )
           })}
@@ -138,7 +146,8 @@ export function DonateSection() {
           <Button
             size="lg"
             asChild
-            className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full px-10 py-6 text-lg font-bold shadow-lg shadow-adhd-amber/20"
+            className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-sm px-10 py-6 text-lg font-mono uppercase tracking-widest"
+            style={{ boxShadow: "5px 5px 0 var(--magenta)" }}
           >
             <a href="https://ko-fi.com/adhdesigns/tiers" target="_blank" rel="noopener noreferrer">
               <Coffee className="w-5 h-5 mr-2" />

@@ -39,7 +39,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
                 return (
                   <span
                     key={j}
-                    className={i >= MUSTARD_START ? 'text-adhd-amber' : 'text-adhd-sage'}
+                    className={i >= MUSTARD_START ? 'text-magenta' : 'text-adhd-purple'}
                     style={{
                       display: 'inline-block',
                       transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
@@ -75,7 +75,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
                 return (
                   <span
                     key={j}
-                    className={i <= 15 ? 'text-adhd-amber' : 'text-adhd-sage'}
+                    className={i <= 15 ? 'text-magenta' : 'text-adhd-purple'}
                     style={{
                       display: 'inline-block',
                       transition: gone ? `transform ${duration}ms cubic-bezier(.2,0,.4,1)` : 'transform 300ms ease',
@@ -162,11 +162,11 @@ const ChaosLenguaIcon = ({ className }: { className?: string }) => (
 
 type StatusKey = "brewing" | "unleashed" | "raging" | "sustained"
 
-const statusConfig: Record<StatusKey, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string }> = {
-  brewing:   { label: "Brewing",   description: "Planning or early build",   icon: CloudLightning, bg: "bg-adhd-sage/30",  text: "text-adhd-teal/70" },
-  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/50", text: "text-adhd-purple" },
-  raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-adhd-green/30", text: "text-adhd-olive" },
-  sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-adhd-purple/30",  text: "text-adhd-dark" },
+const statusConfig: Record<StatusKey, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string; border: string }> = {
+  brewing:   { label: "Brewing",   description: "Planning or early build",   icon: CloudLightning, bg: "bg-adhd-sage/20",  text: "text-adhd-teal",   border: "border-adhd-teal/70" },
+  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/20", text: "text-adhd-purple", border: "border-adhd-purple" },
+  raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-adhd-green/20", text: "text-adhd-olive",  border: "border-adhd-olive" },
+  sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-adhd-purple/15", text: "text-adhd-dark",   border: "border-adhd-dark" },
 }
 
 const STATUS_ORDER: StatusKey[] = ["brewing", "unleashed", "raging", "sustained"]
@@ -174,7 +174,7 @@ const STATUS_ORDER: StatusKey[] = ["brewing", "unleashed", "raging", "sustained"
 function StatusKeyLegend() {
   return (
     <div className="max-w-3xl mx-auto mb-12 glass-card rounded-2xl border-2 border-adhd-purple/20 p-4 sm:p-5">
-      <p className="text-xs font-bold uppercase tracking-wider text-adhd-sage mb-3 text-center">
+      <p className="text-xs font-mono font-bold uppercase tracking-wider text-adhd-dark mb-3 text-center">
         Status Key
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -362,6 +362,14 @@ const displayOrder = [
   "scribecat", "threadnotes", "threadbrain", "walt", "chickenscratch", "personal-context-mcp", "tangle",
 ]
 
+// Rotation + torn-edge shape per card, cycled by index so the stack reads as scattered clippings
+const CLIPPING_VARIANTS = [
+  { tilt: "-1.4deg", clip: "zine-card--a" },
+  { tilt: "1.1deg", clip: "zine-card--b" },
+  { tilt: "-0.7deg", clip: "zine-card--c" },
+  { tilt: "1.6deg", clip: "zine-card--a" },
+] as const
+
 const projects: Project[] = displayOrder
   .map((slug): Project | null => {
     const data = projectsData.find((p) => p.slug === slug)
@@ -400,9 +408,9 @@ export function ProjectsSection() {
       <div className="absolute top-1/2 right-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 30%, transparent) 0%, transparent 70%)" }} />
       <div className="absolute bottom-1/3 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 20%, transparent) 0%, transparent 70%)" }} />
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header - updated colors */}
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 text-adhd-lavender rounded-full text-sm font-bold mb-4 bg-adhd-olive backdrop-blur-md border border-adhd-amber/30">
+          <span className="inline-block px-4 py-1.5 text-adhd-lavender text-xs font-mono uppercase tracking-widest mb-4 bg-adhd-dark border border-adhd-amber/40">
             Current Projects
           </span>
           <ProjectsIntroBlock />
@@ -417,24 +425,31 @@ export function ProjectsSection() {
           const groupProjects = projects.filter((p) => p.category === group.key)
           return (
             <div key={group.key} className="max-w-3xl mx-auto mb-12 last:mb-0">
-              <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-adhd-sage mb-6 text-center">
+              <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-adhd-dark uppercase tracking-wide mb-6 text-center">
                 {group.label}
               </h3>
-              <div className="space-y-4">
-                {groupProjects.map((project) => {
+              {/* TODO(nae): this is a single-column stack (space-y-6) so expanding a card never
+                  reshuffles a grid row. If you want the concept board's scattered multi-column
+                  layout instead, swap this for a CSS grid (grid-template-columns / auto-fit) —
+                  just mind that an expanding card grows its whole grid row, which can leave gaps
+                  next to shorter neighbors. Rotation is already per-card (CLIPPING_VARIANTS below)
+                  so it'll still read as scattered clippings even in a single column. */}
+              <div className="space-y-6">
+                {groupProjects.map((project, idx) => {
                   const Icon = project.icon
                   const isExpanded = activeProject === project.id
                   const status = statusConfig[project.status]
                   const StatusIcon = status.icon
+                  const variant = CLIPPING_VARIANTS[idx % CLIPPING_VARIANTS.length]
 
                   return (
                     <div
                       key={project.id}
-                      className={cn(
-                        "rounded-2xl border-2 transition-all duration-300 overflow-hidden",
-                        isExpanded ? "glass-accent shadow-lg shadow-adhd-amber/10" : "glass-card hover:border-adhd-amber/30 hover:shadow-lg hover:shadow-adhd-amber/5",
-                      )}
+                      className={cn("zine-card", variant.clip)}
+                      style={{ "--tilt": variant.tilt } as React.CSSProperties}
                     >
+                      <div className="zine-tape" />
+
                       {/* Clickable header */}
                       <button onClick={() => toggleProject(project.id)} className="w-full text-left p-6">
                         <div className="flex items-start gap-4">
@@ -446,20 +461,20 @@ export function ProjectsSection() {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center justify-between gap-2 mb-1">
                               <div className="flex items-center gap-3">
-                                <h3 className="font-bold text-lg text-adhd-sage">{project.name}</h3>
-                                <span className={cn("inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold", status.bg, status.text)}>
+                                <h3 className="font-bold text-lg text-adhd-dark">{project.name}</h3>
+                                <span className={cn("inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-mono uppercase tracking-wider border-2 -rotate-2", status.bg, status.text, status.border)}>
                                   <StatusIcon className="w-3.5 h-3.5" />
                                   {status.label}
                                 </span>
                               </div>
                               <ChevronDown
                                 className={cn(
-                                  "w-5 h-5 text-adhd-sage/60 transition-transform duration-300",
-                                  isExpanded && "rotate-180 text-adhd-amber",
+                                  "w-5 h-5 text-adhd-purple/50 transition-transform duration-300",
+                                  isExpanded && "rotate-180 text-magenta",
                                 )}
                               />
                             </div>
-                            <Markdown className="text-sm text-card">{project.tagline}</Markdown>
+                            <Markdown className="text-sm text-adhd-purple">{project.tagline}</Markdown>
                           </div>
                         </div>
                       </button>
@@ -471,12 +486,12 @@ export function ProjectsSection() {
                         )}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-6 pb-6 pt-2 border-t border-adhd-purple/30">
-                            <Markdown className="leading-relaxed mb-6 text-card">{project.description}</Markdown>
+                          <div className="px-6 pb-6 pt-2 border-t border-adhd-dark/15">
+                            <Markdown className="leading-relaxed mb-6 text-paper-text">{project.description}</Markdown>
 
                             <div className="flex flex-wrap gap-2 mb-6">
                               {project.tags.map((tag) => (
-                                <span key={tag} className="px-3 py-1 bg-adhd-purple text-adhd-sage rounded-full text-sm font-medium">
+                                <span key={tag} className="px-3 py-1 bg-adhd-dark text-adhd-lavender text-xs font-mono uppercase tracking-wide">
                                   {tag}
                                 </span>
                               ))}
@@ -484,14 +499,14 @@ export function ProjectsSection() {
 
                             <div className="flex flex-wrap gap-3">
                               <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Button className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-full">
+                                <Button className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-sm">
                                   <ExternalLink className="w-4 h-4 mr-2" />
                                   View Project
                                 </Button>
                               </a>
                               {project.demoUrl && (
                                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                                  <Button className="bg-adhd-teal text-adhd-lavender hover:bg-adhd-teal/90 rounded-full">
+                                  <Button className="bg-adhd-teal text-adhd-lavender hover:bg-adhd-teal/90 rounded-sm">
                                     <ExternalLink className="w-4 h-4 mr-2" />
                                     Live Demo
                                   </Button>
@@ -500,7 +515,7 @@ export function ProjectsSection() {
                               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <Button
                                   variant="outline"
-                                  className="rounded-full border-adhd-sage text-adhd-sage hover:bg-adhd-sage hover:text-adhd-dark bg-transparent"
+                                  className="rounded-sm border-adhd-purple text-adhd-purple hover:bg-adhd-purple hover:text-adhd-lavender bg-transparent"
                                 >
                                   <Github className="w-4 h-4 mr-2" />
                                   Source Code

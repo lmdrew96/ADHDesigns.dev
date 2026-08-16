@@ -16,28 +16,37 @@ export function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-adhd-dark/95 backdrop-blur-xl border-b border-adhd-teal/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-adhd-dark/95 backdrop-blur-xl border-b-2 border-adhd-purple/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-adhd-purple">
         <div className="flex items-center justify-between h-16">
           <a href="/" className="flex items-center group">
             <Image src="/adhdesigns-logo.png" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake" />
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8 text-adhd-purple">
-            <a href="/#projects" className="hover:text-adhd-sage transition-colors font-medium">
+          {/* Desktop Nav — mono uppercase tags, tape-strip hover */}
+          <div className="hidden md:flex items-center gap-3 text-adhd-lavender">
+            <a
+              href="/#projects"
+              className="font-mono text-xs uppercase tracking-widest border border-adhd-lavender/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-adhd-lavender transition-colors"
+            >
               Projects
             </a>
-            <a href="/mcp" className="hover:text-adhd-sage transition-colors font-medium">
+            <a
+              href="/mcp"
+              className="font-mono text-xs uppercase tracking-widest border border-adhd-lavender/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-adhd-lavender transition-colors"
+            >
               MCP
             </a>
-            <a href="/about" className="hover:text-adhd-sage transition-colors font-medium">
+            <a
+              href="/about"
+              className="font-mono text-xs uppercase tracking-widest border border-adhd-lavender/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-adhd-lavender transition-colors"
+            >
               About
             </a>
              <Button
               type="button"
               onClick={openChat}
-              className="bg-adhd-sage text-adhd-dark hover:bg-adhd-sage/90 rounded-full px-6 font-bold gap-2"
+              className="bg-adhd-lavender text-adhd-dark hover:bg-adhd-lavender/90 rounded-sm px-6 font-mono text-xs uppercase tracking-widest gap-2 shadow-[3px_3px_0_var(--magenta)]"
             >
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Chat
@@ -51,26 +60,26 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Menu - updated menu colors */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden glass-card border-b border-adhd-sage/20">
-          <div className="px-4 py-4 space-y-3">
-            <a href="/#projects" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
+        <div className="md:hidden bg-adhd-dark border-b-2 border-adhd-purple/40">
+          <div className="px-4 py-4 space-y-2">
+            <a href="/#projects" className="block font-mono text-xs uppercase tracking-widest text-adhd-lavender border border-adhd-lavender/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
               Projects
             </a>
-            <a href="/mcp" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
+            <a href="/mcp" className="block font-mono text-xs uppercase tracking-widest text-adhd-lavender border border-adhd-lavender/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
               MCP
             </a>
-            <a href="/about" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
+            <a href="/about" className="block font-mono text-xs uppercase tracking-widest text-adhd-lavender border border-adhd-lavender/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
               About
             </a>
-            <a href="/#contact" className="block text-adhd-sage hover:text-mustard transition-colors font-medium py-2">
+            <a href="/#contact" className="block font-mono text-xs uppercase tracking-widest text-adhd-lavender border border-adhd-lavender/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
               Contact
             </a>
             <Button
               type="button"
               onClick={openChat}
-              className="w-full bg-adhd-purple text-adhd-dark hover:bg-adhd-purple/90 rounded-full font-bold gap-2"
+              className="w-full bg-adhd-lavender text-adhd-dark hover:bg-adhd-lavender/90 rounded-sm font-mono text-xs uppercase tracking-widest gap-2 shadow-[3px_3px_0_var(--magenta)]"
             >
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Chat
