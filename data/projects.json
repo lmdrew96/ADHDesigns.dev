@@ -4,50 +4,57 @@
     "slug": "controlledchaos",
     "url": "https://controlledchaos.adhdesigns.dev",
     "tagline": "Your executive function, effectively replaced.",
-    "description": "An ADHD-friendly task manager built around brain dumps (text, voice, or photo) that Claude Haiku parses into structured tasks. Crisis mode for overwhelm days, AI-powered prioritization that factors in time and energy, and Parallel Play rooms for body-doubling with friends. One-tap Moments capture energy and focus state; microtasks surface small recurring prompts without streak guilt. Includes Canvas calendar sync, location-aware notifications, momentum visualization, and a Mirror view that shows your whole day in one chronological timeline. Targeting public launch June 2026.",
-    "status": "live",
+    "description": "An ADHD-friendly task manager that converts brain dumps (voice, text, or photo) into structured tasks using Claude Haiku.\n\n* **AI Prioritization:** Automatically factors in your time and energy levels.\n* **Visual Timelines:** See your whole day chronologically with Mirror view and track momentum.\n* **Student Sync:** Seamlessly integrates with Canvas calendars.\n* **Crisis Mode:** Simplifies everything for high-overwhelm days.",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Convex", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
-    "last_updated": "2026-05-04"
+    "last_updated": "2026-08-13",
+    "githubUrl": "https://github.com/lmdrew96/ControlledChaos"
   },
   {
     "name": "ChaosLimbă",
     "slug": "chaoslimba",
     "url": "https://chaoslimba.adhdesigns.dev",
     "tagline": "English-to-Romanian language learning grounded in SLA research.",
-    "description": "A CALL app for English speakers learning Romanian, designed for ADHD brains and grounded in second language acquisition theory. Built around a 10-component AI ensemble with fossilization detection that turns persistent errors into micro-curriculum. Targeting MVP launch August 2026.",
-    "status": "beta",
+    "description": "An ADHD-friendly CALL app for English speakers learning Romanian, deeply grounded in second language acquisition theory.\n\n* **AI-Powered:** Driven by a robust 10-component AI ensemble.\n* **Smart Tracking:** Features advanced fossilization detection to catch persistent mistakes.\n* **Targeted Growth:** Automatically transforms those ingrained errors into customized, bite-sized micro-curriculums.",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku", "HuggingFace"],
-    "last_updated": "2026-04-30"
+    "last_updated": "2026-08-12",
+    "githubUrl": "https://github.com/lmdrew96/ChaosLimba",
+    "demoUrl": "https://chaoslimba.adhdesigns.dev/demo"
   },
   {
     "name": "ChaosLengua",
     "slug": "chaoslengua",
     "url": "https://chaoslengua.adhdesigns.dev",
     "tagline": "English-to-Spanish counterpart to ChaosLimbă.",
-    "description": "Spanish-language sister project to ChaosLimbă, built in a shared monorepo with the same SLA-grounded AI ensemble architecture and Adaptation Engine. Shares Clerk auth and monorepo tooling with ChaosLimbă while targeting Spanish-specific error patterns like ser/estar and preterite/imperfect.",
-    "status": "beta",
+    "description": "A Spanish-language sister project to ChaosLimbă, built efficiently in a shared monorepo with Clerk auth.\n\n* **Shared Architecture:** Leverages the same SLA-grounded AI ensemble and Adaptation Engine as its Romanian counterpart.\n* **Targeted Learning:** Specifically tackles Spanish-centric error patterns, like *ser/estar* and preterite/imperfect distinctions.\n* **Unified Foundation:** Shares core tooling for streamlined, simultaneous development.",
+    "status": "archived",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku"],
-    "last_updated": "2026-04-30"
+    "last_updated": "2026-05-24",
+    "githubUrl": "https://github.com/lmdrew96/chaos",
+    "demoUrl": "https://chaoslengua.adhdesigns.dev/demo"
   },
   {
     "name": "ChaosPatch",
     "slug": "chaospatch",
     "url": "https://chaospatch.adhdesigns.dev",
     "tagline": "Patch tracker built for agentic development workflows.",
-    "description": "A PWA for tracking dev patches — small specs that Claude Code can pick up and implement. Integrated via MCP so patches flow directly into Claude Code sessions instead of dying in a Notion doc. Attach screenshots to a patch and Claude sees them as visual context. Includes batch updates, cross-project search, tag filtering, and an Insights page that visualizes work-in-flight across projects.",
-    "status": "live",
+    "description": "A PWA for tracking dev patches, designed to keep specs out of Notion and directly in your workflow.\n\n* **Claude Code Ready:** MCP integration feeds small specs and attached screenshots directly into your coding sessions.\n* **Workflow Organization:** Includes batch updates, cross-project search, and tag filtering.\n* **Visual Insights:** A dedicated dashboard tracks and visualizes all your work-in-flight across multiple projects.",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP", "Vercel Blob"],
-    "last_updated": "2026-06-03"
+    "last_updated": "2026-08-04",
+    "githubUrl": "https://github.com/lmdrew96/ChaosPatch"
   },
   {
     "name": "ScribeCat",
     "slug": "scribecat",
     "url": "https://scribecat.adhdesigns.dev",
     "tagline": "ScribeCat scribes and is cat.",
-    "description": "Records lectures with real-time AssemblyAI transcription, generates AI study notes mid-recording (not after), and includes six AI study tools (flashcards, quizzes, concept maps, ELI5). Features exam study rooms with weak-spot tracking, a Tamagotchi-style pixel cat (StudyQuest) tied to study metrics, multiplayer Quiz Battle and Jeopardy, friends + DMs, and a Chrome extension that imports Canvas courses.",
-    "status": "live",
+    "description": "A lecture-recording app that generates AI study notes *during* real-time AssemblyAI transcription.\n\n* **Smart Study Tools:** Features 6 AI tools (flashcards, quizzes, concept maps, ELI5) and exam rooms with weak-spot tracking.\n* **Gamification & Social:** Level up a Tamagotchi-style pixel cat via study metrics, play multiplayer Quiz Battles, and DM friends.\n* **Student Sync:** A dedicated Chrome extension seamlessly imports your Canvas courses.",
+    "status": "alpha",
     "tech": ["Vite", "React", "TypeScript", "Convex", "Clerk", "AssemblyAI", "Claude Haiku", "TipTap"],
-    "last_updated": "2026-04-30"
+    "last_updated": "2026-08-11",
+    "githubUrl": "https://github.com/lmdrew96/ScribeCat-v3"
   },
   {
     "name": "ThreadNotes",
@@ -55,9 +62,11 @@
     "url": "https://research.adhdesigns.dev",
     "tagline": "Personal research command center for the way ADHD brains actually research.",
     "description": "A unified hub for academic research: search peer-reviewed literature via OpenAlex and Crossref, automatically discover free open-access PDFs via Unpaywall, save and annotate articles, organize research questions by theme with bidirectional article linking, write reflective journal entries, and get AI-generated summaries. Includes a Chrome extension for clipping excerpts and an MCP server so Claude can read and write to your research base.",
-    "status": "live",
+    "status": "archived",
     "tech": ["React", "TypeScript", "Vite", "Clerk", "Neon Postgres", "Claude Haiku", "OpenAlex", "Crossref", "Unpaywall"],
-    "last_updated": "2026-05-04"
+    "last_updated": "2026-06-09",
+    "githubUrl": "https://github.com/lmdrew96/research-journal",
+    "demoUrl": "https://research.adhdesigns.dev/demo"
   },
   {
     "name": "ThreadBrain",
@@ -65,59 +74,65 @@
     "url": "https://threadbrain.adhdesigns.dev",
     "tagline": "Reading companion that scaffolds dense text for ADHD brains.",
     "description": "AI-generated micro-headers, purpose-aware chunking that adapts to your stated reading goal and energy level, and \"The Map\" — a 2-3 sentence orientation summary before reading begins. Includes ExpressBrain for cram-sheet generation and integrates with ThreadNotes so excerpts flow into your research thread.",
-    "status": "beta",
+    "status": "archived",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Cloudflare R2"],
-    "last_updated": "2026-04-30"
+    "last_updated": "2026-04-19",
+    "githubUrl": "https://github.com/lmdrew96/threadbrain"
   },
   {
     "name": "ChickenScratch",
     "slug": "chickenscratch",
     "url": "https://chickenscratch.me",
     "tagline": "Editorial portal for Hen & Ink Society literary zine.",
-    "description": "The submissions and review portal for Hen & Ink Society, the first AAP-based RSO at the University of Delaware. Handles submission intake, editor review, and publishing workflows for the zine.",
-    "status": "live",
+    "description": "The submissions and review portal for Hen & Ink Society, the first AAP-based RSO at the University of Delaware.\n\n* **Submission Intake:** Writers submit directly through the portal instead of email threads.\n* **Editor Review:** Editors triage, comment, and move pieces through review stages.\n* **Publishing Workflow:** Approved pieces flow straight into the published zine.\n* **Image Handling:** Cloudflare R2 storage keeps cover art and submissions organized.",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "Cloudflare R2"],
-    "last_updated": "2026-04-30"
+    "last_updated": "2026-04-30",
+    "githubUrl": "https://github.com/lmdrew96/ChickenScratch"
   },
   {
     "name": "Personal Context MCP",
     "slug": "personal-context-mcp",
     "url": "https://personal-context-mcp.vercel.app",
     "tagline": "Cross-session memory layer for Claude.",
-    "description": "An MCP server that stores identity, projects, relationships, and preferences for cross-session Claude context. Powers Cha(t)os context awareness and provides continuity across Claude conversations. Multi-tenant with Redis-backed persistence.",
-    "status": "live",
+    "description": "An MCP server that stores identity, projects, relationships, and preferences so Claude keeps context across sessions instead of starting cold.\n\n* **Identity & Projects:** Tracks who you are and what you're building, project by project.\n* **Relationship Mapping:** Remembers the people and teams tied to your work.\n* **Cross-Session Continuity:** Powers Cha(t)os context awareness across separate conversations.\n* **Multi-Tenant:** Redis-backed persistence keeps every user's context isolated.",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-04-30"
+    "last_updated": "2026-07-27",
+    "githubUrl": "https://github.com/lmdrew96/personal-context-mcp"
   },
   {
     "name": "Tangle",
     "slug": "tangle",
     "url": "https://tangle.adhdesigns.dev",
     "tagline": "Continuity-of-thought MCP for Claude.",
-    "description": "An MCP server that persists Claude's epistemic state across sessions — hunches, suspicions, dead-ends, and partial reasoning that would otherwise evaporate at session end. Sibling to Personal Context MCP (which captures identity and projects) and the built-in memory feature (which captures chat history); Tangle captures the texture of working on a problem. Each Claude attributes their notes via an identity header or URL parameter, and a recency × confidence ranking surfaces what matters most when re-entering a project.",
-    "status": "live",
+    "description": "An MCP server that persists Claude's epistemic state across sessions — hunches, suspicions, dead-ends, and partial reasoning that would otherwise evaporate at session end.\n\n* **Working Notes:** Captures the texture of working a problem, not just facts or chat history.\n* **Attributed Captures:** Each Claude identifies its own notes via header or URL parameter.\n* **Confidence Ranking:** Surfaces what matters most by recency and confidence when re-entering a project.\n* **Sibling Systems:** Complements Personal Context MCP (identity) and built-in memory (chat history).",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-05-07"
+    "last_updated": "2026-07-27",
+    "githubUrl": "https://github.com/lmdrew96/Tangle"
   },
   {
     "name": "Songs of My Selves: We as Walt",
     "slug": "walt",
     "url": "https://walt.adhdesigns.dev",
     "tagline": "Walk through Whitman's *Song of Myself* amid a network of stars.",
-    "description": "An interactive map of Walt Whitman's Epic-like *Song of Myself*. All 52 sections are paired with songs that match the emotions and themes they contain. Click any star in the constellation to read the section in full and listen to its accompanying track. The constellation lives inside a deep-space scene — drifting nebula clouds, a parallax starfield that shifts with depth as you pan and zoom, and the occasional shooting star.",
-    "status": "live",
+    "description": "An interactive map of Walt Whitman's epic *Song of Myself*, where all 52 sections are paired with songs that match their emotions and themes.\n\n* **Constellation Navigation:** Click any star to read its section in full and hear the matching track.\n* **Deep-Space Scene:** Drifting nebula clouds and a parallax starfield shift with depth as you pan and zoom.\n* **Immersive Extras:** Occasional shooting stars keep the sky alive while you explore.",
+    "status": "alpha",
     "tech": ["Vite", "React", "TypeScript", "Tailwind", "d3-force", "Canvas"],
-    "last_updated": "2026-05-09"
+    "last_updated": "2026-05-09",
+    "githubUrl": "https://github.com/lmdrew96/walt"
   },
   {
     "name": "LibraLex",
     "slug": "chaosshelf",
     "url": "https://libra.adhdesigns.dev",
     "tagline": "Your shelf, your wishlist, your library loans — plus the next book you'll love, recommended by friends and the catalog.",
-    "description": "A personal book catalog that tracks the three states a book actually lives in — owned, wished-for, and borrowed-from-the-library (with due dates so nothing goes overdue). Search or scan a title to pull clean covers, summaries, subjects, and author bios from Google Books and Open Library. It learns from the books you've read and rated to suggest what to read next — pulling not just from your own shelves but from your friends' shelves and the wider Open Library catalog, every pick explained ('because you loved X', 'Maya loved this', 'popular in fantasy') and never a black box. Recommendations run on real semantic understanding under the hood (every book is embedded and matched to your taste by meaning, not keyword overlap), and you can just ask in plain language — 'something atmospheric and slow' — to search your friends' shelves for a vibe instead of a title. Beyond the made-for-you picks, you can go exploring on your own terms — browse popular books in the genres you choose, and open any author's full catalog with a tap on their name — and when you spot one you want, every book is one tap from a used copy on ThriftBooks. A friends layer lets you swap shelves and trade recommendations, with per-shelf privacy controls so you decide exactly what friends can see, and an MCP server lets Claude run your whole shelf from chat — not just 'what am I reading?' and 'what's due soon?', but 'I finished Dune, five stars', 'add The Hobbit to my shelf', 'I returned my library book', 'what should I read next?', and 'recommend it to Maya', all in plain conversation.",
-    "status": "beta",
+    "description": "This smart catalog tracks your owned, wished-for, and library books.\n\n* **Instant Info:** Scans pull clean covers and summaries.\n* **Semantic Discovery:** Ask for \"vibes\" to get AI recommendations from friends or Open Library.\n* **Social & Shopping:** Share shelves privately and buy on ThriftBooks with one tap.\n* **Claude MCP:** Manage your library, rate books, and send picks entirely via chat.",
+    "status": "live",
     "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Tailwind CSS", "Voyage AI", "MCP", "Vercel"],
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-14",
+    "githubUrl": "https://github.com/lmdrew96/LibraLex"
   },
   {
     "name": "Kindling",
@@ -125,7 +140,7 @@
     "url": "https://kindling.adhdesigns.dev/",
     "tagline": "A place for ideas to catch before they go out.",
     "description": "An MCP-connected store for sparks and half-formed ideas — capture, dig back through, archive, or promote them into real projects. Exposed to Claude via kindle/kindling_* tools.",
-    "status": "beta",
+    "status": "archived",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Tailwind CSS"],
     "last_updated": "2026-05-17"
   },
@@ -134,40 +149,44 @@
     "slug": "majorot",
     "url": "https://majorot.vercel.app/",
     "tagline": "A solo tarot journaling RPG, played with a real deck and tracked in-app.",
-    "description": "A companion app for a physical solo journaling RPG: draw through a real tarot deck one sitting at a time, collecting all 22 Major Arcana spells before the deck runs out. Majors are spells, Court cards are allies or duel opponents, and Pips are life events — combat runs on a d6 and an elemental rock-paper-scissors wheel (Fire/Water/Air/Earth). The app tracks Self & Spark, allies, kit items, and an editable journal offline-first via IndexedDB, with a full in-app rules reference and round-by-round combat log. Engine logic (122 passing tests) is traceable line-by-line to the written rulebook.",
+    "description": "A companion app for a physical solo journaling RPG — draw through a real tarot deck one sitting at a time, collecting all 22 Major Arcana spells before the deck runs out.\n\n* **Card-Driven Combat:** Majors are spells, Courts are allies or duel opponents, and Pips are life events resolved on a d6 and elemental wheel.\n* **Offline-First Tracking:** Self & Spark, allies, kit items, and your journal all live in IndexedDB.\n* **Full Rules Reference:** In-app rulebook and round-by-round combat log keep every session traceable.\n* **Tested Engine:** 122 passing tests trace engine logic line-by-line to the written rulebook.",
     "status": "beta",
     "tech": ["Vite", "React", "TypeScript", "Zustand", "idb-keyval", "PWA"],
-    "last_updated": "2026-07-02"
+    "last_updated": "2026-07-02",
+    "githubUrl": "https://github.com/lmdrew96/majorot"
   },
   {
     "name": "ChaosLingua Lite",
     "slug": "chaoslingua-lite",
     "url": "https://lingua-lite.vercel.app/",
     "tagline": "Lightweight Latin learning companion.",
-    "description": "A lighter-weight companion app in the Chaos language-learning family, focused on Latin curriculum and drills.",
-    "status": "in-development",
+    "description": "A lighter-weight companion app in the Chaos language-learning family, focused on Latin curriculum and drills.\n\n* **Latin Curriculum:** Structured lessons built around core Latin grammar and vocabulary.\n* **Drill Practice:** Bite-sized drills reinforce what you're learning session to session.\n* **Chaos Family:** Shares its lineage with ChaosLimbă and ChaosLengua, built lighter-weight.",
+    "status": "beta",
     "tech": ["Vite", "React", "TypeScript", "Convex"],
-    "last_updated": "2026-07-14"
+    "last_updated": "2026-07-14",
+    "githubUrl": "https://github.com/lmdrew96/ChaosLingua-Lite"
   },
   {
     "name": "Color Factory",
     "slug": "color-factory",
     "url": "https://color.adhdesigns.dev/",
     "tagline": "A tiny palette-card generator.",
-    "description": "Lock the colors you want to keep, pick a harmony style, and let an OKLCH engine fill the rest — then export a polished, shareable palette card as PNG or SVG.",
-    "status": "in-development",
+    "description": "A tiny palette-card generator: lock the colors you want to keep, pick a harmony style, and let an OKLCH engine fill in the rest.\n\n* **Color Locking:** Keep the swatches you love while the engine works around them.\n* **Harmony Styles:** Pick a harmony rule and get a coherent palette instantly.\n* **Shareable Export:** Download a polished palette card as PNG or SVG.",
+    "status": "alpha",
     "tech": ["Vite", "React"],
-    "last_updated": "2026-07-13"
+    "last_updated": "2026-07-13",
+    "githubUrl": "https://github.com/lmdrew96/card-factory"
   },
   {
     "name": "DuelingChaos",
     "slug": "duelingchaos",
     "url": null,
     "tagline": "A Magic: The Gathering client built on a real rules engine.",
-    "description": "A headless integration with Forge, the open-source MTG rules engine, bridged over HTTP as a JSON game-state API — full stack/targeting/static-ability resolution rather than a simplified simulation. The React frontend renders live board state with stack visualization and targeting arrows, a complete choice UI (targeting, modal spells, mana payment, X-costs, multi-blocker combat damage assignment), and a deckbuilder with card search, legality checking, commander/side-deck assignment, and save/load. Pick your AI opponent's deck (or leave it to random) before a match, and switch between light and dark themes.",
-    "status": "beta",
+    "description": "A headless integration with Forge, the open-source MTG rules engine, bridged over HTTP as a JSON game-state API — full stack/targeting/static-ability resolution rather than a simplified simulation.\n\n* **Live Board State:** Stack visualization and targeting arrows track the game as it unfolds.\n* **Complete Choice UI:** Handles targeting, modal spells, mana payment, X-costs, and multi-blocker combat damage.\n* **Full Deckbuilder:** Card search, legality checking, and commander/side-deck assignment with save/load.\n* **AI Opponents:** Pick your opponent's deck (or randomize it) before a match, in light or dark theme.",
+    "status": "live",
     "tech": ["TypeScript", "Node.js", "Java", "React", "Vite"],
-    "last_updated": "2026-08-05"
+    "last_updated": "2026-08-09",
+    "githubUrl": "https://github.com/lmdrew96/duelingchaos"
   },
   {
     "name": "FeyForge",
@@ -175,7 +194,7 @@
     "url": "https://feyforge.adhdesigns.dev",
     "tagline": "A comprehensive D&D 5e campaign companion.",
     "description": "A D&D 5e companion built with Next.js and Convex: full character sheets across the 2014 and 2024 rules, live real-time sessions with synced audio and live captions, an interactive world map, a campaign wiki, homebrew authoring, an AI DM assistant, a friends/social layer, and AI-assisted character & NPC building.",
-    "status": "beta",
+    "status": "archived",
     "tech": ["Next.js", "TypeScript", "Convex", "Clerk"],
     "last_updated": "2026-06-14"
   },
@@ -184,10 +203,11 @@
     "slug": "loose-change",
     "url": "https://change.adhdesigns.dev/",
     "tagline": "Frictionless capture for stray thoughts.",
-    "description": "Voice/text capture for stray thoughts that hit while driving, falling asleep, or otherwise mid-task — the ones that aren't ControlledChaos tasks and aren't Kindling-worthy sparks. Talk or type, release, triage later in batches.",
-    "status": "beta",
+    "description": "Voice/text capture for stray thoughts that hit while driving, falling asleep, or otherwise mid-task — the ones that aren't ControlledChaos tasks and aren't Kindling-worthy sparks.\n\n* **Frictionless Capture:** Talk or type, then release — no categorizing in the moment.\n* **Batch Triage:** Sort captured thoughts into real destinations later, when you have the bandwidth.\n* **MCP-Connected:** Claude can read and file loose thoughts alongside your other tools.",
+    "status": "in-development",
     "tech": ["Next.js", "TypeScript", "Convex", "PWA", "MCP"],
-    "last_updated": "2026-07-22"
+    "last_updated": "2026-07-22",
+    "githubUrl": "https://github.com/lmdrew96/loose-change"
   },
   {
     "name": "Stellation",
@@ -195,7 +215,7 @@
     "url": "https://stellation.adhdesigns.dev/",
     "tagline": "Generative constellation chart app.",
     "description": "Takes birth data, calculates a real natal chart via Skyfield and JPL's DE440s ephemeris, and renders it as generative art with an AI-generated interpretation. Beyond a solo natal chart: synastry, composite charts, transits, and solar/Saturn returns, with optional sign-in to save and revisit charts.",
-    "status": "beta",
+    "status": "archived",
     "tech": ["FastAPI", "Python", "pyswisseph", "React", "Claude Haiku"],
     "last_updated": "2026-07-21"
   },
@@ -205,8 +225,196 @@
     "url": "https://syzygy.adhdesigns.dev/",
     "tagline": "A generative tarot-and-astrology oracle.",
     "description": "Every reading draws Major Arcana weighted by your input and today's actual planetary transits, then renders live as a unique constellation — no two readings ever look the same, because the sky itself has changed since last time.",
-    "status": "beta",
+    "status": "archived",
     "tech": ["Next.js", "Canvas", "Convex", "Claude Sonnet"],
     "last_updated": "2026-07-29"
+  },
+  {
+    "name": "Cha(t)os",
+    "slug": "chatos",
+    "url": "https://chatos.adhdesigns.dev",
+    "tagline": "Bring your own Claude to a shared AI workspace.",
+    "description": "A real-time group chat where each person brings their own Claude — their own API key, persona, and identity — into the same room. BYOK keys stay in localStorage and never touch the server; Claudes are addressed by @mention and can see and respond to each other for genuine AI-to-AI dialogue, with multimodal image/PDF support built in.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Claude API"],
+    "last_updated": "2026-08-11",
+    "githubUrl": "https://github.com/lmdrew96/Chatos"
+  },
+  {
+    "name": "ChaosCitim",
+    "slug": "chaoscitim",
+    "url": "https://chaoscitim.adhdesigns.dev",
+    "tagline": "Romanian reading companion with graduated morphological glossing.",
+    "description": "A PWA that helps Romanian learners read authentic texts, with scaffolded per-word support (part of speech, morphology, translation) that fades as comprehension grows instead of a flat glossary. Sibling app to ChaosLimbă — this is the reception side to ChaosLimbă's production side — sharing an interlanguage model so an error in one modality signals a gap in the other.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Clerk", "Claude API"],
+    "last_updated": "2026-05-16",
+    "githubUrl": "https://github.com/lmdrew96/ChaosCitim"
+  },
+  {
+    "name": "ChaosCode",
+    "slug": "chaoscode",
+    "url": null,
+    "tagline": "A multi-LLM agentic IDE where Haiku implements and Sonnet reviews.",
+    "description": "An Electron desktop IDE where AI models collaborate on code in real time: Haiku proposes multi-file implementation plans and writes runnable code, while Sonnet reviews the plan before anything ships. Built on the Monaco editor with syntax highlighting and a terminal-command tool for the agentic loop.",
+    "status": "archived",
+    "tech": ["Electron", "React", "TypeScript", "Tailwind CSS", "Vite", "Claude API"],
+    "last_updated": "2026-04-06"
+  },
+  {
+    "name": "ChaosCourse",
+    "slug": "chaoscourse",
+    "url": "https://chaoscourse-mcp.vercel.app",
+    "tagline": "Makes Claude semester-aware by parsing syllabi into structured data.",
+    "description": "An MCP server that imports syllabi (PDF/DOCX) and turns them into queryable course data, so Claude can answer 'what's due this week?' or 'what should I prioritize?' — factoring in due-date proximity, grade weight, and current standing. Code-complete with 16 MCP tools; not yet deployed to production.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "MCP", "Claude API"],
+    "last_updated": "2026-05-05"
+  },
+  {
+    "name": "ChaosCord",
+    "slug": "chaoscord",
+    "url": null,
+    "tagline": "The Hamilton soundboard, as a Discord bot.",
+    "description": "A Discord bot that brings NonStop's Hamilton audio clips straight into voice channels.\n\n* **Shared Clip Library:** Draws from the same R2-hosted clips as the NonStop web soundboard.\n* **Voice Channel Playback:** Trigger clips live, in-call, without tabbing out to a browser.\n* **Fly.io Deployment:** Runs as an always-on bot rather than a self-hosted script.",
+    "status": "live",
+    "tech": ["Node.js", "TypeScript", "discord.js", "Fly.io"],
+    "last_updated": "2026-08-16",
+    "githubUrl": "https://github.com/lmdrew96/chaoscord"
+  },
+  {
+    "name": "ChaosCord Activity",
+    "slug": "chaoscord-activity",
+    "url": null,
+    "tagline": "Multiplayer Hamilton soundboard game for Discord voice calls.",
+    "description": "A Discord Activity — an embedded app — built around distortion-round guessing games using the same Hamilton clip library as NonStop and ChaosCord.\n\n* **Synced Multiplayer:** Play in-call with friends, state synced in real time.\n* **Distortion Rounds:** Guess the clip as it's pitched, sped, or warped past recognition.\n* **Shared Library:** Draws from the same clip catalog as NonStop and ChaosCord.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Convex", "Discord Embedded App SDK"],
+    "last_updated": "2026-08-16",
+    "githubUrl": "https://github.com/lmdrew96/chaoscord-activity"
+  },
+  {
+    "name": "ChaosDeck",
+    "slug": "chaosdeck",
+    "url": "https://chaosdeck.adhdesigns.dev",
+    "tagline": "MTG deckbuilder and goldfish-plus playtester.",
+    "description": "Build and test Magic: The Gathering decks with real-time synced game state — the playtester auto-detects win/loss conditions instead of requiring manual tracking.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Tailwind CSS"],
+    "last_updated": "2026-08-01"
+  },
+  {
+    "name": "MATR1X 0VERL0AD: Cybermancy Companion",
+    "slug": "cybermancy-companion",
+    "url": "https://cybermancy.adhdesigns.dev",
+    "tagline": "Table-side companion for the physical cyberpunk tarot game MATR1X 0VERL0AD.",
+    "description": "A deck-build guide, royal health/Firewall tracker, campaign progress tracker, and full rules reference for Michael Elliott's physical card game — packaged as a Tauri desktop app so the table doesn't need a laptop tab open to a PDF.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Tauri", "PWA"],
+    "last_updated": "2026-07-22"
+  },
+  {
+    "name": "Mythcast",
+    "slug": "mythcast",
+    "url": "https://mythcast.adhdesigns.dev",
+    "tagline": "Generates internally-consistent mythologies that drift coherently over time.",
+    "description": "Builds cultures, pantheons, and myths that evolve over simulated time rather than random generation, with a Neo4j graph layer tracking relationship and lineage data as the mythology drifts.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Neo4j"],
+    "last_updated": "2026-07-27"
+  },
+  {
+    "name": "NonStop",
+    "slug": "nonstop",
+    "url": "https://nonstop.adhdesigns.dev",
+    "tagline": "A shareable, installable Hamilton soundboard.",
+    "description": "An installable PWA soundboard for Hamilton audio clips — the source clip library that ChaosCord and ChaosCord Activity both draw from.\n\n* **Fast Filtering:** Tag filtering and favorites help you find the right clip instantly.\n* **Multi-Select:** Queue up multiple clips at once instead of one at a time.\n* **Installable PWA:** Add it to your home screen and it behaves like a native app.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "PWA", "Cloudflare R2"],
+    "last_updated": "2026-08-16",
+    "githubUrl": "https://github.com/lmdrew96/nonstop"
+  },
+  {
+    "name": "SynthPhone",
+    "slug": "synthphone",
+    "url": "https://synthphone.adhdesigns.dev",
+    "tagline": "Cardinal Vowels, made audible — playable phonetics in the browser.",
+    "description": "Renders the IPA cardinal-vowel trapezoid as acoustic space: tap or drag to hear live formant-synthesized vowels (a voiced glottal source shaped by five parallel formant filters), entirely client-side via the Web Audio API.",
+    "status": "archived",
+    "tech": ["Vite", "React", "TypeScript", "Web Audio API"],
+    "last_updated": "2026-06-18"
+  },
+  {
+    "name": "ConLangLab",
+    "slug": "conlanglab",
+    "url": "https://conlanglab.adhdesigns.dev",
+    "tagline": "Generates complete constructed languages from real linguistic typology.",
+    "description": "Builds phonology, lexicon, morphology, syntax, and orthography for invented languages — every feature deterministic, seedable, and traceable to an explicit typological rule rather than word-soup randomness. Includes Pink Trombone articulatory synthesis to preview generated phonemes and words.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Pink Trombone"],
+    "last_updated": "2026-07-26"
+  },
+  {
+    "name": "Folio",
+    "slug": "folio",
+    "url": "https://folio.adhdesigns.dev",
+    "tagline": "A writing space that knows what changed since you last looked.",
+    "description": "A writing space that persists every editor block as its own row, making per-block author attribution and diff-since-last-visit native to the data model instead of a parsing problem.\n\n* **Block-Level Attribution:** Know exactly who wrote or changed each block, natively.\n* **Diff Since Last Visit:** See what changed the moment you reopen a document.\n* **Cleo, In-App Claude:** Reacts to document changes with her own memory of prior reactions.\n* **MCP Read Access:** A read-only door lets other Claude instances read and diff documents too.",
+    "status": "in-development",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "TipTap", "MCP"],
+    "last_updated": "2026-07-15",
+    "githubUrl": "https://github.com/lmdrew96/folio"
+  },
+  {
+    "name": "Gapline",
+    "slug": "gapline",
+    "url": null,
+    "tagline": "Tracking disability-related disparities across Delaware school districts.",
+    "description": "Pulls attendance and discipline data from Delaware's open-data portal and computes disparity ratios between students with disabilities and their peers — chronic absenteeism and suspension rates, ranked and drilled down by district, race, and gender.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript"],
+    "last_updated": "2026-08-12"
+  },
+  {
+    "name": "Sensible",
+    "slug": "sensible",
+    "url": "https://sensible.adhdesigns.dev",
+    "tagline": "A side-by-side reader that modernizes old writing without losing its voice.",
+    "description": "Shows the original text beside a modernized version in plain contemporary English that preserves the original's exact meaning, tone, and rhetorical intent — Paine still reads urgent, Austen still reads ironic.\n\n* **Side-by-Side Reading:** Original and modernized text sit right next to each other.\n* **Human-Reviewed:** Modernizations are generated once via Claude, then reviewed by a person.\n* **Static Content:** Nothing generates live — every page loads instantly.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Convex", "Claude API"],
+    "last_updated": "2026-08-17",
+    "githubUrl": "https://github.com/lmdrew96/sensible"
+  },
+  {
+    "name": "Skein",
+    "slug": "skein",
+    "url": null,
+    "tagline": "A relationship-graph worldbuilding tool for writers and TTRPG creators.",
+    "description": "An interactive node-and-edge canvas for mapping character and world relationships, with a timeline layer that lets you filter the graph as-of any point in your story's internal chronology.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Drizzle ORM", "Clerk", "React Flow"],
+    "last_updated": "2026-08-04"
+  },
+  {
+    "name": "Strata",
+    "slug": "strata",
+    "url": "https://strata.adhdesigns.dev",
+    "tagline": "In-depth English etymology, in historical context.",
+    "description": "A word-history reference site with per-word pages tracing English etymology in historical context.\n\n* **Per-Word Pages:** Deep-dive pages trace each word's history and usage over time.\n* **Polished Edge Cases:** Branded error and not-found states instead of generic ones.\n* **Admin Panel:** A password-protected panel keeps entry management in-house.",
+    "status": "live",
+    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Drizzle ORM", "Claude API"],
+    "last_updated": "2026-08-17",
+    "githubUrl": "https://github.com/lmdrew96/strata"
+  },
+  {
+    "name": "Vertex",
+    "slug": "vertex",
+    "url": "https://vertex.adhdesigns.dev",
+    "tagline": "Knowledge-graph MCP with an interactive graph browser.",
+    "description": "An MCP server for graph-structured knowledge — create nodes and edges, query and render the graph, archive stale nodes — with an interactive browser UI, claude.ai-compatible SSE support, and per-user token generation from its landing page.",
+    "status": "archived",
+    "tech": ["Next.js", "TypeScript", "MCP", "React Flow"],
+    "last_updated": "2026-07-28"
   }
 ]

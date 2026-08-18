@@ -1,6 +1,7 @@
 import projectsJson from "@/data/projects.json"
 
-export type ProjectStatus = "live" | "beta" | "in-development" | "archived"
+export type ProjectStatus = "live" | "beta" | "in-development" | "alpha" | "archived"
+export type ProjectDisplayStatus = "brewing" | "unleashed" | "raging" | "sustained"
 
 export type Project = {
   name: string
@@ -11,6 +12,9 @@ export type Project = {
   status: ProjectStatus
   tech?: string[]
   last_updated: string
+  githubUrl?: string
+  displayStatus?: ProjectDisplayStatus
+  demoUrl?: string
 }
 
 export const projects: readonly Project[] = (projectsJson as Project[])

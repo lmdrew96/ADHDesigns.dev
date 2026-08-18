@@ -109,7 +109,7 @@ export function DonateSection() {
             Help Keep This <SpinningWord />
           </h2>
           <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-sage leading-relaxed font-medium">
-            Everything I build is free — ChaosLimbă, ScribeCat, ThreadBrain, all of it.
+            Everything I build is free — ChaosLimbă, ScribeCat, Sensible, all of it.
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
           <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-sage leading-relaxed font-medium mt-4">

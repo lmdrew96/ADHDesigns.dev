@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Atom, BookOpen, Brain, Bug, Cat, CloudLightning, Fingerprint, Flame, LayoutDashboard, ListTodo, MessageSquare, Network, Newspaper, RefreshCcwDot, Search, Sparkles, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Atom, Bug, Cat, CloudLightning, Coins, Columns2, Dices, Fingerprint, Flame, Gamepad2, Layers, Library, ListTodo, Music, Network, NotebookPen, Newspaper, Palette, RefreshCcwDot, Scroll, Sparkles, Swords, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -153,23 +153,16 @@ const ChaosLimbaIcon = ({ className }: { className?: string }) => (
   </span>
 )
 
-const ChaosLenguaIcon = ({ className }: { className?: string }) => (
-  <span className={cn("relative inline-block", className)}>
-    <Atom className="w-full h-full" />
-    <span className="absolute -top-2 inset-x-0 text-center text-[28px] leading-none font-bold">˜</span>
-  </span>
-)
+type StatusKey = "brewing" | "unleashed" | "raging" | "sustained" | null
 
-type StatusKey = "brewing" | "unleashed" | "raging" | "sustained"
-
-const statusConfig: Record<StatusKey, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string; border: string }> = {
+const statusConfig: Record<Exclude<StatusKey, null>, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string; border: string }> = {
   brewing:   { label: "Brewing",   description: "Planning or early build",   icon: CloudLightning, bg: "bg-adhd-sage/20",  text: "text-adhd-teal",   border: "border-adhd-teal/70" },
   unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/20", text: "text-adhd-purple", border: "border-adhd-purple" },
   raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-adhd-green/20", text: "text-adhd-olive",  border: "border-adhd-olive" },
   sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-adhd-purple/15", text: "text-adhd-dark",   border: "border-adhd-dark" },
 }
 
-const STATUS_ORDER: StatusKey[] = ["brewing", "unleashed", "raging", "sustained"]
+const STATUS_ORDER: Exclude<StatusKey, null>[] = ["brewing", "unleashed", "raging", "sustained"]
 
 function StatusKeyLegend() {
   return (
@@ -207,7 +200,7 @@ type Project = {
   color: string
   textColor: string
   tags: string[]
-  status: StatusKey
+  status: Exclude<StatusKey, null>
   githubUrl: string
   liveUrl?: string
   demoUrl?: string
@@ -220,16 +213,14 @@ type ProjectUI = {
   textColor: string
   tags: string[]
   category: "chaos" | "other"
-  displayStatus?: StatusKey
-  githubUrl: string
-  demoUrl?: string
 }
 
 const statusMap: Record<ProjectData["status"], StatusKey> = {
   "live": "unleashed",
   "beta": "raging",
   "in-development": "brewing",
-  "archived": "sustained",
+  "alpha": "sustained",
+  "archived": null
 }
 
 const projectUIConfig: Record<string, ProjectUI> = {
@@ -239,8 +230,6 @@ const projectUIConfig: Record<string, ProjectUI> = {
     textColor: "text-adhd-lavender",
     tags: ["ADHD", "MCP", "Crisis Mode", "Productivity"],
     category: "chaos",
-    displayStatus: "raging",
-    githubUrl: "https://github.com/lmdrew96/ControlledChaos",
   },
   chaospatch: {
     icon: Bug,
@@ -248,8 +237,6 @@ const projectUIConfig: Record<string, ProjectUI> = {
     textColor: "text-adhd-purple",
     tags: ["PWA", "MCP", "Patch Tracking", "Dev Tools"],
     category: "chaos",
-    displayStatus: "sustained",
-    githubUrl: "https://github.com/lmdrew96/ChaosPatch",
   },
   chaoslimba: {
     icon: ChaosLimbaIcon,
@@ -257,42 +244,20 @@ const projectUIConfig: Record<string, ProjectUI> = {
     textColor: "text-olive",
     tags: ["SLA", "AI Ensemble", "Adaptation Engine", "MCP"],
     category: "chaos",
-    displayStatus: "sustained",
-    githubUrl: "https://github.com/lmdrew96/ChaosLimba",
-    demoUrl: "https://chaoslimba.adhdesigns.dev/demo",
   },
-  chaoslengua: {
-    icon: ChaosLenguaIcon,
+  "chaoslingua-lite": {
+    icon: Scroll,
     color: "bg-adhd-olive",
     textColor: "text-adhd-amber",
-    tags: ["SLA", "AI Ensemble", "Spanish", "Monorepo"],
+    tags: ["Latin", "SLA", "Drills", "Convex"],
     category: "chaos",
-    githubUrl: "https://github.com/lmdrew96/chaos",
   },
-  chaosdash: {
-    icon: LayoutDashboard,
-    color: "bg-adhd-teal",
-    textColor: "text-adhd-sage",
-    tags: ["Dashboard", "MCP", "Cloudflare Workers", "Ecosystem"],
+  duelingchaos: {
+    icon: Swords,
+    color: "bg-adhd-purple",
+    textColor: "text-adhd-amber",
+    tags: ["MTG", "Rules Engine", "Deckbuilder", "AI Opponent"],
     category: "chaos",
-    githubUrl: "https://github.com/lmdrew96/ChaosDash",
-  },
-  chaoscitim: {
-    icon: BookOpen,
-    color: "bg-adhd-sage",
-    textColor: "text-adhd-dark",
-    tags: ["SLA", "PWA", "Reading", "Morphology"],
-    category: "chaos",
-    githubUrl: "https://github.com/lmdrew96/ChaosCitim",
-  },
-  chatos: {
-    icon: MessageSquare,
-    color: "bg-adhd-green",
-    textColor: "text-adhd-dark",
-    tags: ["Convex", "Next.js", "Claude API", "MCP"],
-    category: "chaos",
-    displayStatus: "raging",
-    githubUrl: "https://github.com/lmdrew96/Chatos",
   },
   scribecat: {
     icon: Cat,
@@ -300,36 +265,6 @@ const projectUIConfig: Record<string, ProjectUI> = {
     textColor: "text-adhd-amber",
     tags: ["Convex", "Transcription", "Study Games", "Chrome Extension"],
     category: "other",
-    displayStatus: "sustained",
-    githubUrl: "https://github.com/lmdrew96/ScribeCat-v3",
-  },
-  threadnotes: {
-    icon: Search,
-    color: "bg-adhd-green",
-    textColor: "text-adhd-teal",
-    tags: ["Research", "Journal", "Browser Extension", "Academic"],
-    category: "other",
-    displayStatus: "unleashed",
-    githubUrl: "https://github.com/lmdrew96/research-journal",
-    demoUrl: "https://research.adhdesigns.dev/demo",
-  },
-  threadbrain: {
-    icon: Brain,
-    color: "bg-adhd-teal",
-    textColor: "text-adhd-lavender",
-    tags: ["AI", "Reading", "Accessibility", "ADHD"],
-    category: "other",
-    displayStatus: "raging",
-    githubUrl: "https://github.com/lmdrew96/threadbrain",
-  },
-  chickenscratch: {
-    icon: Newspaper,
-    color: "bg-adhd-amber",
-    textColor: "text-adhd-dark",
-    tags: ["Submissions", "Editorial", "Image Processing", "Community"],
-    category: "other",
-    displayStatus: "sustained",
-    githubUrl: "https://github.com/lmdrew96/ChickenScratch",
   },
   "personal-context-mcp": {
     icon: Fingerprint,
@@ -337,7 +272,6 @@ const projectUIConfig: Record<string, ProjectUI> = {
     textColor: "text-adhd-purple",
     tags: ["MCP", "Context", "Identity", "Cross-Session"],
     category: "other",
-    githubUrl: "https://github.com/lmdrew96/personal-context-mcp",
   },
   tangle: {
     icon: Network,
@@ -345,7 +279,6 @@ const projectUIConfig: Record<string, ProjectUI> = {
     textColor: "text-adhd-amber",
     tags: ["MCP", "Continuity", "Epistemic Memory", "Claude"],
     category: "other",
-    githubUrl: "https://github.com/lmdrew96/Tangle",
   },
   walt: {
     icon: Sparkles,
@@ -353,13 +286,69 @@ const projectUIConfig: Record<string, ProjectUI> = {
     textColor: "text-adhd-lavender",
     tags: ["Whitman", "Constellation", "Music", "Canvas"],
     category: "other",
-    githubUrl: "https://github.com/lmdrew96/walt",
+  },
+  chaosshelf: {
+    icon: Library,
+    color: "bg-adhd-green",
+    textColor: "text-adhd-dark",
+    tags: ["Books", "AI Recs", "Social", "MCP"],
+    category: "other",
+  },
+  majorot: {
+    icon: Dices,
+    color: "bg-adhd-dark",
+    textColor: "text-adhd-amber",
+    tags: ["Tarot", "Solo RPG", "Offline-First", "PWA"],
+    category: "other",
+  },
+  "color-factory": {
+    icon: Palette,
+    color: "bg-adhd-sage",
+    textColor: "text-adhd-dark",
+    tags: ["OKLCH", "Palette", "Export"],
+    category: "other",
+  },
+  "loose-change": {
+    icon: Coins,
+    color: "bg-adhd-amber",
+    textColor: "text-adhd-dark",
+    tags: ["Voice Capture", "Convex", "PWA", "MCP"],
+    category: "other",
+  },
+  nonstop: {
+    icon: Music,
+    color: "bg-adhd-amber",
+    textColor: "text-olive",
+    tags: ["PWA", "Soundboard", "Cloudflare R2"],
+    category: "other",
+  },
+  folio: {
+    icon: NotebookPen,
+    color: "bg-adhd-purple",
+    textColor: "text-adhd-sage",
+    tags: ["Convex", "Attribution", "MCP", "TipTap"],
+    category: "other",
+  },
+  sensible: {
+    icon: Columns2,
+    color: "bg-adhd-teal",
+    textColor: "text-adhd-amber",
+    tags: ["Reader", "Convex", "Claude API"],
+    category: "other",
+  },
+  strata: {
+    icon: Layers,
+    color: "bg-adhd-dark",
+    textColor: "text-adhd-sage",
+    tags: ["Etymology", "Reference", "Drizzle ORM"],
+    category: "other",
   },
 }
 
 const displayOrder = [
-  "chatos", "controlledchaos", "chaoslimba", "chaoslengua", "chaoscitim", "chaosdash", "chaospatch",
-  "scribecat", "threadnotes", "threadbrain", "walt", "chickenscratch", "personal-context-mcp", "tangle",
+  "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite", "duelingchaos", "chaoscord", "chaoscord-activity",
+  "scribecat", "chickenscratch", "personal-context-mcp", "tangle", "walt", "chaosshelf", "majorot",
+  "color-factory", "loose-change", "nonstop", "folio", "sensible", "strata",
 ]
 
 // Rotation + torn-edge shape per card, cycled by index so the stack reads as scattered clippings
@@ -375,6 +364,8 @@ const projects: Project[] = displayOrder
     const data = projectsData.find((p) => p.slug === slug)
     const ui = projectUIConfig[slug]
     if (!data || !ui) return null
+    const status = data.displayStatus ?? statusMap[data.status]
+    if (!status) return null
     return {
       id: data.slug,
       name: data.name,
@@ -384,10 +375,10 @@ const projects: Project[] = displayOrder
       color: ui.color,
       textColor: ui.textColor,
       tags: ui.tags,
-      status: ui.displayStatus ?? statusMap[data.status],
-      githubUrl: ui.githubUrl,
+      status,
+      githubUrl: data.githubUrl ?? "",
       ...(data.url ? { liveUrl: data.url } : {}),
-      ...(ui.demoUrl ? { demoUrl: ui.demoUrl } : {}),
+      ...(data.demoUrl ? { demoUrl: data.demoUrl } : {}),
       category: ui.category,
     }
   })
@@ -434,7 +425,7 @@ export function ProjectsSection() {
                   just mind that an expanding card grows its whole grid row, which can leave gaps
                   next to shorter neighbors. Rotation is already per-card (CLIPPING_VARIANTS below)
                   so it'll still read as scattered clippings even in a single column. */}
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {groupProjects.map((project, idx) => {
                   const Icon = project.icon
                   const isExpanded = activeProject === project.id
@@ -462,10 +453,6 @@ export function ProjectsSection() {
                             <div className="flex items-center justify-between gap-2 mb-1">
                               <div className="flex items-center gap-3">
                                 <h3 className="font-bold text-lg text-adhd-dark">{project.name}</h3>
-                                <span className={cn("inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-mono uppercase tracking-wider border-2 -rotate-2", status.bg, status.text, status.border)}>
-                                  <StatusIcon className="w-3.5 h-3.5" />
-                                  {status.label}
-                                </span>
                               </div>
                               <ChevronDown
                                 className={cn(
@@ -475,6 +462,10 @@ export function ProjectsSection() {
                               />
                             </div>
                             <Markdown className="text-sm text-adhd-purple">{project.tagline}</Markdown>
+                            <span className={cn("mt-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-mono uppercase tracking-wider border-2 -rotate-2", status.bg, status.text, status.border)}>
+                                  <StatusIcon className="w-3.5 h-3.5" />
+                              {status.label}
+                                </span>
                           </div>
                         </div>
                       </button>
