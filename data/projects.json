@@ -318,10 +318,10 @@
     "slug": "mythcast",
     "url": "https://mythcast.adhdesigns.dev",
     "tagline": "Generates internally-consistent mythologies that drift coherently over time.",
-    "description": "Builds cultures, pantheons, and myths that evolve over simulated time rather than random generation, with a Neo4j graph layer tracking relationship and lineage data as the mythology drifts.",
+    "description": "Builds cultures, pantheons, and myths that evolve over simulated time rather than random generation. Each culture renders as an ethnographic field guide where every trait is footnoted with the conditions that produced it — traceable in hindsight, not predictable in advance.",
     "status": "archived",
-    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Neo4j"],
-    "last_updated": "2026-07-27"
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk"],
+    "last_updated": "2026-08-29"
   },
   {
     "name": "NonStop",
