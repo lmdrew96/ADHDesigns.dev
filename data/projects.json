@@ -170,11 +170,11 @@
     "name": "Color Factory",
     "slug": "color-factory",
     "url": "https://color.adhdesigns.dev/",
-    "tagline": "A tiny palette-card generator.",
-    "description": "A tiny palette-card generator: lock the colors you want to keep, pick a harmony style, and let an OKLCH engine fill in the rest.\n\n* **Color Locking:** Keep the swatches you love while the engine works around them.\n* **Harmony Styles:** Pick a harmony rule and get a coherent palette instantly.\n* **Shareable Export:** Download a polished palette card as PNG or SVG.",
+    "tagline": "A palette generator that tells you whether the palette actually works.",
+    "description": "A palette generator that goes past the swatch: lock the colors you want to keep, pick a harmony style, and let an OKLCH engine fill in the rest — then see the result as a real page instead of seven rectangles.\n\n* **Color Locking:** Keep the swatches you love while the engine works around them.\n* **Harmony Styles:** Pick a harmony rule and get a coherent palette instantly.\n* **Palette in Context:** Renders your palette as a full blog page — body text, links, borders, nested quotes, and quiet metadata — because a color that sings as a rectangle can die as body copy.\n* **Contrast Readout:** Audits every pairing the page renders against WCAG, names what fails and by how much, and offers the nearest passing color — never changing your palette on its own.\n* **Two Chassis:** Run the same palette dense-and-dark or airy-and-light; a palette that survives one can collapse in the other.\n* **Shareable Export:** Download a polished palette card as PNG or SVG, or copy the palette as CSS custom properties in OKLCH.",
     "status": "alpha",
     "tech": ["Vite", "React"],
-    "last_updated": "2026-07-13",
+    "last_updated": "2026-08-30",
     "githubUrl": "https://github.com/lmdrew96/card-factory"
   },
   {
