@@ -95,10 +95,10 @@
     "slug": "personal-context-mcp",
     "url": "https://personal-context-mcp.vercel.app",
     "tagline": "Cross-session memory layer for Claude.",
-    "description": "An MCP server that stores identity, projects, relationships, and preferences so Claude keeps context across sessions instead of starting cold.\n\n* **Identity & Projects:** Tracks who you are and what you're building, project by project.\n* **Relationship Mapping:** Remembers the people and teams tied to your work.\n* **Cross-Session Continuity:** Powers Cha(t)os context awareness across separate conversations.\n* **Multi-Tenant:** Redis-backed persistence keeps every user's context isolated.",
+    "description": "An MCP server that holds the durable facts about you that no codebase or task tracker does, so Claude starts warm instead of cold.\n\n* **Dated Facts:** Every fact carries the date it was established and how it's known — measured, reported, or self-identified — so stale context announces itself instead of being quietly believed.\n* **Relationship Mapping:** Remembers the people and teams tied to your work.\n* **Claude Identities:** Keeps track of which Claude is which across the tools you use, and tells each one who it is.\n* **Multi-Tenant:** Redis-backed persistence keeps every user's context isolated.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-07-27",
+    "last_updated": "2026-09-06",
     "githubUrl": "https://github.com/lmdrew96/personal-context-mcp"
   },
   {
