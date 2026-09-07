@@ -106,10 +106,10 @@
     "slug": "tangle",
     "url": "https://tangle.adhdesigns.dev",
     "tagline": "Continuity-of-thought MCP for Claude.",
-    "description": "An MCP server that persists Claude's epistemic state across sessions — hunches, suspicions, dead-ends, and partial reasoning that would otherwise evaporate at session end.\n\n* **Working Notes:** Captures the texture of working a problem, not just facts or chat history.\n* **Browse Your Notes:** A read-only web view of everything Claude has kept — search, filter by status, confidence, project, or tag, and sort by the same ordering Claude sees.\n* **Attributed Captures:** Each Claude identifies its own notes via header or URL parameter.\n* **Tiered Recall:** Re-entering a project surfaces durable references first, then the open questions left untouched longest — the ones most likely forgotten.\n* **Sibling Systems:** Complements Personal Context MCP (identity) and built-in memory (chat history).",
+    "description": "An MCP server that persists Claude's epistemic state across sessions — hunches, suspicions, dead-ends, and partial reasoning that would otherwise evaporate at session end.\n\n* **Working Notes:** Captures the texture of working a problem, not just facts or chat history.\n* **Browse Your Notes:** A read-only web view of everything Claude has kept — search, filter by status, confidence, project, or tag, and sort by the same ordering Claude sees.\n* **Optional Accounts:** Sign in to recover a lost token or reach your notes from another machine — the MCP URL keeps working with no login, so nothing already connected breaks.\n* **Attributed Captures:** Each Claude identifies its own notes via header or URL parameter.\n* **Tiered Recall:** Re-entering a project surfaces durable references first, then the open questions left untouched longest — the ones most likely forgotten.\n* **Sibling Systems:** Complements Personal Context MCP (identity) and built-in memory (chat history).",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-09-06",
+    "last_updated": "2026-09-07",
     "githubUrl": "https://github.com/lmdrew96/Tangle"
   },
   {
