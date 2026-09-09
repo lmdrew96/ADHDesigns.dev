@@ -6,8 +6,8 @@
     "tagline": "Your executive function, effectively replaced.",
     "description": "An ADHD-friendly task manager that converts brain dumps (voice, text, or photo) into structured tasks using Claude Haiku.\n\n* **AI Prioritization:** Automatically factors in your time and energy levels.\n* **Visual Timelines:** See your whole day chronologically with Mirror view and track momentum.\n* **Student Sync:** Seamlessly integrates with Canvas calendars.\n* **Crisis Mode:** Simplifies everything for high-overwhelm days.",
     "status": "alpha",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Convex", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
-    "last_updated": "2026-08-13",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
+    "last_updated": "2026-09-09",
     "githubUrl": "https://github.com/lmdrew96/ControlledChaos"
   },
   {
