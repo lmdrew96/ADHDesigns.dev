@@ -139,10 +139,10 @@
     "slug": "kindling",
     "url": "https://kindling.adhdesigns.dev/",
     "tagline": "A place for ideas to catch before they go out.",
-    "description": "An MCP-connected store for sparks and half-formed ideas — capture, dig back through, archive, or promote them into real projects. Exposed to Claude via kindle/kindling_* tools.",
-    "status": "archived",
+    "description": "An MCP-connected store for sparks and half-formed ideas — capture, dig back through, archive, or promote them into real projects. Nineteen kindle/kindling_* tools, markdown rendering, export, and a recall ranking that decides which neglected idea deserves attention next.",
+    "status": "in-development",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Tailwind CSS"],
-    "last_updated": "2026-05-17"
+    "last_updated": "2026-09-20"
   },
   {
     "name": "The Majorot",
