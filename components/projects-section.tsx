@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Atom, Bug, Cat, CloudLightning, Coins, Columns2, Dices, Fingerprint, Flame, Gamepad2, Layers, Library, ListTodo, Music, Network, NotebookPen, Newspaper, Palette, RefreshCcwDot, Scroll, Sparkles, Swords, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Atom, Bug, Cat, CloudLightning, Coins, FlaskConical, Fingerprint, Flame, Gamepad2, Layers, Library, Lightbulb, ListTodo, Network, NotebookPen, Newspaper, Palette, RefreshCcwDot, Scroll, Sparkles, Swords, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -228,7 +228,7 @@ const projectUIConfig: Record<string, ProjectUI> = {
     icon: ListTodo,
     color: "bg-adhd-purple",
     textColor: "text-adhd-lavender",
-    tags: ["ADHD", "MCP", "Crisis Mode", "Productivity"],
+    tags: ["ADHD", "MCP", "Rescue", "Productivity"],
     category: "chaos",
   },
   chaospatch: {
@@ -263,7 +263,14 @@ const projectUIConfig: Record<string, ProjectUI> = {
     icon: Cat,
     color: "bg-adhd-purple",
     textColor: "text-adhd-amber",
-    tags: ["Convex", "Transcription", "Study Games", "Chrome Extension"],
+    tags: ["Convex", "Transcription", "Study Games", "StudyQuest"],
+    category: "other",
+  },
+  threadnotes: {
+    icon: FlaskConical,
+    color: "bg-adhd-olive",
+    textColor: "text-adhd-lavender",
+    tags: ["Research", "OpenAlex", "MCP", "Chrome Extension"],
     category: "other",
   },
   "personal-context-mcp": {
@@ -280,6 +287,13 @@ const projectUIConfig: Record<string, ProjectUI> = {
     tags: ["MCP", "Continuity", "Epistemic Memory", "Claude"],
     category: "other",
   },
+  kindling: {
+    icon: Lightbulb,
+    color: "bg-adhd-green",
+    textColor: "text-adhd-purple",
+    tags: ["Idea Capture", "MCP", "Resurfacing", "Upstash Redis"],
+    category: "other",
+  },
   walt: {
     icon: Sparkles,
     color: "bg-adhd-dark",
@@ -292,13 +306,6 @@ const projectUIConfig: Record<string, ProjectUI> = {
     color: "bg-adhd-green",
     textColor: "text-adhd-dark",
     tags: ["Books", "AI Recs", "Social", "MCP"],
-    category: "other",
-  },
-  majorot: {
-    icon: Dices,
-    color: "bg-adhd-dark",
-    textColor: "text-adhd-amber",
-    tags: ["Tarot", "Solo RPG", "Offline-First", "PWA"],
     category: "other",
   },
   "color-factory": {
@@ -315,25 +322,11 @@ const projectUIConfig: Record<string, ProjectUI> = {
     tags: ["Voice Capture", "Convex", "PWA", "MCP"],
     category: "other",
   },
-  nonstop: {
-    icon: Music,
-    color: "bg-adhd-amber",
-    textColor: "text-olive",
-    tags: ["PWA", "Soundboard", "Cloudflare R2"],
-    category: "other",
-  },
   folio: {
     icon: NotebookPen,
     color: "bg-adhd-purple",
     textColor: "text-adhd-sage",
     tags: ["Convex", "Attribution", "MCP", "TipTap"],
-    category: "other",
-  },
-  sensible: {
-    icon: Columns2,
-    color: "bg-adhd-teal",
-    textColor: "text-adhd-amber",
-    tags: ["Reader", "Convex", "Claude API"],
     category: "other",
   },
   strata: {
@@ -346,9 +339,9 @@ const projectUIConfig: Record<string, ProjectUI> = {
 }
 
 const displayOrder = [
-  "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite", "duelingchaos", "chaoscord", "chaoscord-activity",
-  "scribecat", "chickenscratch", "personal-context-mcp", "tangle", "walt", "chaosshelf", "majorot",
-  "color-factory", "loose-change", "nonstop", "folio", "sensible", "strata",
+  "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite",
+  "scribecat", "threadnotes", "personal-context-mcp", "tangle", "kindling", "walt", "chaosshelf",
+  "color-factory", "loose-change", "folio", "strata",
 ]
 
 // Rotation + torn-edge shape per card, cycled by index so the stack reads as scattered clippings
