@@ -489,12 +489,14 @@ export function ProjectsSection() {
                             </div>
 
                             <div className="flex flex-wrap gap-3">
-                              <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Button className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-sm">
-                                  <ExternalLink className="w-4 h-4 mr-2" />
-                                  View Project
-                                </Button>
-                              </a>
+                              {(project.liveUrl || project.githubUrl) && (
+                                <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                  <Button className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-sm">
+                                    <ExternalLink className="w-4 h-4 mr-2" />
+                                    View Project
+                                  </Button>
+                                </a>
+                              )}
                               {project.demoUrl && (
                                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                                   <Button className="bg-adhd-teal text-adhd-lavender hover:bg-adhd-teal/90 rounded-sm">
@@ -503,15 +505,17 @@ export function ProjectsSection() {
                                   </Button>
                                 </a>
                               )}
-                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Button
-                                  variant="outline"
-                                  className="rounded-sm border-adhd-purple text-adhd-purple hover:bg-adhd-purple hover:text-adhd-lavender bg-transparent"
-                                >
-                                  <Github className="w-4 h-4 mr-2" />
-                                  Source Code
-                                </Button>
-                              </a>
+                              {project.githubUrl && (
+                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                  <Button
+                                    variant="outline"
+                                    className="rounded-sm border-adhd-purple text-adhd-purple hover:bg-adhd-purple hover:text-adhd-lavender bg-transparent"
+                                  >
+                                    <Github className="w-4 h-4 mr-2" />
+                                    Source Code
+                                  </Button>
+                                </a>
+                              )}
                             </div>
                           </div>
                         </div>

@@ -19,7 +19,7 @@
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku", "HuggingFace"],
     "last_updated": "2026-08-12",
-    "githubUrl": "https://github.com/lmdrew96/ChaosLimba",
+    "githubUrl": "https://github.com/lmdrew96/chaos",
     "demoUrl": "https://chaoslimba.adhdesigns.dev/demo"
   },
   {
@@ -41,7 +41,7 @@
     "tagline": "Dev patch tracker with MCP powers.",
     "description": "A patch tracker for agentic development — log bugs, fixes, and features per project, then let Claude Code read and close them mid-session.\n\n* **23 MCP Tools:** Claude can add, search, batch-update, and complete patches over remote MCP.\n* **Specs + Screenshots:** Each patch carries terse notes, a long-form markdown spec, and image attachments Claude can see.\n* **Bulk Actions:** Archive, delete, reprioritize, or tag a stack of patches at once, with filters saved in the URL.\n* **Insights:** A Completion Momentum panel shows what's actually getting done across every project.\n* **Installable:** Works as a PWA on desktop and mobile.",
     "status": "alpha",
-    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP", "Vercel Blob"],
+    "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP", "Cloudflare R2"],
     "last_updated": "2026-08-04",
     "githubUrl": "https://github.com/lmdrew96/ChaosPatch"
   },
@@ -84,7 +84,7 @@
     "slug": "chickenscratch",
     "url": "https://chickenscratch.me",
     "tagline": "The submissions and editorial portal for the Hen & Ink Society zine.",
-    "description": "The submissions portal for Hen & Ink Society, a student-run literary and art zine at the University of Delaware. It handles every piece from submission to committee review to publication.\n\n* **Submissions:** Writers and artists submit work, track its status, and revise when the committee asks.\n* **Review Pipeline:** A Kanban board moves pieces from coordinator to proofreader to editor-in-chief, with email handoffs.\n* **Officer Tools:** A task board, meeting polls, announcements, and Discord digests keep the officers in sync.\n* **Gallery + Events:** A public gallery of published work, plus exhibition submissions and event signups.",
+    "description": "The submissions portal for Hen & Ink Society, a student-run literary and art zine and the first AAP-based RSO at the University of Delaware. It handles every piece from submission to committee review to publication.\n\n* **Submissions:** Writers and artists submit work, track its status, and revise when the committee asks.\n* **Review Pipeline:** A Kanban board moves pieces from coordinator to proofreader to editor-in-chief, with email handoffs.\n* **Officer Tools:** A task board, meeting polls, announcements, and Discord digests keep the officers in sync.\n* **Gallery + Events:** A public gallery of published work, plus exhibition submissions and event signups.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "Cloudflare R2"],
     "last_updated": "2026-04-30",
@@ -96,9 +96,9 @@
     "url": "https://personal-context-mcp.vercel.app",
     "tagline": "Durable facts about you, so every Claude starts warm.",
     "description": "An MCP server for what no codebase or task tracker holds — dated facts about you, your people, and which Claude is which.\n\n* **Dated Facts:** Each fact records when it was established and how it's known, so stale context announces itself.\n* **Relationships:** Pronouns, affiliations, and nicknames Claude would otherwise guess at.\n* **Claude Identities:** Each Claude that connects gets told which one it is.\n* **11 MCP Tools + Editor:** Read and write from Claude, or edit it all in a web editor behind a private token or an optional account.",
-    "status": "alpha",
+    "status": "beta",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-09-06",
+    "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/personal-context-mcp"
   },
   {
@@ -109,8 +109,7 @@
     "description": "An MCP server that keeps Claude's hunches, dead-ends, and open questions alive across sessions instead of letting them evaporate when the chat ends.\n\n* **11 MCP Tools:** Capture, recall, search, and resolve notes, each tagged with a confidence from gut to conviction.\n* **Tiered Recall:** Standing references first, then the open questions left untouched longest.\n* **Calibration Record:** Closing a note records whether the hunch panned out, building a track record.\n* **Browse View:** Search, filter, and sort everything Claude has kept on a read-only page.\n* **Optional Accounts:** Recover a lost token by signing in; the MCP URL never needs one.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-09-07",
-    "githubUrl": "https://github.com/lmdrew96/Tangle"
+    "last_updated": "2026-09-07"
   },
   {
     "name": "Songs of My Selves: We as Walt",
@@ -130,7 +129,7 @@
     "tagline": "Track what you own, what you want, and what's due back at the library.",
     "description": "A personal book catalog for your shelf, your wishlist, and your library loans — the due-date tracking Goodreads and StoryGraph skip.\n\n* **Library Loans:** Due dates, overdue states, and one-tap renew or return.\n* **Scan to Add:** Scan a barcode or search, and covers and descriptions fill in.\n* **Recommendations:** Ask for a book in your own words, or open the picks friends send you.\n* **Friends:** Add friends by code to see each other's shelves (loan details stay private).\n* **16 MCP Tools:** Add books, renew loans, and send picks from Claude.",
     "status": "live",
-    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Tailwind CSS", "Voyage AI", "MCP", "Vercel"],
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Tailwind CSS", "MCP", "Vercel", "Gemini embeddings"],
     "last_updated": "2026-07-14",
     "githubUrl": "https://github.com/lmdrew96/LibraLex"
   },
@@ -140,9 +139,10 @@
     "url": "https://kindling.adhdesigns.dev/",
     "tagline": "A place for ideas to catch before they go out.",
     "description": "An idea inbox with a memory: capture a half-formed thought mid-chat, and Kindling keeps resurfacing it until you use it or let it go.\n\n* **21 MCP Tools:** Kindle, recall, snooze, promote, and prune sparks from Claude.\n* **Recall Ranking:** Whatever has waited longest and been touched least comes up first.\n* **Decay:** Untouched sparks go cold after 180 days (configurable), so you triage on purpose.\n* **Promotion:** When a spark becomes something real, it's archived with a note on where it went.\n* **Web Dashboard:** Every spark shows its heat, plus tag cleanup, export, and optional accounts.",
-    "status": "in-development",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Tailwind CSS"],
-    "last_updated": "2026-09-20"
+    "last_updated": "2026-09-27",
+    "githubUrl": "https://github.com/lmdrew96/kindling"
   },
   {
     "name": "The Majorot",
@@ -174,8 +174,7 @@
     "description": "Lock the colors you want, pick a harmony style, and an OKLCH engine fills in the rest — then shows it on a real page instead of seven rectangles.\n\n* **Harmony Engine:** Seven harmony styles, 2 to 7 colors, every hue equally vivid.\n* **Palette in Context:** A full blog page, with a legend for which color paints what.\n* **Contrast Readout:** Checks every pairing against WCAG and offers the nearest passing color.\n* **Two Layouts:** Soft grunge (dense) or Dreamy (airy), because a palette can survive one and die in the other.\n* **Share & Export:** Share a link, grab a PNG or SVG card, or copy OKLCH CSS variables.",
     "status": "alpha",
     "tech": ["Vite", "React"],
-    "last_updated": "2026-09-27",
-    "githubUrl": "https://github.com/lmdrew96/card-factory"
+    "last_updated": "2026-09-27"
   },
   {
     "name": "DuelingChaos",
@@ -183,9 +182,9 @@
     "url": null,
     "tagline": "A Magic: The Gathering client built on a real rules engine.",
     "description": "A React front end for Forge, the open-source MTG rules engine, running headless behind a Java bridge and a Node API. Every trigger, target, and stack interaction resolves by the actual rules (not a simplified simulation).\n\n* **Live board:** A stack rail, targeting arrows, summoning sickness, and combat damage track the game as it plays out.\n* **Deckbuilder:** Card search, format legality, commanders, EDHREC recs, and decks saved to your account.\n* **AI opponents:** Pick their deck (or randomize it), difficulty, and personality before the match.\n* **Extra modes:** Commander from the command zone, Momir Basic quick play, and Forge puzzle files.",
-    "status": "live",
-    "tech": ["TypeScript", "Node.js", "Java", "React", "Vite"],
-    "last_updated": "2026-08-09",
+    "status": "in-development",
+    "tech": ["TypeScript", "Node.js", "Java", "React", "Vite", "Clerk", "Neon Postgres"],
+    "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/duelingchaos"
   },
   {
@@ -204,9 +203,9 @@
     "url": "https://change.adhdesigns.dev/",
     "tagline": "Catch the thought now. Decide what it is later.",
     "description": "A voice-and-text capture PWA for thoughts that show up while you're driving, falling asleep, or mid-something-else. Capturing never asks you to decide anything.\n\n* **One-tap capture:** Tap to record, tap to stop, and AssemblyAI transcribes it (offline captures sync later).\n* **Batch triage:** One entry at a time: keep, discard, skip, or send to Kindling or ControlledChaos, with undo on everything.\n* **No guilt mechanics:** A plain untriaged count, with no streaks, no red badges, and no countdown.\n* **14 MCP tools:** Claude can capture, search, triage, and fix transcripts alongside your other tools.",
-    "status": "in-development",
-    "tech": ["Next.js", "TypeScript", "Convex", "PWA", "MCP"],
-    "last_updated": "2026-07-22",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Convex", "PWA", "MCP", "Clerk", "AssemblyAI"],
+    "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/loose-change"
   },
   {
@@ -216,8 +215,9 @@
     "tagline": "Your natal chart, calculated for real and rendered as art.",
     "description": "Birth data in, a real natal chart out. Stellation computes planetary positions with Skyfield and NASA JPL's DE440s ephemeris, then renders the chart as generative art with a Claude-written reading.\n\n* **Beyond solo charts:** Synastry, composite charts, transits, and solar and Saturn returns.\n* **Shareable cards:** Save a chart and get a public link that unfurls properly on social media.",
     "status": "archived",
-    "tech": ["FastAPI", "Python", "pyswisseph", "React", "Claude Haiku"],
-    "last_updated": "2026-07-21"
+    "tech": ["FastAPI", "Python", "React", "Claude Haiku", "Skyfield", "Three.js", "Clerk", "Postgres"],
+    "last_updated": "2026-07-21",
+    "githubUrl": "https://github.com/lmdrew96/stellation"
   },
   {
     "name": "Syzygy",
@@ -226,8 +226,9 @@
     "tagline": "Tarot draws weighted by today's actual sky.",
     "description": "A tarot oracle that draws 3–7 Major Arcana weighted by your words and today's real transits, then animates the reading as a constellation.\n\n* **Real correspondences:** Cards link through Golden Dawn rulers, so the graph shifts with the sky.\n* **Natal layer:** Add birth data and readings factor in your chart.\n* **Woven reading:** Claude ties each card to its planet.",
     "status": "archived",
-    "tech": ["Next.js", "Canvas", "Convex", "Claude Sonnet"],
-    "last_updated": "2026-07-29"
+    "tech": ["Next.js", "Canvas", "Convex", "Claude Sonnet", "Clerk"],
+    "last_updated": "2026-07-29",
+    "githubUrl": "https://github.com/lmdrew96/syzygy"
   },
   {
     "name": "Cha(t)os",
@@ -247,7 +248,7 @@
     "tagline": "Read real Romanian, with glosses that back off as you improve.",
     "description": "A PWA for reading real Romanian, and the reading-side sibling to ChaosLimbă. Tap a word for layered help while it tracks which forms you get on your own.\n\n* **Graduated glosses:** Four tiers per word, with idioms glossed as one unit.\n* **Bring your own text:** URL, PDF, EPUB, or paste, analyzed with UDPipe and Wiktionary.",
     "status": "archived",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Clerk", "Claude API"],
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Clerk", "Claude API", "Neon Postgres"],
     "last_updated": "2026-05-16",
     "githubUrl": "https://github.com/lmdrew96/ChaosCitim"
   },
@@ -259,7 +260,8 @@
     "description": "An Electron IDE for agentic coding. Haiku proposes a multi-file plan, Sonnet reviews it before any code is written, and the changes land in a Monaco editor as a diff.\n\n* **Visible diffs:** Agent edits show up with gutter highlighting, so you see exactly what changed.\n* **Built-in terminal:** A real terminal panel, plus an agent tool that runs commands sandboxed to the project root.",
     "status": "archived",
     "tech": ["Electron", "React", "TypeScript", "Tailwind CSS", "Vite", "Claude API"],
-    "last_updated": "2026-04-06"
+    "last_updated": "2026-04-06",
+    "githubUrl": "https://github.com/lmdrew96/ChaosCode"
   },
   {
     "name": "ChaosCourse",
@@ -277,9 +279,9 @@
     "url": null,
     "tagline": "The Hamilton soundboard, as a Discord bot.",
     "description": "A Discord bot that plays NonStop's Hamilton clips straight into your voice channel. No browser tab, no screen share, just the line you needed at the exact wrong moment.\n\n* **/sound:** Fuzzy-search 183 clips by line, character, or tag, with autocomplete as you type.\n* **Shared Library:** Streams the same Cloudflare R2 audio as the NonStop web soundboard.\n* **/roll:** Dice notation like 2d6+3, because the voice channel is also where game night happens.\n* **Always On:** Runs as a hosted bot on Fly.io.",
-    "status": "live",
+    "status": "in-development",
     "tech": ["Node.js", "TypeScript", "discord.js", "Fly.io"],
-    "last_updated": "2026-08-16",
+    "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/chaoscord"
   },
   {
@@ -288,9 +290,9 @@
     "url": null,
     "tagline": "A Hamilton guessing game that runs inside your Discord call.",
     "description": "A Discord Activity (an app embedded right in the voice call) built on the same Hamilton clip library as NonStop and ChaosCord.\n\n* **Static Cue:** 10-round matches where you race to name a clip that's been reversed, slowed, or cut to a 0.75-second sting.\n* **Live Scoreboard:** Convex syncs every round, guess, and point across everyone in the call, plus a running leaderboard.\n* **Shared Soundboard:** Anyone can fire a clip and the whole call hears it.\n* **No Duplicate Files:** Distortions happen in the browser with the Web Audio API, straight from NonStop's R2 audio.",
-    "status": "live",
+    "status": "in-development",
     "tech": ["Next.js", "TypeScript", "Convex", "Discord Embedded App SDK"],
-    "last_updated": "2026-08-16",
+    "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/chaoscord-activity"
   },
   {
@@ -360,9 +362,9 @@
     "url": "https://folio.adhdesigns.dev",
     "tagline": "A writing space that knows what changed since you last looked.",
     "description": "A word processor that stores every block as its own row, so who-wrote-what and what-changed-since-you-left live in the data model instead of being parsed out after the fact.\n\n* **Diff since last visit:** See which blocks changed while you were gone, and who changed them.\n* **Cleo:** An in-app Claude who reacts to your edits and remembers her past reactions.\n* **Collaboration:** Invite friends onto shared docs and see who else is viewing.\n* **The basics, done properly:** Footnotes, word-count goals, find and replace, and PDF, Word, and Markdown export.\n* **MCP door:** 4 read-only tools let other Claude instances list, read, and diff your docs.",
-    "status": "in-development",
-    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "TipTap", "MCP"],
-    "last_updated": "2026-07-15",
+    "status": "beta",
+    "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "TipTap", "MCP", "Claude API"],
+    "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/folio"
   },
   {
@@ -382,7 +384,7 @@
     "tagline": "A side-by-side reader that modernizes old writing without losing its voice.",
     "description": "Old texts on one side, plain contemporary English on the other: same meaning, same tone, same rhetorical punch. Paine still reads urgent; Austen still reads ironic.\n\n* **Human-reviewed:** Claude drafts each modernization once, then a person edits and approves it before it goes public.\n* **Glosses:** Archaic terms that survive get explained, and you can ask about anything you highlight.\n* **Your copy:** A free account saves your highlights, notes, and reading position.\n* **Read your way:** Pick the font, text size, and theme (light or dark), or hide the original entirely.",
     "status": "live",
-    "tech": ["Next.js", "TypeScript", "Convex", "Claude API"],
+    "tech": ["Next.js", "TypeScript", "Convex", "Claude API", "Convex Auth"],
     "last_updated": "2026-08-17",
     "githubUrl": "https://github.com/lmdrew96/sensible"
   },
@@ -414,7 +416,7 @@
     "tagline": "A knowledge-graph MCP server Claude can read, write, and map.",
     "description": "An MCP server for graph-shaped ideas (concepts, people, works, claims, and questions, linked by typed edges), built as Tangle's sibling.\n\n* **10 MCP tools:** Create, search, and archive nodes, link them, render the graph, and find orphans.\n* **Graph browser:** An interactive React Flow map of the whole graph.\n* **Works in claude.ai:** Grab a token and MCP URL from the landing page.",
     "status": "archived",
-    "tech": ["Next.js", "TypeScript", "MCP", "React Flow"],
+    "tech": ["Next.js", "TypeScript", "MCP", "React Flow", "Upstash Redis"],
     "last_updated": "2026-07-28"
   }
 ]
