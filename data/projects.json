@@ -39,10 +39,10 @@
     "slug": "chaospatch",
     "url": "https://chaospatch.adhdesigns.dev",
     "tagline": "Dev patch tracker with MCP powers.",
-    "description": "A patch tracker for agentic development — log bugs, fixes, and features per project, then let Claude Code read and close them mid-session.\n\n* **23 MCP Tools:** Claude can add, search, batch-update, and complete patches over remote MCP.\n* **Specs + Screenshots:** Each patch carries terse notes, a long-form markdown spec, and image attachments Claude can see.\n* **Bulk Actions:** Archive, delete, reprioritize, or tag a stack of patches at once, with filters saved in the URL.\n* **Insights:** A Completion Momentum panel shows what's actually getting done across every project.\n* **Installable:** Works as a PWA on desktop and mobile.",
+    "description": "A patch tracker for agentic development — log bugs, fixes, and features per project, then let Claude Code read and close them mid-session.\n\n* **23 MCP Tools:** Claude can add, search, batch-update, and complete patches over remote MCP.\n* **Specs + Screenshots:** Each patch carries terse notes, a long-form markdown spec, and image attachments Claude can see.\n* **Bulk Actions:** Archive, delete, reprioritize, or tag a stack of patches at once, with filters saved in the URL.\n* **Insights:** Your 7-day pace, whether the backlog is growing or shrinking, and which patches are stuck — across every project.\n* **Stale Nudges:** Patches untouched for a week surface on the dashboard, with a one-tap \"still relevant\" to reset the clock.\n* **Installable:** Works as a PWA on desktop and mobile.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP", "Cloudflare R2"],
-    "last_updated": "2026-08-04",
+    "last_updated": "2026-09-28",
     "githubUrl": "https://github.com/lmdrew96/ChaosPatch"
   },
   {
