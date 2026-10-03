@@ -82,12 +82,12 @@
   {
     "name": "ChickenScratch",
     "slug": "chickenscratch",
-    "url": null,
+    "url": "https://chickenscratch.adhdesigns.dev",
     "tagline": "The submissions and editorial portal for the Hen & Ink Society zine.",
     "description": "The submissions portal for Hen & Ink Society, a student-run literary and art zine and the first AAP-based RSO at the University of Delaware.\n\n* **Submissions:** Writers and artists submit work, track its status, and revise on request.\n* **Review Pipeline:** A Kanban board moves pieces from coordinator to proofreader to editor-in-chief.\n* **Officer Tools:** A task board, meeting polls, and Discord digests keep officers in sync.",
     "status": "archived",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "Cloudflare R2"],
-    "last_updated": "2026-09-27",
+    "last_updated": "2026-10-03",
     "githubUrl": "https://github.com/lmdrew96/ChickenScratch"
   },
   {
