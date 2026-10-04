@@ -138,10 +138,10 @@
     "slug": "kindling",
     "url": "https://kindling.adhdesigns.dev/",
     "tagline": "A place for ideas to catch before they go out.",
-    "description": "An idea inbox with a memory: capture a half-formed thought mid-chat, and Kindling keeps resurfacing it until you use it or let it go.\n\n* **21 MCP Tools:** Kindle, recall, snooze, promote, and prune sparks from Claude.\n* **Recall Ranking:** Whatever has waited longest and been touched least comes up first.\n* **Decay:** Untouched sparks go cold after 180 days (configurable), so you triage on purpose.\n* **Promotion:** When a spark becomes something real, it's archived with a note on where it went.\n* **Web Dashboard:** Every spark shows its heat, plus tag cleanup, export, and optional accounts.",
+    "description": "Where ideas go to be developed. Raw thoughts get caught in Loose Change; the ones worth keeping come to Kindling with a title, a kind, a home, and a next step, and it keeps resurfacing them until you use them or let them go.\n\n* **Structured Sparks:** Every idea gets a title, a kind (story, development, research, reading, essay), a home, and a next step.\n* **21 MCP Tools:** Kindle, recall, snooze, promote, and prune sparks from Claude, which offers to keep an idea instead of filing things on its own.\n* **Recall Ranking:** Whatever has waited longest and been touched least comes up first.\n* **Decay:** Untouched sparks go cold after 180 days (configurable), so you triage on purpose.\n* **Promotion:** When a spark becomes something real, it's archived with a note on where it went.\n* **Web Dashboard:** At-a-glance stats, a \"worth another look\" spotlight, heat on every card, and optional accounts with separate work and personal spaces.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Tailwind CSS"],
-    "last_updated": "2026-09-27",
+    "last_updated": "2026-10-04",
     "githubUrl": "https://github.com/lmdrew96/kindling"
   },
   {
