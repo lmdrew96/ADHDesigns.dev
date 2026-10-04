@@ -418,5 +418,16 @@
     "status": "archived",
     "tech": ["Next.js", "TypeScript", "MCP", "React Flow", "Upstash Redis"],
     "last_updated": "2026-07-28"
+  },
+  {
+    "name": "CodyND",
+    "slug": "codynd",
+    "url": null,
+    "tagline": "Claude Code mods for brains that wander.",
+    "description": "Neurodivergent-friendly mods for Claude Code that keep your work visible and your wins audible. A status line shows the patch you're on, a chime celebrates when it's done, a gentle clock nudges you to check in with your body on long sessions, and a re-entry card tells you where you left off. CodyND helps and celebrates. It never polices.",
+    "status": "beta",
+    "tech": ["TypeScript", "Claude Code plugin API", "ChaosPatch MCP"],
+    "last_updated": "2026-10-03",
+    "githubUrl": "https://github.com/lmdrew96/codynd"
   }
 ]
