@@ -4,10 +4,10 @@
     "slug": "controlledchaos",
     "url": "https://controlledchaos.adhdesigns.dev",
     "tagline": "Your executive function, effectively replaced.",
-    "description": "An ADHD-friendly task manager that turns brain dumps (typed, spoken, or photographed) into tasks with Claude Haiku, then tells you what's next.\n\n* **Do This Next:** AI picks your next task from your energy, time, calendar, and goals.\n* **Sittings, Not Marathons:** Plan a big task across several work sessions instead of one unrealistic block.\n* **Goals That Move:** Every goal shows its next step, and AI can break it into starter tasks.\n* **Rescue:** Deadline looming? Tell it what's due and it builds a step-by-step plan.\n* **Canvas + MCP:** Canvas calendar import for class schedules, plus 38 MCP tools so Claude can work your list.",
+    "description": "An ADHD-friendly task manager that turns brain dumps (typed, spoken, or photographed) into tasks with Claude Haiku, then tells you what's next.\n\n* **Do This Next:** AI picks your next task from your energy, time, calendar, and goals.\n* **Sittings, Not Marathons:** Plan a big task across several work sessions instead of one unrealistic block.\n* **Goals That Move:** Every goal shows its next step, and AI can break it into starter tasks.\n* **Rescue:** Deadline looming? Tell it what's due and it builds a step-by-step plan.\n* **Canvas + MCP:** Canvas calendar import for class schedules, plus 41 MCP tools: connect Claude, ChatGPT, or any MCP app by signing in, and it can work your list.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
-    "last_updated": "2026-09-26",
+    "last_updated": "2026-10-04",
     "githubUrl": "https://github.com/lmdrew96/ControlledChaos"
   },
   {
