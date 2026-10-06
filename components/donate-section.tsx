@@ -58,7 +58,7 @@ const donationTiers = [
     icon: Zap,
     title: "Keep the Lights On",
     amount: "$5/mo",
-    description: "Cover the cost of one user across the ADHDesigns ecosystem for a month. Servers, domains, API calls — the invisible stuff that makes free tools possible.",
+    description: "Chip in on the monthly bills: servers, domains, API calls — the invisible stuff that makes free tools possible.",
     color: "bg-indigo-void",
     textColor: "text-caution-amber",
     tilt: "-1.4deg",
@@ -68,7 +68,7 @@ const donationTiers = [
     icon: Heart,
     title: "Fuel the Chaos",
     amount: "$10/mo",
-    description: "Keep two users' worth of tools running AND help fund new features and bug fixes. You're basically my QA department's salary. (I am also the QA department.)",
+    description: "Help keep the lights on AND fund new features and bug fixes. You're basically my QA department's salary. (I am also the QA department.)",
     color: "bg-muted-indigo",
     textColor: "text-bone",
     tilt: "1.1deg",
@@ -78,7 +78,7 @@ const donationTiers = [
     icon: Star,
     title: "Chaos Patron",
     amount: "$25/mo",
-    description: "You're single-handedly keeping a chunk of the ecosystem alive. You get my undying gratitude, a spot on a future supporters page, and the knowledge that you're funding tools built by spite and stubbornness.",
+    description: "You're keeping a real chunk of the ecosystem alive. You get my undying gratitude, a spot on a future supporters page, and the knowledge that you're funding tools built by spite and stubbornness.",
     color: "bg-caution-amber",
     textColor: "text-indigo-void",
     tilt: "-0.7deg",
@@ -113,7 +113,7 @@ export function DonateSection() {
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
           <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text leading-relaxed font-medium mt-4">
-            If anything I've built has helped you, even a small monthly membership goes further than you'd think — $5 covers an entire user's server costs for a month. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
+            If anything I've built has helped you, even a small monthly membership goes further than you'd think — every dollar goes straight to the servers, domains, and API calls that keep it all free. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
 
