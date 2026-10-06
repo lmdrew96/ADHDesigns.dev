@@ -51,7 +51,7 @@
     "url": "https://scribecat.adhdesigns.dev",
     "tagline": "ScribeCat scribes and is cat.",
     "description": "A lecture companion for ADHD brains: record a class, get a live AssemblyAI transcript, and let Nugget take AI notes while you listen.\n\n* **6 Study Tools:** Summary, key concepts, flashcards, quizzes, concept maps, and ELI5, all built from your lecture.\n* **Exam Rooms:** Exam simulations with weak-spot tracking, so you know what to study next.\n* **Study With Friends:** Friends, DMs, study rooms, and multiplayer Quiz Battle and Jeopardy.\n* **StudyQuest:** Adopt a pixel cat that levels up from your study XP and battles for shop coins.",
-    "status": "alpha",
+    "status": "live",
     "tech": ["Vite", "React", "TypeScript", "Convex", "Clerk", "AssemblyAI", "Claude Haiku", "TipTap"],
     "last_updated": "2026-08-11",
     "githubUrl": "https://github.com/lmdrew96/ScribeCat-v3"
@@ -129,7 +129,7 @@
     "url": "https://walt.adhdesigns.dev",
     "tagline": "Whitman's *Song of Myself* as a constellation you can walk through.",
     "description": "An interactive map of Walt Whitman's *Song of Myself*: all 52 sections as stars, each paired with a track from *We as Walt: Songs of My Selves*, Lanae Drew's 52-song response playlist.\n\n* **Constellation Map:** Sections that share themes (body, grass, multitudes, death) are threaded together.\n* **Section View:** The full section beside its song, a Spotify player, and a liner note.\n* **Search & Themes:** Full-text search plus theme filters that light up matching stars.\n* **Deep-Space Scene:** Drifting nebulae, a parallax starfield, and the odd shooting star.",
-    "status": "alpha",
+    "status": "live",
     "tech": ["Vite", "React", "TypeScript", "Tailwind", "d3-force", "Canvas"],
     "last_updated": "2026-05-09",
     "githubUrl": "https://github.com/lmdrew96/walt"
@@ -173,7 +173,7 @@
     "url": "https://lingua-lite.vercel.app/",
     "tagline": "Latin noun drills, built chapter by chapter on Suburani.",
     "description": "A Latin drill app built on the Suburani textbook, with vocab and grammar opening up on an intro course's class schedule.\n\n* **Parse Drills:** See a form, name its case, number, declension, and job.\n* **Decode & Word Order:** Ending-only decoding in tiers, plus a word-order drill.\n* **Chapter Vocab:** Vocab through chapter 32, filterable by chapter and declension.\n* **Speed Mode:** An opt-in timer and streak.\n* **Claude Tutor:** A companion MCP server lets Claude quiz you and track weak areas.",
-    "status": "beta",
+    "status": "alpha",
     "tech": ["Vite", "React", "TypeScript", "Convex"],
     "last_updated": "2026-07-14",
     "githubUrl": "https://github.com/lmdrew96/ChaosLingua-Lite"
