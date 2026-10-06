@@ -29,11 +29,12 @@ export const HOME_PROJECT_ORDER: readonly string[] = [
   "color-factory", "loose-change", "folio", "strata", "chickenscratch",
 ]
 
+// Lifecycle order, matching the status key: in-development → alpha → beta → live.
 const STATUS_TO_DISPLAY: Record<ProjectStatus, ProjectDisplayStatus | null> = {
-  "live": "unleashed",
-  "beta": "raging",
   "in-development": "brewing",
-  "alpha": "sustained",
+  "alpha": "raging",
+  "beta": "unleashed",
+  "live": "sustained",
   // Archived projects stay off the home page unless they opt in with displayStatus: "archived".
   "archived": null,
 }

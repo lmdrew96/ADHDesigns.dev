@@ -16,7 +16,7 @@
     "url": "https://chaoslimba.adhdesigns.dev",
     "tagline": "Learn Romanian through structured chaos.",
     "description": "An ADHD-friendly Romanian app for English speakers, built on second language acquisition research instead of streaks and guilt.\n\n* **Error Garden:** Mistakes get clustered, and fossilizing patterns get flagged before they harden.\n* **Chaos Window:** Time-boxed speaking and writing sessions with AI feedback and a hard stop.\n* **Workshop:** Grammar micro-challenges aimed at your own error patterns.\n* **Deep Fog + Mystery Shelf:** Read and listen to authentic Romanian, then collect the words that stumped you.\n* **The Ensemble:** Speech recognition, phoneme-level pronunciation scoring, grammar checks, and an AI tutor.",
-    "status": "beta",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku", "HuggingFace"],
     "last_updated": "2026-08-12",
     "githubUrl": "https://github.com/lmdrew96/chaos",
