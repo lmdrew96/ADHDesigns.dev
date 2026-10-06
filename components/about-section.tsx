@@ -166,7 +166,7 @@ export function AboutSection() {
               <div className="p-4 glass-dark rounded-xl">
                 <Lightbulb className="w-8 h-8 text-caution-amber mb-2" />
                 <h4 className="font-bold text-sage-green mb-1">Built Different</h4>
-                <p className="text-sm text-lavender">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
+                <p className="text-sm text-bone">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
               </div>
               <div className="p-4 rounded-xl glass-dark">
                 <Heart className="w-8 h-8 mb-2 text-dusty-cyan" />
