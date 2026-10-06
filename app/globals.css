@@ -2,6 +2,8 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/* Paper (light) theme: next-themes sets data-theme="light" on <html> */
+@custom-variant paper (&:where([data-theme="light"], [data-theme="light"] *));
 
 :root {
   /* ── ADHDesigns Brand Tokens (2026 names, see the adhdesigns-theme skill) ── */
@@ -21,6 +23,15 @@
   --muted-indigo-text: #524a7a; /* 5.85:1 on Bone-Dim */
   /* focus ring on the Muted Indigo page (Bone, 4.74:1); cards keep --ring (Dusty Cyan) */
   --ring-page: var(--bone);
+
+  /* ── theme roles: Arcade values here, Paper overrides in [data-theme="light"] ── */
+  --page:              var(--muted-indigo);
+  --ink:               var(--bone);
+  --ink-muted:         var(--bone); /* hierarchy by size/weight, not a dimmer color */
+  --accent-cyan-text:  var(--dusty-cyan);
+  --accent-green-text: var(--sage-green);
+  --accent-amber-text: var(--caution-amber); /* 24px+ only */
+  --hairline:          rgba(237, 230, 210, .16);
 
   /* ── new zine-only tokens (no legacy slot to reuse) ── */
   --magenta:     #642644;
@@ -67,6 +78,25 @@
 }
 
 /* Removed dark mode - using bold colors only */
+
+/* Paper (light) theme — same zine on bone stock. Nav and footer stay dark (.surface-dark). */
+[data-theme="light"] {
+  --page:              var(--bone-dim);
+  --ink:               var(--indigo-void);
+  --ink-muted:         #4a4170; /* 6.72:1 on Bone-Dim */
+  --accent-cyan-text:  var(--muted-indigo-text);
+  --accent-green-text: var(--olive-text);
+  --accent-amber-text: var(--magenta);
+  --hairline:          rgba(20, 15, 34, .14);
+
+  --background:       var(--bone-dim);
+  --foreground:       var(--indigo-void);
+  --muted-foreground: #4a4170;
+  --card:             var(--bone);
+  --card-foreground:  var(--indigo-void);
+  --ring:             var(--muted-indigo);
+  --ring-page:        var(--muted-indigo);
+}
 
 @theme inline {
   --font-sans: var(--font-raela), system-ui, sans-serif;
@@ -123,6 +153,14 @@
   /* zine-only tokens */
   --color-magenta: var(--magenta);
   --color-text-on-bone: var(--text-on-bone);
+  /* theme roles */
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent-cyan-text: var(--accent-cyan-text);
+  --color-accent-green-text: var(--accent-green-text);
+  --color-accent-amber-text: var(--accent-amber-text);
+  --color-hairline: var(--hairline);
 }
 
 @layer base {
@@ -137,6 +175,10 @@
   /* Bone sections need a dark ring */
   :where(.bg-bone) * {
     outline-color: var(--muted-indigo-text);
+  }
+  /* Nav and footer stay dark in both themes, so they keep the Dusty Cyan ring */
+  .surface-dark, .surface-dark * {
+    outline-color: var(--dusty-cyan);
   }
   :focus-visible {
     outline-style: solid;

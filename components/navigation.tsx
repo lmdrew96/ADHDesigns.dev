@@ -5,6 +5,7 @@ import { Menu, X, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChatPanel } from "@/components/chatbot/chat-panel"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,7 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-indigo-void/95 backdrop-blur-xl border-b-2 border-muted-indigo/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-muted-indigo">
+      <div className="surface-dark max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-muted-indigo">
         <div className="flex items-center justify-between h-16">
           <a href="/" className="flex items-center group">
             <Image src="/adhdesigns-logo.png" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake" />
@@ -51,18 +52,22 @@ export function Navigation() {
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Chat
             </Button>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-dusty-cyan" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile: theme toggle + menu button */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button className="p-2 text-dusty-cyan" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-indigo-void border-b-2 border-muted-indigo/40">
+        <div className="surface-dark md:hidden bg-indigo-void border-b-2 border-muted-indigo/40">
           <div className="px-4 py-4 space-y-2">
             <a href="/#projects" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
               Projects

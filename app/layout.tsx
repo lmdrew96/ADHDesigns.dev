@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Geist_Mono } from "next/font/google"
 import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
+import { ThemeProvider } from "@/components/theme-provider"
 import { KofiWidget } from "@/components/kofi-widget"
 import "./globals.css"
 
@@ -70,11 +71,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased ${raelaGrotesque.variable} ${kineksRound.variable} ${geistMono.variable}`}>
-        {children}
-        <Analytics />
-        <KofiWidget />
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          {children}
+          <Analytics />
+          <KofiWidget />
+        </ThemeProvider>
       </body>
     </html>
   )
