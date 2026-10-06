@@ -182,7 +182,7 @@ function StatusKeyLegend() {
               </span>
               <div className="min-w-0">
                 <div className={cn("text-sm font-bold leading-tight", cfg.text)}>{cfg.label}</div>
-                <div className="text-xs text-card/80 leading-snug">{cfg.description}</div>
+                <div className="text-xs text-indigo-deep/80 leading-snug">{cfg.description}</div>
               </div>
             </div>
           )
@@ -386,7 +386,7 @@ export function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-bone relative overflow-hidden">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-bone paper:border-y paper:border-hairline relative overflow-hidden">
       {/* Background blobs for glassmorphism */}
       <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 30%, transparent) 0%, transparent 70%)" }} />
       <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 25%, transparent) 0%, transparent 70%)" }} />

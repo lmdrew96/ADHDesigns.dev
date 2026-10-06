@@ -58,14 +58,14 @@ export function HeroSection() {
   return (
     <section
       className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, var(--indigo-void) 0%, var(--indigo-deep) 45%, var(--muted-indigo) 70%, var(--indigo-void) 100%)" }}
+      style={{ background: "var(--hero-bg)" }}
     >
       {/* Grid horizon — perspective floor in bone, replaces the old pastel blobs */}
       <div
         className="absolute left-0 right-0 bottom-0 h-[46%] pointer-events-none"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, color-mix(in srgb, var(--bone) 30%, transparent) 0 2px, transparent 2px 60px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--bone) 24%, transparent) 0 2px, transparent 2px 34px)",
+            "repeating-linear-gradient(90deg, var(--hero-line-strong) 0 2px, transparent 2px 60px), repeating-linear-gradient(0deg, var(--hero-line-soft) 0 2px, transparent 2px 34px)",
           transform: "perspective(240px) rotateX(58deg)",
           transformOrigin: "bottom",
           maskImage: "linear-gradient(180deg, transparent, black 30%)",
@@ -77,7 +77,7 @@ export function HeroSection() {
       <div
         className="absolute left-1/2 top-[54%] w-[480px] h-[480px] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-40"
         style={{
-          backgroundImage: "radial-gradient(circle, var(--bone) 1.5px, transparent 1.8px)",
+          backgroundImage: "radial-gradient(circle, var(--hero-dot) 1.5px, transparent 1.8px)",
           backgroundSize: "14px 14px",
           maskImage: "radial-gradient(circle, black 0%, transparent 65%)",
           WebkitMaskImage: "radial-gradient(circle, black 0%, transparent 65%)",
@@ -87,7 +87,7 @@ export function HeroSection() {
       {/* Scanlines */}
       <div
         className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
-        style={{ background: "repeating-linear-gradient(0deg, color-mix(in srgb, var(--shadow) 18%, transparent) 0 1px, transparent 1px 3px)" }}
+        style={{ background: "repeating-linear-gradient(0deg, var(--hero-scanline) 0 1px, transparent 1px 3px)" }}
       />
 
       {/* Bouncing puck — fixed clone of the button icon */}
@@ -103,26 +103,26 @@ export function HeroSection() {
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Main Headline - stamped double-shadow, magenta + indigo */}
         <h1
-          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-bone"
+          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-ink"
           style={{ textShadow: "3px 3px 0 var(--pink), 6px 6px 0 var(--muted-indigo)" }}
         >
           <span className="whitespace-nowrap">
             <span className="inline-block hover:animate-wiggle cursor-default text-magenta">A</span>gentic
           </span>{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-sage-green">D</span>evelopment
+            <span className="inline-block hover:animate-wiggle cursor-default text-accent-green-text">D</span>evelopment
           </span>{" "}
           of{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-caution-amber">H</span>uman
+            <span className="inline-block hover:animate-wiggle cursor-default text-accent-amber-text">H</span>uman
           </span>{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-dusty-cyan">D</span>esigns
+            <span className="inline-block hover:animate-wiggle cursor-default text-accent-cyan-text">D</span>esigns
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl text-bone max-w-3xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-ink max-w-3xl mx-auto mb-10 leading-relaxed">
           Apps built with chaos, designed with purpose. Created by a neurodivergent designer who believes the best tools come from understanding the beautiful mess of neurodivergent minds.
         </p>
 
@@ -130,7 +130,7 @@ export function HeroSection() {
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-bone text-indigo-void border-2 border-bone hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
+            className="bg-bone text-indigo-void border-2 border-bone paper:bg-indigo-void paper:text-bone paper:border-indigo-void hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
             style={{ boxShadow: "4px 4px 0 var(--magenta)" }}
             asChild
           >
@@ -152,7 +152,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest border-2 border-bone text-bone bg-transparent hover:bg-bone/10 transition-colors"
+            className="rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest border-2 border-bone text-bone bg-transparent hover:bg-bone/10 paper:border-indigo-void paper:text-indigo-void paper:hover:bg-indigo-void/10 transition-colors"
             style={{ boxShadow: "4px 4px 0 var(--muted-indigo)" }}
             asChild
           >
@@ -178,7 +178,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#projects" className="flex flex-col items-center gap-2 text-bone/70 hover:text-magenta transition-colors">
+        <a href="#projects" className="flex flex-col items-center gap-2 text-ink/70 hover:text-magenta transition-colors">
           <span className="text-sm font-mono uppercase tracking-widest">Scroll to explore</span>
           <ArrowDown className="w-5 h-5" />
         </a>

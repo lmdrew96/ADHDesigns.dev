@@ -58,7 +58,7 @@ function BalloonText() {
 
   return (
     <span
-      className="text-caution-amber cursor-default"
+      className="text-accent-amber-text cursor-default"
       onMouseEnter={canHover ? () => setBurst(true) : undefined}
       onMouseLeave={canHover ? () => setBurst(false) : undefined}
     >
@@ -94,7 +94,7 @@ const struggles = [
   { icon: Brain, label: "ADHD", color: "bg-caution-amber", textColor: "text-foreground" },
   { icon: Coffee, label: "Depression", color: "bg-dusty-cyan", textColor: "text-muted-indigo" },
   { icon: Zap, label: "Tenacity", color: "bg-muted-indigo", textColor: "text-dusty-cyan" },
-  { icon: Lightbulb, label: "Innovation", color: "bg-accent", textColor: "text-card" },
+  { icon: Lightbulb, label: "Innovation", color: "bg-accent", textColor: "text-indigo-deep" },
 ]
 
 export function AboutSection() {
@@ -122,11 +122,11 @@ export function AboutSection() {
                 <div className="mb-6">
                   <CoinFlipAvatar />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-dusty-cyan text-center">
+                <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-accent-cyan-text text-center">
                   {ABOUT_CARD.name}
                 </h3>
-                <p className="text-dusty-cyan/70 text-center">{ABOUT_CARD.role}</p>
-                <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-dusty-cyan text-center">
+                <p className="text-dusty-cyan/70 paper:text-ink-muted text-center">{ABOUT_CARD.role}</p>
+                <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-accent-cyan-text text-center">
                   {ABOUT_CARD.school}
                 </p>
 
@@ -147,16 +147,16 @@ export function AboutSection() {
 
           {/* Content Side - updated text/accent colors */}
           <div>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass text-card">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass text-indigo-deep">
               <Sparkles className="w-4 h-4" />
               The Human Behind the Code
             </span>
 
-            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-dusty-cyan mb-6 leading-tight">
+            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-accent-cyan-text mb-6 leading-tight">
               Too much on my plate, making it <BalloonText />
             </h2>
 
-            <div className="space-y-4 text-bone leading-relaxed font-medium">
+            <div className="space-y-4 text-ink leading-relaxed font-medium">
               {ABOUT_PARAGRAPHS.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}
@@ -164,14 +164,14 @@ export function AboutSection() {
 
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="p-4 glass-dark rounded-xl">
-                <Lightbulb className="w-8 h-8 text-caution-amber mb-2" />
-                <h4 className="font-bold text-sage-green mb-1">Built Different</h4>
-                <p className="text-sm text-bone">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
+                <Lightbulb className="w-8 h-8 text-accent-amber-text mb-2" />
+                <h4 className="font-bold text-accent-green-text mb-1">Built Different</h4>
+                <p className="text-sm text-ink">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
               </div>
               <div className="p-4 rounded-xl glass-dark">
-                <Heart className="w-8 h-8 mb-2 text-dusty-cyan" />
-                <h4 className="font-bold mb-1 text-sage-green">Structured Chaos</h4>
-                <p className="text-sm text-bone">ADHD-AI synergy: the core of the development process</p>
+                <Heart className="w-8 h-8 mb-2 text-accent-cyan-text" />
+                <h4 className="font-bold mb-1 text-accent-green-text">Structured Chaos</h4>
+                <p className="text-sm text-ink">ADHD-AI synergy: the core of the development process</p>
               </div>
             </div>
           </div>

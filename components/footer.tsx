@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
-    <footer id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-indigo-void text-bone relative overflow-hidden border-t-4 border-muted-indigo/40">
+    <footer id="contact" className="surface-dark py-16 px-4 sm:px-6 lg:px-8 bg-indigo-void text-bone relative overflow-hidden border-t-4 border-muted-indigo/40">
       {/* Background blobs for glassmorphism */}
       <div className="absolute top-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--bone) 12%, transparent) 0%, transparent 70%)" }} />
       <div className="absolute bottom-10 right-20 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--muted-indigo) 20%, transparent) 0%, transparent 70%)" }} />

@@ -32,6 +32,12 @@
   --accent-green-text: var(--sage-green);
   --accent-amber-text: var(--caution-amber); /* 24px+ only */
   --hairline:          rgba(237, 230, 210, .16);
+  /* hero atmosphere */
+  --hero-bg:          linear-gradient(180deg, var(--indigo-void) 0%, var(--indigo-deep) 45%, var(--muted-indigo) 70%, var(--indigo-void) 100%);
+  --hero-line-strong: color-mix(in srgb, var(--bone) 30%, transparent);
+  --hero-line-soft:   color-mix(in srgb, var(--bone) 24%, transparent);
+  --hero-dot:         var(--bone);
+  --hero-scanline:    color-mix(in srgb, var(--shadow) 18%, transparent);
 
   /* ── new zine-only tokens (no legacy slot to reuse) ── */
   --magenta:     #642644;
@@ -88,6 +94,11 @@
   --accent-green-text: var(--olive-text);
   --accent-amber-text: var(--magenta);
   --hairline:          rgba(20, 15, 34, .14);
+  --hero-bg:          linear-gradient(180deg, var(--bone) 0%, var(--bone-dim) 100%);
+  --hero-line-strong: color-mix(in srgb, var(--indigo-void) 14%, transparent);
+  --hero-line-soft:   color-mix(in srgb, var(--indigo-void) 10%, transparent);
+  --hero-dot:         color-mix(in srgb, var(--indigo-void) 35%, transparent);
+  --hero-scanline:    color-mix(in srgb, var(--shadow) 5%, transparent);
 
   --background:       var(--bone-dim);
   --foreground:       var(--indigo-void);
@@ -302,6 +313,13 @@
   -webkit-backdrop-filter: blur(24px) saturate(1.5);
   border: 1px solid color-mix(in srgb, var(--dusty-cyan) 20%, transparent);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Paper: glass panels become solid Bone sheets with a hairline edge */
+[data-theme="light"] :is(.glass, .glass-dark, .glass-card, .glass-accent) {
+  background: var(--bone);
+  border-color: var(--hairline);
+  box-shadow: 0 4px 18px rgba(20, 15, 34, 0.08);
 }
 
 /* ── Zine clipping cards — taped photocopy treatment for project rows ──
