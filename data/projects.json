@@ -361,7 +361,7 @@
     "slug": "folio",
     "url": "https://folio.adhdesigns.dev",
     "tagline": "A writing space that knows what changed since you last looked.",
-    "description": "A word processor that stores every block as its own row, so who-wrote-what and what-changed-since-you-left live in the data model instead of being parsed out after the fact.\n\n* **Diff since last visit:** See which blocks changed while you were gone, and who changed them.\n* **Cleo:** An in-app Claude who reacts to your edits and remembers her past reactions.\n* **Collaboration:** Invite friends onto shared docs and see who else is viewing.\n* **The basics, done properly:** Footnotes, word-count goals, find and replace, and PDF, Word, and Markdown export.\n* **MCP door:** 4 read-only tools let other Claude instances list, read, and diff your docs.",
+    "description": "A word processor that stores every block as its own row, so who-wrote-what and what-changed-since-you-left live in the data model instead of being parsed out after the fact.\n\n* **Diff since last visit:** See which blocks changed while you were gone, and who changed them.\n* **Cleo:** An in-app Claude who reacts to your edits and remembers her past reactions.\n* **Collaboration:** Invite friends onto shared docs and see who else is viewing.\n* **The basics, done properly:** Footnotes, word-count goals, find and replace, and PDF, Word, and Markdown export.\n* **MCP door:** 8 tools let other Claude instances list, read, search, and diff your docs — six reads, plus two that only mark what they've caught up on.",
     "status": "beta",
     "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "TipTap", "MCP", "Claude API"],
     "last_updated": "2026-09-27",

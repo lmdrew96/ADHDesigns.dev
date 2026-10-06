@@ -162,7 +162,7 @@ const statusConfig: Record<Exclude<StatusKey, null>, { label: string; descriptio
   sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-adhd-purple/15", text: "text-adhd-dark",   border: "border-adhd-dark" },
 }
 
-const STATUS_ORDER: Exclude<StatusKey, null>[] = ["brewing", "unleashed", "raging", "sustained"]
+const STATUS_ORDER: Exclude<StatusKey, null>[] = ["brewing", "raging", "unleashed", "sustained"]
 
 function StatusKeyLegend() {
   return (
