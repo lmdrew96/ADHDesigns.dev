@@ -47,7 +47,7 @@ export default function McpPage() {
             MCP servers I&rsquo;ve <span className="text-adhd-amber">built</span>.
           </h1>
 
-          <p className="mt-8 text-lg sm:text-xl text-adhd-lavender/90 leading-relaxed font-medium max-w-2xl mx-auto">
+          <p className="mt-8 text-lg sm:text-xl text-adhd-lavender leading-relaxed font-medium max-w-2xl mx-auto">
             {MCP_SERVERS.length} custom servers, {TOTAL_TOOL_COUNT} tools. Each one wires a real product&rsquo;s data and logic
             directly into Claude — so users can ask questions, take actions, and get back natural answers without
             ever leaving the conversation.
@@ -84,7 +84,7 @@ export default function McpPage() {
             <p className="mt-3 text-adhd-lavender">
               Click any card to expand the tool list and see example flows.
             </p>
-            <p className="mt-2 text-xs text-adhd-lavender/70">
+            <p className="mt-2 text-xs text-adhd-lavender">
               Tool lists come straight from each server&rsquo;s own <code>tools/list</code>, last updated{" "}
               {LATEST_SNAPSHOT}.
             </p>

@@ -1,6 +1,6 @@
 {
   "name": "my-v0-project",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "private": true,
   "scripts": {
     "prebuild": "node scripts/snapshot-mcp-tools.mjs",

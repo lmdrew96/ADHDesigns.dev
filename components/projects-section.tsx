@@ -157,8 +157,8 @@ type StatusKey = "brewing" | "unleashed" | "raging" | "sustained" | null
 
 const statusConfig: Record<Exclude<StatusKey, null>, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string; border: string }> = {
   brewing:   { label: "Brewing",   description: "Planning or early build",   icon: CloudLightning, bg: "bg-adhd-sage/20",  text: "text-adhd-teal",   border: "border-adhd-teal/70" },
-  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/20", text: "text-adhd-purple", border: "border-adhd-purple" },
-  raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-adhd-green/20", text: "text-adhd-olive",  border: "border-adhd-olive" },
+  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-adhd-amber/20", text: "text-adhd-purple-text", border: "border-adhd-purple" },
+  raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-adhd-green/20", text: "text-adhd-olive-text", border: "border-adhd-olive" },
   sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-adhd-purple/15", text: "text-adhd-dark",   border: "border-adhd-dark" },
 }
 

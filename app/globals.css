@@ -18,6 +18,13 @@
   --adhd-bg:       #E3DCC6; /* bone-dim */
   --adhd-dark:     #140F22; /* indigo-void — nav/dark bg slot */
 
+  /* ── text-only shades: brand colors stay exact as fills/borders,
+     these darker shades carry labels on Paper (WCAG AA) ── */
+  --adhd-olive-text:  #575c33; /* 5.13:1 on Paper */
+  --adhd-purple-text: #524a7a; /* 5.85:1 on Paper */
+  /* focus ring on the purple page background (Cream, 4.74:1); cards keep --ring (Sage) */
+  --ring-page: var(--adhd-lavender);
+
   /* ── new zine-only tokens (no legacy slot to reuse) ── */
   --magenta:     #642644;
   --shadow:      #000000;
@@ -123,6 +130,8 @@
   --color-adhd-lavender: var(--adhd-lavender);
   --color-adhd-bg:       var(--adhd-bg);
   --color-adhd-dark:     var(--adhd-dark);
+  --color-adhd-olive-text:  var(--adhd-olive-text);
+  --color-adhd-purple-text: var(--adhd-purple-text);
   /* Legacy named aliases */
   --color-purple: var(--purple);
   --color-mustard: var(--mustard);
@@ -138,7 +147,21 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+    outline-color: var(--ring-page);
+  }
+  /* Sage ring inside dark cards and panels (7.62:1 on indigo-deep) */
+  :where(.bg-adhd-teal, .bg-adhd-dark, .glass-dark, [class*="bg-adhd-dark/"]) * {
+    outline-color: var(--ring);
+  }
+  /* Cream sections need a dark ring */
+  :where(.bg-adhd-lavender) * {
+    outline-color: var(--adhd-purple-text);
+  }
+  :focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
   }
   html, body {
     overflow-x: hidden;
