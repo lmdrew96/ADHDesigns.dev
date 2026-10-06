@@ -27,16 +27,16 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="rounded-3xl glass-card border-2 border-dusty-cyan/25 px-6 sm:px-10 py-10 sm:py-12"
+      className="rounded-3xl glass-card border-2 border-dusty-cyan/25 paper:border-hairline px-6 sm:px-10 py-10 sm:py-12"
     >
       <div className="text-center mb-10 max-w-2xl mx-auto">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold glass-dark text-dusty-cyan border border-dusty-cyan/30 uppercase tracking-wide mb-4">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold glass-dark text-accent-cyan-text border border-dusty-cyan/30 paper:border-hairline uppercase tracking-wide mb-4">
           How it works
         </span>
-        <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-caution-amber leading-tight">
+        <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-accent-amber-text leading-tight">
           From a question to your database, <span className="text-indigo-deep">in one round trip.</span>
         </h2>
-        <p className="mt-4 text-bone leading-relaxed">
+        <p className="mt-4 text-ink leading-relaxed">
           MCP is the protocol that lets AI assistants like Claude talk directly to the tools and data your users
           already trust. Ask in plain language, and the work happens right there in the conversation.
         </p>
@@ -47,19 +47,19 @@ export function HowItWorks() {
           const Icon = step.icon
           return (
             <li key={step.title} className="contents">
-              <div className="flex flex-col items-center text-center bg-indigo-void/40 rounded-2xl border border-dusty-cyan/20 p-5">
+              <div className="flex flex-col items-center text-center bg-indigo-void/40 rounded-2xl border border-dusty-cyan/20 paper:bg-bone-dim paper:border-hairline p-5">
                 <div className="w-12 h-12 rounded-xl bg-dusty-cyan/20 flex items-center justify-center mb-3">
-                  <Icon className="w-6 h-6 text-dusty-cyan" aria-hidden />
+                  <Icon className="w-6 h-6 text-accent-cyan-text" aria-hidden />
                 </div>
-                <div className="text-[10px] uppercase tracking-wider font-bold text-bone/70 mb-1">
+                <div className="text-[10px] uppercase tracking-wider font-bold text-ink/70 mb-1">
                   Step {i + 1}
                 </div>
-                <h3 className="font-bold text-dusty-cyan mb-2">{step.title}</h3>
-                <p className="text-xs text-bone/85 leading-relaxed">{step.body}</p>
+                <h3 className="font-bold text-accent-cyan-text mb-2">{step.title}</h3>
+                <p className="text-xs text-ink/85 leading-relaxed">{step.body}</p>
               </div>
               {i < STEPS.length - 1 && (
                 <div
-                  className="hidden lg:flex items-center justify-center text-dusty-cyan/60"
+                  className="hidden lg:flex items-center justify-center text-accent-cyan-text/60"
                   aria-hidden
                 >
                   <ArrowRight className="w-5 h-5" />
