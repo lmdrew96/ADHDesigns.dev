@@ -177,9 +177,10 @@ export function ServerCard({ server }: { server: McpServer }) {
             </section>
 
             <section>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-adhd-lavender/80 mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-adhd-lavender/80 mb-1">
                 Example flows
               </h3>
+              <p className="text-xs text-adhd-lavender/70 mb-4">Illustrative — sample data, not real usage.</p>
               <div className="space-y-8">
                 {server.examples.map((flow, i) => (
                   <ExampleFlowCard key={i} flow={flow} accentText={accent.text} />

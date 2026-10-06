@@ -48,35 +48,34 @@ const SERVER_CONTENT: readonly McpServerContent[] = [
     accent: "green",
     examples: [
       {
-        userPrompt: "Add 'review PR feedback for the auth refactor' to my tasks, high priority, due tomorrow.",
+        userPrompt: "Add 'review PR feedback for the auth refactor' to my tasks — it's important, due tomorrow at 5.",
         toolName: "cc_create_task",
         toolArgs: {
           title: "review PR feedback for the auth refactor",
-          priority: "high",
-          due_date: "2026-05-01",
+          priority: "important",
+          deadline: "2026-10-06T21:00:00Z",
         },
         response: {
-          id: "task_a8f3c1",
+          id: "a8f3c1d2-…",
           title: "review PR feedback for the auth refactor",
-          priority: "high",
-          due_date: "2026-05-01",
+          priority: "important",
+          deadline: "2026-10-06T21:00:00Z",
           status: "pending",
-          created_at: "2026-04-30T18:42:11.000Z",
         },
         claudeReply:
-          "Added — high priority, due tomorrow. You've got 4 other tasks open for tomorrow already. Want me to pull those up so you can stack-rank?",
+          "Added — marked important, due tomorrow at 5. You've got 4 other tasks open for tomorrow already. Want me to pull those up so you can stack-rank?",
       },
       {
         userPrompt: "What's on my plate today?",
         toolName: "cc_list_tasks",
-        toolArgs: { status: "pending", date: "2026-04-30" },
+        toolArgs: { status: "pending" },
         response: [
-          { id: "task_91f2", title: "ship MCP docs page", priority: "high" },
-          { id: "task_b12c", title: "reply to client onboarding email", priority: "medium" },
-          { id: "task_d4a8", title: "write up patch notes for v0.4.1", priority: "low" },
+          { title: "ship MCP docs page", priority: "urgent", energy_level: "high" },
+          { title: "reply to client onboarding email", priority: "normal", energy_level: "low" },
+          { title: "write up patch notes for v0.4.1", priority: "someday", energy_level: "low" },
         ],
         claudeReply:
-          "Three tasks today: shipping the MCP docs page (high), replying to the onboarding email (medium), and patch notes (low). The docs page is the heaviest — start there while your focus is fresh?",
+          "Three on the list: shipping the MCP docs page (urgent), replying to the onboarding email, and patch notes whenever. The docs page is the heaviest — start there while your focus is fresh?",
       },
     ],
   },
@@ -105,20 +104,21 @@ const SERVER_CONTENT: readonly McpServerContent[] = [
           id: "patch_9c4e22",
           status: "open",
           priority: "high",
-          created_at: "2026-04-30T18:55:03.000Z",
+          created_at: "2026-10-05T18:55:03.000Z",
         },
         claudeReply:
           "Logged as a high-priority patch on ControlledChaos. Want me to start it now and dig into the day-grouping code?",
       },
       {
-        userPrompt: "What's open on ChaosLimbă?",
+        userPrompt: "What's open on Kindling? I've only got energy for small stuff.",
         toolName: "cp_list_patches",
-        toolArgs: { project_slug: "chaoslimba", status: "open" },
+        toolArgs: { project_slug: "kindling", status: "open", tags: ["energy:low"] },
         response: [
-          { id: "patch_1a2b", title: "Adaptation Engine fossilization tier transition logic", priority: "high" },
+          { title: "Snooze picker: add a 'next week' shortcut", priority: "medium", tags: ["ui", "energy:low"] },
+          { title: "Fix tag chip wrapping on mobile", priority: "low", tags: ["bug", "energy:low"] },
         ],
         claudeReply:
-          "Just one open patch on ChaosLimbă — the Adaptation Engine tier transition logic, marked high. Want me to read the notes and propose a fix?",
+          "Two low-energy patches on Kindling: a 'next week' snooze shortcut and a tag-chip wrapping fix on mobile. The chip fix is the quickest — want to start there?",
       },
     ],
   },
@@ -135,34 +135,27 @@ const SERVER_CONTENT: readonly McpServerContent[] = [
     accent: "amber",
     examples: [
       {
-        userPrompt: "Show me where students are struggling most with Romanian stress patterns.",
-        toolName: "cl_get_stress_pairs",
-        toolArgs: { sort_by: "confusion_rate", limit: 5 },
-        response: [
-          { pair: "MAS·ină vs ma·ȘI·nă", confusion_rate: 0.42, sessions: 138 },
-          { pair: "CO·pil vs co·PIL", confusion_rate: 0.38, sessions: 121 },
-          { pair: "FA·tă vs fa·TĂ", confusion_rate: 0.31, sessions: 109 },
-        ],
+        userPrompt: "Which grammar features still don't have any content?",
+        toolName: "cl_coverage_report",
+        toolArgs: {},
+        response: {
+          features_with_content: 41,
+          gaps: ["conditional_perfect", "vocative_case", "supine"],
+        },
         claudeReply:
-          "The top three confusion pairs all involve initial-syllable stress in 2-syllable nouns — that's a clear pattern. Worth surfacing this as a focused drill in the Adaptation Engine?",
+          "41 features have content; three don't yet — the conditional perfect, the vocative, and the supine. The vocative is the easiest gap to close with short dialogues. Want me to draft a few?",
       },
       {
-        userPrompt: "What's my current proficiency on Romanian past tense?",
-        toolName: "cl_get_proficiency_trends",
-        toolArgs: {
-          user_id: "user_3Bi...",
-          feature: "past_tense_perfect",
-          range_days: 30,
-        },
-        response: {
-          feature: "past_tense_perfect",
-          current_score: 0.71,
-          trend_30d: "+0.18",
-          fossilization_risk: "low",
-          interventions_triggered: 2,
-        },
+        userPrompt: "Pull a few stress pairs for a pronunciation drill.",
+        toolName: "cl_get_stress_pairs",
+        toolArgs: { limit: 3 },
+        response: [
+          { a: "CÓpii", a_meaning: "copies", b: "coPÍI", b_meaning: "children" },
+          { a: "ÁCele", a_meaning: "the needles", b: "aCÉle", b_meaning: "those" },
+          { a: "MÓdele", a_meaning: "fashions", b: "moDÉle", b_meaning: "models" },
+        ],
         claudeReply:
-          "You're at 0.71 on past tense perfect — up 0.18 over the last 30 days, and fossilization risk is low. Solid trajectory. Two adaptive interventions fired during the period; both seem to have moved the needle.",
+          "Three pairs where stress flips the meaning: copii (copies / children), acele (the needles / those), modele (fashions / models). I'll say a sentence, you tell me which one I meant?",
       },
     ],
   },
@@ -170,44 +163,38 @@ const SERVER_CONTENT: readonly McpServerContent[] = [
     id: "personal-context",
     name: "Personal Context MCP",
     prefix: "pctx_",
-    tagline: "Cross-session memory store: identity, projects, and relationships.",
+    tagline: "Durable facts about you, so every Claude starts warm.",
     description:
-      "The MCP server that gives Claude continuity across sessions. It stores who the user is, the projects they're working on, the people in their life, and the preferences each Claude instance should respect. Used by Cha(t)os to give every Claude in a group chat a coherent picture of the person they're talking with.",
-    endpointLabel: "personal-context-mcp.vercel.app/mcp",
+      "The MCP server for what no codebase or task tracker holds — dated facts about you, your people, and which Claude is which. Each fact records when it was established and how it's known, so stale context announces itself; relationships carry pronouns, affiliations, and nicknames Claude would otherwise guess at; and each Claude that connects is told which one it is.",
+    endpointLabel: "personal-context-mcp.vercel.app/mcp?token={uuid}",
     liveUrl: "https://personal-context-mcp.vercel.app/",
     accent: "sage",
     examples: [
       {
-        userPrompt: "What projects am I currently working on?",
-        toolName: "pctx_get_context",
-        toolArgs: {},
-        response: {
-          identity: { name: "Nae", pronouns: "she/they", brand: "ADHDesigns" },
-          projects: [
-            { name: "ControlledChaos", status: "shipped" },
-            { name: "ChaosLimbă", status: "in_development" },
-            { name: "ChaosPatch", status: "shipped" },
-            { name: "ThreadBrain", status: "in_development" },
-          ],
+        userPrompt: "Remember that I passed the B1 Spanish exam in June.",
+        toolName: "pctx_add_fact",
+        toolArgs: {
+          label: "Spanish level",
+          category: "linguistic",
+          content: "Passed the B1 Spanish exam.",
+          established: "2026-06",
+          confidence: "measured",
         },
+        response: { label: "Spanish level", category: "linguistic", established: "2026-06", confidence: "measured" },
         claudeReply:
-          "You've got two shipped (ControlledChaos and ChaosPatch) and two in-development (ChaosLimbă and ThreadBrain). Want to focus on one in particular?",
+          "Saved — B1 Spanish, dated June 2026 and marked as measured. Any Claude you talk to will see it, along with how old it is.",
       },
       {
-        userPrompt: "Add Sam to my contacts — they're my brother, lives in Boston.",
+        userPrompt: "Add Sam — they're my brother, lives in Boston.",
         toolName: "pctx_add_relationship",
         toolArgs: {
           name: "Sam",
-          relationship_type: "sibling",
-          notes: "Brother. Lives in Boston.",
+          role: "Brother",
+          context: "Lives in Boston.",
         },
-        response: {
-          id: "rel_b41f3a",
-          name: "Sam",
-          relationship_type: "sibling",
-          created_at: "2026-04-30T19:02:44.000Z",
-        },
-        claudeReply: "Got it — saved Sam as your brother, based in Boston. I'll remember that for future conversations.",
+        response: { name: "Sam", role: "Brother", pronouns: null },
+        claudeReply:
+          "Got it — Sam, your brother in Boston. I didn't record pronouns since you didn't mention them; want to add those?",
       },
     ],
   },
@@ -244,7 +231,7 @@ const SERVER_CONTENT: readonly McpServerContent[] = [
       {
         userPrompt: "Pull my excerpts about fossilization.",
         toolName: "journal_search",
-        toolArgs: { query: "fossilization", scope: "excerpts" },
+        toolArgs: { query: "fossilization" },
         response: [
           {
             article: "Interlanguage (Selinker, 1972)",

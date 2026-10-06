@@ -38,7 +38,7 @@ export function HowItWorks() {
         </h2>
         <p className="mt-4 text-adhd-lavender leading-relaxed">
           MCP is the protocol that lets AI assistants like Claude talk directly to the tools and data your users
-          already trust. No screenshot uploads, no copy-paste — just a conversation.
+          already trust. Ask in plain language, and the work happens right there in the conversation.
         </p>
       </div>
 
