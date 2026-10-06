@@ -144,7 +144,7 @@ function ProjectsIntroBlock() {
 import { Button } from "@/components/ui/button"
 import { Markdown } from "@/components/markdown"
 import { cn } from "@/lib/utils"
-import { projects as projectsData, type Project as ProjectData } from "@/lib/projects"
+import { DISPLAY_STATUS_INFO, homeProjects } from "@/lib/projects"
 
 const ChaosLimbaIcon = ({ className }: { className?: string }) => (
   <span className={cn("relative inline-block", className)}>
@@ -156,10 +156,10 @@ const ChaosLimbaIcon = ({ className }: { className?: string }) => (
 type StatusKey = "brewing" | "unleashed" | "raging" | "sustained" | null
 
 const statusConfig: Record<Exclude<StatusKey, null>, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string; border: string }> = {
-  brewing:   { label: "Brewing",   description: "Planning or early build",   icon: CloudLightning, bg: "bg-dusty-cyan/20",  text: "text-indigo-deep",   border: "border-indigo-deep/70" },
-  unleashed: { label: "Unleashed", description: "Recently launched",         icon: Zap,            bg: "bg-caution-amber/20", text: "text-muted-indigo-text", border: "border-muted-indigo" },
-  raging:    { label: "Raging",    description: "Active development",        icon: Flame,          bg: "bg-sage-green/20", text: "text-olive-text", border: "border-olive" },
-  sustained: { label: "Sustained", description: "Stable, in maintenance",    icon: RefreshCcwDot,  bg: "bg-muted-indigo/15", text: "text-indigo-void",   border: "border-indigo-void" },
+  brewing: { ...DISPLAY_STATUS_INFO.brewing, icon: CloudLightning, bg: "bg-dusty-cyan/20",  text: "text-indigo-deep",   border: "border-indigo-deep/70" },
+  unleashed: { ...DISPLAY_STATUS_INFO.unleashed, icon: Zap,            bg: "bg-caution-amber/20", text: "text-muted-indigo-text", border: "border-muted-indigo" },
+  raging: { ...DISPLAY_STATUS_INFO.raging, icon: Flame,          bg: "bg-sage-green/20", text: "text-olive-text", border: "border-olive" },
+  sustained: { ...DISPLAY_STATUS_INFO.sustained, icon: RefreshCcwDot,  bg: "bg-muted-indigo/15", text: "text-indigo-void",   border: "border-indigo-void" },
 }
 
 const STATUS_ORDER: Exclude<StatusKey, null>[] = ["brewing", "raging", "unleashed", "sustained"]
@@ -215,13 +215,6 @@ type ProjectUI = {
   category: "chaos" | "other"
 }
 
-const statusMap: Record<ProjectData["status"], StatusKey> = {
-  "live": "unleashed",
-  "beta": "raging",
-  "in-development": "brewing",
-  "alpha": "sustained",
-  "archived": null
-}
 
 const projectUIConfig: Record<string, ProjectUI> = {
   controlledchaos: {
@@ -338,11 +331,6 @@ const projectUIConfig: Record<string, ProjectUI> = {
   },
 }
 
-const displayOrder = [
-  "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite",
-  "scribecat", "threadnotes", "personal-context-mcp", "tangle", "kindling", "walt", "chaosshelf",
-  "color-factory", "loose-change", "folio", "strata",
-]
 
 // Rotation + torn-edge shape per card, cycled by index so the stack reads as scattered clippings
 const CLIPPING_VARIANTS = [
@@ -352,13 +340,11 @@ const CLIPPING_VARIANTS = [
   { tilt: "1.6deg", clip: "zine-card--a" },
 ] as const
 
-const projects: Project[] = displayOrder
-  .map((slug): Project | null => {
-    const data = projectsData.find((p) => p.slug === slug)
-    const ui = projectUIConfig[slug]
-    if (!data || !ui) return null
-    const status = data.displayStatus ?? statusMap[data.status]
-    if (!status) return null
+const projects: Project[] = homeProjects
+  .map((data): Project | null => {
+    const ui = projectUIConfig[data.slug]
+    if (!ui) return null
+    const status = data.displayStatus
     return {
       id: data.slug,
       name: data.name,
