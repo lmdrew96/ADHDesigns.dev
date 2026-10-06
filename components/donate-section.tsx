@@ -113,7 +113,7 @@ export function DonateSection() {
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
           <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text leading-relaxed font-medium mt-4">
-            If anything I've built has helped you, even a small monthly membership goes further than you'd think — every dollar goes straight to the servers, domains, and API calls that keep it all free. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
+            If anything I've built has helped you, even a small monthly membership goes further than you'd think — it goes toward the servers, domains, and API calls that keep it all free. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
 
