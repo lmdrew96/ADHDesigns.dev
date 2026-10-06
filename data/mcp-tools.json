@@ -1,0 +1,1027 @@
+{
+  "controlledchaos": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "cc_add_task_session",
+        "description": "Plan another sitting for an existing task, leaving its other sittings alone (\"also work on this Thursday morning\")."
+      },
+      {
+        "name": "cc_brain_dump",
+        "description": "Store a raw brain dump entry in the user's dump history."
+      },
+      {
+        "name": "cc_complete_microtask",
+        "description": "Mark a microtask done for today."
+      },
+      {
+        "name": "cc_complete_task",
+        "description": "Mark a task as completed."
+      },
+      {
+        "name": "cc_create_event",
+        "description": "Create a new calendar event in ControlledChaos, optionally recurring."
+      },
+      {
+        "name": "cc_create_goal",
+        "description": "Create a new goal in ControlledChaos."
+      },
+      {
+        "name": "cc_create_journal",
+        "description": "Save a new junk journal entry — longer-form, reflective writing kept separate from task brain dumps."
+      },
+      {
+        "name": "cc_create_microtask",
+        "description": "Create a small repeatable microtask (a prompt, not a real task)."
+      },
+      {
+        "name": "cc_create_reference_card",
+        "description": "Pin a new reference card to the user's dashboard: a markdown playbook, checklist, or set of defaults they look up often."
+      },
+      {
+        "name": "cc_create_task",
+        "description": "Create a new task in ControlledChaos."
+      },
+      {
+        "name": "cc_deactivate_microtask",
+        "description": "Soft-pause a microtask (sets active=false)."
+      },
+      {
+        "name": "cc_delete_event",
+        "description": "Permanently delete a calendar event."
+      },
+      {
+        "name": "cc_delete_goal",
+        "description": "Delete a goal."
+      },
+      {
+        "name": "cc_delete_moment",
+        "description": "Soft-delete a moment."
+      },
+      {
+        "name": "cc_delete_task",
+        "description": "Delete a task."
+      },
+      {
+        "name": "cc_delete_task_session",
+        "description": "Remove ONE planned sitting from a task."
+      },
+      {
+        "name": "cc_get_active_crisis",
+        "description": "Return the user's active crisis plan if one is in progress, or report none."
+      },
+      {
+        "name": "cc_get_daily_stats",
+        "description": "Get a snapshot of today's productivity stats: tasks completed today, total pending, overdue count, and upcoming events."
+      },
+      {
+        "name": "cc_get_mirror_day",
+        "description": "Read the chronological timeline for a single day — completed tasks, calendar events, brain dumps, journal entries, and moments, merged and sorted in reverse-chronological order."
+      },
+      {
+        "name": "cc_get_settings",
+        "description": "Read the user's timezone and the hour bounds of their day."
+      },
+      {
+        "name": "cc_list_brain_dumps",
+        "description": "List past brain dump entries from ControlledChaos."
+      },
+      {
+        "name": "cc_list_calendar",
+        "description": "List calendar events from ControlledChaos within a date range."
+      },
+      {
+        "name": "cc_list_goals",
+        "description": "List goals from ControlledChaos, in the order the user arranged them (most important first)."
+      },
+      {
+        "name": "cc_list_journals",
+        "description": "List junk journal entries (category='junk_journal')."
+      },
+      {
+        "name": "cc_list_microtasks",
+        "description": "List the user's active microtasks with today's completion status and a rolling 7-day count."
+      },
+      {
+        "name": "cc_list_moments",
+        "description": "List recent moments, optionally filtered by date range or type."
+      },
+      {
+        "name": "cc_list_reference_cards",
+        "description": "List the user's reference cards: pinned markdown playbooks shown on the dashboard (evening routines, launch-pad checklists, decision defaults)."
+      },
+      {
+        "name": "cc_list_tasks",
+        "description": "List tasks from ControlledChaos, optionally filtered by status, priority, category, or energy level."
+      },
+      {
+        "name": "cc_log_moment",
+        "description": "Log a behavioral state moment."
+      },
+      {
+        "name": "cc_recommend_next_task",
+        "description": "Return up to 5 candidate next tasks plus current context (energy, active Rescue plans, goals, today's planned sittings, calendar, today's progress) so the calling AI can recommend \"what to do right now.\""
+      },
+      {
+        "name": "cc_search_tasks",
+        "description": "Search tasks by text across titles and descriptions."
+      },
+      {
+        "name": "cc_uncomplete_microtask",
+        "description": "Undo today's completion of a microtask."
+      },
+      {
+        "name": "cc_uncomplete_task",
+        "description": "Reopen a completed task — put it back to pending and clear its completion timestamp."
+      },
+      {
+        "name": "cc_update_event",
+        "description": "Update an existing calendar event."
+      },
+      {
+        "name": "cc_update_goal",
+        "description": "Update an existing goal."
+      },
+      {
+        "name": "cc_update_journal",
+        "description": "Edit the text of an existing junk journal entry — fixing a typo, finishing a sentence the user trailed off on."
+      },
+      {
+        "name": "cc_update_microtask",
+        "description": "Update fields on an existing microtask."
+      },
+      {
+        "name": "cc_update_moment",
+        "description": "Update a moment's intensity, note, or timestamp."
+      },
+      {
+        "name": "cc_update_reference_card",
+        "description": "Update a reference card."
+      },
+      {
+        "name": "cc_update_task",
+        "description": "Update an existing task."
+      },
+      {
+        "name": "cc_update_task_session",
+        "description": "Move or resize ONE planned sitting of a task."
+      }
+    ]
+  },
+  "chaospatch": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "cp_add_note",
+        "description": "Append a note to an existing patch."
+      },
+      {
+        "name": "cp_add_patch",
+        "description": "Add a new patch to a project, optionally with initial notes, a long-form spec, tags, and a due date."
+      },
+      {
+        "name": "cp_add_project",
+        "description": "Create a new ChaosPatch project for the authenticated user."
+      },
+      {
+        "name": "cp_add_tags",
+        "description": "Append tags to a patch atomically."
+      },
+      {
+        "name": "cp_archive_completed",
+        "description": "Archive all completed (status='done') patches owned by the authenticated user, optionally scoped to a single project."
+      },
+      {
+        "name": "cp_archive_project",
+        "description": "Archive a project: hide it (and its patches) from project lists, cross-project patch lists, search, and summaries without deleting anything."
+      },
+      {
+        "name": "cp_batch_update",
+        "description": "Bulk-apply one action to many patches."
+      },
+      {
+        "name": "cp_complete_patch",
+        "description": "Set a patch status to done and log completed_at."
+      },
+      {
+        "name": "cp_confirm_image_upload",
+        "description": "Step 2 of 2: after PUTting the file to the upload_url from cp_request_image_upload, call this with its upload_id to attach the image to the patch."
+      },
+      {
+        "name": "cp_delete_patch",
+        "description": "Permanently delete a patch."
+      },
+      {
+        "name": "cp_delete_project",
+        "description": "Permanently delete a project and all its patches."
+      },
+      {
+        "name": "cp_get_patch",
+        "description": "Fetch a single patch by ID."
+      },
+      {
+        "name": "cp_get_patch_images",
+        "description": "Fetch a patch's image attachments as viewable images for visual context (e.g. screenshots the user attached to a bug)."
+      },
+      {
+        "name": "cp_get_project_summary",
+        "description": "Get open/in_progress/done/archived/total counts for each project."
+      },
+      {
+        "name": "cp_get_velocity",
+        "description": "Get patches completed since a given date/time across all projects (most recent first)."
+      },
+      {
+        "name": "cp_list_all_patches",
+        "description": "Get patches across ALL projects for the authenticated user (patches in archived projects are excluded unless include_archived is true), optionally filtered by status, priority, and/or tags (any-overlap match)."
+      },
+      {
+        "name": "cp_list_patches",
+        "description": "Get patches for a project, optionally filtered by status (open | in_progress | done), priority (low | medium | high), and/or tags (returns patches with at least one matching tag)."
+      },
+      {
+        "name": "cp_list_projects",
+        "description": "Get all ChaosPatch projects for the authenticated user."
+      },
+      {
+        "name": "cp_remove_tags",
+        "description": "Remove specific tags from a patch atomically."
+      },
+      {
+        "name": "cp_reopen_patch",
+        "description": "Reopen a done or in_progress patch."
+      },
+      {
+        "name": "cp_request_image_upload",
+        "description": "Step 1 of 2 for attaching an image (e.g. a screenshot) to an existing patch."
+      },
+      {
+        "name": "cp_search_patches",
+        "description": "Search patches by title, notes, or tags (case-insensitive)."
+      },
+      {
+        "name": "cp_start_patch",
+        "description": "Set a patch status to in_progress and log started_at."
+      },
+      {
+        "name": "cp_unarchive_patch",
+        "description": "Unarchive a single patch (sets archived = false)."
+      },
+      {
+        "name": "cp_unarchive_project",
+        "description": "Unarchive a project so it shows up in default lists again."
+      },
+      {
+        "name": "cp_update_patch",
+        "description": "Update a patch's title, priority, tags, due_date, notes, and/or spec."
+      },
+      {
+        "name": "cp_update_project",
+        "description": "Update a project's name, color, and/or slug."
+      }
+    ]
+  },
+  "kindling": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "kindle",
+        "description": "Keep a curated idea — one worth planning and coming back to."
+      },
+      {
+        "name": "kindling_archive",
+        "description": "Archive a spark that is no longer relevant, so it stops competing for attention in recall."
+      },
+      {
+        "name": "kindling_batch_archive",
+        "description": "Archive many sparks in one call."
+      },
+      {
+        "name": "kindling_delete",
+        "description": "Permanently delete a spark."
+      },
+      {
+        "name": "kindling_dig",
+        "description": "Surface cold sparks — the ones untouched for so long they fell out of active rotation — for triage."
+      },
+      {
+        "name": "kindling_export",
+        "description": "Export the whole corpus as markdown or JSON — every spark, with tags, timestamps and promotion provenance."
+      },
+      {
+        "name": "kindling_find_duplicates",
+        "description": "Find sparks that are probably the same recurring thought captured more than once."
+      },
+      {
+        "name": "kindling_get",
+        "description": "Inspect one spark in full — its whole content, every timestamp, and its promotion provenance if it has any."
+      },
+      {
+        "name": "kindling_list",
+        "description": "List sparks, filtered by status, tag, kind and/or home."
+      },
+      {
+        "name": "kindling_promote",
+        "description": "Record that a spark became something real — it turned into a project, a task, a draft, a decision, a section of a document."
+      },
+      {
+        "name": "kindling_recall",
+        "description": "Surface the sparks most in need of attention, ranked by the Kindling algorithm — how old they are, how long they have been neglected, and how rarely they have been shown."
+      },
+      {
+        "name": "kindling_remove_tag",
+        "description": "Strip a tag from every spark carrying it, leaving the sparks themselves untouched."
+      },
+      {
+        "name": "kindling_rename_tag",
+        "description": "Rename a tag across every spark that carries it — and merge two tags by renaming one into the other."
+      },
+      {
+        "name": "kindling_revive",
+        "description": "Move a cold spark back to active, resetting its decay clock so it can surface in recall again."
+      },
+      {
+        "name": "kindling_search",
+        "description": "Find a spark the user half-remembers, by text (title, content, home, next step) and/or by tags, kind or home."
+      },
+      {
+        "name": "kindling_set_standing",
+        "description": "Mark a spark as a standing intention, exempt from the decay clock forever — or put it back on the clock."
+      },
+      {
+        "name": "kindling_settings",
+        "description": "Read or change how long a spark sits untouched before it goes cold (default 180 days)."
+      },
+      {
+        "name": "kindling_snooze",
+        "description": "Hold a spark out of recall for a while — \"not now, ask me in a month\"."
+      },
+      {
+        "name": "kindling_stats",
+        "description": "Counts by status, promotion rate, capture cadence, and the oldest and most neglected active sparks."
+      },
+      {
+        "name": "kindling_tags",
+        "description": "Every tag in use, with how many sparks carry each."
+      },
+      {
+        "name": "kindling_update",
+        "description": "Edit a spark's title, content, tags, kind, home or next step."
+      }
+    ]
+  },
+  "tangle": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "note_batch_resolve",
+        "description": "Resolve many notes in one call — for maintenance sweeps such as clearing a duplicate cluster."
+      },
+      {
+        "name": "note_capture",
+        "description": "Stash an epistemic note — a hunch, suspicion, dead-end, or partial reasoning."
+      },
+      {
+        "name": "note_find_duplicates",
+        "description": "Find clusters of duplicate notes — groups that share identical content, tags, confidence, identity, and parent."
+      },
+      {
+        "name": "note_get",
+        "description": "Deep-read a single note by id — returns the full content body plus tags, confidence, status, standing, outcome, and parent chain."
+      },
+      {
+        "name": "note_list",
+        "description": "Admin-style paginated listing of notes for review passes."
+      },
+      {
+        "name": "note_recall",
+        "description": "Pull live notes for the current context as a tiered, scannable index."
+      },
+      {
+        "name": "note_resolve",
+        "description": "Close out a live note with an outcome."
+      },
+      {
+        "name": "note_search",
+        "description": "Substring search across all notes' content + tags."
+      },
+      {
+        "name": "note_stale",
+        "description": "List live notes left untouched (by last-touch / updated_at) past a threshold, STALEST first — a deliberate review-pass tool that reproduces a manual sweep without eyeballing the whole corpus."
+      },
+      {
+        "name": "note_stats",
+        "description": "Corpus shape in one cheap call — counts by status / confidence / captured_by / project, a standing count, capture velocity (last 7d / 30d), and age signals (oldest live note, count untouched 30d+, resolved:live ratio)."
+      },
+      {
+        "name": "note_update",
+        "description": "Edit a note's content, tags, confidence, or status without resolving it."
+      }
+    ]
+  },
+  "threadnotes": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "journal_add_article",
+        "description": "Creates a new article in the library — a paper someone else wrote."
+      },
+      {
+        "name": "journal_add_decision",
+        "description": "Records a design decision on a study — what was chosen, what was not, and WHY."
+      },
+      {
+        "name": "journal_add_entry",
+        "description": "Creates a free-form journal entry in the active project — the right home for an observation, reflection, or cross-cutting thought that is not tied to a specific paper."
+      },
+      {
+        "name": "journal_add_excerpt",
+        "description": "Adds a new excerpt (quote + optional comment) to an existing article."
+      },
+      {
+        "name": "journal_add_hypothesis",
+        "description": "Adds a hypothesis to a study."
+      },
+      {
+        "name": "journal_add_note",
+        "description": "Appends text to an existing article's notes field."
+      },
+      {
+        "name": "journal_add_project",
+        "description": "Creates a new top-level project — an isolated container with its own themes, questions, library, and journal."
+      },
+      {
+        "name": "journal_add_question",
+        "description": "Adds a new research question to an existing theme."
+      },
+      {
+        "name": "journal_add_question_source",
+        "description": "Attaches a user source to a research question — a reference you want kept next to the question that is not (yet) an article in the library: a book, a talk, a URL, a citation from elsewhere."
+      },
+      {
+        "name": "journal_add_study",
+        "description": "Creates a study — original research being designed, as opposed to a paper someone else wrote."
+      },
+      {
+        "name": "journal_add_theme",
+        "description": "Creates a new research theme."
+      },
+      {
+        "name": "journal_delete_article",
+        "description": "Permanently removes an article from the library by ID."
+      },
+      {
+        "name": "journal_delete_decision",
+        "description": "Permanently removes a decision."
+      },
+      {
+        "name": "journal_delete_entry",
+        "description": "Permanently removes a journal entry by ID."
+      },
+      {
+        "name": "journal_delete_excerpt",
+        "description": "Removes a specific excerpt from an article by excerpt ID."
+      },
+      {
+        "name": "journal_delete_hypothesis",
+        "description": "Permanently removes a hypothesis."
+      },
+      {
+        "name": "journal_delete_project",
+        "description": "Soft-deletes a project, matching the app: it disappears from every read but keeps its whole subtree."
+      },
+      {
+        "name": "journal_delete_question",
+        "description": "Permanently removes a research question and everything hanging off it: its notes, its user sources, its status and starred state."
+      },
+      {
+        "name": "journal_delete_question_note",
+        "description": "Permanently removes a note from a research question by note ID."
+      },
+      {
+        "name": "journal_delete_question_source",
+        "description": "Permanently removes a user source from a research question by source ID."
+      },
+      {
+        "name": "journal_delete_study",
+        "description": "Permanently removes a study AND every hypothesis and decision on it."
+      },
+      {
+        "name": "journal_delete_theme",
+        "description": "Deletes a research theme."
+      },
+      {
+        "name": "journal_get_article",
+        "description": "Returns full details of a single article by ID, including all excerpts, notes, linked questions, AI summary, and metadata."
+      },
+      {
+        "name": "journal_get_entries",
+        "description": "Returns journal entries from the active project, newest first."
+      },
+      {
+        "name": "journal_get_hypothesis_chain",
+        "description": "The full revision history of one hypothesis, oldest to newest."
+      },
+      {
+        "name": "journal_get_library",
+        "description": "Returns all saved articles with title, authors, year, tags, status, source, and excerpt count."
+      },
+      {
+        "name": "journal_get_open_decisions",
+        "description": "Every decision still open — the \"what have I not settled yet\" list."
+      },
+      {
+        "name": "journal_get_questions",
+        "description": "Returns all research questions across all themes, with their status, starred state, notes, user sources, and search phrases."
+      },
+      {
+        "name": "journal_get_studies",
+        "description": "Lists every study in the active project with counts of active hypotheses and open decisions."
+      },
+      {
+        "name": "journal_get_study",
+        "description": "Full detail for one study: design prose, every hypothesis and decision (superseded ones included, each carrying the id of what replaced it), and linked questions with their text."
+      },
+      {
+        "name": "journal_get_themes",
+        "description": "Returns all research themes with their descriptions and which question IDs belong to each."
+      },
+      {
+        "name": "journal_link_question",
+        "description": "Links or unlinks an article to a research question by updating the article's linkedQuestions array."
+      },
+      {
+        "name": "journal_link_questions",
+        "description": "Links or unlinks two research questions as related."
+      },
+      {
+        "name": "journal_link_study_question",
+        "description": "Links or unlinks a study and a research question."
+      },
+      {
+        "name": "journal_list_projects",
+        "description": "Returns every top-level project with its icon, color, description, and content counts, and marks which one is currently active."
+      },
+      {
+        "name": "journal_restore_project",
+        "description": "Restores a soft-deleted project with everything it held, and makes it the active project, matching the app."
+      },
+      {
+        "name": "journal_restore_theme",
+        "description": "Restores a soft-deleted theme in the active project, matching Recently deleted in Manage Themes."
+      },
+      {
+        "name": "journal_search",
+        "description": "Full-text search across the active project: research questions, articles, journal entries, and studies."
+      },
+      {
+        "name": "journal_set_active_project",
+        "description": "Changes which project every other journal_* tool reads and writes."
+      },
+      {
+        "name": "journal_supersede_decision",
+        "description": "Reverses a decision in ONE call: records the new decision, marks the old one superseded, and points it at the replacement."
+      },
+      {
+        "name": "journal_supersede_hypothesis",
+        "description": "Replaces a hypothesis with a revised version in ONE call: creates the new hypothesis carrying the old one's label and question forward, marks the old one superseded, and points it at the new one."
+      },
+      {
+        "name": "journal_update_article",
+        "description": "Updates fields on an existing article."
+      },
+      {
+        "name": "journal_update_decision",
+        "description": "Edits a decision in place — typically to settle an open one by adding the rationale and setting status='settled'."
+      },
+      {
+        "name": "journal_update_entry",
+        "description": "Updates an existing journal entry."
+      },
+      {
+        "name": "journal_update_hypothesis",
+        "description": "Edits a hypothesis in place."
+      },
+      {
+        "name": "journal_update_project",
+        "description": "Renames a project or changes its description, icon or color."
+      },
+      {
+        "name": "journal_update_question",
+        "description": "Updates a research question."
+      },
+      {
+        "name": "journal_update_question_note",
+        "description": "Replaces the content of an existing note on a research question."
+      },
+      {
+        "name": "journal_update_study",
+        "description": "Updates a study."
+      },
+      {
+        "name": "journal_update_tags",
+        "description": "Sets the tags array on an existing article, replacing whatever tags are currently there."
+      },
+      {
+        "name": "journal_update_theme",
+        "description": "Renames a research theme or changes its description, color, or icon."
+      }
+    ]
+  },
+  "loose-change": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "lc_capture_text",
+        "description": "Capture a thought directly from a chat conversation, skipping the app entirely (captureMode: chat)."
+      },
+      {
+        "name": "lc_discard",
+        "description": "Soft-delete an entry (starts the 30-day undo window, not instant-gone)."
+      },
+      {
+        "name": "lc_get_entry",
+        "description": "Full entry: transcript, audio ref, timestamp, capture mode."
+      },
+      {
+        "name": "lc_get_stats",
+        "description": "Untriaged count and keep/discard/promote breakdown."
+      },
+      {
+        "name": "lc_keep",
+        "description": "Mark an entry kept."
+      },
+      {
+        "name": "lc_list_archive",
+        "description": "Paginated, triaged entries, newest first — the same three views the app's Archive screen offers: kept (default), promoted (sent to another app), or discarded (still inside their 30-day undo window)."
+      },
+      {
+        "name": "lc_list_inbox",
+        "description": "Paginated, untriaged entries, newest first."
+      },
+      {
+        "name": "lc_mark_promoted",
+        "description": "Flag an entry as sent elsewhere and record the destination."
+      },
+      {
+        "name": "lc_retry_transcription",
+        "description": "Retry a voice memo whose transcription timed out (transcriptionStatus: timed_out)."
+      },
+      {
+        "name": "lc_return_to_inbox",
+        "description": "Move a kept, promoted or discarded entry back to the untriaged inbox, clearing its destination and triage time."
+      },
+      {
+        "name": "lc_revert_transcript",
+        "description": "Restore an edited entry's transcript to the text as originally captured."
+      },
+      {
+        "name": "lc_search",
+        "description": "Full-text search across entries by transcript content."
+      },
+      {
+        "name": "lc_undo_discard",
+        "description": "Restore a discarded entry to the status it was discarded from — untriaged if it was discarded during triage, kept if it was deleted from the archive."
+      },
+      {
+        "name": "lc_update_transcript",
+        "description": "Correct an entry's transcript (e.g. a misheard word)."
+      }
+    ]
+  },
+  "folio": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "folio_diff_since_last_visit",
+        "description": "What changed in a document since YOU (this key) last looked — added / edited / deleted blocks, keyed to this key's own watermark and independent of the writer's and any other AI's."
+      },
+      {
+        "name": "folio_list_documents",
+        "description": "List the Folio documents this key can read — the user's own plus any shared with them."
+      },
+      {
+        "name": "folio_list_folders",
+        "description": "The user's folder tree, flat and sorted by path (\"Classes / Psycholinguistics\")."
+      },
+      {
+        "name": "folio_mark_all_caught_up",
+        "description": "Advance YOUR (this key's) watermark on every document you can read to now."
+      },
+      {
+        "name": "folio_mark_caught_up",
+        "description": "Advance YOUR (this key's) watermark for a document to now — 'I've seen everything up to here.'"
+      },
+      {
+        "name": "folio_read_document",
+        "description": "Read the current content of one Folio document — its live blocks in order, each as markdown text with author attribution."
+      },
+      {
+        "name": "folio_search",
+        "description": "Full-text search across every Folio document this key can read (own + shared)."
+      },
+      {
+        "name": "folio_whats_new",
+        "description": "One-call catch-up: every document this key can read that changed since YOU (this key) last looked at it, most recently changed first."
+      }
+    ]
+  },
+  "personal-context": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "pctx_add_claude_identity",
+        "description": "Register a Claude identity — who you are, where you live, and what you can access."
+      },
+      {
+        "name": "pctx_add_fact",
+        "description": "Record a durable fact about the user — something measured, diagnosed, or established that isn't reconstructible from a codebase or a task tracker."
+      },
+      {
+        "name": "pctx_add_relationship",
+        "description": "Add a person to the relationships — personal or professional, one array for both."
+      },
+      {
+        "name": "pctx_delete_claude_identity",
+        "description": "Delete a Claude identity by name."
+      },
+      {
+        "name": "pctx_delete_fact",
+        "description": "Delete a fact by label."
+      },
+      {
+        "name": "pctx_delete_relationship",
+        "description": "Delete a relationship by name."
+      },
+      {
+        "name": "pctx_get_context",
+        "description": "Retrieve the personal context: the user, registered Claude identities, dated facts, and relationships."
+      },
+      {
+        "name": "pctx_update_claude_identity",
+        "description": "Update an existing Claude identity by name."
+      },
+      {
+        "name": "pctx_update_context",
+        "description": "Update top-level fields of the personal context (user, claudeIdentities, facts, relationships)."
+      },
+      {
+        "name": "pctx_update_fact",
+        "description": "Update an existing fact by label."
+      },
+      {
+        "name": "pctx_update_relationship",
+        "description": "Update an existing relationship by name."
+      }
+    ]
+  },
+  "libralex": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "accept_recommendation",
+        "description": "Accept a friend's recommendation from the inbox: puts the book on the user's wishlist (or owned shelf) and removes it from the inbox."
+      },
+      {
+        "name": "active_loans",
+        "description": "Active library loans (not yet returned), soonest due first."
+      },
+      {
+        "name": "add_book",
+        "description": "Add a book to a specific shelf by title — use this (not add_to_wishlist) when the user owns it, is reading it, has read it, or borrowed it from the library."
+      },
+      {
+        "name": "add_to_wishlist",
+        "description": "Add a book to the user's wishlist by title (optionally with author to disambiguate)."
+      },
+      {
+        "name": "currently_reading",
+        "description": "The books the user is reading right now (readStatus = reading), most-recently-started first."
+      },
+      {
+        "name": "dismiss_recommendation",
+        "description": "Dismiss a friend's recommendation without adding it (removes it from the inbox)."
+      },
+      {
+        "name": "list_books",
+        "description": "List the user's books, optionally filtered."
+      },
+      {
+        "name": "reading_stats",
+        "description": "The user's reading stats: books read all-time and this year, pages read, currently-reading and to-read counts, average rating + rating distribution, and shelf totals (owned/wishlist/active loans)."
+      },
+      {
+        "name": "recommend_books",
+        "description": "Suggest what the user should read next."
+      },
+      {
+        "name": "recommendation_inbox",
+        "description": "Books friends have recommended to the user, newest first — each with who sent it and any note."
+      },
+      {
+        "name": "renew_loan",
+        "description": "Renew (extend) an active library loan, by title."
+      },
+      {
+        "name": "return_loan",
+        "description": "Mark an active library loan as returned, by title."
+      },
+      {
+        "name": "search_books",
+        "description": "Search the global book catalog (Google Books) by title/author/keyword — NOT the user's shelf."
+      },
+      {
+        "name": "send_recommendation",
+        "description": "Recommend a book to one of the user's friends, identified by their name."
+      },
+      {
+        "name": "update_reading_status",
+        "description": "Update a book the user already has on a shelf: mark it reading/read/unread, set a 1–5 star rating, and/or save a review."
+      },
+      {
+        "name": "wishlist",
+        "description": "The user's wishlist — books they want but don't own yet, newest first."
+      }
+    ]
+  },
+  "scribecat": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "get_session",
+        "description": "Get the full content of a ScribeCat session including its transcript and notes."
+      },
+      {
+        "name": "list_courses",
+        "description": "List all course names the user has tagged their sessions with."
+      },
+      {
+        "name": "list_sessions",
+        "description": "List the user's ScribeCat lecture sessions."
+      },
+      {
+        "name": "search_sessions",
+        "description": "Search the user's sessions by keyword."
+      }
+    ]
+  },
+  "vertex": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "vtx_edge_create",
+        "description": "Connect two existing nodes with a directed, typed edge."
+      },
+      {
+        "name": "vtx_edge_delete",
+        "description": "Remove an edge between two nodes."
+      },
+      {
+        "name": "vtx_graph_query",
+        "description": "BFS traversal from a starting node outward to `depth` hops."
+      },
+      {
+        "name": "vtx_graph_render",
+        "description": "Run a BFS traversal and return the result as a Mermaid `graph LR` diagram string."
+      },
+      {
+        "name": "vtx_node_archive",
+        "description": "Soft-delete a node."
+      },
+      {
+        "name": "vtx_node_create",
+        "description": "Create a new node in the Vertexism knowledge graph."
+      },
+      {
+        "name": "vtx_node_get",
+        "description": "Fetch a single node plus all its edges (both directions)."
+      },
+      {
+        "name": "vtx_node_search",
+        "description": "Full-text search across node names and descriptions."
+      },
+      {
+        "name": "vtx_node_update",
+        "description": "Update the name, description, or tags on an existing node."
+      },
+      {
+        "name": "vtx_orphans_list",
+        "description": "Returns all nodes with no edges, sorted by days orphaned (most neglected first)."
+      }
+    ]
+  },
+  "chaoslingua-lite": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "cll_get_progress",
+        "description": "Returns the ChaosLingua Lite app owner's overall drill stats: attempted, correct, and current streak."
+      },
+      {
+        "name": "cll_get_weak_areas",
+        "description": "Returns accuracy from this account's logged attempts, sorted worst-first — grouped by drill type, and further by declension + case where recorded (e.g. parse, 3rd declension, genitive)."
+      },
+      {
+        "name": "cll_get_grammar_reference",
+        "description": "Returns the ChaosLingua Lite app's Suburani noun grammar exactly as its Learn section shows it: model-noun paradigm tables for all five declensions (forms copied from the Suburani Reference Grammar), the uses of each case with the textbook's own examples, vocative/locative notes, the app's drill types, and the class schedule for when each declension and chapter opens."
+      },
+      {
+        "name": "cll_get_glossary",
+        "description": "Returns the app's glossary of grammar terms (case, declension, number, gender, neuter nom = acc, ambiguous forms) with learner-friendly definitions matching the app's own Learn section."
+      },
+      {
+        "name": "cll_get_vocab",
+        "description": "Returns the Suburani \"Vocabulary for learning\" lists by chapter, copied from the textbook."
+      },
+      {
+        "name": "cll_log_tutoring_attempt",
+        "description": "Records the outcome of a question asked during a conversational tutoring session."
+      }
+    ]
+  },
+  "chaoslimba": {
+    "capturedAt": "2026-10-05",
+    "tools": [
+      {
+        "name": "cl_get_schema",
+        "description": "Returns a summary of all tables and their columns in the ChaosLimba database. Use this to orient yourself when first connecting."
+      },
+      {
+        "name": "cl_get_grammar_map",
+        "description": "Returns all entries from grammar_feature_map, optionally filtered by CEFR level. Shows feature keys, names, categories, descriptions, prerequisites, and sort order."
+      },
+      {
+        "name": "cl_get_prerequisite_chain",
+        "description": "For a given grammar feature, returns its full recursive prerequisite chain so you can audit whether the sequencing is pedagogically sound. Caps depth at 10."
+      },
+      {
+        "name": "cl_get_content",
+        "description": "Returns content items, optionally filtered by difficulty level, topic, or type. When no difficulty filter is set, results are stratified across difficulty levels for even coverage."
+      },
+      {
+        "name": "cl_coverage_report",
+        "description": "Cross-references grammar_feature_map against content_items.language_features to show which grammar features have content coverage and which are gaps. The core instructional design audit tool."
+      },
+      {
+        "name": "cl_add_content",
+        "description": "Inserts a new content item into the content_items table. Use during dev sessions to seed reading passages, audio content, etc."
+      },
+      {
+        "name": "cl_get_error_patterns",
+        "description": "Returns aggregated error patterns from error_logs across all users (anonymized). Useful for understanding where learners actually struggle."
+      },
+      {
+        "name": "cl_get_adaptation_summary",
+        "description": "Returns a summary of fossilization interventions — which patterns are being escalated and whether they are resolving. Shows max tier reached, total interventions, and resolution counts."
+      },
+      {
+        "name": "cl_get_reading_questions",
+        "description": "Returns reading comprehension questions, optionally filtered by CEFR level. Shows passage text, question, answer options, and correct index. Useful for auditing question quality and level coverage."
+      },
+      {
+        "name": "cl_get_stress_pairs",
+        "description": "Returns stress minimal pairs — words where stress placement changes meaning (e.g., CÁsă vs caSĂ). Core pronunciation training data."
+      },
+      {
+        "name": "cl_get_suggested_questions",
+        "description": "Returns AI tutor conversation starter questions, optionally filtered by CEFR level or category. Useful for auditing prompt quality and topic coverage."
+      },
+      {
+        "name": "cl_get_tutor_openings",
+        "description": "Returns tutor opening messages keyed by self-assessment level. Shows how the AI tutor greets learners at different proficiency levels."
+      },
+      {
+        "name": "cl_add_reading_question",
+        "description": "Inserts a new reading comprehension question into the reading_questions table. Provide a passage, question, answer options, and the index of the correct answer."
+      },
+      {
+        "name": "cl_get_session_summary",
+        "description": "Returns aggregated session data — session counts by type, average duration, and content engagement. All data is anonymized (no user IDs returned). Useful for understanding how learners actually use the app."
+      },
+      {
+        "name": "cl_get_proficiency_trends",
+        "description": "Returns proficiency score history over time — overall, listening, reading, speaking, writing scores by period. Anonymized across all users. Useful for tracking whether content improvements translate to learner gains."
+      },
+      {
+        "name": "cl_get_feature_exposure",
+        "description": "Returns aggregated feature exposure data — how many times each grammar feature has been seen by learners, with correctness rates. Anonymized. Useful for finding undertaught or poorly-performing features."
+      },
+      {
+        "name": "cl_get_mystery_items",
+        "description": "Returns mystery vocabulary items — words learners encountered and flagged for exploration. Shows word, context, definition, examples, grammar info, and whether the learner has explored it. Useful for understanding organic vocabulary discovery."
+      },
+      {
+        "name": "cl_get_generated_content_summary",
+        "description": "Returns aggregated stats on AI-generated content — what types are being generated, for which error targets, listening rates, and estimated TTS costs. Anonymized. Useful for auditing the AI tutor's output quality and cost."
+      },
+      {
+        "name": "cl_get_learning_narratives",
+        "description": "Returns AI-generated learning narrative summaries — periodic reflections on learner progress with stats. Anonymized. Useful for auditing narrative quality and checking if the reflection system captures meaningful patterns."
+      },
+      {
+        "name": "cl_get_tts_usage",
+        "description": "Returns TTS (text-to-speech) usage stats — characters consumed per day. Useful for monitoring costs and usage trends."
+      }
+    ]
+  }
+}

@@ -1,11 +1,13 @@
 {
   "name": "my-v0-project",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/snapshot-mcp-tools.mjs",
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
+    "mcp:snapshot": "node scripts/snapshot-mcp-tools.mjs",
     "start": "next start"
   },
   "dependencies": {
@@ -65,6 +67,7 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@modelcontextprotocol/client": "^2.3.1",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",

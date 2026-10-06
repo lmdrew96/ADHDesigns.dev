@@ -102,9 +102,11 @@ export function ServerCard({ server }: { server: McpServer }) {
               >
                 {server.tools.length} tools
               </span>
-              <code className="px-2 py-0.5 rounded-md bg-adhd-dark/50 border border-adhd-sage/20 text-[11px] font-[family-name:var(--font-mono)] text-adhd-sage">
-                {server.prefix}*
-              </code>
+              {server.prefix && (
+                <code className="px-2 py-0.5 rounded-md bg-adhd-dark/50 border border-adhd-sage/20 text-[11px] font-[family-name:var(--font-mono)] text-adhd-sage">
+                  {server.prefix}*
+                </code>
+              )}
             </div>
             <p className="text-adhd-lavender/90 leading-snug">{server.tagline}</p>
             <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-adhd-sage font-[family-name:var(--font-mono)]">

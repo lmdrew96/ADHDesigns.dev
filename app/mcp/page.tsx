@@ -7,8 +7,15 @@ import { MCP_SERVERS, TOTAL_TOOL_COUNT } from "@/lib/mcp-servers"
 
 export const metadata: Metadata = {
   title: "MCP Servers — ADHDesigns",
-  description: `Five custom Model Context Protocol servers, ${TOTAL_TOOL_COUNT} tools across the ADHDesigns ecosystem — task management, language learning, dev tooling, personal context, and research.`,
+  description: `${MCP_SERVERS.length} custom Model Context Protocol servers, ${TOTAL_TOOL_COUNT} tools across the ADHDesigns ecosystem — tasks, ideas, notes, reading, research, language learning, and dev tooling.`,
 }
+
+const formatSnapshotDate = (isoDate: string): string => {
+  const [year, month, day] = isoDate.split("-").map(Number)
+  return new Date(year, month - 1, day).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
+}
+
+const LATEST_SNAPSHOT = formatSnapshotDate(MCP_SERVERS.map((s) => s.snapshotDate).sort().at(-1) ?? "")
 
 export default function McpPage() {
   return (
@@ -41,7 +48,7 @@ export default function McpPage() {
           </h1>
 
           <p className="mt-8 text-lg sm:text-xl text-adhd-lavender/90 leading-relaxed font-medium max-w-2xl mx-auto">
-            Five custom servers, {TOTAL_TOOL_COUNT} tools. Each one wires a real product&rsquo;s data and logic
+            {MCP_SERVERS.length} custom servers, {TOTAL_TOOL_COUNT} tools. Each one wires a real product&rsquo;s data and logic
             directly into Claude — so users can ask questions, take actions, and get back natural answers without
             ever leaving the conversation.
           </p>
@@ -53,7 +60,7 @@ export default function McpPage() {
                 href={`#${server.id}`}
                 className="px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-sage/40 border border-adhd-teal/25 text-adhd-lavender hover:border-adhd-sage/60 hover:text-adhd-sage hover:bg-adhd-sage/25 transition-colors font-[family-name:var(--font-mono)]"
               >
-                {server.prefix}*
+                {server.prefix ? `${server.prefix}*` : server.id}
                 <span className="ml-1.5 opacity-70">·</span>
                 <span className="ml-1.5 opacity-90">{server.tools.length}</span>
               </a>
@@ -75,7 +82,11 @@ export default function McpPage() {
               The servers, <span className="text-adhd-amber">up close.</span>
             </h2>
             <p className="mt-3 text-adhd-lavender">
-              Click any card to expand the tool list and see real example flows.
+              Click any card to expand the tool list and see example flows.
+            </p>
+            <p className="mt-2 text-xs text-adhd-lavender/70">
+              Tool lists come straight from each server&rsquo;s own <code>tools/list</code>, last updated{" "}
+              {LATEST_SNAPSHOT}.
             </p>
           </div>
           {MCP_SERVERS.map((server) => (
