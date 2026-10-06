@@ -58,14 +58,14 @@ export function HeroSection() {
   return (
     <section
       className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, var(--adhd-dark) 0%, var(--adhd-teal) 45%, var(--adhd-purple) 70%, var(--adhd-dark) 100%)" }}
+      style={{ background: "linear-gradient(180deg, var(--indigo-void) 0%, var(--indigo-deep) 45%, var(--muted-indigo) 70%, var(--indigo-void) 100%)" }}
     >
       {/* Grid horizon — perspective floor in bone, replaces the old pastel blobs */}
       <div
         className="absolute left-0 right-0 bottom-0 h-[46%] pointer-events-none"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, color-mix(in srgb, var(--adhd-lavender) 30%, transparent) 0 2px, transparent 2px 60px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--adhd-lavender) 24%, transparent) 0 2px, transparent 2px 34px)",
+            "repeating-linear-gradient(90deg, color-mix(in srgb, var(--bone) 30%, transparent) 0 2px, transparent 2px 60px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--bone) 24%, transparent) 0 2px, transparent 2px 34px)",
           transform: "perspective(240px) rotateX(58deg)",
           transformOrigin: "bottom",
           maskImage: "linear-gradient(180deg, transparent, black 30%)",
@@ -77,7 +77,7 @@ export function HeroSection() {
       <div
         className="absolute left-1/2 top-[54%] w-[480px] h-[480px] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-40"
         style={{
-          backgroundImage: "radial-gradient(circle, var(--adhd-lavender) 1.5px, transparent 1.8px)",
+          backgroundImage: "radial-gradient(circle, var(--bone) 1.5px, transparent 1.8px)",
           backgroundSize: "14px 14px",
           maskImage: "radial-gradient(circle, black 0%, transparent 65%)",
           WebkitMaskImage: "radial-gradient(circle, black 0%, transparent 65%)",
@@ -96,33 +96,33 @@ export function HeroSection() {
           className="fixed z-[9999] pointer-events-none rounded-full"
           style={{ left: puckPos.x, top: puckPos.y, width: PUCK_SIZE, height: PUCK_SIZE }}
         >
-          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-adhd-dark" />
+          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-indigo-void" />
         </div>
       )}
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Main Headline - stamped double-shadow, magenta + indigo */}
         <h1
-          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-adhd-lavender"
-          style={{ textShadow: "3px 3px 0 var(--pink), 6px 6px 0 var(--adhd-purple)" }}
+          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-bone"
+          style={{ textShadow: "3px 3px 0 var(--pink), 6px 6px 0 var(--muted-indigo)" }}
         >
           <span className="whitespace-nowrap">
             <span className="inline-block hover:animate-wiggle cursor-default text-magenta">A</span>gentic
           </span>{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-green">D</span>evelopment
+            <span className="inline-block hover:animate-wiggle cursor-default text-sage-green">D</span>evelopment
           </span>{" "}
           of{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-amber">H</span>uman
+            <span className="inline-block hover:animate-wiggle cursor-default text-caution-amber">H</span>uman
           </span>{" "}
           <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-adhd-sage">D</span>esigns
+            <span className="inline-block hover:animate-wiggle cursor-default text-dusty-cyan">D</span>esigns
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl text-adhd-lavender max-w-3xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-bone max-w-3xl mx-auto mb-10 leading-relaxed">
           Apps built with chaos, designed with purpose. Created by a neurodivergent designer who believes the best tools come from understanding the beautiful mess of neurodivergent minds.
         </p>
 
@@ -130,7 +130,7 @@ export function HeroSection() {
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-adhd-lavender text-adhd-dark border-2 border-adhd-lavender hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
+            className="bg-bone text-indigo-void border-2 border-bone hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
             style={{ boxShadow: "4px 4px 0 var(--magenta)" }}
             asChild
           >
@@ -152,8 +152,8 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest border-2 border-adhd-lavender text-adhd-lavender bg-transparent hover:bg-adhd-lavender/10 transition-colors"
-            style={{ boxShadow: "4px 4px 0 var(--adhd-purple)" }}
+            className="rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest border-2 border-bone text-bone bg-transparent hover:bg-bone/10 transition-colors"
+            style={{ boxShadow: "4px 4px 0 var(--muted-indigo)" }}
             asChild
           >
             <a href="/about">
@@ -168,7 +168,7 @@ export function HeroSection() {
           {["ADHD Friendly", "Open Source", "Student Built", "AI Powered"].map((label) => (
             <span
               key={label}
-              className="px-3 py-1.5 bg-adhd-dark text-adhd-lavender text-xs font-mono uppercase tracking-wider border border-adhd-lavender/25 hover:border-magenta transition-colors cursor-default"
+              className="px-3 py-1.5 bg-indigo-void text-bone text-xs font-mono uppercase tracking-wider border border-bone/25 hover:border-magenta transition-colors cursor-default"
             >
               {label}
             </span>
@@ -178,7 +178,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#projects" className="flex flex-col items-center gap-2 text-adhd-lavender/70 hover:text-magenta transition-colors">
+        <a href="#projects" className="flex flex-col items-center gap-2 text-bone/70 hover:text-magenta transition-colors">
           <span className="text-sm font-mono uppercase tracking-widest">Scroll to explore</span>
           <ArrowDown className="w-5 h-5" />
         </a>

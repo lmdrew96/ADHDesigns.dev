@@ -19,49 +19,49 @@ const ACCENT: Record<
   }
 > = {
   green: {
-    border: "border-adhd-green/30",
-    cardShadow: "shadow-adhd-green/10",
-    badge: "bg-adhd-green/20 text-adhd-green border-adhd-green/35",
-    text: "text-adhd-green",
-    iconBg: "bg-adhd-green/20",
-    iconText: "text-adhd-green",
-    chip: "bg-adhd-green/15 text-adhd-green border-adhd-green/30",
+    border: "border-sage-green/30",
+    cardShadow: "shadow-sage-green/10",
+    badge: "bg-sage-green/20 text-sage-green border-sage-green/35",
+    text: "text-sage-green",
+    iconBg: "bg-sage-green/20",
+    iconText: "text-sage-green",
+    chip: "bg-sage-green/15 text-sage-green border-sage-green/30",
   },
   purple: {
-    border: "border-adhd-purple/40",
-    cardShadow: "shadow-adhd-purple/10",
-    badge: "bg-adhd-purple/30 text-adhd-bg border-adhd-purple/50",
-    text: "text-adhd-bg",
-    iconBg: "bg-adhd-purple/30",
-    iconText: "text-adhd-bg",
-    chip: "bg-adhd-purple/20 text-adhd-bg border-adhd-purple/40",
+    border: "border-muted-indigo/40",
+    cardShadow: "shadow-muted-indigo/10",
+    badge: "bg-muted-indigo/30 text-bone-dim border-muted-indigo/50",
+    text: "text-bone-dim",
+    iconBg: "bg-muted-indigo/30",
+    iconText: "text-bone-dim",
+    chip: "bg-muted-indigo/20 text-bone-dim border-muted-indigo/40",
   },
   amber: {
-    border: "border-adhd-amber/30",
-    cardShadow: "shadow-adhd-amber/10",
-    badge: "bg-adhd-amber/20 text-adhd-amber border-adhd-amber/40",
-    text: "text-adhd-amber",
-    iconBg: "bg-adhd-amber/20",
-    iconText: "text-adhd-amber",
-    chip: "bg-adhd-amber/15 text-adhd-amber border-adhd-amber/30",
+    border: "border-caution-amber/30",
+    cardShadow: "shadow-caution-amber/10",
+    badge: "bg-caution-amber/20 text-caution-amber border-caution-amber/40",
+    text: "text-caution-amber",
+    iconBg: "bg-caution-amber/20",
+    iconText: "text-caution-amber",
+    chip: "bg-caution-amber/15 text-caution-amber border-caution-amber/30",
   },
   sage: {
-    border: "border-adhd-sage/35",
-    cardShadow: "shadow-adhd-sage/10",
-    badge: "bg-adhd-sage/20 text-adhd-sage border-adhd-sage/40",
-    text: "text-adhd-sage",
-    iconBg: "bg-adhd-sage/20",
-    iconText: "text-adhd-sage",
-    chip: "bg-adhd-sage/15 text-adhd-sage border-adhd-sage/30",
+    border: "border-dusty-cyan/35",
+    cardShadow: "shadow-dusty-cyan/10",
+    badge: "bg-dusty-cyan/20 text-dusty-cyan border-dusty-cyan/40",
+    text: "text-dusty-cyan",
+    iconBg: "bg-dusty-cyan/20",
+    iconText: "text-dusty-cyan",
+    chip: "bg-dusty-cyan/15 text-dusty-cyan border-dusty-cyan/30",
   },
   olive: {
-    border: "border-adhd-olive/40",
-    cardShadow: "shadow-adhd-olive/10",
-    badge: "bg-adhd-olive/30 text-adhd-bg border-adhd-olive/50",
-    text: "text-adhd-bg",
-    iconBg: "bg-adhd-olive/30",
-    iconText: "text-adhd-bg",
-    chip: "bg-adhd-olive/20 text-adhd-bg border-adhd-olive/40",
+    border: "border-olive/40",
+    cardShadow: "shadow-olive/10",
+    badge: "bg-olive/30 text-bone-dim border-olive/50",
+    text: "text-bone-dim",
+    iconBg: "bg-olive/30",
+    iconText: "text-bone-dim",
+    chip: "bg-olive/20 text-bone-dim border-olive/40",
   },
 }
 
@@ -74,7 +74,7 @@ export function ServerCard({ server }: { server: McpServer }) {
     <article
       id={server.id}
       className={cn(
-        "rounded-3xl bg-adhd-dark/40 border-2 shadow-2xl shadow-black/20 overflow-hidden scroll-mt-24",
+        "rounded-3xl bg-indigo-void/40 border-2 shadow-2xl shadow-black/20 overflow-hidden scroll-mt-24",
         accent.border,
       )}
     >
@@ -83,7 +83,7 @@ export function ServerCard({ server }: { server: McpServer }) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls={bodyId}
-        className="w-full text-left p-6 sm:p-8 hover:bg-adhd-dark/20 transition-colors"
+        className="w-full text-left p-6 sm:p-8 hover:bg-indigo-void/20 transition-colors"
       >
         <div className="flex items-start gap-4">
           <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0", accent.iconBg)}>
@@ -91,7 +91,7 @@ export function ServerCard({ server }: { server: McpServer }) {
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center flex-wrap gap-2 mb-2">
-              <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-adhd-bg leading-tight">
+              <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-bone-dim leading-tight">
                 {server.name}
               </h2>
               <span
@@ -103,16 +103,16 @@ export function ServerCard({ server }: { server: McpServer }) {
                 {server.tools.length} tools
               </span>
               {server.prefix && (
-                <code className="px-2 py-0.5 rounded-md bg-adhd-dark/50 border border-adhd-sage/20 text-[11px] font-[family-name:var(--font-mono)] text-adhd-sage">
+                <code className="px-2 py-0.5 rounded-md bg-indigo-void/50 border border-dusty-cyan/20 text-[11px] font-[family-name:var(--font-mono)] text-dusty-cyan">
                   {server.prefix}*
                 </code>
               )}
             </div>
-            <p className="text-adhd-lavender/90 leading-snug">{server.tagline}</p>
-            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-adhd-sage font-[family-name:var(--font-mono)]">
+            <p className="text-bone/90 leading-snug">{server.tagline}</p>
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-dusty-cyan font-[family-name:var(--font-mono)]">
               <span className="opacity-80">{server.endpointLabel}</span>
               {server.localOnly && (
-                <span className="px-2 py-0.5 rounded-full bg-adhd-sage/15 text-adhd-sage border border-adhd-sage/35 text-[10px] uppercase tracking-wider font-bold">
+                <span className="px-2 py-0.5 rounded-full bg-dusty-cyan/15 text-dusty-cyan border border-dusty-cyan/35 text-[10px] uppercase tracking-wider font-bold">
                   Local-only
                 </span>
               )}
@@ -120,8 +120,8 @@ export function ServerCard({ server }: { server: McpServer }) {
           </div>
           <ChevronDown
             className={cn(
-              "w-6 h-6 text-adhd-lavender/60 transition-transform duration-300 shrink-0 mt-2",
-              open && "rotate-180 text-adhd-amber",
+              "w-6 h-6 text-bone/60 transition-transform duration-300 shrink-0 mt-2",
+              open && "rotate-180 text-caution-amber",
             )}
             aria-hidden
           />
@@ -133,16 +133,16 @@ export function ServerCard({ server }: { server: McpServer }) {
         className={cn("grid transition-all duration-300 ease-in-out", open ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}
       >
         <div className="overflow-hidden">
-          <div className="border-t-2 border-adhd-sage/20 bg-adhd-dark/40 px-6 sm:px-8 py-8 space-y-10">
+          <div className="border-t-2 border-dusty-cyan/20 bg-indigo-void/40 px-6 sm:px-8 py-8 space-y-10">
             <section>
-              <p className="text-adhd-bg leading-relaxed">{server.description}</p>
+              <p className="text-bone-dim leading-relaxed">{server.description}</p>
               {server.liveUrl && (
                 <a
                   href={server.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "mt-4 inline-flex items-center gap-1.5 text-sm font-bold border rounded-full px-4 py-1.5 transition-colors hover:bg-adhd-purple/20",
+                    "mt-4 inline-flex items-center gap-1.5 text-sm font-bold border rounded-full px-4 py-1.5 transition-colors hover:bg-muted-indigo/20",
                     accent.chip,
                   )}
                 >
@@ -153,14 +153,14 @@ export function ServerCard({ server }: { server: McpServer }) {
             </section>
 
             <section>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-adhd-lavender/80 mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-bone/80 mb-4">
                 Tools ({server.tools.length})
               </h3>
               <div className="grid sm:grid-cols-2 gap-2">
                 {server.tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="rounded-xl bg-adhd-dark/50 border border-adhd-sage/15 px-3 py-2.5"
+                    className="rounded-xl bg-indigo-void/50 border border-dusty-cyan/15 px-3 py-2.5"
                   >
                     <code
                       className={cn(
@@ -170,17 +170,17 @@ export function ServerCard({ server }: { server: McpServer }) {
                     >
                       {tool.name}
                     </code>
-                    <p className="text-xs text-adhd-lavender/85 leading-snug">{tool.description}</p>
+                    <p className="text-xs text-bone/85 leading-snug">{tool.description}</p>
                   </div>
                 ))}
               </div>
             </section>
 
             <section>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-adhd-lavender/80 mb-1">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-bone/80 mb-1">
                 Example flows
               </h3>
-              <p className="text-xs text-adhd-lavender/70 mb-4">Illustrative — sample data, not real usage.</p>
+              <p className="text-xs text-bone/70 mb-4">Illustrative — sample data, not real usage.</p>
               <div className="space-y-8">
                 {server.examples.map((flow, i) => (
                   <ExampleFlowCard key={i} flow={flow} accentText={accent.text} />

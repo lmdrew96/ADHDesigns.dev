@@ -19,7 +19,7 @@ function SpinningWord() {
 
   return (
     <span
-      className="text-adhd-green cursor-default"
+      className="text-sage-green cursor-default"
       onMouseEnter={canHover ? () => setSpinning(true) : undefined}
       onMouseLeave={canHover ? () => setSpinning(false) : undefined}
       onClick={() => setSpinning(s => !s)}
@@ -59,8 +59,8 @@ const donationTiers = [
     title: "Keep the Lights On",
     amount: "$5/mo",
     description: "Cover the cost of one user across the ADHDesigns ecosystem for a month. Servers, domains, API calls — the invisible stuff that makes free tools possible.",
-    color: "bg-adhd-dark",
-    textColor: "text-adhd-amber",
+    color: "bg-indigo-void",
+    textColor: "text-caution-amber",
     tilt: "-1.4deg",
     clip: "zine-card--a",
   },
@@ -69,8 +69,8 @@ const donationTiers = [
     title: "Fuel the Chaos",
     amount: "$10/mo",
     description: "Keep two users' worth of tools running AND help fund new features and bug fixes. You're basically my QA department's salary. (I am also the QA department.)",
-    color: "bg-adhd-purple",
-    textColor: "text-adhd-lavender",
+    color: "bg-muted-indigo",
+    textColor: "text-bone",
     tilt: "1.1deg",
     clip: "zine-card--b",
   },
@@ -79,8 +79,8 @@ const donationTiers = [
     title: "Chaos Patron",
     amount: "$25/mo",
     description: "You're single-handedly keeping a chunk of the ecosystem alive. You get my undying gratitude, a spot on a future supporters page, and the knowledge that you're funding tools built by spite and stubbornness.",
-    color: "bg-adhd-amber",
-    textColor: "text-adhd-dark",
+    color: "bg-caution-amber",
+    textColor: "text-indigo-void",
     tilt: "-0.7deg",
     clip: "zine-card--c",
   },
@@ -88,31 +88,31 @@ const donationTiers = [
 
 export function DonateSection() {
   return (
-    <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-adhd-teal relative overflow-hidden">
+    <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-indigo-deep relative overflow-hidden">
       {/* Background blobs */}
-      <div className="absolute top-10 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 30%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 30%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 20%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-10 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 30%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 30%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--muted-indigo) 20%, transparent) 0%, transparent 70%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono uppercase tracking-widest mb-6 bg-adhd-dark text-adhd-lavender border border-adhd-amber/40">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono uppercase tracking-widest mb-6 bg-indigo-void text-bone border border-caution-amber/40">
             <Sparkles className="w-4 h-4" />
             Support the Work
             <Sparkles className="w-4 h-4" />
           </span>
           <h2
-            className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-adhd-lavender mb-6 leading-tight"
-            style={{ textShadow: "2px 2px 0 var(--magenta), 4px 4px 0 var(--adhd-purple)" }}
+            className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-bone mb-6 leading-tight"
+            style={{ textShadow: "2px 2px 0 var(--magenta), 4px 4px 0 var(--muted-indigo)" }}
           >
             Help Keep This <SpinningWord />
           </h2>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-sage leading-relaxed font-medium">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-dusty-cyan leading-relaxed font-medium">
             Everything I build is free — ControlledChaos, ChaosLimbă, Kindling, all of it.
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-adhd-sage leading-relaxed font-medium mt-4">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-dusty-cyan leading-relaxed font-medium mt-4">
             If anything I've built has helped you, even a small monthly membership goes further than you'd think — $5 covers an entire user's server costs for a month. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
@@ -132,10 +132,10 @@ export function DonateSection() {
                   <Icon className={`w-6 h-6 ${tier.textColor}`} />
                 </div>
                 <div>
-                  <p className="text-3xl font-bold font-[family-name:var(--font-display)] text-adhd-purple">{tier.amount}</p>
-                  <h3 className="font-bold text-lg text-adhd-dark mt-1">{tier.title}</h3>
+                  <p className="text-3xl font-bold font-[family-name:var(--font-display)] text-muted-indigo">{tier.amount}</p>
+                  <h3 className="font-bold text-lg text-indigo-void mt-1">{tier.title}</h3>
                 </div>
-                <p className="text-sm text-paper-text leading-relaxed font-semibold">{tier.description}</p>
+                <p className="text-sm text-text-on-bone leading-relaxed font-semibold">{tier.description}</p>
               </div>
             )
           })}
@@ -146,7 +146,7 @@ export function DonateSection() {
           <Button
             size="lg"
             asChild
-            className="bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 rounded-sm px-10 py-6 text-lg font-mono uppercase tracking-widest"
+            className="bg-caution-amber text-indigo-void hover:bg-caution-amber/90 rounded-sm px-10 py-6 text-lg font-mono uppercase tracking-widest"
             style={{ boxShadow: "5px 5px 0 var(--magenta)" }}
           >
             <a href="https://ko-fi.com/adhdesigns/tiers" target="_blank" rel="noopener noreferrer">

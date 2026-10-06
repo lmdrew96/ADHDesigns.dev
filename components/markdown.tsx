@@ -21,7 +21,7 @@ export function Markdown({ children, className }: MarkdownProps) {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-adhd-amber underline underline-offset-2 hover:text-adhd-amber/80"
+              className="text-caution-amber underline underline-offset-2 hover:text-caution-amber/80"
             >
               {c}
             </a>
@@ -39,24 +39,24 @@ export function Markdown({ children, className }: MarkdownProps) {
             const isBlock = codeClassName?.startsWith("language-")
             if (isBlock) {
               return (
-                <code className="block bg-adhd-dark/40 text-adhd-amber font-mono text-xs rounded-lg p-3 my-2 overflow-x-auto whitespace-pre">
+                <code className="block bg-indigo-void/40 text-caution-amber font-mono text-xs rounded-lg p-3 my-2 overflow-x-auto whitespace-pre">
                   {c}
                 </code>
               )
             }
             return (
-              <code className="bg-adhd-dark/30 text-adhd-amber font-mono text-[0.85em] px-1.5 py-0.5 rounded">
+              <code className="bg-indigo-void/30 text-caution-amber font-mono text-[0.85em] px-1.5 py-0.5 rounded">
                 {c}
               </code>
             )
           },
           pre: ({ children: c }) => <pre className="my-2">{c}</pre>,
           blockquote: ({ children: c }) => (
-            <blockquote className="border-l-2 border-adhd-amber/60 pl-3 italic text-adhd-bg/80 my-2">
+            <blockquote className="border-l-2 border-caution-amber/60 pl-3 italic text-bone-dim/80 my-2">
               {c}
             </blockquote>
           ),
-          hr: () => <hr className="my-3 border-adhd-purple/30" />,
+          hr: () => <hr className="my-3 border-muted-indigo/30" />,
         }}
       >
         {children}

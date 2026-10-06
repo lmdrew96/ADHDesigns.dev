@@ -27,27 +27,27 @@ export default function McpPage() {
           className="absolute top-10 -left-20 w-[28rem] h-[28rem] rounded-full pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 28%, transparent) 0%, transparent 70%)",
+              "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 28%, transparent) 0%, transparent 70%)",
           }}
         />
         <div
           className="absolute -bottom-32 right-0 w-[32rem] h-[32rem] rounded-full pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 26%, transparent) 0%, transparent 70%)",
+              "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 26%, transparent) 0%, transparent 70%)",
           }}
         />
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-20 glass-dark text-adhd-sage/90 border border-adhd-sage/25">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-20 glass-dark text-dusty-cyan/90 border border-dusty-cyan/25">
             Model Context Protocol
           </span>
 
-          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-adhd-teal leading-[1.05]">
-            MCP servers I&rsquo;ve <span className="text-adhd-amber">built</span>.
+          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-indigo-deep leading-[1.05]">
+            MCP servers I&rsquo;ve <span className="text-caution-amber">built</span>.
           </h1>
 
-          <p className="mt-8 text-lg sm:text-xl text-adhd-lavender leading-relaxed font-medium max-w-2xl mx-auto">
+          <p className="mt-8 text-lg sm:text-xl text-bone leading-relaxed font-medium max-w-2xl mx-auto">
             {MCP_SERVERS.length} custom servers, {TOTAL_TOOL_COUNT} tools. Each one wires a real product&rsquo;s data and logic
             directly into Claude — so users can ask questions, take actions, and get back natural answers without
             ever leaving the conversation.
@@ -58,7 +58,7 @@ export default function McpPage() {
               <a
                 key={server.id}
                 href={`#${server.id}`}
-                className="px-4 py-1.5 rounded-full text-xs font-bold bg-adhd-sage/40 border border-adhd-teal/25 text-adhd-lavender hover:border-adhd-sage/60 hover:text-adhd-sage hover:bg-adhd-sage/25 transition-colors font-[family-name:var(--font-mono)]"
+                className="px-4 py-1.5 rounded-full text-xs font-bold bg-dusty-cyan/40 border border-indigo-deep/25 text-bone hover:border-dusty-cyan/60 hover:text-dusty-cyan hover:bg-dusty-cyan/25 transition-colors font-[family-name:var(--font-mono)]"
               >
                 {server.prefix ? `${server.prefix}*` : server.id}
                 <span className="ml-1.5 opacity-70">·</span>
@@ -78,13 +78,13 @@ export default function McpPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-center mb-2">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-adhd-teal">
-              The servers, <span className="text-adhd-amber">up close.</span>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-indigo-deep">
+              The servers, <span className="text-caution-amber">up close.</span>
             </h2>
-            <p className="mt-3 text-adhd-lavender">
+            <p className="mt-3 text-bone">
               Click any card to expand the tool list and see example flows.
             </p>
-            <p className="mt-2 text-xs text-adhd-lavender">
+            <p className="mt-2 text-xs text-bone">
               Tool lists come straight from each server&rsquo;s own <code>tools/list</code>, last updated{" "}
               {LATEST_SNAPSHOT}.
             </p>

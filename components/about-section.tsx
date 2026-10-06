@@ -37,12 +37,12 @@ function CoinFlipAvatar() {
       }}>
         {/* Front — profile photo */}
         <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}
-          className="rounded-full bg-mustard/30 border-4 border-mustard overflow-hidden">
+          className="rounded-full bg-caution-amber/30 border-4 border-caution-amber overflow-hidden">
           <img src="/nae-profile.jpg" alt="Nae" className="w-full h-full object-cover object-top scale-110" />
         </div>
         {/* Back — SpaceNugg */}
         <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-          className="rounded-full bg-adhd-purple/30 border-4 border-adhd-purple overflow-hidden">
+          className="rounded-full bg-muted-indigo/30 border-4 border-muted-indigo overflow-hidden">
           <img src="/SpaceNugg.png" alt="Space Nugg" className="w-full h-full object-cover" />
         </div>
       </div>
@@ -57,7 +57,7 @@ function BalloonText() {
 
   return (
     <span
-      className="text-mustard cursor-default"
+      className="text-caution-amber cursor-default"
       onMouseEnter={canHover ? () => setBurst(true) : undefined}
       onMouseLeave={canHover ? () => setBurst(false) : undefined}
     >
@@ -90,30 +90,30 @@ function BalloonText() {
 }
 
 const struggles = [
-  { icon: Brain, label: "ADHD", color: "bg-mustard", textColor: "text-foreground" },
-  { icon: Coffee, label: "Depression", color: "bg-teal", textColor: "text-purple" },
-  { icon: Zap, label: "Tenacity", color: "bg-purple", textColor: "text-teal" },
+  { icon: Brain, label: "ADHD", color: "bg-caution-amber", textColor: "text-foreground" },
+  { icon: Coffee, label: "Depression", color: "bg-dusty-cyan", textColor: "text-muted-indigo" },
+  { icon: Zap, label: "Tenacity", color: "bg-muted-indigo", textColor: "text-dusty-cyan" },
   { icon: Lightbulb, label: "Innovation", color: "bg-accent", textColor: "text-card" },
 ]
 
 export function AboutSection() {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
-      <div className="absolute top-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-amber) 40%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-sage) 35%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-purple) 25%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/4 left-5 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--adhd-green) 20%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 40%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 35%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--muted-indigo) 25%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/4 left-5 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--sage-green) 20%, transparent) 0%, transparent 70%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex flex-col gap-12 items-start">
           {/* Image/Visual Side - updated decorative colors */}
-          <div className="w-full rounded-3xl glass-dark border border-teal/25 overflow-hidden relative shadow-2xl shadow-black/20">
+          <div className="w-full rounded-3xl glass-dark border border-dusty-cyan/25 overflow-hidden relative shadow-2xl shadow-black/20">
               {/* Decorative pattern */}
               <div className="absolute inset-0 opacity-40">
-                <div className="absolute top-4 left-4 w-24 h-24 border-4 border-mustard rounded-full" />
-                <div className="absolute top-20 right-8 w-16 h-16 bg-teal rounded-full" />
-                <div className="absolute bottom-12 left-12 w-20 h-20 bg-purple rounded-lg rotate-12" />
-                <div className="absolute bottom-20 right-20 w-12 h-12 bg-mustard rounded-full" />
+                <div className="absolute top-4 left-4 w-24 h-24 border-4 border-caution-amber rounded-full" />
+                <div className="absolute top-20 right-8 w-16 h-16 bg-dusty-cyan rounded-full" />
+                <div className="absolute bottom-12 left-12 w-20 h-20 bg-muted-indigo rounded-lg rotate-12" />
+                <div className="absolute bottom-20 right-20 w-12 h-12 bg-caution-amber rounded-full" />
               </div>
 
               {/* Main content */}
@@ -121,11 +121,11 @@ export function AboutSection() {
                 <div className="mb-6">
                   <CoinFlipAvatar />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-teal text-center">
+                <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-dusty-cyan text-center">
                   Lanae Drew
                 </h3>
-                <p className="text-teal/70 text-center">Full-Time Student</p>
-                <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-teal text-center">
+                <p className="text-dusty-cyan/70 text-center">Full-Time Student</p>
+                <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-dusty-cyan text-center">
                   University of Delaware
                 </p>
 
@@ -151,11 +151,11 @@ export function AboutSection() {
               The Human Behind the Code
             </span>
 
-            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-teal mb-6 leading-tight">
+            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-dusty-cyan mb-6 leading-tight">
               Too much on my plate, making it <BalloonText />
             </h2>
 
-            <div className="space-y-4 text-adhd-lavender leading-relaxed font-medium">
+            <div className="space-y-4 text-bone leading-relaxed font-medium">
   <p>
     I build tools for brains that don't work the way traditional apps expect them to.
   </p>
@@ -187,14 +187,14 @@ export function AboutSection() {
 
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="p-4 glass-dark rounded-xl">
-                <Lightbulb className="w-8 h-8 text-adhd-amber mb-2" />
-                <h4 className="font-bold text-adhd-green mb-1">Built Different</h4>
+                <Lightbulb className="w-8 h-8 text-caution-amber mb-2" />
+                <h4 className="font-bold text-sage-green mb-1">Built Different</h4>
                 <p className="text-sm text-lavender">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
               </div>
               <div className="p-4 rounded-xl glass-dark">
-                <Heart className="w-8 h-8 mb-2 text-adhd-sage" />
-                <h4 className="font-bold mb-1 text-adhd-green">Structured Chaos</h4>
-                <p className="text-sm text-adhd-lavender">ADHD-AI synergy: the core of the development process</p>
+                <Heart className="w-8 h-8 mb-2 text-dusty-cyan" />
+                <h4 className="font-bold mb-1 text-sage-green">Structured Chaos</h4>
+                <p className="text-sm text-bone">ADHD-AI synergy: the core of the development process</p>
               </div>
             </div>
           </div>

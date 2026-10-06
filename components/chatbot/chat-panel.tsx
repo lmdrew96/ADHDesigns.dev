@@ -90,7 +90,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         aria-hidden={!isOpen}
         onClick={onClose}
         className={cn(
-          "fixed inset-0 z-[60] bg-adhd-dark/40 backdrop-blur-sm transition-opacity duration-300",
+          "fixed inset-0 z-[60] bg-indigo-void/40 backdrop-blur-sm transition-opacity duration-300",
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
       />
@@ -102,25 +102,25 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         aria-hidden={!isOpen}
         inert={!isOpen}
         className={cn(
-          "fixed top-0 right-0 z-[70] h-[100dvh] w-full sm:w-[420px] bg-adhd-dark border-l-2 border-adhd-teal/30 shadow-2xl flex flex-col transition-transform duration-300 ease-out",
+          "fixed top-0 right-0 z-[70] h-[100dvh] w-full sm:w-[420px] bg-indigo-void border-l-2 border-indigo-deep/30 shadow-2xl flex flex-col transition-transform duration-300 ease-out",
           isOpen ? "translate-x-0" : "translate-x-full pointer-events-none",
         )}
       >
-        <header className="flex items-center justify-between px-4 py-3 border-b border-adhd-teal/30 bg-adhd-dark">
+        <header className="flex items-center justify-between px-4 py-3 border-b border-indigo-deep/30 bg-indigo-void">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-adhd-amber/20 text-adhd-amber">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-caution-amber/20 text-caution-amber">
               <Sparkles className="w-4 h-4" />
             </span>
             <div>
-              <div className="font-bold text-adhd-bg leading-tight">ADHDesigns Assistant</div>
-              <div className="text-[11px] text-adhd-purple/80 leading-tight">Powered by Claude Haiku</div>
+              <div className="font-bold text-bone-dim leading-tight">ADHDesigns Assistant</div>
+              <div className="text-[11px] text-muted-indigo/80 leading-tight">Powered by Claude Haiku</div>
             </div>
           </div>
           <div className="flex items-center gap-1">
             <button
               type="button"
               onClick={reset}
-              className="p-2 rounded-full text-adhd-purple hover:text-adhd-sage hover:bg-adhd-teal/20 transition-colors"
+              className="p-2 rounded-full text-muted-indigo hover:text-dusty-cyan hover:bg-indigo-deep/20 transition-colors"
               aria-label="Reset conversation"
               title="Reset conversation"
             >
@@ -129,7 +129,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
             <button
               type="button"
               onClick={onClose}
-              className="p-2 rounded-full text-adhd-purple hover:text-adhd-amber hover:bg-adhd-teal/20 transition-colors"
+              className="p-2 rounded-full text-muted-indigo hover:text-caution-amber hover:bg-indigo-deep/20 transition-colors"
               aria-label="Close chat"
             >
               <X className="w-5 h-5" />
@@ -146,21 +146,21 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
             <ChatBubble key={i} message={m} />
           ))}
           {status === "sending" && (
-            <div className="flex items-center gap-2 text-adhd-purple/80 text-sm pl-1">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-adhd-amber animate-pulse" />
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-adhd-amber animate-pulse [animation-delay:150ms]" />
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-adhd-amber animate-pulse [animation-delay:300ms]" />
+            <div className="flex items-center gap-2 text-muted-indigo/80 text-sm pl-1">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-caution-amber animate-pulse" />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-caution-amber animate-pulse [animation-delay:150ms]" />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-caution-amber animate-pulse [animation-delay:300ms]" />
             </div>
           )}
           {errorMsg && (
-            <div role="alert" className="rounded-xl bg-adhd-amber/15 border border-adhd-amber/40 px-3 py-2 text-adhd-bg text-sm">
+            <div role="alert" className="rounded-xl bg-caution-amber/15 border border-caution-amber/40 px-3 py-2 text-bone-dim text-sm">
               {errorMsg}
             </div>
           )}
           <div ref={messagesEndRef} />
         </div>
 
-        <form onSubmit={handleSubmit} className="border-t border-adhd-teal/30 p-3 bg-adhd-dark">
+        <form onSubmit={handleSubmit} className="border-t border-indigo-deep/30 p-3 bg-indigo-void">
           <div className="flex items-end gap-2">
             <textarea
               ref={inputRef}
@@ -171,20 +171,20 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
               rows={1}
               maxLength={4000}
               disabled={status === "sending"}
-              className="flex-1 resize-none rounded-2xl bg-adhd-bg/95 text-adhd-dark placeholder:text-adhd-purple/60 px-4 py-2.5 text-sm border-2 border-adhd-teal/20 focus:border-adhd-amber focus:outline-none transition-colors max-h-32"
+              className="flex-1 resize-none rounded-2xl bg-bone-dim/95 text-indigo-void placeholder:text-muted-indigo/60 px-4 py-2.5 text-sm border-2 border-indigo-deep/20 focus:border-caution-amber focus:outline-none transition-colors max-h-32"
             />
             <button
               type="submit"
               disabled={status === "sending" || !input.trim()}
-              className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-adhd-amber text-adhd-dark hover:bg-adhd-amber/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-caution-amber text-indigo-void hover:bg-caution-amber/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               aria-label="Send message"
             >
               <Send className="w-4 h-4" />
             </button>
           </div>
-          <p className="text-[10px] text-adhd-purple/70 mt-2 text-center">
+          <p className="text-[10px] text-muted-indigo/70 mt-2 text-center">
             Or email{" "}
-            <a href="mailto:nae@adhdesigns.dev" className="text-adhd-amber underline underline-offset-2">
+            <a href="mailto:nae@adhdesigns.dev" className="text-caution-amber underline underline-offset-2">
               nae@adhdesigns.dev
             </a>{" "}
             directly.
@@ -203,8 +203,8 @@ function ChatBubble({ message }: { message: ChatMessage }) {
         className={cn(
           "max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm",
           isUser
-            ? "bg-adhd-amber text-adhd-dark rounded-br-sm font-medium"
-            : "bg-adhd-teal/30 text-adhd-bg rounded-bl-sm",
+            ? "bg-caution-amber text-indigo-void rounded-br-sm font-medium"
+            : "bg-indigo-deep/30 text-bone-dim rounded-bl-sm",
         )}
       >
         {isUser ? (
