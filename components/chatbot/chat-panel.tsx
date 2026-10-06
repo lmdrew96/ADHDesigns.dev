@@ -102,11 +102,11 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         aria-hidden={!isOpen}
         inert={!isOpen}
         className={cn(
-          "fixed top-0 right-0 z-[70] h-[100dvh] w-full sm:w-[420px] bg-indigo-void border-l-2 border-indigo-deep/30 shadow-2xl flex flex-col transition-transform duration-300 ease-out",
+          "fixed top-0 right-0 z-[70] h-[100dvh] w-full sm:w-[420px] bg-indigo-void paper:bg-bone border-l-2 border-indigo-deep/30 shadow-2xl flex flex-col transition-transform duration-300 ease-out",
           isOpen ? "translate-x-0" : "translate-x-full pointer-events-none",
         )}
       >
-        <header className="flex items-center justify-between px-4 py-3 border-b border-indigo-deep/30 bg-indigo-void">
+        <header className="surface-dark flex items-center justify-between px-4 py-3 border-b border-indigo-deep/30 bg-indigo-void">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-caution-amber/20 text-caution-amber">
               <Sparkles className="w-4 h-4" />
@@ -146,21 +146,21 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
             <ChatBubble key={i} message={m} />
           ))}
           {status === "sending" && (
-            <div className="flex items-center gap-2 text-muted-indigo/80 text-sm pl-1">
+            <div className="flex items-center gap-2 text-muted-indigo/80 paper:text-ink-muted text-sm pl-1">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-caution-amber animate-pulse" />
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-caution-amber animate-pulse [animation-delay:150ms]" />
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-caution-amber animate-pulse [animation-delay:300ms]" />
             </div>
           )}
           {errorMsg && (
-            <div role="alert" className="rounded-xl bg-caution-amber/15 border border-caution-amber/40 px-3 py-2 text-bone-dim text-sm">
+            <div role="alert" className="rounded-xl bg-caution-amber/15 border border-caution-amber/40 px-3 py-2 text-bone-dim paper:text-indigo-void text-sm">
               {errorMsg}
             </div>
           )}
           <div ref={messagesEndRef} />
         </div>
 
-        <form onSubmit={handleSubmit} className="border-t border-indigo-deep/30 p-3 bg-indigo-void">
+        <form onSubmit={handleSubmit} className="surface-dark border-t border-indigo-deep/30 p-3 bg-indigo-void">
           <div className="flex items-end gap-2">
             <textarea
               ref={inputRef}
@@ -204,7 +204,7 @@ function ChatBubble({ message }: { message: ChatMessage }) {
           "max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm",
           isUser
             ? "bg-caution-amber text-indigo-void rounded-br-sm font-medium"
-            : "bg-indigo-deep/30 text-bone-dim rounded-bl-sm",
+            : "bg-indigo-deep/30 text-bone-dim paper:bg-bone-dim paper:text-indigo-void paper:border paper:border-hairline rounded-bl-sm",
         )}
       >
         {isUser ? (
