@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Atom, Bug, Cat, CloudLightning, Coins, FlaskConical, Fingerprint, Flame, Gamepad2, Layers, Library, Lightbulb, ListTodo, Network, NotebookPen, Newspaper, Palette, RefreshCcwDot, Scroll, Sparkles, Swords, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Archive, Atom, Bug, Cat, CloudLightning, Coins, FlaskConical, Fingerprint, Flame, Gamepad2, Layers, Library, Lightbulb, ListTodo, Network, NotebookPen, Newspaper, Palette, PawPrint, RefreshCcwDot, Scroll, Sparkles, Swords, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -153,16 +153,17 @@ const ChaosLimbaIcon = ({ className }: { className?: string }) => (
   </span>
 )
 
-type StatusKey = "brewing" | "unleashed" | "raging" | "sustained" | null
+type StatusKey = "brewing" | "unleashed" | "raging" | "sustained" | "archived" | null
 
 const statusConfig: Record<Exclude<StatusKey, null>, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string; border: string }> = {
   brewing: { ...DISPLAY_STATUS_INFO.brewing, icon: CloudLightning, bg: "bg-dusty-cyan/20",  text: "text-indigo-deep",   border: "border-indigo-deep/70" },
   unleashed: { ...DISPLAY_STATUS_INFO.unleashed, icon: Zap,            bg: "bg-caution-amber/20", text: "text-muted-indigo-text", border: "border-muted-indigo" },
   raging: { ...DISPLAY_STATUS_INFO.raging, icon: Flame,          bg: "bg-sage-green/20", text: "text-olive-text", border: "border-olive" },
   sustained: { ...DISPLAY_STATUS_INFO.sustained, icon: RefreshCcwDot,  bg: "bg-muted-indigo/15", text: "text-indigo-void",   border: "border-indigo-void" },
+  archived: { ...DISPLAY_STATUS_INFO.archived, icon: Archive, bg: "bg-text-on-bone/10", text: "text-text-on-bone", border: "border-text-on-bone/60" },
 }
 
-const STATUS_ORDER: Exclude<StatusKey, null>[] = ["brewing", "raging", "unleashed", "sustained"]
+const STATUS_ORDER: Exclude<StatusKey, null>[] = ["brewing", "raging", "unleashed", "sustained", "archived"]
 
 function StatusKeyLegend() {
   return (
@@ -170,7 +171,7 @@ function StatusKeyLegend() {
       <p className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-void mb-3 text-center">
         Status Key
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         {STATUS_ORDER.map((key) => {
           const cfg = statusConfig[key]
           const Icon = cfg.icon
@@ -257,6 +258,20 @@ const projectUIConfig: Record<string, ProjectUI> = {
     color: "bg-muted-indigo",
     textColor: "text-caution-amber",
     tags: ["Convex", "Transcription", "Study Games", "StudyQuest"],
+    category: "other",
+  },
+  nugnotes: {
+    icon: PawPrint,
+    color: "bg-caution-amber",
+    textColor: "text-muted-indigo",
+    tags: ["Study", "Handwriting", "Study Rooms", "Convex"],
+    category: "other",
+  },
+  chickenscratch: {
+    icon: Newspaper,
+    color: "bg-indigo-deep",
+    textColor: "text-bone",
+    tags: ["Zine", "Submissions", "Editorial", "Kanban"],
     category: "other",
   },
   threadnotes: {

@@ -16,7 +16,7 @@
     "url": "https://chaoslimba.adhdesigns.dev",
     "tagline": "Learn Romanian through structured chaos.",
     "description": "An ADHD-friendly Romanian app for English speakers, built on second language acquisition research instead of streaks and guilt.\n\n* **Error Garden:** Mistakes get clustered, and fossilizing patterns get flagged before they harden.\n* **Chaos Window:** Time-boxed speaking and writing sessions with AI feedback and a hard stop.\n* **Workshop:** Grammar micro-challenges aimed at your own error patterns.\n* **Deep Fog + Mystery Shelf:** Read and listen to authentic Romanian, then collect the words that stumped you.\n* **The Ensemble:** Speech recognition, phoneme-level pronunciation scoring, grammar checks, and an AI tutor.",
-    "status": "alpha",
+    "status": "beta",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku", "HuggingFace"],
     "last_updated": "2026-08-12",
     "githubUrl": "https://github.com/lmdrew96/chaos",
@@ -57,6 +57,17 @@
     "githubUrl": "https://github.com/lmdrew96/ScribeCat-v3"
   },
   {
+    "name": "NugNotes",
+    "slug": "nugnotes",
+    "url": null,
+    "tagline": "Your notes, but actually good.",
+    "description": "An ADHD-friendly study app for notes, documents, and handwriting, with Nugget the cat to help you study. It grew out of ScribeCat, minus the audio.\n\n* **Write It Your Way:** Type, sketch by hand, or snap a photo of the whiteboard. Every session saves itself.\n* **Nugget Drafts Notes:** Upload a PDF or a photo and get organized notes you can edit.\n* **Study Tools:** Flashcards, quizzes, concept maps, and ELI5 breakdowns from your notes in one click.\n* **Study Together:** Study rooms with classmates' live cursors, shared sessions, and quiz battles.",
+    "status": "in-development",
+    "tech": ["Vite", "React", "TypeScript", "Convex", "Clerk", "BlockNote", "Claude", "Cloudflare R2"],
+    "last_updated": "2026-10-05",
+    "githubUrl": "https://github.com/lmdrew96/nugnotes"
+  },
+  {
     "name": "ThreadNotes",
     "slug": "threadnotes",
     "url": "https://research.adhdesigns.dev",
@@ -86,6 +97,7 @@
     "tagline": "The submissions and editorial portal for the Hen & Ink Society zine.",
     "description": "The submissions portal for Hen & Ink Society, a student-run literary and art zine and the first AAP-based RSO at the University of Delaware.\n\n* **Submissions:** Writers and artists submit work, track its status, and revise on request.\n* **Review Pipeline:** A Kanban board moves pieces from coordinator to proofreader to editor-in-chief.\n* **Officer Tools:** A task board, meeting polls, and Discord digests keep officers in sync.",
     "status": "archived",
+    "displayStatus": "archived",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "Cloudflare R2"],
     "last_updated": "2026-10-03",
     "githubUrl": "https://github.com/lmdrew96/ChickenScratch"

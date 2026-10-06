@@ -1,7 +1,7 @@
 import projectsJson from "@/data/projects.json"
 
 export type ProjectStatus = "live" | "beta" | "in-development" | "alpha" | "archived"
-export type ProjectDisplayStatus = "brewing" | "unleashed" | "raging" | "sustained"
+export type ProjectDisplayStatus = "brewing" | "unleashed" | "raging" | "sustained" | "archived"
 
 export type Project = {
   name: string
@@ -25,8 +25,8 @@ export const projects: readonly Project[] = (projectsJson as Project[])
 
 export const HOME_PROJECT_ORDER: readonly string[] = [
   "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite",
-  "scribecat", "threadnotes", "personal-context-mcp", "tangle", "kindling", "walt", "chaosshelf",
-  "color-factory", "loose-change", "folio", "strata",
+  "scribecat", "nugnotes", "threadnotes", "personal-context-mcp", "tangle", "kindling", "walt", "chaosshelf",
+  "color-factory", "loose-change", "folio", "strata", "chickenscratch",
 ]
 
 const STATUS_TO_DISPLAY: Record<ProjectStatus, ProjectDisplayStatus | null> = {
@@ -34,6 +34,7 @@ const STATUS_TO_DISPLAY: Record<ProjectStatus, ProjectDisplayStatus | null> = {
   "beta": "raging",
   "in-development": "brewing",
   "alpha": "sustained",
+  // Archived projects stay off the home page unless they opt in with displayStatus: "archived".
   "archived": null,
 }
 
@@ -42,6 +43,7 @@ export const DISPLAY_STATUS_INFO: Record<ProjectDisplayStatus, { label: string; 
   raging: { label: "Raging", description: "Active development" },
   unleashed: { label: "Unleashed", description: "Recently launched" },
   sustained: { label: "Sustained", description: "Stable, in maintenance" },
+  archived: { label: "Archived", description: "Finished or retired" },
 }
 
 export const displayStatusOf = (p: Project): ProjectDisplayStatus | null =>
