@@ -84,9 +84,9 @@
     "slug": "marginalia",
     "url": null,
     "tagline": "Read the real page, and write in the margins.",
-    "description": "A PDF reader for class readings and research papers: the actual page, your highlights and margin notes, and Claude in a sidebar.\n\n* **The Real Page:** PDFs render as the page itself, with opt-in OCR for scanned pages that have no text layer.\n* **Highlights + Margin Notes:** Highlight anything and attach comments to it, like annotating a printout.\n* **Ask Claude:** A sidebar chat that knows the document you're reading.\n* **Quiz Me:** Quizzes on the whole document or a page range, weighted toward what you highlighted.\n* **Claude Instructions:** Tell Claude once in Settings how you like things explained, and the chat and quizzes follow it.\n* **Readable Themes:** Moss and Riga themes, both WCAG AA.",
+    "description": "A reader for class readings and research papers, PDF or Word: the actual page, your highlights and margin notes, and Claude in a sidebar.\n\n* **The Real Page:** PDFs render as the page itself, Word files are converted to PDF on upload, and scanned pages get opt-in OCR.\n* **Highlights + Margin Notes:** Highlight anything and write notes beside it in the margin, like annotating a printout.\n* **Ask Claude:** A sidebar chat that knows the document you're reading.\n* **Quiz Me:** Multiple-choice and typed short-answer quizzes on the whole document or a page range, weighted toward what you highlighted.\n* **Claude Instructions:** Tell Claude once in Settings how you like things explained, and the chat and quizzes follow it.\n* **A Reading Desk:** An annotated-manuscript look with Moss and Riga themes, dark or light, all WCAG AA.",
     "status": "in-development",
-    "tech": ["Next.js", "TypeScript", "Clerk", "Neon Postgres", "Drizzle ORM", "Claude API", "pdf.js", "Tesseract.js", "Cloudflare R2"],
+    "tech": ["Next.js", "TypeScript", "Clerk", "Neon Postgres", "Drizzle ORM", "Claude API", "pdf.js", "Tesseract.js", "Cloudflare R2", "Gotenberg"],
     "last_updated": "2026-10-06",
     "githubUrl": "https://github.com/lmdrew96/marginalia"
   },
