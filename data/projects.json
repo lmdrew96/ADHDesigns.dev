@@ -80,6 +80,17 @@
     "demoUrl": "https://research.adhdesigns.dev/demo"
   },
   {
+    "name": "Marginalia",
+    "slug": "marginalia",
+    "url": null,
+    "tagline": "Read the real page, and write in the margins.",
+    "description": "A PDF reader for class readings and research papers: the actual page, your highlights and margin notes, and Claude in a sidebar.\n\n* **The Real Page:** PDFs render as the page itself, with opt-in OCR for scanned pages that have no text layer.\n* **Highlights + Margin Notes:** Highlight anything and attach comments to it, like annotating a printout.\n* **Ask Claude:** A sidebar chat that knows the document you're reading.\n* **Quiz Me:** Quizzes on the whole document or a page range, weighted toward what you highlighted.\n* **Claude Instructions:** Tell Claude once in Settings how you like things explained, and the chat and quizzes follow it.\n* **Readable Themes:** Moss and Riga themes, both WCAG AA.",
+    "status": "in-development",
+    "tech": ["Next.js", "TypeScript", "Clerk", "Neon Postgres", "Drizzle ORM", "Claude API", "pdf.js", "Tesseract.js", "Cloudflare R2"],
+    "last_updated": "2026-10-06",
+    "githubUrl": "https://github.com/lmdrew96/marginalia"
+  },
+  {
     "name": "ThreadBrain",
     "slug": "threadbrain",
     "url": "https://threadbrain.adhdesigns.dev",
@@ -194,7 +205,7 @@
     "url": null,
     "tagline": "A Magic: The Gathering client built on a real rules engine.",
     "description": "A React front end for Forge, the open-source MTG rules engine, running headless behind a Java bridge and a Node API. Every trigger, target, and stack interaction resolves by the actual rules (not a simplified simulation).\n\n* **Live board:** A stack rail, targeting arrows, summoning sickness, and combat damage track the game as it plays out.\n* **Deckbuilder:** Card search, format legality, commanders, EDHREC recs, and decks saved to your account.\n* **AI opponents:** Pick their deck (or randomize it), difficulty, and personality before the match.\n* **Extra modes:** Commander from the command zone, Momir Basic quick play, and Forge puzzle files.",
-    "status": "in-development",
+    "status": "archived",
     "tech": ["TypeScript", "Node.js", "Java", "React", "Vite", "Clerk", "Neon Postgres"],
     "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/duelingchaos"
@@ -333,7 +344,7 @@
     "url": "https://mythcast.adhdesigns.dev",
     "tagline": "Generates internally consistent mythologies that drift over simulated time.",
     "description": "A procedural worldbuilding engine: seed a culture, then watch its pantheon and myths mutate across generations without contradicting themselves. Every trait stays traceable to the conditions that produced it.\n\n* **Simulation Loop:** Run generational time and inject events like war, famine, migration, or first contact.\n* **Field Guide:** Each culture renders as an ethnographic guide, with provenance footnotes on every trait.\n* **Lineage Viewer:** Diff how a myth's variants drifted from the original telling.\n* **DM Codex:** Export factions, NPCs, locations, and adventure hooks as a PDF quick reference.",
-    "status": "in-development",
+    "status": "archived",
     "tech": ["Next.js", "TypeScript", "Convex", "Clerk"],
     "last_updated": "2026-08-29"
   },
@@ -427,7 +438,7 @@
     "url": "https://vertex.adhdesigns.dev",
     "tagline": "A knowledge-graph MCP server Claude can read, write, and map.",
     "description": "An MCP server for graph-shaped ideas (concepts, people, works, claims, and questions, linked by typed edges), built as Tangle's sibling.\n\n* **10 MCP tools:** Create, search, and archive nodes, link them, render the graph, and find orphans.\n* **Graph browser:** An interactive React Flow map of the whole graph.\n* **Works in claude.ai:** Grab a token and MCP URL from the landing page.",
-    "status": "archived",
+    "status": "alpha",
     "tech": ["Next.js", "TypeScript", "MCP", "React Flow", "Upstash Redis"],
     "last_updated": "2026-07-28"
   },
