@@ -26,7 +26,7 @@ export const projects: readonly Project[] = (projectsJson as Project[])
 export const HOME_PROJECT_ORDER: readonly string[] = [
   "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite",
   "scribecat", "nugnotes", "threadnotes", "personal-context-mcp", "tangle", "kindling", "walt", "chaosshelf",
-  "color-factory", "loose-change", "folio", "strata", "chickenscratch",
+  "color-factory", "loose-change", "folio", "strata", "marginalia", "codynd", "chickenscratch",
 ]
 
 // Lifecycle order, matching the status key: in-development → alpha → beta → live.

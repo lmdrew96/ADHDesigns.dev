@@ -53,6 +53,6 @@ const mcpBlock = [
 export const CHAT_SYSTEM_PROMPT = [
   BASE_PROMPT,
   `## About Nae\n\n${aboutBlock}`,
-  `## Projects (as shown on the home page)\n\n${projectsBlock}`,
+  `## Projects (as shown on the home page) — ${homeProjects.length} total\n\n${projectsBlock}`,
   `## MCP servers\n\n${mcpBlock}`,
 ].join("\n\n")

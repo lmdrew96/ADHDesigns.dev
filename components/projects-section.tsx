@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Archive, Atom, Bug, Cat, CloudLightning, Coins, FlaskConical, Fingerprint, Flame, Gamepad2, Layers, Library, Lightbulb, ListTodo, Network, NotebookPen, Newspaper, Palette, PawPrint, RefreshCcwDot, Scroll, Sparkles, Swords, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Archive, Atom, Bug, Cat, CloudLightning, Coins, FlaskConical, Fingerprint, Flame, Gamepad2, Highlighter, Layers, Library, Lightbulb, ListTodo, Network, NotebookPen, Newspaper, Palette, PawPrint, RefreshCcwDot, Scroll, Sparkles, Swords, Terminal, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const MUSTARD_START = 17 // index where "On Purpose" begins
@@ -342,6 +342,20 @@ const projectUIConfig: Record<string, ProjectUI> = {
     color: "bg-indigo-void",
     textColor: "text-dusty-cyan",
     tags: ["Etymology", "Reference", "Drizzle ORM"],
+    category: "other",
+  },
+  marginalia: {
+    icon: Highlighter,
+    color: "bg-caution-amber",
+    textColor: "text-indigo-void",
+    tags: ["PDF", "OCR", "Claude API", "Quizzes"],
+    category: "other",
+  },
+  codynd: {
+    icon: Terminal,
+    color: "bg-indigo-void",
+    textColor: "text-caution-amber",
+    tags: ["Claude Code", "Plugin", "ADHD", "ChaosPatch"],
     category: "other",
   },
 }
