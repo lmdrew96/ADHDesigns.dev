@@ -236,7 +236,7 @@ const projectUIConfig: Record<string, ProjectUI> = {
     icon: ChaosLimbaIcon,
     color: "bg-caution-amber",
     textColor: "text-olive",
-    tags: ["SLA", "AI Ensemble", "Adaptation Engine", "MCP"],
+    tags: ["SLA", "AI Ensemble", "Error Garden", "MCP"],
     category: "chaos",
   },
   "chaoslingua-lite": {
