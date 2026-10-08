@@ -72,10 +72,10 @@
     "slug": "threadnotes",
     "url": "https://research.adhdesigns.dev",
     "tagline": "Where hyperfocus meets hypothesis.",
-    "description": "A research command center for the way ADHD brains actually research — find papers, save them, and track your own studies in one place.\n\n* **Find Papers:** Search OpenAlex and Crossref, with free open-access versions flagged via OpenAlex.\n* **Library:** Save, annotate, and summarize articles with Claude Haiku.\n* **Questions + Journal:** Group questions by theme, link them to articles, and journal as you go.\n* **Your Own Studies:** Hypotheses and design decisions keep a revision chain of what changed and why.\n* **Clipper + MCP:** A Chrome extension clips excerpts, and 51 MCP tools let Claude read and write your research.",
+    "description": "A research command center for the way ADHD brains actually research — find papers, save them, and track your own studies in one place.\n\n* **Find Papers:** Search OpenAlex and Crossref, or add any paper from its DOI alone, with free open-access versions flagged.\n* **Library:** Save, annotate, and summarize articles, keep page-cited excerpts and uploaded PDFs, and follow a citation trail to what each paper cites and what cites it.\n* **Questions + Journal:** Group questions by theme, link them to articles, and journal as you go.\n* **Ask the Pile:** Turn the papers linked to a question into a short synthesis where every claim cites its paper, plus the 1–3 worth reading next.\n* **One Section, Not the Paper:** Claude reads the full text and points to the sections that answer your question, with page numbers.\n* **Your Own Studies:** Hypotheses and design decisions keep a revision chain of what changed and why.\n* **Clipper + MCP:** A Chrome extension clips excerpts, and 53 MCP tools let Claude search, discover papers, and read and write your research.",
     "status": "live",
-    "tech": ["React", "TypeScript", "Vite", "Clerk", "Neon Postgres", "Claude Haiku", "OpenAlex", "Crossref"],
-    "last_updated": "2026-09-13",
+    "tech": ["React", "TypeScript", "Vite", "Clerk", "Neon Postgres", "Claude Haiku", "Claude Sonnet", "OpenAlex", "Crossref", "Semantic Scholar", "Cloudflare R2"],
+    "last_updated": "2026-10-07",
     "githubUrl": "https://github.com/lmdrew96/research-journal",
     "demoUrl": "https://research.adhdesigns.dev/demo"
   },
