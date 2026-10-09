@@ -38,6 +38,8 @@
   --hero-line-soft:   color-mix(in srgb, var(--bone) 24%, transparent);
   --hero-dot:         var(--bone);
   --hero-scanline:    color-mix(in srgb, var(--shadow) 18%, transparent);
+  --hero-title-shadow: 3px 3px 0 var(--pink), 6px 6px 0 var(--muted-indigo);
+  --footer-title-shadow: 2px 2px 0 var(--magenta), 4px 4px 0 var(--muted-indigo);
 
   /* ── new zine-only tokens (no legacy slot to reuse) ── */
   --magenta:     #642644;
@@ -85,7 +87,7 @@
 
 /* Removed dark mode - using bold colors only */
 
-/* Paper (light) theme — same zine on bone stock. Nav and footer stay dark (.surface-dark). */
+/* Paper (light) theme — same zine on lighter stock. Nav and footer follow the theme (.chrome). */
 [data-theme="light"] {
   --page:              var(--bone-dim);
   --ink:               var(--indigo-void);
@@ -95,10 +97,13 @@
   --accent-amber-text: var(--magenta);
   --hairline:          rgba(20, 15, 34, .14);
   --hero-bg:          linear-gradient(180deg, var(--bone) 0%, var(--bone-dim) 100%);
-  --hero-line-strong: color-mix(in srgb, var(--indigo-void) 14%, transparent);
-  --hero-line-soft:   color-mix(in srgb, var(--indigo-void) 10%, transparent);
-  --hero-dot:         color-mix(in srgb, var(--indigo-void) 35%, transparent);
-  --hero-scanline:    color-mix(in srgb, var(--shadow) 5%, transparent);
+  --hero-line-strong: color-mix(in srgb, var(--indigo-void) 10%, transparent);
+  --hero-line-soft:   color-mix(in srgb, var(--indigo-void) 7%, transparent);
+  --hero-dot:         color-mix(in srgb, var(--indigo-void) 25%, transparent);
+  --hero-scanline:    color-mix(in srgb, var(--shadow) 3.5%, transparent);
+  /* one soft pink stamp instead of the pink + indigo double */
+  --hero-title-shadow:   3px 3px 0 color-mix(in srgb, var(--pink) 55%, transparent);
+  --footer-title-shadow: 3px 3px 0 color-mix(in srgb, var(--pink) 55%, transparent);
 
   --background:       var(--bone-dim);
   --foreground:       var(--indigo-void);
@@ -187,9 +192,16 @@
   :where(.bg-bone) * {
     outline-color: var(--muted-indigo-text);
   }
-  /* Nav and footer stay dark in both themes, so they keep the Dusty Cyan ring */
+  /* Surfaces that stay dark in both themes keep the Dusty Cyan ring */
   .surface-dark, .surface-dark * {
     outline-color: var(--dusty-cyan);
+  }
+  /* Nav and footer: dark in Arcade, Bone in Paper */
+  .chrome, .chrome * {
+    outline-color: var(--dusty-cyan);
+  }
+  [data-theme="light"] :is(.chrome, .chrome *) {
+    outline-color: var(--ring-page);
   }
   :focus-visible {
     outline-style: solid;
@@ -364,4 +376,11 @@
   opacity: 0.85;
   box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow) 30%, transparent);
   pointer-events: none;
+}
+
+/* Theme switch crossfade (ThemeToggle wraps the change in a view transition) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
 }

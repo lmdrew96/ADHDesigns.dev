@@ -103,8 +103,8 @@ export function HeroSection() {
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Main Headline - stamped double-shadow, magenta + indigo */}
         <h1
-          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-ink"
-          style={{ textShadow: "3px 3px 0 var(--pink), 6px 6px 0 var(--muted-indigo)" }}
+          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-ink paper:text-indigo-deep"
+          style={{ textShadow: "var(--hero-title-shadow)" }}
         >
           <span className="whitespace-nowrap">
             <span className="inline-block hover:animate-wiggle cursor-default text-magenta">A</span>gentic
@@ -130,7 +130,7 @@ export function HeroSection() {
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
           <Button
             size="lg"
-            className="bg-bone text-indigo-void border-2 border-bone paper:bg-indigo-void paper:text-bone paper:border-indigo-void hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
+            className="bg-bone text-indigo-void border-2 border-bone paper:bg-muted-indigo paper:text-bone paper:border-muted-indigo hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
             style={{ boxShadow: "4px 4px 0 var(--magenta)" }}
             asChild
           >
@@ -168,7 +168,7 @@ export function HeroSection() {
           {["ADHD Friendly", "Open Source", "Student Built", "AI Powered"].map((label) => (
             <span
               key={label}
-              className="px-3 py-1.5 bg-indigo-void text-bone text-xs font-mono uppercase tracking-wider border border-bone/25 hover:border-magenta transition-colors cursor-default"
+              className="px-3 py-1.5 bg-indigo-void text-bone text-xs font-mono uppercase tracking-wider border border-bone/25 paper:bg-transparent paper:text-ink paper:border-ink/40 hover:border-magenta transition-colors cursor-default"
             >
               {label}
             </span>

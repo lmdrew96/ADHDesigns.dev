@@ -17,37 +17,38 @@ export function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-indigo-void/95 backdrop-blur-xl border-b-2 border-muted-indigo/40">
-      <div className="surface-dark max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-muted-indigo">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-indigo-void/95 paper:bg-bone/95 backdrop-blur-xl border-b-2 border-muted-indigo/40 paper:border-b paper:border-hairline">
+      <div className="chrome max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-muted-indigo">
         <div className="flex items-center justify-between h-16">
           <a href="/" className="flex items-center group">
-            <Image src="/adhdesigns-logo.png" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake" />
+            <Image src="/adhdesigns-logo.png" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake paper:hidden" />
+            <Image src="/adhdesigns-logo-paper.png" alt="ADHDesigns logo" width={160} height={38} className="object-contain animate-chaos-shake hidden paper:block" />
           </a>
 
           {/* Desktop Nav — mono uppercase tags, tape-strip hover */}
-          <div className="hidden md:flex items-center gap-3 text-bone">
+          <div className="hidden md:flex items-center gap-3 text-bone paper:text-ink">
             <a
               href="/#projects"
-              className="font-mono text-xs uppercase tracking-widest border border-bone/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors"
+              className="font-mono text-xs uppercase tracking-widest border border-bone/40 paper:border-ink/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors"
             >
               Projects
             </a>
             <a
               href="/mcp"
-              className="font-mono text-xs uppercase tracking-widest border border-bone/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors"
+              className="font-mono text-xs uppercase tracking-widest border border-bone/40 paper:border-ink/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors"
             >
               MCP
             </a>
             <a
               href="/about"
-              className="font-mono text-xs uppercase tracking-widest border border-bone/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors"
+              className="font-mono text-xs uppercase tracking-widest border border-bone/40 paper:border-ink/40 px-3 py-1.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors"
             >
               About
             </a>
              <Button
               type="button"
               onClick={openChat}
-              className="bg-bone text-indigo-void hover:bg-bone/90 rounded-sm px-6 font-mono text-xs uppercase tracking-widest gap-2 shadow-[3px_3px_0_var(--magenta)]"
+              className="bg-bone text-indigo-void hover:bg-bone/90 paper:bg-muted-indigo paper:text-bone paper:hover:bg-muted-indigo/90 rounded-sm px-6 font-mono text-xs uppercase tracking-widest gap-2 shadow-[3px_3px_0_var(--magenta)]"
             >
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Chat
@@ -58,7 +59,7 @@ export function Navigation() {
           {/* Mobile: theme toggle + menu button */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
-            <button className="p-2 text-dusty-cyan" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+            <button className="p-2 text-dusty-cyan paper:text-ink" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -67,24 +68,24 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="surface-dark md:hidden bg-indigo-void border-b-2 border-muted-indigo/40">
+        <div className="chrome md:hidden bg-indigo-void paper:bg-bone border-b-2 border-muted-indigo/40 paper:border-b paper:border-hairline">
           <div className="px-4 py-4 space-y-2">
-            <a href="/#projects" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
+            <a href="/#projects" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 paper:text-ink paper:border-ink/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors">
               Projects
             </a>
-            <a href="/mcp" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
+            <a href="/mcp" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 paper:text-ink paper:border-ink/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors">
               MCP
             </a>
-            <a href="/about" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
+            <a href="/about" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 paper:text-ink paper:border-ink/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors">
               About
             </a>
-            <a href="/#contact" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta transition-colors">
+            <a href="/#contact" className="block font-mono text-xs uppercase tracking-widest text-bone border border-bone/30 paper:text-ink paper:border-ink/30 px-3 py-2.5 hover:bg-magenta hover:border-magenta hover:text-bone transition-colors">
               Contact
             </a>
             <Button
               type="button"
               onClick={openChat}
-              className="w-full bg-bone text-indigo-void hover:bg-bone/90 rounded-sm font-mono text-xs uppercase tracking-widest gap-2 shadow-[3px_3px_0_var(--magenta)]"
+              className="w-full bg-bone text-indigo-void hover:bg-bone/90 paper:bg-muted-indigo paper:text-bone paper:hover:bg-muted-indigo/90 rounded-sm font-mono text-xs uppercase tracking-widest gap-2 shadow-[3px_3px_0_var(--magenta)]"
             >
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Chat
