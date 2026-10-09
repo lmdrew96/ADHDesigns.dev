@@ -7,6 +7,14 @@ import { Button } from "@/components/ui/button"
 
 const PUCK_SIZE = 20
 
+// In Paper each chip gets its own tinted fill and full-color border
+const FEATURE_TAGS = [
+  { label: "ADHD Friendly", paperColor: "paper:bg-sage-green/25 paper:border-sage-green" },
+  { label: "Open Source", paperColor: "paper:bg-dusty-cyan/25 paper:border-dusty-cyan" },
+  { label: "Student Built", paperColor: "paper:bg-caution-amber/30 paper:border-caution-amber" },
+  { label: "AI Powered", paperColor: "paper:bg-muted-indigo/20 paper:border-muted-indigo" },
+]
+
 export function HeroSection() {
   const iconRef = useRef<HTMLSpanElement>(null)
   const posRef = useRef({ x: 0, y: 0 })
@@ -165,10 +173,10 @@ export function HeroSection() {
 
         {/* Feature tags — mono chips instead of pastel pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {["ADHD Friendly", "Open Source", "Student Built", "AI Powered"].map((label) => (
+          {FEATURE_TAGS.map(({ label, paperColor }) => (
             <span
               key={label}
-              className="px-3 py-1.5 bg-indigo-void text-bone text-xs font-mono uppercase tracking-wider border border-bone/25 paper:bg-transparent paper:text-ink paper:border-ink/40 hover:border-magenta transition-colors cursor-default"
+              className={`px-3 py-1.5 bg-indigo-void text-bone text-xs font-mono uppercase tracking-wider border border-bone/25 paper:text-ink ${paperColor} hover:border-magenta transition-colors cursor-default`}
             >
               {label}
             </span>

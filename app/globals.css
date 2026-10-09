@@ -40,6 +40,7 @@
   --hero-scanline:    color-mix(in srgb, var(--shadow) 18%, transparent);
   --hero-title-shadow: 3px 3px 0 var(--pink), 6px 6px 0 var(--muted-indigo);
   --footer-title-shadow: 2px 2px 0 var(--magenta), 4px 4px 0 var(--muted-indigo);
+  --donate-title-shadow: 2px 2px 0 var(--magenta), 4px 4px 0 var(--muted-indigo);
 
   /* ── new zine-only tokens (no legacy slot to reuse) ── */
   --magenta:     #642644;
@@ -96,14 +97,17 @@
   --accent-green-text: var(--olive-text);
   --accent-amber-text: var(--magenta);
   --hairline:          rgba(20, 15, 34, .14);
-  --hero-bg:          linear-gradient(180deg, var(--bone) 0%, var(--bone-dim) 100%);
-  --hero-line-strong: color-mix(in srgb, var(--indigo-void) 10%, transparent);
-  --hero-line-soft:   color-mix(in srgb, var(--indigo-void) 7%, transparent);
-  --hero-dot:         color-mix(in srgb, var(--indigo-void) 25%, transparent);
+  /* Bone at the top into a Muted Indigo dusk where the grid floor sits */
+  --hero-bg:          linear-gradient(180deg, var(--bone) 0%, var(--bone-dim) 50%, color-mix(in srgb, var(--bone-dim) 78%, var(--muted-indigo)) 100%);
+  --hero-line-strong: color-mix(in srgb, var(--muted-indigo) 40%, transparent);
+  --hero-line-soft:   color-mix(in srgb, var(--muted-indigo) 30%, transparent);
+  --hero-dot:         var(--pink);
   --hero-scanline:    color-mix(in srgb, var(--shadow) 3.5%, transparent);
-  /* one soft pink stamp instead of the pink + indigo double */
-  --hero-title-shadow:   3px 3px 0 color-mix(in srgb, var(--pink) 55%, transparent);
+  /* risograph: two inks printed slightly off-register */
+  --hero-title-shadow:   3px 3px 0 var(--pink), 6px 6px 0 var(--dusty-cyan);
   --footer-title-shadow: 3px 3px 0 color-mix(in srgb, var(--pink) 55%, transparent);
+  /* donate is a Muted Indigo band in Paper */
+  --donate-title-shadow: 3px 3px 0 var(--magenta);
 
   --background:       var(--bone-dim);
   --foreground:       var(--indigo-void);
@@ -202,6 +206,10 @@
   }
   [data-theme="light"] :is(.chrome, .chrome *) {
     outline-color: var(--ring-page);
+  }
+  /* Paper's Muted Indigo band needs the Bone ring */
+  [data-theme="light"] :is(.band-indigo, .band-indigo *) {
+    outline-color: var(--bone);
   }
   :focus-visible {
     outline-style: solid;

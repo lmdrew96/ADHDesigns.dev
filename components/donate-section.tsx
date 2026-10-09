@@ -19,7 +19,7 @@ function SpinningWord() {
 
   return (
     <span
-      className="text-accent-green-text cursor-default"
+      className="text-accent-green-text paper:text-caution-amber cursor-default"
       onMouseEnter={canHover ? () => setSpinning(true) : undefined}
       onMouseLeave={canHover ? () => setSpinning(false) : undefined}
       onClick={() => setSpinning(s => !s)}
@@ -88,7 +88,7 @@ const donationTiers = [
 
 export function DonateSection() {
   return (
-    <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-indigo-deep paper:bg-bone relative overflow-hidden">
+    <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-indigo-deep paper:bg-muted-indigo band-indigo relative overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-10 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 30%, transparent) 0%, transparent 70%)" }} />
       <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 30%, transparent) 0%, transparent 70%)" }} />
@@ -103,16 +103,16 @@ export function DonateSection() {
             <Sparkles className="w-4 h-4" />
           </span>
           <h2
-            className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-ink mb-6 leading-tight"
-            style={{ textShadow: "2px 2px 0 var(--magenta), 4px 4px 0 var(--muted-indigo)" }}
+            className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-ink paper:text-bone mb-6 leading-tight"
+            style={{ textShadow: "var(--donate-title-shadow)" }}
           >
             Help Keep This <SpinningWord />
           </h2>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text leading-relaxed font-medium">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text paper:text-bone leading-relaxed font-medium">
             Everything I build is free — ControlledChaos, ChaosLimbă, Kindling, all of it.
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text leading-relaxed font-medium mt-4">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text paper:text-bone leading-relaxed font-medium mt-4">
             If anything I've built has helped you, even a small monthly membership goes further than you'd think — it goes toward the servers, domains, and API calls that keep it all free. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
