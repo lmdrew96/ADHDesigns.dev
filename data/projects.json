@@ -182,11 +182,11 @@
     "name": "ChaosLingua Lite",
     "slug": "chaoslingua-lite",
     "url": "https://lingua-lite.vercel.app/",
-    "tagline": "Latin noun drills, built chapter by chapter on Suburani.",
-    "description": "A Latin drill app built on the Suburani textbook, with vocab and grammar opening up on an intro course's class schedule.\n\n* **Parse Drills:** See a form, name its case, number, declension, and job.\n* **Decode & Word Order:** Ending-only decoding in tiers, plus a word-order drill.\n* **Chapter Vocab:** Vocab through chapter 32, filterable by chapter and declension.\n* **Speed Mode:** An opt-in timer and streak.\n* **Claude Tutor:** A companion MCP server lets Claude quiz you and track weak areas.",
+    "tagline": "Latin drills for nouns, verbs, and the little words, built chapter by chapter on Suburani.",
+    "description": "A Latin drill app built on the Suburani textbook, with vocab and grammar opening up on an intro course's class schedule, down to which tenses are unlocked.\n\n* **Parse Drills:** See a noun and name its case, number, declension, and job. See a verb and name its person, number, tense, and conjugation, then say what it means.\n* **Conjugate:** Get a dictionary form and a slot, then produce the form. Multiple choice, or typed with forgiving macrons.\n* **Decode & Word Order:** Read the endings, not the word order, across nominatives, datives, prepositions, and plural subjects where only the verb's -t or -nt tells you who's doing it.\n* **Little Words:** Prepositions and the case they take, conjunctions, adverbs, and spotting the part of speech.\n* **Learn Charts:** Declension and conjugation tables in the textbook's own layout, plus endings, tense signs, and principal parts. Made for open-chart quizzes.\n* **Chapter Vocab:** Vocab through chapter 32, filterable by chapter, declension, tense, and conjugation.\n* **Speed Mode:** An opt-in timer and streak.\n* **Claude Tutor:** A companion MCP server lets Claude quiz you and track weak areas.",
     "status": "alpha",
     "tech": ["Vite", "React", "TypeScript", "Convex"],
-    "last_updated": "2026-07-14",
+    "last_updated": "2026-10-11",
     "githubUrl": "https://github.com/lmdrew96/ChaosLingua-Lite"
   },
   {
