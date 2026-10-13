@@ -161,10 +161,10 @@
     "slug": "kindling",
     "url": "https://kindling.adhdesigns.dev/",
     "tagline": "A place for ideas to catch before they go out.",
-    "description": "Where ideas go to be developed. Raw thoughts get caught in Loose Change; the ones worth keeping come to Kindling with a title, a kind, a home, and a next step, and it keeps resurfacing them until you use them or let them go.\n\n* **Structured Sparks:** Every idea gets a title, a kind (story, development, research, reading, essay), a home, and a next step.\n* **21 MCP Tools:** Kindle, recall, snooze, promote, and prune sparks from Claude, which offers to keep an idea instead of filing things on its own.\n* **Recall Ranking:** Whatever has waited longest and been touched least comes up first.\n* **Decay:** Untouched sparks go cold after 180 days (configurable), so you triage on purpose.\n* **Promotion:** When a spark becomes something real, it's archived with a note on where it went.\n* **Web Dashboard:** At-a-glance stats, a \"worth another look\" spotlight, heat on every card, and optional accounts with separate work and personal spaces.",
+    "description": "Where ideas go to be developed. Raw thoughts get caught in Loose Change; the ones worth keeping come to Kindling with a title, a kind, a home, and a next step, and it keeps resurfacing them until you use them or let them go.\n\n* **Structured Sparks:** Every idea gets a title, a kind (story, development, research, reading, essay), a home, and a next step.\n* **21 MCP Tools:** Kindle, recall, snooze, promote, and prune sparks from Claude, which offers to keep an idea instead of filing things on its own.\n* **Recall Ranking:** Whatever has waited longest and been touched least comes up first.\n* **Decay:** Untouched sparks go cold after 180 days (configurable), so you triage on purpose.\n* **Develop This:** A short guided session with Claude that asks one question at a time (what it's for, what's unclear, what the smallest version is) and ends with a sharper write-up and next step you approve before it's saved.\n* **Promotion:** When a spark becomes something real, it gets a moment, and a \"What they became\" wall keeps a record of where each one went.\n* **Web Dashboard:** At-a-glance stats, a \"worth another look\" spotlight, heat on every card, a board grouped by each spark's home, and optional accounts with separate work and personal spaces.",
     "status": "alpha",
-    "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Tailwind CSS"],
-    "last_updated": "2026-10-04",
+    "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Claude API", "Tailwind CSS"],
+    "last_updated": "2026-10-12",
     "githubUrl": "https://github.com/lmdrew96/kindling"
   },
   {
