@@ -14,5 +14,8 @@
   "observability": { "enabled": true },
   // `wrangler deploy` drops any route that isn't listed, so every domain
   // must live in this file.
-  "routes": [{ "pattern": "adhdesigns.dev", "custom_domain": true }]
+  "routes": [
+    { "pattern": "adhdesigns.dev", "custom_domain": true },
+    { "pattern": "www.adhdesigns.dev", "custom_domain": true }
+  ]
 }
