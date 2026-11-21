@@ -11,8 +11,8 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
-  "observability": { "enabled": true }
-  // Routes / custom domains (adhdesigns.dev) get declared here at cutover,
-  // after the workers.dev deploy is verified. `wrangler deploy` drops any
-  // route that isn't listed, so every domain must live in this file.
+  "observability": { "enabled": true },
+  // `wrangler deploy` drops any route that isn't listed, so every domain
+  // must live in this file.
+  "routes": [{ "pattern": "adhdesigns.dev", "custom_domain": true }]
 }
