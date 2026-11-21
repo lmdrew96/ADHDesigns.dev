@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "adhdesigns",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  // next-themes ships its pre-paint script via Function.prototype.toString();
+  // esbuild's keep_names injects __name() into it, which breaks in the browser.
+  "keep_names": false,
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": { "enabled": true }
+  // Routes / custom domains (adhdesigns.dev) get declared here at cutover,
+  // after the workers.dev deploy is verified. `wrangler deploy` drops any
+  // route that isn't listed, so every domain must live in this file.
+}

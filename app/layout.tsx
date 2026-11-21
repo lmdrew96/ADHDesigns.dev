@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist_Mono } from "next/font/google"
 import localFont from "next/font/local"
-import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { KofiWidget } from "@/components/kofi-widget"
 import "./globals.css"
@@ -75,7 +74,6 @@ export default function RootLayout({
       <body className={`font-sans antialiased ${raelaGrotesque.variable} ${kineksRound.variable} ${geistMono.variable}`}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
-          <Analytics />
           <KofiWidget />
         </ThemeProvider>
       </body>

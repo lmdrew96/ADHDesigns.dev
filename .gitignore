@@ -39,3 +39,8 @@ next-env.d.ts
 
 # JetBrains IDEs (WebStorm, IntelliJ, etc.)
 .idea/
+
+# OpenNext / Cloudflare
+.open-next/
+.wrangler/
+.dev.vars*
