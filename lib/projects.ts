@@ -29,6 +29,9 @@ export const HOME_PROJECT_ORDER: readonly string[] = [
   "color-factory", "loose-change", "folio", "strata", "marginalia", "codynd", "chickenscratch",
 ]
 
+// The Chaos ecosystem, as listed on the hero's ecosystem card.
+export const CHAOS_ECOSYSTEM_SLUGS: readonly string[] = ["controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite"]
+
 // Lifecycle order, matching the status key: in-development → alpha → beta → live.
 const STATUS_TO_DISPLAY: Record<ProjectStatus, ProjectDisplayStatus | null> = {
   "in-development": "brewing",

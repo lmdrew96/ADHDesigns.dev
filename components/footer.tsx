@@ -1,78 +1,59 @@
 "use client"
 
-import { Github, Mail, Heart } from "lucide-react"
+import { Github, Mail } from "lucide-react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
-    <footer id="contact" className="chrome py-16 px-4 sm:px-6 lg:px-8 bg-indigo-void text-bone paper:bg-bone-dim paper:text-ink relative overflow-hidden border-t-4 border-muted-indigo/40 paper:border-muted-indigo">
-      {/* Background blobs for glassmorphism */}
-      <div className="absolute top-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--bone) 12%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-10 right-20 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--muted-indigo) 20%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--sage-green) 12%, transparent) 0%, transparent 70%)" }} />
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* CTA Section*/}
+    <footer id="contact" className="px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-6xl mx-auto border-t-2 border-fg pt-20">
+        {/* CTA Section */}
         <div className="text-center mb-16">
-          <h2
-            className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl text-bone paper:text-indigo-deep font-bold mb-4"
-            style={{ textShadow: "var(--footer-title-shadow)" }}
-          >
-            Let&apos;s Build Something <span className="text-accent-cyan-text">Together</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-[-1px] text-fg mb-4">
+            Let&apos;s Build Something <span className="zine-highlight">Together</span>
           </h2>
-          <p className="max-w-xl mx-auto mb-8 text-sage-green paper:text-ink-muted">
+          <p className="max-w-xl mx-auto mb-8 text-fg-muted">
             Got ideas? Want to collaborate? Or just want to chat about neurodivergent experiences? I&apos;d love to hear
             from you.
           </p>
-          <Button
-            size="lg"
-            className="bg-bone text-indigo-void hover:bg-bone/90 paper:bg-muted-indigo paper:text-bone paper:hover:bg-muted-indigo/90 rounded-sm px-8 py-6 text-lg font-mono uppercase tracking-widest"
-            style={{ boxShadow: "5px 5px 0 var(--magenta)" }}
-            asChild
+          <a
+            href="mailto:nae@adhdesigns.dev"
+            className="zine-shadow zine-mono text-sm tracking-[1.4px] bg-fg text-background h-12 px-7 inline-flex items-center gap-2"
+            style={{ "--shadow-color": "var(--blue)" } as React.CSSProperties}
           >
-            <a href="mailto:nae@adhdesigns.dev">
-              <Mail className="w-5 h-5 mr-2" />
-              Get in Touch
-            </a>
-          </Button>
+            <Mail className="w-5 h-5" aria-hidden />
+            Get in Touch
+          </a>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-bone/20 paper:border-hairline my-12" />
-
         {/* Bottom Section — colophon */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-left">
-          {/* Logo */}
+        <div className="border-t-2 border-fg/30 pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-indigo-void overflow-hidden border border-bone/20">
+            <div className="w-11 h-11 rounded-full flex items-center justify-center bg-card overflow-hidden border-2 border-fg">
               <Image src="/vertexism_favicon_128.png" alt="ADHDesigns logo" width={28} height={28} className="object-contain" style={{ marginTop: '-4.67px' }} />
             </div>
             <div>
-              <span className="font-[family-name:var(--font-display)] font-bold text-xl text-ink">
-                Brought to you by{" "}
-                <span className="text-magenta">A</span>
-                <span className="text-accent-green-text">D</span>
-                <span className="text-accent-amber-text">H</span>
-                <span className="text-accent-cyan-text">D</span>
+              <span className="inline-block bg-sticker text-on-fill border-2 border-fg px-3 py-0.5 font-display text-lg -rotate-1">
+                brought to you by ADHD
               </span>
-              <p className="text-xs font-mono uppercase tracking-widest text-bone/70 paper:text-ink-muted">Agentic Development of Human Designs</p>
+              <p className="mt-2 zine-mono text-[11px] tracking-[1px] text-fg-muted">Agentic Development of Human Designs</p>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4 text-center justify-center">
+          <div className="flex items-center gap-3">
             <a
               href="https://github.com/lmdrew96"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-indigo-deep/40 border border-bone/20 paper:bg-transparent paper:border-ink/30 flex items-center justify-center hover:bg-magenta hover:text-bone transition-colors"
+              className="w-10 h-10 border-2 border-fg text-fg flex items-center justify-center hover:bg-fg/10 transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
             <a
               href="mailto:nae@adhdesigns.dev"
-              className="w-10 h-10 rounded-full bg-indigo-deep/40 border border-bone/20 paper:bg-transparent paper:border-ink/30 flex items-center justify-center hover:bg-magenta hover:text-bone transition-colors"
+              className="w-10 h-10 border-2 border-fg text-fg flex items-center justify-center hover:bg-fg/10 transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />

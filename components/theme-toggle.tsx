@@ -42,7 +42,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={label}
       title={label}
       className={cn(
-        "inline-flex items-center justify-center w-10 h-10 rounded-xl border border-bone/30 text-bone hover:border-bone/60 paper:border-ink/30 paper:text-ink paper:hover:border-ink/60 hover:-translate-y-0.5 transition motion-reduce:transition-none motion-reduce:hover:translate-y-0",
+        "inline-flex items-center justify-center w-10 h-10 border-2 border-fg text-fg hover:bg-fg/10 transition-colors motion-reduce:transition-none",
         className,
       )}
     >

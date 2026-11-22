@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Archive, Atom, Bug, Cat, CloudLightning, Coins, FlaskConical, Fingerprint, Flame, Gamepad2, Highlighter, Layers, Library, Lightbulb, ListTodo, Network, NotebookPen, Newspaper, Palette, PawPrint, RefreshCcwDot, Scroll, Sparkles, Swords, Terminal, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
-const MUSTARD_START = 17 // index where "On Purpose" begins
+const HIGHLIGHT_START = 17 // index where "On Purpose" / "în mod intenționat" begins
 const ROMANIAN = "Conceput altfel, în mod intenționat"
 
 // Deterministic per-letter chaos — seed offsets keep EN and RO values independent
@@ -27,7 +27,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
   return (
     <div className="relative mb-4 cursor-default select-none">
       {/* English — cartwheels off to the right, last letter first */}
-      <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold">
+      <h2 className="text-4xl sm:text-5xl md:text-[52px] tracking-[-1px] leading-tight text-fg">
         {HEADING.split(' ').map((word, wi, words) => {
           const charOffset = words.slice(0, wi).reduce((n, w) => n + w.length + 1, 0)
           return (
@@ -39,7 +39,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
                 return (
                   <span
                     key={j}
-                    className={i >= MUSTARD_START ? 'text-magenta' : 'text-muted-indigo'}
+                    className={i >= HIGHLIGHT_START ? 'zine-highlight px-0' : undefined}
                     style={{
                       display: 'inline-block',
                       transition: gone ? `transform ${duration}ms cubic-bezier(.4,0,.6,1)` : 'transform 300ms ease',
@@ -61,7 +61,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
 
       {/* Romanian — cartwheels in from the left, last letter first */}
       <h2
-        className="absolute top-0 left-0 right-0 text-center font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold pointer-events-none"
+        className="absolute top-0 left-0 right-0 text-center text-4xl sm:text-5xl md:text-[52px] tracking-[-1px] leading-tight text-fg pointer-events-none"
         aria-hidden
       >
         {ROMANIAN.split(' ').map((word, wi, words) => {
@@ -75,7 +75,7 @@ function CartwheelingHeading({ gone }: { gone: boolean }) {
                 return (
                   <span
                     key={j}
-                    className={i <= 15 ? 'text-magenta' : 'text-muted-indigo'}
+                    className={i >= HIGHLIGHT_START ? 'zine-highlight px-0' : undefined}
                     style={{
                       display: 'inline-block',
                       transition: gone ? `transform ${duration}ms cubic-bezier(.2,0,.4,1)` : 'transform 300ms ease',
@@ -111,7 +111,7 @@ function ProjectsIntroBlock() {
       onMouseLeave={canHover ? () => setGone(false) : undefined}
     >
       <CartwheelingHeading gone={gone} />
-      <p className="text-lg max-w-2xl mx-auto text-muted-indigo select-none cursor-default">
+      <p className="text-lg max-w-2xl mx-auto text-fg-muted select-none cursor-default">
         {subtitleWords.map((word, wi, words) => {
           const charOffset = words.slice(0, wi).reduce((n, w) => n + w.length + 1, 0)
           return (
@@ -155,35 +155,36 @@ const ChaosLimbaIcon = ({ className }: { className?: string }) => (
 
 type StatusKey = "brewing" | "unleashed" | "raging" | "sustained" | "archived" | null
 
-const statusConfig: Record<Exclude<StatusKey, null>, { label: string; description: string; icon: React.FC<{ className?: string }>; bg: string; text: string; border: string }> = {
-  brewing: { ...DISPLAY_STATUS_INFO.brewing, icon: CloudLightning, bg: "bg-dusty-cyan/20",  text: "text-indigo-deep",   border: "border-indigo-deep/70" },
-  unleashed: { ...DISPLAY_STATUS_INFO.unleashed, icon: Zap,            bg: "bg-caution-amber/20", text: "text-muted-indigo-text", border: "border-muted-indigo" },
-  raging: { ...DISPLAY_STATUS_INFO.raging, icon: Flame,          bg: "bg-sage-green/20", text: "text-olive-text", border: "border-olive" },
-  sustained: { ...DISPLAY_STATUS_INFO.sustained, icon: RefreshCcwDot,  bg: "bg-muted-indigo/15", text: "text-indigo-void",   border: "border-indigo-void" },
-  archived: { ...DISPLAY_STATUS_INFO.archived, icon: Archive, bg: "bg-text-on-bone/10", text: "text-text-on-bone", border: "border-text-on-bone/60" },
+// Square mono chips; the word carries the meaning, color is a second cue
+const statusConfig: Record<Exclude<StatusKey, null>, { label: string; description: string; icon: React.FC<{ className?: string }>; chip: string }> = {
+  brewing: { ...DISPLAY_STATUS_INFO.brewing, icon: CloudLightning, chip: "bg-transparent text-fg" },
+  unleashed: { ...DISPLAY_STATUS_INFO.unleashed, icon: Zap, chip: "bg-blue text-on-fill" },
+  raging: { ...DISPLAY_STATUS_INFO.raging, icon: Flame, chip: "bg-chip-raging text-on-fill" },
+  sustained: { ...DISPLAY_STATUS_INFO.sustained, icon: RefreshCcwDot, chip: "bg-blue-pale text-on-fill" },
+  archived: { ...DISPLAY_STATUS_INFO.archived, icon: Archive, chip: "bg-card text-fg border-dashed" },
 }
+
+const chipBase = "inline-flex items-center gap-1 px-2 py-0.5 border-2 border-fg zine-mono text-[11px] tracking-[1px]"
 
 const STATUS_ORDER: Exclude<StatusKey, null>[] = ["brewing", "raging", "unleashed", "sustained", "archived"]
 
 function StatusKeyLegend() {
   return (
-    <div className="max-w-3xl mx-auto mb-12 glass-card rounded-2xl border-2 border-muted-indigo/20 p-4 sm:p-5">
-      <p className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-void mb-3 text-center">
+    <div className="max-w-4xl mx-auto mb-16 bg-card border-2 border-fg p-4 sm:p-5">
+      <p className="zine-mono text-xs tracking-[1.4px] text-fg mb-4 text-center">
         Status Key
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {STATUS_ORDER.map((key) => {
           const cfg = statusConfig[key]
           const Icon = cfg.icon
           return (
-            <div key={key} className="flex items-start gap-2">
-              <span className={cn("inline-flex items-center justify-center w-7 h-7 rounded-full shrink-0", cfg.bg)}>
-                <Icon className={cn("w-4 h-4", cfg.text)} />
+            <div key={key} className="flex flex-col items-start gap-1.5">
+              <span className={cn(chipBase, cfg.chip)}>
+                <Icon className="w-3.5 h-3.5" aria-hidden />
+                {cfg.label}
               </span>
-              <div className="min-w-0">
-                <div className={cn("text-sm font-bold leading-tight", cfg.text)}>{cfg.label}</div>
-                <div className="text-xs text-indigo-deep/80 leading-snug">{cfg.description}</div>
-              </div>
+              <span className="text-xs text-fg-muted leading-snug">{cfg.description}</span>
             </div>
           )
         })}
@@ -198,8 +199,6 @@ type Project = {
   tagline: string
   description: string
   icon: React.FC<{ className?: string }>
-  color: string
-  textColor: string
   tags: string[]
   status: Exclude<StatusKey, null>
   githubUrl: string
@@ -210,8 +209,6 @@ type Project = {
 
 type ProjectUI = {
   icon: React.FC<{ className?: string }>
-  color: string
-  textColor: string
   tags: string[]
   category: "chaos" | "other"
 }
@@ -220,153 +217,112 @@ type ProjectUI = {
 const projectUIConfig: Record<string, ProjectUI> = {
   controlledchaos: {
     icon: ListTodo,
-    color: "bg-muted-indigo",
-    textColor: "text-bone",
     tags: ["ADHD", "MCP", "Rescue", "Productivity"],
     category: "chaos",
   },
   chaospatch: {
     icon: Bug,
-    color: "bg-indigo-void",
-    textColor: "text-muted-indigo",
     tags: ["PWA", "MCP", "Patch Tracking", "Dev Tools"],
     category: "chaos",
   },
   chaoslimba: {
     icon: ChaosLimbaIcon,
-    color: "bg-caution-amber",
-    textColor: "text-olive",
     tags: ["SLA", "AI Ensemble", "Error Garden", "MCP"],
     category: "chaos",
   },
   "chaoslingua-lite": {
     icon: Scroll,
-    color: "bg-olive",
-    textColor: "text-caution-amber",
     tags: ["Latin", "SLA", "Drills", "Convex"],
     category: "chaos",
   },
   duelingchaos: {
     icon: Swords,
-    color: "bg-muted-indigo",
-    textColor: "text-caution-amber",
     tags: ["MTG", "Rules Engine", "Deckbuilder", "AI Opponent"],
     category: "chaos",
   },
   scribecat: {
     icon: Cat,
-    color: "bg-muted-indigo",
-    textColor: "text-caution-amber",
     tags: ["Convex", "Transcription", "Study Games", "StudyQuest"],
     category: "other",
   },
   nugnotes: {
     icon: PawPrint,
-    color: "bg-caution-amber",
-    textColor: "text-muted-indigo",
     tags: ["Study", "Handwriting", "Study Rooms", "Convex"],
     category: "other",
   },
   chickenscratch: {
     icon: Newspaper,
-    color: "bg-indigo-deep",
-    textColor: "text-bone",
     tags: ["Zine", "Submissions", "Editorial", "Kanban"],
     category: "other",
   },
   threadnotes: {
     icon: FlaskConical,
-    color: "bg-olive",
-    textColor: "text-bone",
     tags: ["Research", "OpenAlex", "MCP", "Chrome Extension"],
     category: "other",
   },
   "personal-context-mcp": {
     icon: Fingerprint,
-    color: "bg-dusty-cyan",
-    textColor: "text-muted-indigo",
     tags: ["MCP", "Context", "Identity", "Cross-Session"],
     category: "other",
   },
   tangle: {
     icon: Network,
-    color: "bg-indigo-deep",
-    textColor: "text-caution-amber",
     tags: ["MCP", "Continuity", "Epistemic Memory", "Claude"],
     category: "other",
   },
   kindling: {
     icon: Lightbulb,
-    color: "bg-sage-green",
-    textColor: "text-muted-indigo",
     tags: ["Idea Capture", "MCP", "Resurfacing", "Upstash Redis"],
     category: "other",
   },
   walt: {
     icon: Sparkles,
-    color: "bg-indigo-void",
-    textColor: "text-bone",
     tags: ["Whitman", "Constellation", "Music", "Canvas"],
     category: "other",
   },
   chaosshelf: {
     icon: Library,
-    color: "bg-sage-green",
-    textColor: "text-indigo-void",
     tags: ["Books", "AI Recs", "Social", "MCP"],
     category: "other",
   },
   "color-factory": {
     icon: Palette,
-    color: "bg-dusty-cyan",
-    textColor: "text-indigo-void",
     tags: ["OKLCH", "Palette", "Export"],
     category: "other",
   },
   "loose-change": {
     icon: Coins,
-    color: "bg-caution-amber",
-    textColor: "text-indigo-void",
     tags: ["Voice Capture", "Convex", "PWA", "MCP"],
     category: "other",
   },
   folio: {
     icon: NotebookPen,
-    color: "bg-muted-indigo",
-    textColor: "text-dusty-cyan",
     tags: ["Convex", "Attribution", "MCP", "TipTap"],
     category: "other",
   },
   strata: {
     icon: Layers,
-    color: "bg-indigo-void",
-    textColor: "text-dusty-cyan",
     tags: ["Etymology", "Reference", "Drizzle ORM"],
     category: "other",
   },
   marginalia: {
     icon: Highlighter,
-    color: "bg-caution-amber",
-    textColor: "text-indigo-void",
     tags: ["PDF", "OCR", "Claude API", "Quizzes"],
     category: "other",
   },
   codynd: {
     icon: Terminal,
-    color: "bg-indigo-void",
-    textColor: "text-caution-amber",
     tags: ["Claude Code", "Plugin", "ADHD", "ChaosPatch"],
     category: "other",
   },
 }
 
 
-// Rotation + torn-edge shape per card, cycled by index so the stack reads as scattered clippings
+// Slight alternating tilt, tape color and icon fill per card, cycled by index
 const CLIPPING_VARIANTS = [
-  { tilt: "-1.4deg", clip: "zine-card--a" },
-  { tilt: "1.1deg", clip: "zine-card--b" },
-  { tilt: "-0.7deg", clip: "zine-card--c" },
-  { tilt: "1.6deg", clip: "zine-card--a" },
+  { tilt: "-0.8deg", tape: "var(--tape-1)", iconFill: "bg-accent" },
+  { tilt: "0.6deg", tape: "var(--tape-2)", iconFill: "bg-blue" },
+  { tilt: "-0.4deg", tape: "var(--tape-3)", iconFill: "bg-eco-card" },
 ] as const
 
 const projects: Project[] = homeProjects
@@ -380,8 +336,6 @@ const projects: Project[] = homeProjects
       tagline: data.tagline,
       description: data.description,
       icon: ui.icon,
-      color: ui.color,
-      textColor: ui.textColor,
       tags: ui.tags,
       status,
       githubUrl: data.githubUrl ?? "",
@@ -400,16 +354,11 @@ export function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-bone paper:border-y paper:border-hairline relative overflow-hidden">
-      {/* Background blobs for glassmorphism */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 30%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 25%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 right-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--muted-indigo) 30%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-1/3 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--sage-green) 20%, transparent) 0%, transparent 70%)" }} />
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="projects" className="px-4 sm:px-6 lg:px-8 pb-24">
+      <div className="max-w-7xl mx-auto border-t-2 border-fg pt-20">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 text-bone text-xs font-mono uppercase tracking-widest mb-4 bg-indigo-void border border-caution-amber/40">
+        <div className="text-center mb-14">
+          <span className="inline-block bg-accent text-on-fill border-2 border-fg zine-mono text-xs tracking-[1.4px] px-3 py-1.5 -rotate-2 mb-6">
             Current Projects
           </span>
           <ProjectsIntroBlock />
@@ -423,17 +372,11 @@ export function ProjectsSection() {
         ]).map((group) => {
           const groupProjects = projects.filter((p) => p.category === group.key)
           return (
-            <div key={group.key} className="max-w-3xl mx-auto mb-12 last:mb-0">
-              <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-indigo-void uppercase tracking-wide mb-6 text-center">
+            <div key={group.key} className="max-w-4xl mx-auto mb-16 last:mb-0">
+              <h3 className="font-display text-3xl tracking-[-1px] text-fg mb-8 text-center">
                 {group.label}
               </h3>
-              {/* TODO(nae): this is a single-column stack (space-y-6) so expanding a card never
-                  reshuffles a grid row. If you want the concept board's scattered multi-column
-                  layout instead, swap this for a CSS grid (grid-template-columns / auto-fit) —
-                  just mind that an expanding card grows its whole grid row, which can leave gaps
-                  next to shorter neighbors. Rotation is already per-card (CLIPPING_VARIANTS below)
-                  so it'll still read as scattered clippings even in a single column. */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
                 {groupProjects.map((project, idx) => {
                   const Icon = project.icon
                   const isExpanded = activeProject === project.id
@@ -444,36 +387,36 @@ export function ProjectsSection() {
                   return (
                     <div
                       key={project.id}
-                      className={cn("zine-card", variant.clip)}
-                      style={{ "--tilt": variant.tilt } as React.CSSProperties}
+                      className="zine-card"
+                      style={{ "--tilt": variant.tilt, "--tape": variant.tape } as React.CSSProperties}
                     >
                       <div className="zine-tape" />
 
                       {/* Clickable header */}
-                      <button onClick={() => toggleProject(project.id)} className="w-full text-left p-6">
+                      <button onClick={() => toggleProject(project.id)} aria-expanded={isExpanded} className="w-full text-left p-6 pt-7">
                         <div className="flex items-start gap-4">
                           <div
-                            className={cn("w-12 h-12 rounded-xl flex items-center justify-center shrink-0", project.color)}
+                            className={cn("w-12 h-12 border-2 border-fg flex items-center justify-center shrink-0 text-on-fill", variant.iconFill)}
                           >
-                            <Icon className={cn("w-6 h-6", project.textColor)} />
+                            <Icon className="w-6 h-6" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center justify-between gap-2 mb-1">
                               <div className="flex items-center gap-3">
-                                <h3 className="font-bold text-lg text-indigo-void">{project.name}</h3>
+                                <h3 className="font-display text-2xl leading-tight text-fg">{project.name}</h3>
                               </div>
                               <ChevronDown
                                 className={cn(
-                                  "w-5 h-5 text-muted-indigo/50 transition-transform duration-300",
-                                  isExpanded && "rotate-180 text-magenta",
+                                  "w-5 h-5 text-fg shrink-0 transition-transform duration-300 motion-reduce:transition-none",
+                                  isExpanded && "rotate-180",
                                 )}
                               />
                             </div>
-                            <Markdown className="text-sm text-muted-indigo">{project.tagline}</Markdown>
-                            <span className={cn("mt-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-mono uppercase tracking-wider border-2 -rotate-2", status.bg, status.text, status.border)}>
-                                  <StatusIcon className="w-3.5 h-3.5" />
+                            <Markdown className="text-sm text-fg-muted">{project.tagline}</Markdown>
+                            <span className={cn("mt-3", chipBase, status.chip)}>
+                              <StatusIcon className="w-3.5 h-3.5" aria-hidden />
                               {status.label}
-                                </span>
+                            </span>
                           </div>
                         </div>
                       </button>
@@ -485,12 +428,12 @@ export function ProjectsSection() {
                         )}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-6 pb-6 pt-2 border-t border-indigo-void/15">
-                            <Markdown className="leading-relaxed mb-6 text-text-on-bone">{project.description}</Markdown>
+                          <div className="px-6 pb-6 pt-4 border-t-2 border-fg/20">
+                            <Markdown className="leading-relaxed mb-6 text-fg">{project.description}</Markdown>
 
                             <div className="flex flex-wrap gap-2 mb-6">
                               {project.tags.map((tag) => (
-                                <span key={tag} className="px-3 py-1 bg-indigo-void text-bone text-xs font-mono uppercase tracking-wide">
+                                <span key={tag} className="px-2 py-0.5 border-2 border-fg text-fg zine-mono text-[11px] tracking-[1px]">
                                   {tag}
                                 </span>
                               ))}
@@ -499,7 +442,7 @@ export function ProjectsSection() {
                             <div className="flex flex-wrap gap-3">
                               {(project.liveUrl || project.githubUrl) && (
                                 <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                  <Button className="bg-caution-amber text-indigo-void hover:bg-caution-amber/90 rounded-sm">
+                                  <Button className="zine-shadow zine-mono tracking-[1.4px]" style={{ "--shadow-size": "4px" } as React.CSSProperties}>
                                     <ExternalLink className="w-4 h-4 mr-2" />
                                     View Project
                                   </Button>
@@ -507,7 +450,7 @@ export function ProjectsSection() {
                               )}
                               {project.demoUrl && (
                                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                                  <Button className="bg-indigo-deep text-bone hover:bg-indigo-deep/90 rounded-sm">
+                                  <Button variant="secondary" className="zine-mono tracking-[1.4px]">
                                     <ExternalLink className="w-4 h-4 mr-2" />
                                     Live Demo
                                   </Button>
@@ -517,7 +460,7 @@ export function ProjectsSection() {
                                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                   <Button
                                     variant="outline"
-                                    className="rounded-sm border-muted-indigo text-muted-indigo hover:bg-muted-indigo hover:text-bone bg-transparent"
+                                    className="zine-mono tracking-[1.4px]"
                                   >
                                     <Github className="w-4 h-4 mr-2" />
                                     Source Code

@@ -1,19 +1,44 @@
 "use client"
 
-import { ArrowDown, Brain } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { CHAOS_ECOSYSTEM_SLUGS, homeProjects } from "@/lib/projects"
 
 const PUCK_SIZE = 20
 
-// In Paper each chip gets its own tinted fill and full-color border
-const FEATURE_TAGS = [
-  { label: "ADHD Friendly", paperColor: "paper:bg-sage-green/25 paper:border-sage-green" },
-  { label: "Open Source", paperColor: "paper:bg-dusty-cyan/25 paper:border-dusty-cyan" },
-  { label: "Student Built", paperColor: "paper:bg-caution-amber/30 paper:border-caution-amber" },
-  { label: "AI Powered", paperColor: "paper:bg-muted-indigo/20 paper:border-muted-indigo" },
-]
+const ecosystem = homeProjects.filter((p) => CHAOS_ECOSYSTEM_SLUGS.includes(p.slug))
+
+function EcosystemCard({ className }: { className?: string }) {
+  return (
+    <div className={cn("relative bg-eco-card text-on-fill border-2 border-fg p-6", className)}>
+      <div className="zine-tape left-1/2 -translate-x-1/2" style={{ "--tape": "var(--accent)" } as React.CSSProperties} />
+      <p className="zine-mono text-xs tracking-[1.4px] mb-3">The Chaos Ecosystem</p>
+      <ul className="space-y-1">
+        {ecosystem.map((p) => (
+          <li key={p.slug} className="font-display text-2xl xl:text-[28px] leading-tight">{p.name}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const RoundSticker = ({ className }: { className?: string }) => (
+  <div
+    className={cn(
+      "rounded-full bg-accent text-on-fill border-2 border-fg flex items-center justify-center text-center zine-mono tracking-[1px] leading-snug -rotate-12",
+      className,
+    )}
+  >
+    Student<br />Built<br />· Open ·<br />Source
+  </div>
+)
+
+const AdhdSticker = ({ className }: { className?: string }) => (
+  <div className={cn("bg-sticker text-on-fill border-2 border-fg px-4 py-2 font-display -rotate-2 whitespace-nowrap", className)}>
+    brought to you by ADHD
+  </div>
+)
 
 export function HeroSection() {
   const iconRef = useRef<HTMLSpanElement>(null)
@@ -64,132 +89,72 @@ export function HeroSection() {
   useEffect(() => () => { if (frameRef.current) cancelAnimationFrame(frameRef.current) }, [])
 
   return (
-    <section
-      className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center relative overflow-hidden"
-      style={{ background: "var(--hero-bg)" }}
-    >
-      {/* Grid horizon — perspective floor in bone, replaces the old pastel blobs */}
-      <div
-        className="absolute left-0 right-0 bottom-0 h-[46%] pointer-events-none"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(90deg, var(--hero-line-strong) 0 2px, transparent 2px 60px), repeating-linear-gradient(0deg, var(--hero-line-soft) 0 2px, transparent 2px 34px)",
-          transform: "perspective(240px) rotateX(58deg)",
-          transformOrigin: "bottom",
-          maskImage: "linear-gradient(180deg, transparent, black 30%)",
-          WebkitMaskImage: "linear-gradient(180deg, transparent, black 30%)",
-        }}
-      />
-
-      {/* Halftone halo behind the headline — same dot texture as the project clippings */}
-      <div
-        className="absolute left-1/2 top-[54%] w-[480px] h-[480px] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-40"
-        style={{
-          backgroundImage: "radial-gradient(circle, var(--hero-dot) 1.5px, transparent 1.8px)",
-          backgroundSize: "14px 14px",
-          maskImage: "radial-gradient(circle, black 0%, transparent 65%)",
-          WebkitMaskImage: "radial-gradient(circle, black 0%, transparent 65%)",
-        }}
-      />
-
-      {/* Scanlines */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
-        style={{ background: "repeating-linear-gradient(0deg, var(--hero-scanline) 0 1px, transparent 1px 3px)" }}
-      />
-
+    <section id="top" className="pt-32 pb-20 lg:pt-36 lg:pb-24 px-4 sm:px-6 lg:px-8">
       {/* Bouncing puck — fixed clone of the button icon */}
       {puckPos && (
         <div
           className="fixed z-[9999] pointer-events-none rounded-full"
           style={{ left: puckPos.x, top: puckPos.y, width: PUCK_SIZE, height: PUCK_SIZE }}
         >
-          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-indigo-void" />
+          <Image src="/vertexism_favicon_128.png" alt="" width={PUCK_SIZE} height={PUCK_SIZE} className="rounded-full w-full h-full object-contain bg-background" />
         </div>
       )}
 
-      <div className="max-w-5xl mx-auto text-center relative z-10">
-        {/* Main Headline - stamped double-shadow, magenta + indigo */}
-        <h1
-          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-ink paper:text-indigo-deep"
-          style={{ textShadow: "var(--hero-title-shadow)" }}
-        >
-          <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-magenta">A</span>gentic
-          </span>{" "}
-          <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-accent-green-text">D</span>evelopment
-          </span>{" "}
-          of{" "}
-          <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-accent-amber-text">H</span>uman
-          </span>{" "}
-          <span className="whitespace-nowrap">
-            <span className="inline-block hover:animate-wiggle cursor-default text-accent-cyan-text">D</span>esigns
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.15fr_1fr] gap-14 lg:gap-10 items-center">
+        <div>
+          <span className="inline-block bg-accent text-on-fill border-2 border-fg zine-mono text-xs tracking-[1.4px] px-3 py-1.5 -rotate-2 mb-6">
+            ADHD Friendly · AI Powered
           </span>
-        </h1>
 
-        {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl text-ink max-w-3xl mx-auto mb-10 leading-relaxed">
-          Apps built with chaos, designed with purpose. Created by a neurodivergent designer who believes the best tools come from understanding the beautiful mess of neurodivergent minds.
-        </p>
+          <h1 className="text-[44px] sm:text-6xl lg:text-[72px] xl:text-[84px] leading-[1.02] tracking-[-1.5px] text-fg mb-8">
+            Agentic Development of <span className="zine-highlight">Human Designs</span>
+          </h1>
 
-        {/* CTA Buttons — sticker-taped rectangles instead of pills */}
-        <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-16">
-          <Button
-            size="lg"
-            className="bg-bone text-indigo-void border-2 border-bone paper:bg-muted-indigo paper:text-bone paper:border-muted-indigo hover:-translate-y-0.5 rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest transition-transform group"
-            style={{ boxShadow: "4px 4px 0 var(--magenta)" }}
-            asChild
-          >
+          <p className="text-lg sm:text-xl text-fg max-w-xl mb-10 leading-relaxed">
+            Apps built with chaos, designed with purpose. Created by a neurodivergent designer who believes the best tools come from understanding the beautiful mess of neurodivergent minds.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="/#projects"
               onMouseEnter={canHover ? startPuck : undefined}
               onMouseLeave={canHover ? stopPuck : undefined}
+              className="zine-shadow zine-mono text-sm tracking-[1.4px] bg-primary text-primary-foreground border-2 border-fg h-12 px-6 inline-flex items-center gap-2"
             >
               <span
                 ref={iconRef}
-                className="block w-5 h-5 mr-1.5 sm:mr-2 shrink-0"
+                className="block w-5 h-5 shrink-0"
                 style={{ visibility: puckPos ? "hidden" : "visible" }}
               >
                 <Image src="/vertexism_favicon_128.png" alt="" width={20} height={20} className="object-contain w-full h-full" />
               </span>
               See My Projects
             </a>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-sm px-4 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-mono uppercase tracking-widest border-2 border-bone text-bone bg-transparent hover:bg-bone/10 paper:border-indigo-void paper:text-indigo-void paper:hover:bg-indigo-void/10 transition-colors"
-            style={{ boxShadow: "4px 4px 0 var(--muted-indigo)" }}
-            asChild
-          >
-            <a href="/about">
-              <Brain className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2" />
+            <a
+              href="/about"
+              className="zine-mono text-sm tracking-[1.4px] text-fg border-2 border-fg h-12 px-6 inline-flex items-center hover:bg-fg/10 transition-colors"
+            >
               My Story
             </a>
-          </Button>
+          </div>
         </div>
 
-        {/* Feature tags — mono chips instead of pastel pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {FEATURE_TAGS.map(({ label, paperColor }) => (
-            <span
-              key={label}
-              className={`px-3 py-1.5 bg-indigo-void text-bone text-xs font-mono uppercase tracking-wider border border-bone/25 paper:text-ink ${paperColor} hover:border-magenta transition-colors cursor-default`}
-            >
-              {label}
-            </span>
-          ))}
+        {/* Collage — desktop */}
+        <div className="relative hidden lg:block h-[460px]" aria-hidden>
+          <div className="zine-dots absolute left-[6%] top-0 w-[58%] h-[80%] -rotate-4" />
+          <EcosystemCard className="absolute right-0 top-[11%] w-[62%] rotate-3" />
+          <RoundSticker className="absolute left-0 bottom-[12%] w-40 h-40 text-xs" />
+          <AdhdSticker className="absolute right-[8%] bottom-0 text-lg" />
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#projects" className="flex flex-col items-center gap-2 text-ink/70 hover:text-magenta transition-colors">
-          <span className="text-sm font-mono uppercase tracking-widest">Scroll to explore</span>
-          <ArrowDown className="w-5 h-5" />
-        </a>
+        {/* Collage — phones and tablets: stacked, no overflow */}
+        <div className="lg:hidden flex flex-col items-center gap-8 px-3" aria-hidden>
+          <EcosystemCard className="w-full max-w-sm rotate-[1.5deg]" />
+          <div className="flex items-center justify-center gap-5 flex-wrap">
+            <RoundSticker className="w-28 h-28 text-[10px]" />
+            <AdhdSticker className="text-base" />
+          </div>
+        </div>
       </div>
     </section>
   )

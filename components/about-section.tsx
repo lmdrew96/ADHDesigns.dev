@@ -38,12 +38,12 @@ function CoinFlipAvatar() {
       }}>
         {/* Front — profile photo */}
         <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}
-          className="rounded-full bg-caution-amber/30 border-4 border-caution-amber overflow-hidden">
+          className="rounded-full bg-accent border-2 border-fg overflow-hidden">
           <img src="/nae-profile.jpg" alt="Nae" className="w-full h-full object-cover object-top scale-110" />
         </div>
         {/* Back — SpaceNugg */}
         <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-          className="rounded-full bg-muted-indigo/30 border-4 border-muted-indigo overflow-hidden">
+          className="rounded-full bg-blue border-2 border-fg overflow-hidden">
           <img src="/SpaceNugg.png" alt="Space Nugg" className="w-full h-full object-cover" />
         </div>
       </div>
@@ -58,7 +58,7 @@ function BalloonText() {
 
   return (
     <span
-      className="text-accent-amber-text cursor-default"
+      className="cursor-default"
       onMouseEnter={canHover ? () => setBurst(true) : undefined}
       onMouseLeave={canHover ? () => setBurst(false) : undefined}
     >
@@ -72,6 +72,7 @@ function BalloonText() {
               return (
                 <span
                   key={j}
+                  className="zine-highlight px-0"
                   style={{
                     display: 'inline-block',
                     transition: burst ? `transform ${duration}ms cubic-bezier(.15,.5,.3,1)` : 'transform 220ms ease',
@@ -91,87 +92,74 @@ function BalloonText() {
 }
 
 const struggles = [
-  { icon: Brain, label: "ADHD", color: "bg-caution-amber", textColor: "text-foreground" },
-  { icon: Coffee, label: "Depression", color: "bg-dusty-cyan", textColor: "text-muted-indigo" },
-  { icon: Zap, label: "Tenacity", color: "bg-muted-indigo", textColor: "text-dusty-cyan" },
-  { icon: Lightbulb, label: "Innovation", color: "bg-accent", textColor: "text-indigo-deep" },
+  { icon: Brain, label: "ADHD", fill: "bg-accent" },
+  { icon: Coffee, label: "Depression", fill: "bg-blue" },
+  { icon: Zap, label: "Tenacity", fill: "bg-blue-pale" },
+  { icon: Lightbulb, label: "Innovation", fill: "bg-eco-card" },
 ]
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
-      <div className="absolute top-20 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 40%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 35%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/3 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--muted-indigo) 25%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/4 left-5 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--sage-green) 20%, transparent) 0%, transparent 70%)" }} />
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="flex flex-col gap-12 items-start">
-          {/* Image/Visual Side - updated decorative colors */}
-          <div className="w-full rounded-3xl glass-dark border border-dusty-cyan/25 overflow-hidden relative shadow-2xl shadow-black/20">
-              {/* Decorative pattern */}
-              <div className="absolute inset-0 opacity-40">
-                <div className="absolute top-4 left-4 w-24 h-24 border-4 border-caution-amber rounded-full" />
-                <div className="absolute top-20 right-8 w-16 h-16 bg-dusty-cyan rounded-full" />
-                <div className="absolute bottom-12 left-12 w-20 h-20 bg-muted-indigo rounded-lg rotate-12" />
-                <div className="absolute bottom-20 right-20 w-12 h-12 bg-caution-amber rounded-full" />
+    <section id="about" className="pt-20 pb-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col gap-14 items-start">
+          {/* Profile card */}
+          <div className="zine-card w-full" style={{ "--tilt": "-0.4deg", "--tape": "var(--tape-1)" } as React.CSSProperties}>
+            <div className="zine-tape left-1/2 -translate-x-1/2" />
+            <div className="flex flex-col justify-center p-8 pt-10 items-center">
+              <div className="mb-6">
+                <CoinFlipAvatar />
               </div>
+              <h3 className="font-display text-3xl text-fg text-center">
+                {ABOUT_CARD.name}
+              </h3>
+              <p className="text-fg-muted text-center">{ABOUT_CARD.role}</p>
+              <p className="font-display text-2xl text-fg text-center">
+                {ABOUT_CARD.school}
+              </p>
 
-              {/* Main content */}
-              <div className="relative flex flex-col justify-center p-8 items-center">
-                <div className="mb-6">
-                  <CoinFlipAvatar />
-                </div>
-                <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-accent-cyan-text text-center">
-                  {ABOUT_CARD.name}
-                </h3>
-                <p className="text-dusty-cyan/70 paper:text-ink-muted text-center">{ABOUT_CARD.role}</p>
-                <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-accent-cyan-text text-center">
-                  {ABOUT_CARD.school}
-                </p>
-
-                {/* Struggle badges */}
-                <div className="flex flex-wrap justify-center gap-3 mt-6">
-                  {struggles.map((item) => {
-                    const Icon = item.icon
-                    return (
-                      <div key={item.label} className={`flex items-center gap-2 px-3 py-2 ${item.color} rounded-full backdrop-blur-md border border-white/15`}>
-                        <Icon className={`w-4 h-4 ${item.textColor}`} />
-                        <span className={`text-sm font-bold ${item.textColor}`}>{item.label}</span>
-                      </div>
-                    )
-                  })}
-                </div>
+              {/* Struggle badges */}
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
+                {struggles.map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <div key={item.label} className={`flex items-center gap-2 px-3 py-1.5 border-2 border-fg text-on-fill ${item.fill}`}>
+                      <Icon className="w-4 h-4" aria-hidden />
+                      <span className="zine-mono text-xs tracking-[1px]">{item.label}</span>
+                    </div>
+                  )
+                })}
               </div>
+            </div>
           </div>
 
-          {/* Content Side - updated text/accent colors */}
+          {/* Content */}
           <div>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 glass text-indigo-deep">
-              <Sparkles className="w-4 h-4" />
+            <span className="inline-flex items-center gap-2 bg-accent text-on-fill border-2 border-fg zine-mono text-xs tracking-[1.4px] px-3 py-1.5 -rotate-2 mb-6">
+              <Sparkles className="w-4 h-4" aria-hidden />
               The Human Behind the Code
             </span>
 
-            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-accent-cyan-text mb-6 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-[52px] tracking-[-1px] text-fg mb-6 leading-tight">
               Too much on my plate, making it <BalloonText />
             </h2>
 
-            <div className="space-y-4 text-ink leading-relaxed font-medium">
+            <div className="space-y-4 text-fg leading-relaxed text-lg">
               {ABOUT_PARAGRAPHS.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="p-4 glass-dark rounded-xl">
-                <Lightbulb className="w-8 h-8 text-accent-amber-text mb-2" />
-                <h4 className="font-bold text-accent-green-text mb-1">Built Different</h4>
-                <p className="text-sm text-ink">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
+            <div className="grid sm:grid-cols-2 gap-6 mt-10">
+              <div className="p-5 bg-card border-2 border-fg">
+                <Lightbulb className="w-7 h-7 text-fg mb-2" aria-hidden />
+                <h4 className="font-display text-xl text-fg mb-1">Built Different</h4>
+                <p className="text-sm text-fg">Unique solutions designed to work <span className="font-bold italic">with</span> unique brains, not against them</p>
               </div>
-              <div className="p-4 rounded-xl glass-dark">
-                <Heart className="w-8 h-8 mb-2 text-accent-cyan-text" />
-                <h4 className="font-bold mb-1 text-accent-green-text">Structured Chaos</h4>
-                <p className="text-sm text-ink">ADHD-AI synergy: the core of the development process</p>
+              <div className="p-5 bg-card border-2 border-fg">
+                <Heart className="w-7 h-7 text-fg mb-2" aria-hidden />
+                <h4 className="font-display text-xl text-fg mb-1">Structured Chaos</h4>
+                <p className="text-sm text-fg">ADHD-AI synergy: the core of the development process</p>
               </div>
             </div>
           </div>

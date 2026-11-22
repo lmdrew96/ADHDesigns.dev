@@ -14,8 +14,8 @@ export function KofiWidget() {
         kofiWidgetOverlay.draw('adhdesigns', {
           'type': 'floating-chat',
           'floating-chat.donateButton.text': 'Tip Me',
-          'floating-chat.donateButton.background-color': root.getPropertyValue('--caution-amber').trim(),
-          'floating-chat.donateButton.text-color': root.getPropertyValue('--indigo-void').trim(),
+          'floating-chat.donateButton.background-color': root.getPropertyValue('--accent').trim(),
+          'floating-chat.donateButton.text-color': root.getPropertyValue('--on-fill').trim(),
         })
       }}
     />

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { Heart, Zap, Star, Sparkles, Coffee } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 const SMOKE_PARTICLES = [
   { left: '60%', size: 22, delay: 0,   duration: 700, anim: 'smoke-blow-left'     },
@@ -19,7 +18,7 @@ function SpinningWord() {
 
   return (
     <span
-      className="text-accent-green-text paper:text-caution-amber cursor-default"
+      className="zine-highlight cursor-default"
       onMouseEnter={canHover ? () => setSpinning(true) : undefined}
       onMouseLeave={canHover ? () => setSpinning(false) : undefined}
       onClick={() => setSpinning(s => !s)}
@@ -41,7 +40,7 @@ function SpinningWord() {
                 left: p.left,
                 width:  p.size,
                 height: p.size,
-                background: 'rgba(240,240,240,0.65)',
+                background: 'color-mix(in srgb, var(--fg) 45%, transparent)',
                 animation: `${p.anim} ${p.duration}ms ease-out infinite`,
                 animationDelay: `${p.delay + i * 55}ms`,
               }}
@@ -59,60 +58,49 @@ const donationTiers = [
     title: "Keep the Lights On",
     amount: "$5/mo",
     description: "Chip in on the monthly bills: servers, domains, API calls — the invisible stuff that makes free tools possible.",
-    color: "bg-indigo-void",
-    textColor: "text-caution-amber",
-    tilt: "-1.4deg",
-    clip: "zine-card--a",
+    tilt: "-0.8deg",
+    tape: "var(--tape-1)",
+    iconFill: "bg-accent",
   },
   {
     icon: Heart,
     title: "Fuel the Chaos",
     amount: "$10/mo",
     description: "Help keep the lights on AND fund new features and bug fixes. You're basically my QA department's salary. (I am also the QA department.)",
-    color: "bg-muted-indigo",
-    textColor: "text-bone",
-    tilt: "1.1deg",
-    clip: "zine-card--b",
+    tilt: "0.6deg",
+    tape: "var(--tape-2)",
+    iconFill: "bg-blue",
   },
   {
     icon: Star,
     title: "Chaos Patron",
     amount: "$25/mo",
     description: "You're keeping a real chunk of the ecosystem alive. You get my undying gratitude, a spot on a future supporters page, and the knowledge that you're funding tools built by spite and stubbornness.",
-    color: "bg-caution-amber",
-    textColor: "text-indigo-void",
-    tilt: "-0.7deg",
-    clip: "zine-card--c",
+    tilt: "-0.4deg",
+    tape: "var(--tape-3)",
+    iconFill: "bg-eco-card",
   },
 ]
 
 export function DonateSection() {
   return (
-    <section id="donate" className="py-24 px-4 sm:px-6 lg:px-8 bg-indigo-deep paper:bg-muted-indigo band-indigo relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-10 right-10 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--dusty-cyan) 30%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--caution-amber) 30%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, color-mix(in srgb, var(--muted-indigo) 20%, transparent) 0%, transparent 70%)" }} />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="donate" className="px-4 sm:px-6 lg:px-8 pb-24">
+      <div className="max-w-6xl mx-auto border-t-2 border-fg pt-20">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono uppercase tracking-widest mb-6 bg-indigo-void text-bone border border-caution-amber/40">
-            <Sparkles className="w-4 h-4" />
+          <span className="inline-flex items-center gap-2 bg-accent text-on-fill border-2 border-fg zine-mono text-xs tracking-[1.4px] px-3 py-1.5 -rotate-2 mb-6">
+            <Sparkles className="w-4 h-4" aria-hidden />
             Support the Work
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4" aria-hidden />
           </span>
-          <h2
-            className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-ink paper:text-bone mb-6 leading-tight"
-            style={{ textShadow: "var(--donate-title-shadow)" }}
-          >
+          <h2 className="text-4xl sm:text-5xl md:text-[52px] tracking-[-1px] text-fg mb-6 leading-tight">
             Help Keep This <SpinningWord />
           </h2>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text paper:text-bone leading-relaxed font-medium">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-fg leading-relaxed">
             Everything I build is free — ControlledChaos, ChaosLimbă, Kindling, all of it.
             I'm a full-time college student who'd rather give my work away than gatekeep it behind a paywall. But servers cost money, domains cost money, and ramen can only sustain a person for so long.
             </p>
-          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-accent-cyan-text paper:text-bone leading-relaxed font-medium mt-4">
+          <p className="max-w-[90vw] md:max-w-[55vw] mx-auto text-fg leading-relaxed mt-4">
             If anything I've built has helped you, even a small monthly membership goes further than you'd think — it goes toward the servers, domains, and API calls that keep it all free. But if a one-time tip is more your speed, the floating yellow 'Tip Me' button in the corner has you covered. No pressure, no paywall, no guilt — just gratitude.
           </p>
         </div>
@@ -124,18 +112,18 @@ export function DonateSection() {
             return (
               <div
                 key={tier.title}
-                className={`zine-card ${tier.clip} relative p-6 flex flex-col gap-4`}
-                style={{ "--tilt": tier.tilt } as React.CSSProperties}
+                className="zine-card p-6 pt-8 flex flex-col gap-4"
+                style={{ "--tilt": tier.tilt, "--tape": tier.tape } as React.CSSProperties}
               >
                 <div className="zine-tape" />
-                <div className={`w-12 h-12 rounded-2xl ${tier.color} flex items-center justify-center`}>
-                  <Icon className={`w-6 h-6 ${tier.textColor}`} />
+                <div className={`w-12 h-12 border-2 border-fg ${tier.iconFill} text-on-fill flex items-center justify-center`}>
+                  <Icon className="w-6 h-6" aria-hidden />
                 </div>
                 <div>
-                  <p className="text-3xl font-bold font-[family-name:var(--font-display)] text-muted-indigo">{tier.amount}</p>
-                  <h3 className="font-bold text-lg text-indigo-void mt-1">{tier.title}</h3>
+                  <p className="text-3xl font-display text-fg">{tier.amount}</p>
+                  <h3 className="zine-mono text-sm tracking-[1.4px] text-fg mt-1">{tier.title}</h3>
                 </div>
-                <p className="text-sm text-text-on-bone leading-relaxed font-semibold">{tier.description}</p>
+                <p className="text-sm text-fg leading-relaxed">{tier.description}</p>
               </div>
             )
           })}
@@ -143,17 +131,15 @@ export function DonateSection() {
 
         {/* Single CTA */}
         <div className="text-center">
-          <Button
-            size="lg"
-            asChild
-            className="bg-caution-amber text-indigo-void hover:bg-caution-amber/90 rounded-sm px-10 py-6 text-lg font-mono uppercase tracking-widest"
-            style={{ boxShadow: "5px 5px 0 var(--magenta)" }}
+          <a
+            href="https://ko-fi.com/adhdesigns/tiers"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="zine-shadow zine-mono text-sm tracking-[1.4px] bg-primary text-primary-foreground border-2 border-fg h-12 px-7 inline-flex items-center gap-2"
           >
-            <a href="https://ko-fi.com/adhdesigns/tiers" target="_blank" rel="noopener noreferrer">
-              <Coffee className="w-5 h-5 mr-2" />
-              Support on Ko-fi
-            </a>
-          </Button>
+            <Coffee className="w-5 h-5" aria-hidden />
+            Support on Ko-fi
+          </a>
         </div>
       </div>
     </section>

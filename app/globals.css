@@ -1,127 +1,84 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-/* Paper (light) theme: next-themes sets data-theme="light" on <html> */
+/* Light theme: next-themes sets data-theme="light" on <html> (dark is the default) */
 @custom-variant paper (&:where([data-theme="light"], [data-theme="light"] *));
 
+/* ── ADHDesigns zine theme (Nov 2026) ──
+   Cut-and-paste zine, new-wave colors. Dark = navy/mint (all cool on purpose),
+   light = periwinkle/lemon. Text on any colored fill uses --on-fill. */
 :root {
-  /* ── ADHDesigns Brand Tokens (2026 names, see the adhdesigns-theme skill) ── */
-  --muted-indigo:  #665C99; /* brand; page fill */
-  --indigo-void:   #140F22; /* deepest ink; nav and dark fills */
-  --indigo-deep:   #241D38; /* dark surface: cards, inputs, popovers */
-  --bone:          #EDE6D2; /* main foreground on dark; light section fill */
-  --bone-dim:      #E3DCC6; /* light panel fill (Paper) */
-  --caution-amber: #F2CB05; /* primary / CTA */
-  --dusty-cyan:    #5FC2C0; /* borders, focus inside cards */
-  --sage-green:    #7FA88C; /* status */
-  --olive:         #7C8449; /* natural highlight */
+  /* core */
+  --bg:         #141A2E; /* deep navy page */
+  --fg:         #E8EDFF; /* text, 2px borders */
+  --fg-muted:   #AFC2F1; /* secondary text (9.8:1 on bg) */
+  --card:       #222B4A;
+  --accent:     #98ADE7; /* logo block, eyebrow, primary button, round sticker */
+  --on-fill:    #141A2E; /* text on accent / blue / pale / mint fills */
+  --blue:       #7F93E0;
+  --blue-pale:  #AFC2F1;
+  --mint:       #9DC6BA;
+  --mint-light: #AAD8CB;
+  --link-hover: #98ADE7;
 
-  /* ── text-only shades: brand colors stay exact as fills/borders,
-     these darker shades carry labels on Bone-Dim (WCAG AA) ── */
-  --olive-text:        #575c33; /* 5.13:1 on Bone-Dim */
-  --muted-indigo-text: #524a7a; /* 5.85:1 on Bone-Dim */
-  /* focus ring on the Muted Indigo page (Bone, 4.74:1); cards keep --ring (Dusty Cyan) */
-  --ring-page: var(--bone);
+  /* roles that change color between themes */
+  --hard-shadow: var(--blue);   /* ink shadows vanish on navy */
+  --highlight:   #3A4FA8;       /* highlighter swipe behind fg text (6.2:1) */
+  --eco-card:    var(--mint);
+  --sticker:     var(--mint-light); /* "brought to you by ADHD" */
+  --chip-raging: var(--mint-light);
+  --dots-block:  #2B3560;
+  --dots:        rgba(175, 194, 241, .35);
+  --tape-1:      var(--blue);
+  --tape-2:      var(--mint);
+  --tape-3:      var(--blue-pale);
 
-  /* ── theme roles: Arcade values here, Paper overrides in [data-theme="light"] ── */
-  --page:              var(--muted-indigo);
-  --ink:               var(--bone);
-  --ink-muted:         var(--bone); /* hierarchy by size/weight, not a dimmer color */
-  --accent-cyan-text:  var(--dusty-cyan);
-  --accent-green-text: var(--sage-green);
-  --accent-amber-text: var(--caution-amber); /* 24px+ only */
-  --hairline:          rgba(237, 230, 210, .16);
-  /* hero atmosphere */
-  --hero-bg:          linear-gradient(180deg, var(--indigo-void) 0%, var(--indigo-deep) 45%, var(--muted-indigo) 70%, var(--indigo-void) 100%);
-  --hero-line-strong: color-mix(in srgb, var(--bone) 30%, transparent);
-  --hero-line-soft:   color-mix(in srgb, var(--bone) 24%, transparent);
-  --hero-dot:         var(--bone);
-  --hero-scanline:    color-mix(in srgb, var(--shadow) 18%, transparent);
-  --hero-title-shadow: 3px 3px 0 var(--pink), 6px 6px 0 var(--muted-indigo);
-  --footer-title-shadow: 2px 2px 0 var(--magenta), 4px 4px 0 var(--muted-indigo);
-  --donate-title-shadow: 2px 2px 0 var(--magenta), 4px 4px 0 var(--muted-indigo);
-
-  /* ── new zine-only tokens (no legacy slot to reuse) ── */
-  --magenta:     #642644;
-  --shadow:      #000000;
-  --text-on-bone:  #2A2A2A;
-  --pink:        #FF8FCB;
-
-  /* ── shadcn/ui semantic tokens → brand tokens ── */
-  --background: var(--muted-indigo);
-  --foreground: var(--bone);
-  --card: var(--indigo-deep);
-  --card-foreground: var(--bone);
-  --popover: var(--indigo-deep);
-  --popover-foreground: var(--bone);
-  --primary: var(--caution-amber);       /* primary button color */
-  --primary-foreground: var(--indigo-void);
-  --secondary: var(--dusty-cyan);
-  --secondary-foreground: var(--indigo-deep);
-  --muted: var(--indigo-deep);
-  --muted-foreground: var(--bone);
-  --accent: var(--sage-green);
-  --accent-foreground: var(--indigo-deep);
-  --destructive: var(--caution-amber);
-  --destructive-foreground: var(--indigo-void);
-  --border: var(--dusty-cyan);
-  --input: var(--indigo-deep);
-  --ring: var(--dusty-cyan);
-  --chart-1: var(--dusty-cyan);
-  --chart-2: var(--caution-amber);
-  --chart-3: var(--sage-green);
-  --chart-4: var(--indigo-deep);
-  --chart-5: var(--muted-indigo);
-  --radius: 16px;
-
-  /* nav / sidebar → indigo-void */
-  --sidebar: var(--indigo-void);
-  --sidebar-foreground: var(--bone);
-  --sidebar-primary: var(--caution-amber);
-  --sidebar-primary-foreground: var(--indigo-void);
-  --sidebar-accent: var(--dusty-cyan);
-  --sidebar-accent-foreground: var(--indigo-void);
-  --sidebar-border: var(--indigo-deep);
-  --sidebar-ring: var(--dusty-cyan);
+  /* shadcn/ui semantic tokens */
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --card-foreground: var(--fg);
+  --popover: var(--card);
+  --popover-foreground: var(--fg);
+  --primary: var(--accent);
+  --primary-foreground: var(--on-fill);
+  --secondary: var(--card);
+  --secondary-foreground: var(--fg);
+  --muted: var(--card);
+  --muted-foreground: var(--fg-muted);
+  --destructive: var(--accent);
+  --destructive-foreground: var(--on-fill);
+  --border: var(--fg);
+  --input: var(--card);
+  --ring: var(--fg);
+  --radius: 0px;
 }
 
-/* Removed dark mode - using bold colors only */
-
-/* Paper (light) theme — same zine on lighter stock. Nav and footer follow the theme (.chrome). */
 [data-theme="light"] {
-  --page:              var(--bone-dim);
-  --ink:               var(--indigo-void);
-  --ink-muted:         #4a4170; /* 6.72:1 on Bone-Dim */
-  --accent-cyan-text:  var(--muted-indigo-text);
-  --accent-green-text: var(--olive-text);
-  --accent-amber-text: var(--magenta);
-  --hairline:          rgba(20, 15, 34, .14);
-  /* Bone at the top into a Muted Indigo dusk where the grid floor sits */
-  --hero-bg:          linear-gradient(180deg, var(--bone) 0%, var(--bone-dim) 50%, color-mix(in srgb, var(--bone-dim) 78%, var(--muted-indigo)) 100%);
-  --hero-line-strong: color-mix(in srgb, var(--muted-indigo) 40%, transparent);
-  --hero-line-soft:   color-mix(in srgb, var(--muted-indigo) 30%, transparent);
-  --hero-dot:         var(--pink);
-  --hero-scanline:    color-mix(in srgb, var(--shadow) 3.5%, transparent);
-  /* risograph: two inks printed slightly off-register */
-  --hero-title-shadow:   3px 3px 0 var(--pink), 6px 6px 0 var(--dusty-cyan);
-  --footer-title-shadow: 3px 3px 0 color-mix(in srgb, var(--pink) 55%, transparent);
-  /* donate is a Muted Indigo band in Paper */
-  --donate-title-shadow: 3px 3px 0 var(--magenta);
+  --bg:         #D6E2FF; /* periwinkle */
+  --fg:         #1B1A17;
+  --fg-muted:   #3A3870; /* 8.2:1 on bg */
+  --card:       #F4F6FF; /* paper on paper */
+  --accent:     #F6D46D; /* lemon */
+  --on-fill:    #1B1A17;
+  --link-hover: #3A3870;
 
-  --background:       var(--bone-dim);
-  --foreground:       var(--indigo-void);
-  --muted-foreground: #4a4170;
-  --card:             var(--bone);
-  --card-foreground:  var(--indigo-void);
-  --ring:             var(--muted-indigo);
-  --ring-page:        var(--muted-indigo);
+  --hard-shadow: var(--fg);
+  --highlight:   var(--blue); /* fg on blue: 6.0:1 */
+  --eco-card:    var(--blue);
+  --sticker:     var(--blue-pale);
+  --chip-raging: var(--accent);
+  --dots-block:  #1B1A17;
+  --dots:        rgba(233, 226, 207, .35);
+  --tape-1:      var(--blue);
+  --tape-2:      var(--accent);
+  --tape-3:      var(--blue-pale);
 }
 
 @theme inline {
-  --font-sans: var(--font-raela), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-display: var(--font-gluten), system-ui, sans-serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -134,135 +91,159 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  /* ADHDesigns brand token colors */
-  --color-olive:    var(--olive);
-  --color-indigo-deep:     var(--indigo-deep);
-  --color-caution-amber:    var(--caution-amber);
-  --color-muted-indigo:   var(--muted-indigo);
-  --color-dusty-cyan:     var(--dusty-cyan);
-  --color-sage-green:    var(--sage-green);
-  --color-bone: var(--bone);
-  --color-bone-dim:       var(--bone-dim);
-  --color-indigo-void:     var(--indigo-void);
-  --color-olive-text:  var(--olive-text);
-  --color-muted-indigo-text: var(--muted-indigo-text);
-  /* zine-only tokens */
-  --color-magenta: var(--magenta);
-  --color-text-on-bone: var(--text-on-bone);
-  /* theme roles */
-  --color-page: var(--page);
-  --color-ink: var(--ink);
-  --color-ink-muted: var(--ink-muted);
-  --color-accent-cyan-text: var(--accent-cyan-text);
-  --color-accent-green-text: var(--accent-green-text);
-  --color-accent-amber-text: var(--accent-amber-text);
-  --color-hairline: var(--hairline);
+  --radius-xl: var(--radius);
+
+  /* zine tokens */
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-on-fill: var(--on-fill);
+  --color-blue: var(--blue);
+  --color-blue-pale: var(--blue-pale);
+  --color-mint: var(--mint);
+  --color-mint-light: var(--mint-light);
+  --color-link-hover: var(--link-hover);
+  --color-hard-shadow: var(--hard-shadow);
+  --color-highlight: var(--highlight);
+  --color-eco-card: var(--eco-card);
+  --color-sticker: var(--sticker);
+  --color-chip-raging: var(--chip-raging);
+  --color-dots-block: var(--dots-block);
 }
 
 @layer base {
   * {
     @apply border-border;
-    outline-color: var(--ring-page);
-  }
-  /* Dusty Cyan ring inside dark cards and panels (7.62:1 on Indigo-Deep) */
-  :where(.bg-indigo-deep, .bg-indigo-void, .glass-dark, [class*="bg-indigo-void/"]) * {
     outline-color: var(--ring);
   }
-  /* Bone sections need a dark ring */
-  :where(.bg-bone) * {
-    outline-color: var(--muted-indigo-text);
-  }
-  /* Surfaces that stay dark in both themes keep the Dusty Cyan ring */
-  .surface-dark, .surface-dark * {
-    outline-color: var(--dusty-cyan);
-  }
-  /* Nav and footer: dark in Arcade, Bone in Paper */
-  .chrome, .chrome * {
-    outline-color: var(--dusty-cyan);
-  }
-  [data-theme="light"] :is(.chrome, .chrome *) {
-    outline-color: var(--ring-page);
-  }
-  /* Paper's Muted Indigo band needs the Bone ring */
-  [data-theme="light"] :is(.band-indigo, .band-indigo *) {
-    outline-color: var(--bone);
+  /* Colored fills (buttons, stickers, chips) take the on-fill ring so it stays visible */
+  :where(.bg-primary, .bg-accent, .bg-blue, .bg-blue-pale, .bg-mint, .bg-mint-light, .bg-eco-card, .bg-sticker, .bg-chip-raging):focus-visible {
+    outline-color: var(--fg);
   }
   :focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-offset: 2px;
+    outline-offset: 3px;
   }
   html, body {
     overflow-x: hidden;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2 {
+    font-family: var(--font-gluten), system-ui, sans-serif;
+    font-weight: 800;
   }
 }
 
-/* Groovy animations */
-@keyframes wiggle {
-  0%,
-  100% {
-    transform: rotate(-3deg);
+@layer components {
+  /* ── Zine components ── */
+
+  /* Hard-shadow block: buttons, stickers. --shadow-size sets the offset.
+     Hover lifts 1–2px and the shadow grows; no lift under reduced motion. */
+  .zine-shadow {
+    --shadow-size: 5px;
+    --shadow-color: var(--hard-shadow);
+    box-shadow: var(--shadow-size) var(--shadow-size) 0 var(--shadow-color);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  50% {
-    transform: rotate(3deg);
+  .zine-shadow:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--shadow-size) + 2px) calc(var(--shadow-size) + 2px) 0 var(--shadow-color);
+  }
+  .zine-shadow:active {
+    transform: translate(0, 0);
+    box-shadow: calc(var(--shadow-size) - 2px) calc(var(--shadow-size) - 2px) 0 var(--shadow-color);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .zine-shadow, .zine-shadow:hover, .zine-shadow:active {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Mono UPPERCASE control text (buttons, nav, chips, eyebrows) */
+  .zine-mono {
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* Highlighter swipe behind a phrase */
+  .zine-highlight {
+    background-image: linear-gradient(var(--highlight), var(--highlight));
+    background-repeat: no-repeat;
+    background-size: 100% 0.42em;
+    background-position: 0 88%;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0 0.08em;
+  }
+
+  /* Dotted halftone block */
+  .zine-dots {
+    background-color: var(--dots-block);
+    background-image: radial-gradient(circle, var(--dots) 1.2px, transparent 1.4px);
+    background-size: 9px 9px;
+  }
+
+  /* Taped card: card fill, 2px fg border, square corners, slight tilt */
+  .zine-card {
+    position: relative;
+    background: var(--card);
+    border: 2px solid var(--fg);
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform 0.18s ease;
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .zine-card:hover {
+      transform: rotate(0deg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .zine-card { transition: none; }
+  }
+  .zine-tape {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    width: 80px;
+    height: 22px;
+    background: var(--tape, var(--tape-1));
+    opacity: 0.75;
+    pointer-events: none;
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
+/* Logo wiggle on hover */
+@keyframes chaos-shake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  20%  { transform: translate(-2px, 1px) rotate(-1.5deg); }
+  40%  { transform: translate(2px, -1px) rotate(1deg); }
+  60%  { transform: translate(-2px, 2px) rotate(1.5deg); }
+  80%  { transform: translate(1px, -1px) rotate(-1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .animate-chaos-shake:hover {
+    animation: chaos-shake 0.5s ease-in-out infinite;
   }
-  50% {
-    transform: translateY(-10px);
-  }
 }
 
-.animate-wiggle {
-  animation: wiggle 2s ease-in-out infinite;
-}
-
-@utility animate-wiggle {
-  animation: wiggle 2s ease-in-out infinite;
-}
-
-.animate-float {
-  will-change: transform;
-  animation: float 3s ease-in-out infinite;
-}
-
+/* Donate "Going" burnout */
 @keyframes tire-spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-
 @keyframes smoke-blow-left {
   0%   { transform: translate(-50%, 0) scale(1);                    opacity: 0.6; filter: blur(10px); }
   50%  { opacity: 0.32; filter: blur(15px); }
@@ -272,118 +253,6 @@
   0%   { transform: translate(-50%, 0) scale(1);                    opacity: 0.5; filter: blur(12px); }
   50%  { opacity: 0.25; filter: blur(16px); }
   100% { transform: translate(calc(-50% - 80px), -50px) scale(3.5); opacity: 0;   filter: blur(22px); }
-}
-
-@keyframes chaos-shake {
-  0%   { transform: translate(0, 0) rotate(0deg); }
-  10%  { transform: translate(-3px, 2px) rotate(-1.5deg); }
-  20%  { transform: translate(3px, -3px) rotate(1deg); }
-  30%  { transform: translate(-4px, 1px) rotate(2deg); }
-  40%  { transform: translate(4px, 3px) rotate(-1deg); }
-  50%  { transform: translate(-2px, -2px) rotate(1.5deg); }
-  60%  { transform: translate(3px, 2px) rotate(-2deg); }
-  70%  { transform: translate(-3px, 3px) rotate(1deg); }
-  80%  { transform: translate(2px, -1px) rotate(-1.5deg); }
-  90%  { transform: translate(-1px, 2px) rotate(0.5deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
-}
-
-@media (hover: hover) {
-  .animate-chaos-shake:hover {
-    animation: chaos-shake 0.5s ease-in-out infinite;
-  }
-}
-
-@utility animate-chaos-shake {
-  @media (hover: hover) {
-    &:hover {
-      animation: chaos-shake 0.5s ease-in-out infinite;
-    }
-  }
-}
-
-/* Glassmorphism utilities */
-.glass {
-  background: color-mix(in srgb, var(--bone) 12%, transparent);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border: 1px solid color-mix(in srgb, var(--bone) 25%, transparent);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.glass-dark {
-  background: color-mix(in srgb, var(--indigo-deep) 45%, transparent);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border: 1px solid color-mix(in srgb, var(--dusty-cyan) 25%, transparent);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 color-mix(in srgb, var(--dusty-cyan) 10%, transparent);
-}
-
-.glass-accent {
-  background: color-mix(in srgb, var(--muted-indigo) 18%, transparent);
-  backdrop-filter: blur(16px) saturate(1.3);
-  -webkit-backdrop-filter: blur(16px) saturate(1.3);
-  border: 1px solid color-mix(in srgb, var(--caution-amber) 30%, transparent);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 color-mix(in srgb, var(--caution-amber) 10%, transparent);
-}
-
-.glass-card {
-  background: color-mix(in srgb, var(--bone) 8%, transparent);
-  backdrop-filter: blur(24px) saturate(1.5);
-  -webkit-backdrop-filter: blur(24px) saturate(1.5);
-  border: 1px solid color-mix(in srgb, var(--dusty-cyan) 20%, transparent);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-/* Paper: glass panels become solid Bone sheets with a hairline edge */
-[data-theme="light"] :is(.glass, .glass-dark, .glass-card, .glass-accent) {
-  background: var(--bone);
-  border-color: var(--hairline);
-  box-shadow: 0 4px 18px rgba(20, 15, 34, 0.08);
-}
-
-/* ── Zine clipping cards — taped photocopy treatment for project rows ──
-   clip-path lives on the ::before, not .zine-card itself, so the taped
-   .zine-tape child (which overflows above the card) isn't clipped along
-   with it — clip-path clips an element's own rendering AND its children. ── */
-.zine-card {
-  position: relative;
-  transform: rotate(var(--tilt, 0deg));
-  transition: transform 0.18s ease;
-}
-.zine-card:hover {
-  transform: rotate(0deg) scale(1.01);
-}
-.zine-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle, color-mix(in srgb, var(--shadow) 10%, transparent) 1px, transparent 1.3px) 0 0/10px 10px,
-    var(--bone);
-  box-shadow: 0 12px 24px color-mix(in srgb, var(--shadow) 30%, transparent);
-}
-.zine-card--a::before {
-  clip-path: polygon(1% 3%, 10% 0%, 30% 1.5%, 55% 0%, 78% 1.5%, 100% 0.5%, 99% 20%, 100% 45%, 98% 70%, 100% 92%, 90% 100%, 60% 98.5%, 35% 100%, 12% 98%, 0% 90%, 1% 60%, 0% 30%);
-}
-.zine-card--b::before {
-  clip-path: polygon(0% 1%, 20% 0%, 45% 1.5%, 70% 0%, 100% 1%, 99% 25%, 100% 55%, 98.5% 80%, 100% 100%, 75% 98.5%, 50% 100%, 25% 98.5%, 0% 100%, 1% 70%, 0% 40%);
-}
-.zine-card--c::before {
-  clip-path: polygon(2% 0%, 25% 1.5%, 50% 0%, 80% 1.5%, 100% 0%, 98.5% 30%, 100% 60%, 99% 85%, 100% 100%, 65% 98.5%, 40% 100%, 15% 98.5%, 0% 100%, 1.5% 65%, 0% 35%, 1% 10%);
-}
-.zine-tape {
-  position: absolute;
-  top: -10px;
-  left: 24px;
-  width: 64px;
-  height: 20px;
-  transform: rotate(-4deg);
-  background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--caution-amber) 55%, transparent) 0 6px, color-mix(in srgb, var(--caution-amber) 40%, transparent) 6px 12px);
-  opacity: 0.85;
-  box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow) 30%, transparent);
-  pointer-events: none;
 }
 
 /* Theme switch crossfade (ThemeToggle wraps the change in a view transition) */
