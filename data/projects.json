@@ -456,10 +456,10 @@
     "slug": "wikichasm",
     "url": "https://wikichasm.adhdesigns.dev",
     "tagline": "Rabbit holes that leave something behind.",
-    "description": "Wikipedia rabbit holes that are enticing to start and that you actually remember afterwards.\n\n* **Trail Map:** Every hop is mapped as you go, so you can see how you got from A to Z.\n* **Pins + Souvenirs:** Pin the lines that grabbed you, and each rabbit hole ends with a souvenir you keep on your shelf.\n* **Weird Doors:** Wander through strange categories and amazing people, from icons to wonderful oddballs.\n* **Daily Race:** Race from one article to a target using only links.\n* **No Account Needed:** Browse, read, pin and race as a guest, then keep your rabbit hole if you sign up.",
+    "description": "Wikipedia rabbit holes that are enticing to start and that you actually remember afterwards.\n\n* **Trail Map:** Every hop is mapped as you go, so you can see how you got from A to Z.\n* **Pins + Souvenirs:** Pin the lines that grabbed you, and each rabbit hole ends with a souvenir you keep on your shelf.\n* **Weird Doors:** Wander through strange categories and amazing people, from icons to wonderful oddballs.\n* **Daily Race:** Race from one article to a target using only links.\n* **Save for Later:** Hold a link to save it without leaving the article, then follow it later in the same hole or start a new one from Home.\n* **Core Samples:** See where your time went, with every rabbit hole drawn as a ribbon of the articles you read.\n* **No Account Needed:** Browse, read, pin and race as a guest, then keep your rabbit hole if you sign up.",
     "status": "alpha",
     "tech": ["Vite", "React", "TypeScript", "Hono", "Cloudflare Workers", "Neon Postgres", "Drizzle ORM", "Upstash Redis"],
-    "last_updated": "2026-11-21",
+    "last_updated": "2026-11-22",
     "githubUrl": "https://github.com/lmdrew96/wikichasm"
   },
   {
