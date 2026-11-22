@@ -376,7 +376,7 @@ export function ProjectsSection() {
               <h3 className="font-display text-3xl tracking-[-1px] text-fg mb-8 text-center">
                 {group.label}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-x-8 gap-y-10">
                 {groupProjects.map((project, idx) => {
                   const Icon = project.icon
                   const isExpanded = activeProject === project.id
