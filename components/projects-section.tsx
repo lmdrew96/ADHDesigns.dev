@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Archive, Atom, Bug, Cat, CloudLightning, Coins, FlaskConical, Fingerprint, Flame, Gamepad2, Highlighter, Layers, Library, Lightbulb, ListTodo, Network, NotebookPen, Newspaper, Palette, PawPrint, RefreshCcwDot, Scroll, Sparkles, Swords, Terminal, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
+import { Archive, Atom, Bug, Cat, CloudLightning, Coins, Compass, FlaskConical, Fingerprint, Flame, Gamepad2, Highlighter, Layers, Library, Lightbulb, ListTodo, Moon, Network, NotebookPen, Newspaper, Palette, PawPrint, RefreshCcwDot, Scroll, Sparkles, Swords, Terminal, Volume2, ExternalLink, Github, ChevronDown, Zap } from "lucide-react"
 
 const HEADING = "Built Different, On Purpose"
 const HIGHLIGHT_START = 17 // index where "On Purpose" / "în mod intenționat" begins
@@ -239,6 +239,16 @@ const projectUIConfig: Record<string, ProjectUI> = {
     icon: Swords,
     tags: ["MTG", "Rules Engine", "Deckbuilder", "AI Opponent"],
     category: "chaos",
+  },
+  wikichasm: {
+    icon: Compass,
+    tags: ["Wikipedia", "Trail Map", "Hono", "Neon"],
+    category: "other",
+  },
+  moodrift: {
+    icon: Moon,
+    tags: ["Sleep Sounds", "Web Audio", "Ambient"],
+    category: "other",
   },
   scribecat: {
     icon: Cat,
