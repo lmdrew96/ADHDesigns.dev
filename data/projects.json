@@ -7,20 +7,19 @@
     "description": "An ADHD-friendly task manager that turns brain dumps (typed, spoken, or photographed) into tasks with Claude Haiku, then tells you what's next.\n\n* **Do This Next:** AI picks your next task from your energy, time, calendar, and goals.\n* **Sittings, Not Marathons:** Plan a big task across several work sessions instead of one unrealistic block.\n* **Goals That Move:** Every goal shows its next step, and AI can break it into starter tasks.\n* **Rescue:** Deadline looming? Tell it what's due and it builds a step-by-step plan.\n* **Canvas + MCP:** Canvas calendar import for class schedules, plus 41 MCP tools: connect Claude, ChatGPT, or any MCP app by signing in, and it can work your list.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Claude Haiku", "Groq Whisper", "Cloudflare R2"],
-    "last_updated": "2026-10-04",
+    "last_updated": "2026-11-21",
     "githubUrl": "https://github.com/lmdrew96/ControlledChaos"
   },
   {
     "name": "ChaosLimbă",
     "slug": "chaoslimba",
-    "url": "https://chaoslimba.adhdesigns.dev",
-    "tagline": "Learn Romanian through structured chaos.",
-    "description": "An ADHD-friendly Romanian app for English speakers, built on second language acquisition research instead of streaks and guilt.\n\n* **Error Garden:** Mistakes get clustered, and fossilizing patterns get flagged before they harden.\n* **Chaos Window:** Time-boxed speaking and writing sessions with AI feedback and a hard stop.\n* **Workshop:** Grammar micro-challenges aimed at your own error patterns.\n* **Deep Fog + Mystery Shelf:** Read and listen to authentic Romanian, then collect the words that stumped you.\n* **The Ensemble:** Speech recognition, phoneme-level pronunciation scoring, grammar checks, and an AI tutor.",
-    "status": "alpha",
-    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Clerk", "Groq", "Claude Haiku", "HuggingFace"],
-    "last_updated": "2026-08-12",
-    "githubUrl": "https://github.com/lmdrew96/chaos",
-    "demoUrl": "https://chaoslimba.adhdesigns.dev/demo"
+    "url": null,
+    "tagline": "Learn Romanian by making mistakes.",
+    "description": "A rebuild of ChaosLimbă around one idea: you learn a language by making mistakes, being corrected, and understanding the correction. Errors are the curriculum.\n\n* **Error Garden:** Every recurring mistake becomes a plant. Get it right and it grows; skip it and it goes dormant, never dies.\n* **Intake Is Day One:** A chat that steers toward specific structures, shows the sentences behind what it saw, and plants your first garden.\n* **A Tutor That Aims:** Conversation steers toward the one error you're working on, and a separate grader gives the correction.\n* **No AI-Written Lessons:** AI talks and diagnoses; it doesn't invent curriculum. No streaks, no guilt.",
+    "status": "in-development",
+    "tech": ["Next.js", "TypeScript", "Drizzle ORM", "Neon Postgres", "Claude Sonnet", "Claude Haiku", "Cloudflare Workers"],
+    "last_updated": "2026-10-20",
+    "githubUrl": "https://github.com/lmdrew96/chaoslimba-v2"
   },
   {
     "name": "ChaosLengua",
@@ -42,7 +41,7 @@
     "description": "A patch tracker for agentic development — log bugs, fixes, and features per project, then let Claude Code read and close them mid-session.\n\n* **27 MCP Tools:** Claude can add, search, batch-update, and complete patches over remote MCP — and attach screenshots to them directly.\n* **Screenshot to Patch:** Paste a bug screenshot into Add Patch and Claude drafts the title and notes for you to edit before saving.\n* **Changelog in One Click:** Turn a project's finished patches into plain-language release notes (new, fixed, polish), ready to copy as Markdown.\n* **Specs + Screenshots:** Each patch carries terse notes, a long-form markdown spec, and image attachments Claude can see.\n* **Bulk Actions:** Archive, delete, reprioritize, or tag a stack of patches at once, with filters saved in the URL.\n* **Insights:** This week's wins grouped by project, your 7-day pace, whether the backlog is growing or shrinking, and which patches are stuck — across every project.\n* **Stale Nudges:** Patches untouched for a week surface on the dashboard, with a one-tap \"still relevant\" to reset the clock.\n* **Installable:** Works as a PWA on desktop and mobile.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Clerk", "MCP", "Cloudflare R2", "Claude API"],
-    "last_updated": "2026-10-05",
+    "last_updated": "2026-11-21",
     "githubUrl": "https://github.com/lmdrew96/ChaosPatch"
   },
   {
@@ -51,43 +50,42 @@
     "url": "https://scribecat.adhdesigns.dev",
     "tagline": "ScribeCat scribes and is cat.",
     "description": "A lecture companion for ADHD brains: record a class, get a live AssemblyAI transcript, and let Nugget take AI notes while you listen.\n\n* **6 Study Tools:** Summary, key concepts, flashcards, quizzes, concept maps, and ELI5, all built from your lecture.\n* **Exam Rooms:** Exam simulations with weak-spot tracking, so you know what to study next.\n* **Study With Friends:** Friends, DMs, study rooms, and multiplayer Quiz Battle and Jeopardy.\n* **StudyQuest:** Adopt a pixel cat that levels up from your study XP and battles for shop coins.",
-    "status": "live",
+    "status": "archived",
     "tech": ["Vite", "React", "TypeScript", "Convex", "Clerk", "AssemblyAI", "Claude Haiku", "TipTap"],
-    "last_updated": "2026-08-11",
+    "last_updated": "2026-09-27",
     "githubUrl": "https://github.com/lmdrew96/ScribeCat-v3"
   },
   {
     "name": "NugNotes",
     "slug": "nugnotes",
-    "url": null,
+    "url": "https://nugnotes.adhdesigns.dev",
     "tagline": "Your notes, but actually good.",
     "description": "An ADHD-friendly study app for notes, documents, and handwriting, with Nugget the cat to help you study. It grew out of ScribeCat, minus the audio.\n\n* **Write It Your Way:** Type, sketch by hand, or snap a photo of the whiteboard. Every session saves itself.\n* **Nugget Drafts Notes:** Upload a PDF or a photo and get organized notes you can edit.\n* **Study Tools:** Flashcards, quizzes, concept maps, and ELI5 breakdowns from your notes in one click.\n* **Study Together:** Study rooms with classmates' live cursors, shared sessions, and quiz battles.",
     "status": "in-development",
     "tech": ["Vite", "React", "TypeScript", "Convex", "Clerk", "BlockNote", "Claude", "Cloudflare R2"],
-    "last_updated": "2026-10-05",
+    "last_updated": "2026-11-13",
     "githubUrl": "https://github.com/lmdrew96/nugnotes"
   },
   {
     "name": "ThreadNotes",
     "slug": "threadnotes",
-    "url": "https://research.adhdesigns.dev",
+    "url": null,
     "tagline": "Where hyperfocus meets hypothesis.",
     "description": "A research command center for the way ADHD brains actually research — find papers, save them, and track your own studies in one place.\n\n* **Find Papers:** Search OpenAlex and Crossref, or add any paper from its DOI alone, with free open-access versions flagged.\n* **Library:** Save, annotate, and summarize articles, keep page-cited excerpts and uploaded PDFs, and follow a citation trail to what each paper cites and what cites it.\n* **Questions + Journal:** Group questions by theme, link them to articles, and journal as you go.\n* **Ask the Pile:** Turn the papers linked to a question into a short synthesis where every claim cites its paper, plus the 1–3 worth reading next.\n* **One Section, Not the Paper:** Claude reads the full text and points to the sections that answer your question, with page numbers.\n* **Your Own Studies:** Hypotheses and design decisions keep a revision chain of what changed and why.\n* **Clipper + MCP:** A Chrome extension clips excerpts, and 53 MCP tools let Claude search, discover papers, and read and write your research.",
-    "status": "live",
+    "status": "in-development",
     "tech": ["React", "TypeScript", "Vite", "Clerk", "Neon Postgres", "Claude Haiku", "Claude Sonnet", "OpenAlex", "Crossref", "Semantic Scholar", "Cloudflare R2"],
-    "last_updated": "2026-10-07",
-    "githubUrl": "https://github.com/lmdrew96/research-journal",
-    "demoUrl": "https://research.adhdesigns.dev/demo"
+    "last_updated": "2026-11-06",
+    "githubUrl": "https://github.com/lmdrew96/research-journal"
   },
   {
     "name": "Marginalia",
     "slug": "marginalia",
-    "url": null,
+    "url": "https://marginalia.adhdesigns.dev",
     "tagline": "Read the real page, and write in the margins.",
     "description": "A reader for class readings and research papers, PDF or Word: the actual page, your highlights and margin notes, and Claude in a sidebar.\n\n* **The Real Page:** PDFs render as the page itself, Word files are converted to PDF on upload, and scanned pages get opt-in OCR.\n* **Highlights + Margin Notes:** Highlight anything and write notes beside it in the margin, like annotating a printout.\n* **Ask Claude:** A sidebar chat that knows the document you're reading.\n* **Quiz Me:** Multiple-choice and typed short-answer quizzes on the whole document or a page range, weighted toward what you highlighted.\n* **Claude Instructions:** Tell Claude once in Settings how you like things explained, and the chat and quizzes follow it.\n* **A Reading Desk:** An annotated-manuscript look with Moss and Riga themes, dark or light, all WCAG AA.",
     "status": "in-development",
     "tech": ["Next.js", "TypeScript", "Clerk", "Neon Postgres", "Drizzle ORM", "Claude API", "pdf.js", "Tesseract.js", "Cloudflare R2", "Gotenberg"],
-    "last_updated": "2026-10-06",
+    "last_updated": "2026-10-10",
     "githubUrl": "https://github.com/lmdrew96/marginalia"
   },
   {
@@ -116,12 +114,12 @@
   {
     "name": "Personal Context MCP",
     "slug": "personal-context-mcp",
-    "url": "https://personal-context-mcp.vercel.app",
+    "url": "https://pctx.adhdesigns.dev",
     "tagline": "Durable facts about you, so every Claude starts warm.",
     "description": "An MCP server for what no codebase or task tracker holds — dated facts about you, your people, and which Claude is which.\n\n* **Dated Facts:** Each fact records when it was established and how it's known, so stale context announces itself.\n* **Relationships:** Pronouns, affiliations, and nicknames Claude would otherwise guess at.\n* **Claude Identities:** Each Claude that connects gets told which one it is.\n* **11 MCP Tools + Editor:** Read and write from Claude, or edit it all in a web editor behind a private token or an optional account.",
     "status": "beta",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-09-27",
+    "last_updated": "2026-11-21",
     "githubUrl": "https://github.com/lmdrew96/personal-context-mcp"
   },
   {
@@ -132,12 +130,12 @@
     "description": "An MCP server that keeps Claude's hunches, dead-ends, and open questions alive across sessions instead of letting them evaporate when the chat ends.\n\n* **11 MCP Tools:** Capture, recall, search, and resolve notes, each tagged with a confidence from gut to conviction.\n* **Tiered Recall:** Standing references first, then the open questions left untouched longest.\n* **Calibration Record:** Closing a note records whether the hunch panned out, building a track record.\n* **Browse View:** Search, filter, and sort everything Claude has kept on a read-only page.\n* **Optional Accounts:** Recover a lost token by signing in; the MCP URL never needs one.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Vercel"],
-    "last_updated": "2026-09-07"
+    "last_updated": "2026-11-21"
   },
   {
     "name": "Songs of My Selves: We as Walt",
     "slug": "walt",
-    "url": "https://walt.adhdesigns.dev",
+    "url": null,
     "tagline": "Whitman's *Song of Myself* as a constellation you can walk through.",
     "description": "An interactive map of Walt Whitman's *Song of Myself*: all 52 sections as stars, each paired with a track from *We as Walt: Songs of My Selves*, Lanae Drew's 52-song response playlist.\n\n* **Constellation Map:** Sections that share themes (body, grass, multitudes, death) are threaded together.\n* **Section View:** The full section beside its song, a Spotify player, and a liner note.\n* **Search & Themes:** Full-text search plus theme filters that light up matching stars.\n* **Deep-Space Scene:** Drifting nebulae, a parallax starfield, and the odd shooting star.",
     "status": "live",
@@ -148,12 +146,12 @@
   {
     "name": "LibraLex",
     "slug": "chaosshelf",
-    "url": "https://libra.adhdesigns.dev",
+    "url": null,
     "tagline": "Track what you own, what you want, and what's due back at the library.",
     "description": "A personal book catalog for your shelf, your wishlist, and your library loans — the due-date tracking Goodreads and StoryGraph skip.\n\n* **Library Loans:** Due dates, overdue states, and one-tap renew or return.\n* **Scan to Add:** Scan a barcode or search, and covers and descriptions fill in.\n* **Recommendations:** Ask for a book in your own words, or open the picks friends send you.\n* **Friends:** Add friends by code to see each other's shelves (loan details stay private).\n* **16 MCP Tools:** Add books, renew loans, and send picks from Claude.",
     "status": "live",
     "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "Tailwind CSS", "MCP", "Vercel", "Gemini embeddings"],
-    "last_updated": "2026-07-14",
+    "last_updated": "2026-10-28",
     "githubUrl": "https://github.com/lmdrew96/LibraLex"
   },
   {
@@ -164,13 +162,13 @@
     "description": "Where ideas go to be developed. Raw thoughts get caught in Loose Change; the ones worth keeping come to Kindling with a title, a kind, a home, and a next step, and it keeps resurfacing them until you use them or let them go.\n\n* **Structured Sparks:** Every idea gets a title, a kind (story, development, research, reading, essay), a home, and a next step.\n* **21 MCP Tools:** Kindle, recall, snooze, promote, and prune sparks from Claude, which offers to keep an idea instead of filing things on its own.\n* **Recall Ranking:** Whatever has waited longest and been touched least comes up first.\n* **Decay:** Untouched sparks go cold after 180 days (configurable), so you triage on purpose.\n* **Develop This:** A short guided session with Claude that asks one question at a time (what it's for, what's unclear, what the smallest version is) and ends with a sharper write-up and next step you approve before it's saved.\n* **Promotion:** When a spark becomes something real, it gets a moment, and a \"What they became\" wall keeps a record of where each one went.\n* **Web Dashboard:** At-a-glance stats, a \"worth another look\" spotlight, heat on every card, a board grouped by each spark's home, and optional accounts with separate work and personal spaces.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "Upstash Redis", "MCP", "Claude API", "Tailwind CSS"],
-    "last_updated": "2026-10-12",
+    "last_updated": "2026-11-21",
     "githubUrl": "https://github.com/lmdrew96/kindling"
   },
   {
     "name": "The Majorot",
     "slug": "majorot",
-    "url": "https://majorot.vercel.app/",
+    "url": null,
     "tagline": "A solo tarot journaling RPG, played with a real deck and tracked in-app.",
     "description": "A companion app for The Majorot, Lanae Drew's solo journaling RPG — draw through a real tarot deck and collect all 22 Major Arcana spells before the magic wears you down.\n\n* **Card-Driven Play:** Majors are spells, Courts are allies or duel opponents, and Pips are life events.\n* **Full Spellbook:** All 22 Majors, 16 ally abilities, and 16 kit items work in the engine.\n* **Guided Journaling:** A founding ritual, per-card prompts, and an editable chapter log.\n* **Offline PWA:** Installable and playable offline, saved locally in IndexedDB.\n* **Tested Engine:** 122 tests check the engine against the rulebook.",
     "status": "beta",
@@ -181,7 +179,7 @@
   {
     "name": "ChaosLingua Lite",
     "slug": "chaoslingua-lite",
-    "url": "https://lingua-lite.vercel.app/",
+    "url": null,
     "tagline": "Latin drills for nouns, verbs, and the little words, built chapter by chapter on Suburani.",
     "description": "A Latin drill app built on the Suburani textbook, with vocab and grammar opening up on an intro course's class schedule, down to which tenses are unlocked.\n\n* **Parse Drills:** See a noun and name its case, number, declension, and job. See a verb and name its person, number, tense, and conjugation, then say what it means.\n* **Conjugate:** Get a dictionary form and a slot, then produce the form. Multiple choice, or typed with forgiving macrons.\n* **Decode & Word Order:** Read the endings, not the word order, across nominatives, datives, prepositions, and plural subjects where only the verb's -t or -nt tells you who's doing it.\n* **Little Words:** Prepositions and the case they take, conjunctions, adverbs, and spotting the part of speech.\n* **Learn Charts:** Declension and conjugation tables in the textbook's own layout, plus endings, tense signs, and principal parts. Made for open-chart quizzes.\n* **Chapter Vocab:** Vocab through chapter 32, filterable by chapter, declension, tense, and conjugation.\n* **Speed Mode:** An opt-in timer and streak.\n* **Claude Tutor:** A companion MCP server lets Claude quiz you and track weak areas.",
     "status": "alpha",
@@ -197,7 +195,7 @@
     "description": "Lock the colors you want, pick a harmony style, and an OKLCH engine fills in the rest — then shows it on a real page instead of seven rectangles.\n\n* **Harmony Engine:** Seven harmony styles, 2 to 7 colors, every hue equally vivid.\n* **Palette in Context:** A full blog page, with a legend for which color paints what.\n* **Contrast Readout:** Checks every pairing against WCAG and offers the nearest passing color.\n* **Two Layouts:** Soft grunge (dense) or Dreamy (airy), because a palette can survive one and die in the other.\n* **Share & Export:** Share a link, grab a PNG or SVG card, or copy OKLCH CSS variables.",
     "status": "alpha",
     "tech": ["Vite", "React"],
-    "last_updated": "2026-09-27"
+    "last_updated": "2026-11-21"
   },
   {
     "name": "DuelingChaos",
@@ -223,12 +221,12 @@
   {
     "name": "Loose Change",
     "slug": "loose-change",
-    "url": "https://change.adhdesigns.dev/",
+    "url": null,
     "tagline": "Catch the thought now. Decide what it is later.",
     "description": "A voice-and-text capture PWA for thoughts that show up while you're driving, falling asleep, or mid-something-else. Capturing never asks you to decide anything.\n\n* **One-tap capture:** Tap to record, tap to stop, and AssemblyAI transcribes it (offline captures sync later).\n* **Batch triage:** One entry at a time: keep, discard, skip, or send to Kindling or ControlledChaos, with undo on everything.\n* **No guilt mechanics:** A plain untriaged count, with no streaks, no red badges, and no countdown.\n* **14 MCP tools:** Claude can capture, search, triage, and fix transcripts alongside your other tools.",
     "status": "beta",
     "tech": ["Next.js", "TypeScript", "Convex", "PWA", "MCP", "Clerk", "AssemblyAI"],
-    "last_updated": "2026-09-27",
+    "last_updated": "2026-10-04",
     "githubUrl": "https://github.com/lmdrew96/loose-change"
   },
   {
@@ -351,7 +349,7 @@
   {
     "name": "NonStop",
     "slug": "nonstop",
-    "url": "https://nonstop.adhdesigns.dev",
+    "url": null,
     "tagline": "A shareable, installable Hamilton soundboard.",
     "description": "An installable soundboard for Hamilton clips, and the source library ChaosCord and ChaosCord Activity both pull from.\n\n* **183 Clips:** From Alexander Hamilton through Yorktown, stored on Cloudflare R2.\n* **Fast Finding:** Fuzzy search plus multi-select character and song filters.\n* **Favorites:** Star clips and get a Most Used row, saved on your device.\n* **Installable PWA:** Add it to your home screen and it works offline like a native app.",
     "status": "live",
@@ -382,12 +380,12 @@
   {
     "name": "Folio",
     "slug": "folio",
-    "url": "https://folio.adhdesigns.dev",
+    "url": null,
     "tagline": "A writing space that knows what changed since you last looked.",
     "description": "A word processor that stores every block as its own row, so who-wrote-what and what-changed-since-you-left live in the data model instead of being parsed out after the fact.\n\n* **Diff since last visit:** See which blocks changed while you were gone, and who changed them.\n* **Cleo:** An in-app Claude who reacts to your edits and remembers her past reactions.\n* **Collaboration:** Invite friends onto shared docs and see who else is viewing.\n* **The basics, done properly:** Footnotes, word-count goals, find and replace, and PDF, Word, and Markdown export.\n* **MCP door:** 8 tools let other Claude instances list, read, search, and diff your docs — six reads, plus two that only mark what they've caught up on.",
     "status": "beta",
     "tech": ["Next.js", "TypeScript", "Convex", "Clerk", "TipTap", "MCP", "Claude API"],
-    "last_updated": "2026-09-27",
+    "last_updated": "2026-10-12",
     "githubUrl": "https://github.com/lmdrew96/folio"
   },
   {
@@ -403,7 +401,7 @@
   {
     "name": "Sensible",
     "slug": "sensible",
-    "url": "https://sensible.adhdesigns.dev",
+    "url": null,
     "tagline": "A side-by-side reader that modernizes old writing without losing its voice.",
     "description": "Old texts on one side, plain contemporary English on the other: same meaning, same tone, same rhetorical punch. Paine still reads urgent; Austen still reads ironic.\n\n* **Human-reviewed:** Claude drafts each modernization once, then a person edits and approves it before it goes public.\n* **Glosses:** Archaic terms that survive get explained, and you can ask about anything you highlight.\n* **Your copy:** A free account saves your highlights, notes, and reading position.\n* **Read your way:** Pick the font, text size, and theme (light or dark), or hide the original entirely.",
     "status": "live",
@@ -424,23 +422,23 @@
   {
     "name": "Strata",
     "slug": "strata",
-    "url": "https://strata.adhdesigns.dev",
+    "url": null,
     "tagline": "In-depth English etymology, in historical context.",
     "description": "An etymology explorer that shows English words living through their history (how each one was spelled, how it sounded, and what it meant at every stage), not just where it came from.\n\n* **Era timeline:** Scrub through a word's forms, IPA, and meanings, with its semantic drift named.\n* **Real attestations:** Quotes pulled from Old, Middle, and Early Modern English corpora, cited and translated.\n* **Hear it:** Reconstructed pronunciation audio per era (synthetic on purpose; nobody recorded Old English).\n* **Human-reviewed:** Claude drafts entries from corpus and Wiktionary data; each is reviewed before publishing.",
     "status": "live",
     "tech": ["Next.js", "TypeScript", "Neon Postgres", "Drizzle ORM", "Claude API"],
-    "last_updated": "2026-08-17",
+    "last_updated": "2026-08-22",
     "githubUrl": "https://github.com/lmdrew96/strata"
   },
   {
     "name": "Vertex",
     "slug": "vertex",
-    "url": "https://vertex.adhdesigns.dev",
+    "url": null,
     "tagline": "A knowledge-graph MCP server Claude can read, write, and map.",
     "description": "An MCP server for graph-shaped ideas (concepts, people, works, claims, and questions, linked by typed edges), built as Tangle's sibling.\n\n* **10 MCP tools:** Create, search, and archive nodes, link them, render the graph, and find orphans.\n* **Graph browser:** An interactive React Flow map of the whole graph.\n* **Works in claude.ai:** Grab a token and MCP URL from the landing page.",
     "status": "alpha",
     "tech": ["Next.js", "TypeScript", "MCP", "React Flow", "Upstash Redis"],
-    "last_updated": "2026-07-28"
+    "last_updated": "2026-10-15"
   },
   {
     "name": "CodyND",
@@ -450,7 +448,28 @@
     "description": "Neurodivergent-friendly mods for Claude Code that keep your work visible and your wins audible. A status line shows the patch you're on, a rotating set of chimes celebrates when it's done, a gentle clock nudges you to check in with your body on long sessions, and a re-entry card (back anytime with /recap) tells you where you left off. Switch topics and it offers to park the old thread so nothing gets lost. CodyND helps and celebrates. It never polices.",
     "status": "beta",
     "tech": ["TypeScript", "Claude Code plugin API", "ChaosPatch MCP"],
-    "last_updated": "2026-10-04",
+    "last_updated": "2026-10-06",
     "githubUrl": "https://github.com/lmdrew96/codynd"
+  },
+  {
+    "name": "WikiChasm",
+    "slug": "wikichasm",
+    "url": "https://wikichasm.adhdesigns.dev",
+    "tagline": "Rabbit holes that leave something behind.",
+    "description": "Wikipedia rabbit holes that are enticing to start and that you actually remember afterwards.\n\n* **Trail Map:** Every hop is mapped as you go, so you can see how you got from A to Z.\n* **Pins + Souvenirs:** Pin the lines that grabbed you, and each rabbit hole ends with a souvenir you keep on your shelf.\n* **Weird Doors:** Wander through strange categories and amazing people, from icons to wonderful oddballs.\n* **Daily Race:** Race from one article to a target using only links.\n* **No Account Needed:** Browse, read, pin and race as a guest, then keep your rabbit hole if you sign up.",
+    "status": "alpha",
+    "tech": ["Vite", "React", "TypeScript", "Hono", "Cloudflare Workers", "Neon Postgres", "Drizzle ORM", "Upstash Redis"],
+    "last_updated": "2026-11-21",
+    "githubUrl": "https://github.com/lmdrew96/wikichasm"
+  },
+  {
+    "name": "Moodrift",
+    "slug": "moodrift",
+    "url": null,
+    "tagline": "Pretty, dim, and loud enough to fall asleep to.",
+    "description": "A sleep-sounds app for falling asleep on a laptop: layered rain, beach and soft music with a slow visual that breathes with the sound.\n\n* **Fuller, Not Just Louder:** A generated low-end layer and gentle compression make the sound feel bigger at the same volume.\n* **Darkness Wins:** Dim, slow visuals that fade to black well before the sound stops. Nothing flashes.\n* **One-Tap Presets:** Rain on the roof, Storm far away, Beach at night, Soft music + rain.\n* **No Account:** Open it, pick a mix, close your eyes.",
+    "status": "in-development",
+    "tech": ["Vite", "React", "TypeScript", "Web Audio", "Cloudflare Workers"],
+    "last_updated": "2026-11-05"
   }
 ]

@@ -24,7 +24,7 @@ export const projects: readonly Project[] = (projectsJson as Project[])
 // Home page lineup and status labels — shared with the site assistant so they never disagree.
 
 export const HOME_PROJECT_ORDER: readonly string[] = [
-  "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite",
+  "controlledchaos", "chaospatch", "chaoslimba", "chaoslingua-lite", "wikichasm", "moodrift",
   "scribecat", "nugnotes", "threadnotes", "personal-context-mcp", "tangle", "kindling", "walt", "chaosshelf",
   "color-factory", "loose-change", "folio", "strata", "marginalia", "codynd", "chickenscratch",
 ]
