@@ -2,12 +2,15 @@ import { NextResponse } from "next/server"
 import Anthropic from "@anthropic-ai/sdk"
 import { Resend } from "resend"
 
+import { CLAUDE_MODEL } from "@/lib/ai"
 import { CHAT_SYSTEM_PROMPT } from "@/lib/chat-system-prompt"
 
 export const runtime = "nodejs"
 export const maxDuration = 30
 
-const MODEL = "claude-haiku-4-5-20251001"
+// Haiku 5.5 thinks by default and thinking counts toward max_tokens; low effort keeps
+// chat replies inside the caps below.
+const EFFORT = "low" as const
 const MAX_MESSAGES = 40
 const MAX_CONTENT_LENGTH = 4000
 
@@ -189,7 +192,8 @@ export async function POST(req: Request) {
 
   try {
     let response = await client.messages.create({
-      model: MODEL,
+      model: CLAUDE_MODEL,
+      output_config: { effort: EFFORT },
       max_tokens: 1024,
       system: [
         {
@@ -224,7 +228,8 @@ export async function POST(req: Request) {
         }
 
         const followup = await client.messages.create({
-          model: MODEL,
+          model: CLAUDE_MODEL,
+          output_config: { effort: EFFORT },
           max_tokens: 512,
           system: [
             {
